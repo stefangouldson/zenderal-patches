@@ -285,6 +285,21 @@ These are distilled from real failures in this workspace's lineage. They cost te
 - ALWAYS grep the whole workspace (your patch folders + `reference/`) for a hex FormID before
   assigning it — use the `formkey-check` skill.
 
+### Allocations in use
+
+Each patch's own ESL block. Overrides are not listed — they consume nothing.
+
+| Patch / plugin | Block | Contents |
+|---|---|---|
+| `RelentlessSword` → `Zenderal - Relentless Sword.esp` | `0x800–0x825` | `800–806` statics (1st-person models), `809–80F` weapons, `811–81F` forge + temper recipes (johnskyrim's original offsets, preserved for traceability), `820–825` dismantle recipes (new, this repo's) |
+
+> **`Enderal - Forgotten Stories.esm` survives as a declared master.** It is an *implicit* base
+> master under `GameRelease.EnderalSE`, so there was reason to fear Mutagen would drop it from the
+> written master list and leave `:Enderal - Forgotten Stories.esm` FormKeys dangling. It does not:
+> `Zenderal - Relentless Sword.esp` builds with `MAST Skyrim.esm` + `MAST Enderal - Forgotten
+> Stories.esm`, and its `02F336` references resolve at master index **1**. **[verified]** So a patch
+> may reference FS records freely — just declare the master and confirm it in the built header.
+
 ## Papyrus toolchain
 
 Scripts go through extract → decompile → edit → compile → package. Use the matching skills; the
@@ -439,6 +454,28 @@ and Enderal's copy wins or loses purely on load order.
 `_00E_Game_SkillmenuSC`, memory/learning points (`_00E_Lehrbuch_Plus1MemoryPointSC`,
 `_00E_Lehrbuch_Plus2SkillPointsScript`), crafting books (`_00E_Handwerksbuch*`), and the
 talent cooldown/control quests (`_00E_Game_TalentControlSC`, `_00E_Game_TalentCooldownSC`).
+
+**A ported Skyrim gear mod's recipes are the part most likely to be silently inert.** Enderal keeps
+the crafting *plumbing* (bench keywords are vanilla — see
+[`crafting-alchemy-economy.md`](arch-docs/enderal/crafting-alchemy-economy.md)) but not everything
+around it. Two concrete traps, both found in Relentless Sword **[verified]**:
+
+| Vanilla FormID | In Enderal | Consequence |
+|---|---|---|
+| `0F46CE` `CraftingSmithingSkyforge`, `0F46D1` (Companions global) | **Do not exist** — no record at either ID in `Skyrim.esm`, `Update.esm` or the FS ESM | A Skyforge recipe can never appear. Repoint to `CraftingSmithingForge` `088105`. |
+| `05218E` — vanilla's Arcane Blacksmith | `_00E_Class_Phasmalist_P04_B_ArcaneSmith`, *"You can improve enchanted armors and weapons"* | A **false friend that happens to be correct**: the standard temper condition means in Enderal exactly what it meant in Skyrim. Leave it alone. |
+
+Enderal's own forge recipes gate on **`GetActorValue Smithing >= N`** (`RunOnType: Reference`,
+`Reference: 000014:Skyrim.esm`) plus, usually, owning a `_00E_CraftingPlan_*` blueprint — **not** on
+smithing perks. The vanilla smithing perks `0CB40D–0CB414` all still exist, but Enderal's `Player`
+NPC record **grants every one of them at rank 1 from the start** **[verified]**, so `HasPerk
+EbonySmithing` is a condition that is always true and gates nothing. Copy the AV shape from
+`_03E_RecipeWeapon_27_SwordOfTheRighteousPathForged` (`148A89:Skyrim.esm`) instead.
+
+For weapon balance, Enderal's scale runs ~1.6× Skyrim's: its shadowsteel (ebony) tier sword is
+**23 damage / crit 6** and its greatsword **37 / crit 11** **[verified]**. Note also that
+`05AD9D:Skyrim.esm` is **`IngotShadowsteel`** here, Enderal's rename of ebony — so an ebony-tier
+Skyrim recipe's *materials* usually port across unchanged even when its gating does not.
 
 ## Useful FormKey constants
 
