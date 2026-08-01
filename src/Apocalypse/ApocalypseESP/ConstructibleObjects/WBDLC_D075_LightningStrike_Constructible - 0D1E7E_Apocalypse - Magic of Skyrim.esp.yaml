@@ -1,0 +1,17 @@
+FormKey: 0D1E7E:Apocalypse - Magic of Skyrim.esp
+EditorID: WBDLC_D075_LightningStrike_Constructible
+Items:
+- Item:
+    Item: 0BE11F:Skyrim.esm
+    Count: 1
+Conditions:
+- MutagenObjectType: ConditionFloat
+  Data:
+    MutagenObjectType: HasSpellConditionData
+    RunOnType: Reference
+    Reference: 000014:Skyrim.esm
+    Spell: 002878:Apocalypse - Magic of Skyrim.esp
+  ComparisonValue: 1
+CreatedObject: 07A7A6:Apocalypse - Magic of Skyrim.esp
+WorkbenchKeyword: Null
+CreatedObjectCount: 1

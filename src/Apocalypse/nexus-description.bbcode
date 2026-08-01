@@ -1,0 +1,198 @@
+[size=5]Apocalypse — Magic of Skyrim — Enderal Patch[/size]
+
+[i]Enai Siaion's Apocalypse, made to actually work in Enderal: Forgotten Stories — and to stop sounding like Tamriel.[/i]
+
+Apocalypse adds 373 spells. In Enderal, out of the box, you can obtain [b]none of them[/b]. Not one vendor stocks a tome, not one chest drops a scroll, and not one staff can be crafted. The spells are all there, mechanically fine, sitting in a plugin that has no way to hand them to you.
+
+This patch gives them a way in, retires the parts that cannot work here, and takes the Daedra out of a world that has never heard of them.
+
+[line]
+
+[size=4]⚠ Requirements — read this part[/size]
+
+[list]
+[*][b][url=https://www.nexusmods.com/skyrimspecialedition/mods/1090]Apocalypse — Magic of Skyrim by Enai Siaion[/url][/b], version [b]10.2.3[/b]. Install it normally.
+[*][b]Keep [font=Courier New]Apocalypse - Magic of Skyrim.esp[/font] ENABLED[/b] and load this patch [b]after[/b] it. This is a patch, not a replacement — all the spells, meshes and textures come from Enai's mod.
+[*][b]Enable Enderal's stub [font=Courier New]Dragonborn.esm[/font] in your profile.[/b] Not optional.
+[/list]
+
+That last one surprises people, so: Apocalypse declares [font=Courier New]Dragonborn.esm[/font] as a master and will not load without it. Enderal ships a stub of that file in its Data folder for exactly this purpose — it is 44 KB, contains a single record, and changes nothing on its own. Tick it in MO2's plugins list and Apocalypse loads. This patch then clears every reference that pointed into it, so nothing is left dangling.
+
+A patch cannot rewrite another plugin's master list. Enabling the stub is the correct fix, not a workaround.
+
+[line]
+
+[size=4]Why Apocalypse does nothing in Enderal[/size]
+
+Not an exaggeration, and not a balance complaint. Two independent failures:
+
+[list=1]
+[*][b]Its entire distribution system targets records Enderal does not have.[/b] Apocalypse runs a quest at game start that copies its tomes, scrolls and staves into [b]54 vanilla Skyrim vendor and loot leveled lists[/b]. Enderal replaced [font=Courier New]Skyrim.esm[/font] wholesale — it is base Enderal, not Bethesda's game — and [b]not one of those 54 lists exists[/b]. Neither do the five College of Winterhold ritual globals the mod gates part of its distribution on, nor the [font=Courier New]Tamriel[/font] worldspace it places its utility containers in. The quest runs, copies nothing into nothing, and reports success.
+[*][b]Its staff crafting is built on Dragonborn content.[/b] All 67 staff recipes are made at the [b]Staff Enchanter[/b] out of [b]Heart Stones[/b]. Enderal has neither.
+[/list]
+
+Enderal also has no spell tomes at all — it teaches spells from its own spellbooks, fed by its own leveled lists. So there was nowhere for Apocalypse's tomes to land even in principle until something put them there.
+
+[line]
+
+[size=4]What this patch does[/size]
+
+[b]1. Distribution — the part that makes the mod exist.[/b]
+
+[b]160 spell tomes[/b] and [b]130 scrolls[/b] are added to Enderal's own vendor and loot lists, tiered by spell rank so a novice does not find a master spell at level 3:
+
+[code]
+  Apocalypse rank      Enderal tier              Roughly
+  Novice   (000)       Trader/Loot A             level 1+
+  Apprentice (025)     Trader/Loot A and B       level 5-10+
+  Adept    (050)       Trader/Loot C             level 18+
+  Expert   (075)       Trader/Loot C and D       level 30+
+  Master   (100)       Trader/Loot D             level 40+
+[/code]
+
+Scrolls go into Enderal's general scroll loot pool. Buy tomes from mages and traders, find them in the world, exactly as you find Enderal's own.
+
+This is done by [b]adding[/b] a single entry to each of Enderal's nine lists, pointing at this patch's own sublists. Every entry Enderal already had is carried through untouched — nothing of the base game's loot is displaced or replaced.
+
+[b]2. Staff crafting is retired.[/b]
+
+All 67 recipes are switched off, and the staves are not distributed. There was no honest way to keep them: the bench does not exist, the component does not exist, and Enderal's Arcane Enchanter has no crafting keyword to repoint them to without overriding one of the base game's own records. Thirteen of the recipes also called for a staff template Enderal does not have. The staves remain in Apocalypse as dormant records; they simply have no route to your hands.
+
+[b]3. Fabricate Object drops its Staff Enchanter option.[/b]
+
+The spell that conjures a temporary crafting station offered nine, one of them the Dragonborn Staff Enchanter. It now offers the [b]eight[/b] that exist in Enderal — Arcane Enchanter, Alchemy Lab, Tanning Rack, Workbench, Anvil, Cooking Spit, Grindstone, Smelter — all of them present and working. The menu and the station list are index-matched, so both were trimmed together; picking "Smelter" still gives you a smelter.
+
+[b]4. Fifteen summons removed.[/b]
+
+Enderal has no Daedra and no Dwemer. These are never added to any vendor or loot list:
+
+[list]
+[*][b]Dremora[/b] — Churl, Pit Fighter, Champion, Honor Guard, Mentor, Assassin
+[*][b]Xivilai[/b] — Sorcerer, Lord
+[*][b]Other Daedra[/b] — Weeping Daedra, Lord of Bindings, Six Demon Bag, Conjure Herne, Conjure Kyrkrim
+[*][b]Atronach Mark[/b] — summons atronachs onto the marked target
+[*][b]Conjure Craftlord[/b] — a Dwemer automaton
+[/list]
+
+Everything else in Apocalypse's conjuration school stays: the wraiths, liches, totem spirits, the Battlemage, the Necrowitch, the Deadeye Captain, Bag of Rats. Enderal's own magic already raises the dead and binds spirits — [i]Entropy[/i] is one of its five disciplines — so undead and spirit summoning is entirely at home here. Only the Oblivion natives had to go.
+
+[b]5. Elder Scrolls names replaced.[/b]
+
+See the table below.
+
+[line]
+
+[size=4]The renamed spells[/size]
+
+Every replacement is drawn from Enderal's own written lore — its seven gods, its named scholars, its geography — not invented. Renames are applied to every place the name appears: the tome, the spell, the scroll, the magic effect, the enchantment and the description text.
+
+[b]Gods, the world, and the planes[/b]
+
+[table]
+[tr][td][b]Apocalypse[/b][/td][td][b]This patch[/b][/td][td][b]Why[/b][/td][/tr]
+[tr][td]Lamb of Mara[/td][td][b]Lamb of Irlanda[/b][/td][td]Mara is mercy. Irlanda is Enderal's goddess of judgment — "merciful, yet severe".[/td][/tr]
+[tr][td]Meridia's Wrath[/td][td][b]Malphas' Wrath[/b][/td][td]A spell that burns undead. Malphas is the guardian of the gods, whose Seraphim subjugate the sinful.[/td][/tr]
+[tr][td]Breath of Arkay[/td][td][b]Breath of Tyr[/b][/td][td]Arkay holds the cycle of life and death. Tyr is the father of the gods, highest of the Light-Born.[/td][/tr]
+[tr][td]Medora's Memory[/td][td][b]Esara's Memory[/b][/td][td]A spell that remembers a spell for you. Esara is the goddess of memories. Almost too neat.[/td][/tr]
+[tr][td]Stendarr's Embrace[/td][td][b]Erodan's Embrace[/b][/td][td]Stendarr is mercy and healing. Erodan is the god of wisdom and old rites.[/td][/tr]
+[tr][td]Talons of Nirn[/td][td][b]Talons of Vyn[/b][/td][td]Nirn is that world. This one is Vyn.[/td][/tr]
+[tr][td]Reynos' Fins[/td][td][b]Fins of Kilé[/b][/td][td]Kilé is Morala's island realm of green groves and roaring waterfalls.[/td][/tr]
+[tr][td]Oblivion Unbound[/td][td][b]Sinistra Unbound[/b][/td][td]Sinistra is Enderal's dark school of magic — Entropy and Psionics.[/td][/tr]
+[tr][td]Daedric Crescent[/td][td][b]Entropic Crescent[/b][/td][td]A bound weapon, so it survives the cull — but not under that name.[/td][/tr]
+[/table]
+
+[b]Named mages[/b]
+
+Only the two figures Enderal actually establishes as arcanists keep a spell named after them. The rest became descriptive rather than crediting spells to people who were never spellcasters.
+
+[table]
+[tr][td][b]Apocalypse[/b][/td][td][b]This patch[/b][/td][td][b]Why[/b][/td][/tr]
+[tr][td]Ocato's Recital[/td][td][b]Baledor's Recital[/b][/td][td]Baledor Dal'Goldenstein wrote Enderal's five books on the disciplines of magic.[/td][/tr]
+[tr][td]Tharn's Prison[/td][td][b]Girathû's Prison[/b][/td][td]Archmagister Gawayn Girathû.[/td][/tr]
+[tr][td]Silmane's Spell Sentinel[/td][td][b]Spell Sentinel[/b][/td][td]Descriptive.[/td][/tr]
+[tr][td]Hethoth's Grimoire[/td][td][b]Eventuality Grimoire[/b][/td][td]After the Sea of Eventualities, where Enderal's mages find their spells.[/td][/tr]
+[tr][td]Malviser's Gauntlet[/td][td][b]Telekinetic Gauntlet[/b][/td][td]Descriptive. Telekinesis is Mentalism here.[/td][/tr]
+[tr][td]Welloc's Instant Forest[/td][td][b]Instant Forest[/b][/td][td]Descriptive.[/td][/tr]
+[tr][td]Hrormir's Misdirection[/td][td][b]Veil of Misdirection[/b][/td][td]Descriptive.[/td][/tr]
+[tr][td]Sotha's Maelstrom[/td][td][b]Thaumaturgic Maelstrom[/b][/td][td]Thaumaturgy is the higher school that Mentalism belongs to.[/td][/tr]
+[/table]
+
+[b]Everything else that named Tamriel[/b]
+
+[table]
+[tr][td][b]Apocalypse[/b][/td][td][b]This patch[/b][/td][/tr]
+[tr][td]"The School of Alteration" [i](load screen)[/i][/td][td][b]The discipline of Mentalism[/b][/td][/tr]
+[tr][td]"The School of Conjuration" [i](load screen)[/i][/td][td][b]The discipline of Entropy[/b][/td][/tr]
+[tr][td]"The School of Destruction" [i](load screen)[/i][/td][td][b]The discipline of Elementalism[/b][/td][/tr]
+[tr][td]"The School of Illusion" [i](load screen)[/i][/td][td][b]The discipline of Psionics[/b][/td][/tr]
+[tr][td]"The School of Restoration" [i](load screen)[/i][/td][td][b]The discipline of Light Magic[/b][/td][/tr]
+[tr][td]"...conjure a variety of Daedra and undead"[/td][td][b]"...conjure a variety of spirits and undead"[/b][/td][/tr]
+[tr][td]"Banish a living creature to Oblivion"[/td][td][b]"Banish a living creature into the Sea of Eventualities"[/b][/td][/tr]
+[tr][td]"...serving the will of the Dragonborn"[/td][td][b]"...serving your will"[/b][/td][/tr]
+[tr][td]"Summons a Nordic totem spirit"[/td][td][b]"Summons an ancient totem spirit"[/b][/td][/tr]
+[tr][td]Altmer / Imperial / Breton / Dunmer / Nord / Bosmer / Khajiit / Redguard Battlemage [i](the 10 Conjure Battlemage summons)[/i][/td][td][b]Endralean / Nehrimese / Qyranian / Kiléan Battlemage[/b][/td][/tr]
+[tr][td]Daedric Dagger [i](carried by the Necrowitch)[/i][/td][td][b]Entropic Dagger[/b][/td][/tr]
+[tr][td]Imperial Sword [i](carried by the Battlemage)[/i][/td][td][b]Battlemage Sword[/b][/td][/tr]
+[tr][td]Daedric Body / Daedric Wolf [i](internal summon records)[/i][/td][td][b]Summoned Body / Spirit Wolf[/b][/td][/tr]
+[/table]
+
+[line]
+
+[size=4]What is NOT changed[/size]
+
+[list]
+[*][b]No spell balance changes.[/b] Damage, cost, duration and cooldowns are Enai's. Enderal keeps all five of Skyrim's magic skills and only renames them, so Apocalypse's spells scale off your Elementalism, Entropy, Light Magic, Mentalism and Psionics without any conversion at all.
+[*][b]No new spells, no removed records.[/b] The fifteen cut summons are still in Apocalypse; they are simply never handed to you.
+[*][b]No Enderal records rewritten.[/b] The nine leveled lists are appended to, never edited.
+[/list]
+
+For reference, in case you have wondered which Enderal skill governs an Apocalypse spell:
+
+[code]
+  Skyrim school     Enderal discipline    Higher school
+  Destruction       Elementalism          (its own art)
+  Conjuration       Entropy               Sinistra
+  Restoration       Light Magic           Thaumaturgy
+  Alteration        Mentalism             Thaumaturgy
+  Illusion          Psionics              Sinistra
+[/code]
+
+Note the last two — Alteration is [i]Mentalism[/i] and Illusion is [i]Psionics[/i], not the pairing you would guess.
+
+[line]
+
+[size=4]Compatibility and load order[/size]
+
+The plugin is [b]ESL-flagged[/b], so it costs nothing against the 254-plugin limit.
+
+Load it [b]after[/b] [font=Courier New]Apocalypse - Magic of Skyrim.esp[/font]. It overrides records from Apocalypse and appends to nine of Enderal's leveled lists:
+
+[list]
+[*][font=Courier New]_00ETraderSpellBooksLevelA[/font] through [font=Courier New]D[/font] — the spellbook vendor tiers
+[*][font=Courier New]_00E_SpellBooksLootA[/font] through [font=Courier New]D[/font] — the spellbook loot tiers
+[*][font=Courier New]00E_ScrollsLowChance[/font] — the scroll loot pool
+[/list]
+
+If another mod also edits those nine lists, the later plugin wins outright and one mod's additions are lost — either load order accordingly or merge them with a Bashed/Smashed patch, as with any leveled list conflict.
+
+[b]Pinned to Apocalypse 10.2.3.[/b] This patch overrides specific records by ID. If Enai releases a version that moves things, the patch needs refreshing — do not assume a newer Apocalypse is safe with it.
+
+[line]
+
+[size=4]Known limitations[/size]
+
+[list]
+[*][b]The 67 staves are unobtainable.[/b] Deliberate — see above. If you want them, the console still works.
+[*][b]Banish Living has no visual effect[/b], and a couple of spells that would have spoken a line stay silent. Both are Apocalypse pointing at vanilla Skyrim records Enderal does not have. They are cosmetic, and inventing replacements would have meant guessing at Enai's intent, so they were left alone and written down instead.
+[*][b]Spell tome tiering is by rank name, not by playtested power.[/b] A master-rank Apocalypse spell arrives around level 40 because it is master-rank, not because it was measured against Enderal's difficulty curve. Feedback welcome.
+[*][b]Requires Enderal SE[/b], which is pinned to Skyrim SE [b]1.5.97[/b]. This is a plugin only, so no SKSE version concerns apply to it.
+[/list]
+
+[line]
+
+[size=4]Credits[/size]
+
+[b]Enai Siaion[/b] — Apocalypse, all 373 spells, and every asset involved. This patch contains no assets and no spells of its own; it is plumbing so that his work reaches you in a different game. Go endorse [url=https://www.nexusmods.com/skyrimspecialedition/mods/1090]the original[/url].
+[b]SureAI[/b] — Enderal: Forgotten Stories, and the written lore every replacement name was taken from.
+
+Built from Spriggit YAML sources. Every record was checked against Enderal's own serialized plugins rather than assumed from Skyrim modding habits — which is how the dead distribution was found in the first place.

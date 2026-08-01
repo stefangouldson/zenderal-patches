@@ -1,0 +1,17 @@
+FormKey: 0D1E78:Apocalypse - Magic of Skyrim.esp
+EditorID: WBDLC_D025_Thundercrack_Constructible
+Items:
+- Item:
+    Item: 0BE11F:Skyrim.esm
+    Count: 1
+Conditions:
+- MutagenObjectType: ConditionFloat
+  Data:
+    MutagenObjectType: HasSpellConditionData
+    RunOnType: Reference
+    Reference: 000014:Skyrim.esm
+    Spell: 07C83B:Apocalypse - Magic of Skyrim.esp
+  ComparisonValue: 1
+CreatedObject: 07C848:Apocalypse - Magic of Skyrim.esp
+WorkbenchKeyword: Null
+CreatedObjectCount: 1

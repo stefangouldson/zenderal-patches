@@ -1,0 +1,17 @@
+FormKey: 0D1E9C:Apocalypse - Magic of Skyrim.esp
+EditorID: WBDLC_C075_OathboundGuardian_Constructible
+Items:
+- Item:
+    Item: 07E647:Skyrim.esm
+    Count: 1
+Conditions:
+- MutagenObjectType: ConditionFloat
+  Data:
+    MutagenObjectType: HasSpellConditionData
+    RunOnType: Reference
+    Reference: 000014:Skyrim.esm
+    Spell: 018AE7:Apocalypse - Magic of Skyrim.esp
+  ComparisonValue: 1
+CreatedObject: 0BB97C:Apocalypse - Magic of Skyrim.esp
+WorkbenchKeyword: Null
+CreatedObjectCount: 1

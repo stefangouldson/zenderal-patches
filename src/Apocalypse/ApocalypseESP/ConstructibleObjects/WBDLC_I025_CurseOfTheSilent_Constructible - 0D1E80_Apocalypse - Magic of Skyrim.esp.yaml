@@ -1,0 +1,13 @@
+FormKey: 0D1E80:Apocalypse - Magic of Skyrim.esp
+EditorID: WBDLC_I025_CurseOfTheSilent_Constructible
+Conditions:
+- MutagenObjectType: ConditionFloat
+  Data:
+    MutagenObjectType: HasSpellConditionData
+    RunOnType: Reference
+    Reference: 000014:Skyrim.esm
+    Spell: 017509:Apocalypse - Magic of Skyrim.esp
+  ComparisonValue: 1
+CreatedObject: 07A797:Apocalypse - Magic of Skyrim.esp
+WorkbenchKeyword: Null
+CreatedObjectCount: 1

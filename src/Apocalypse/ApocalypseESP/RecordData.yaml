@@ -1,0 +1,26 @@
+SpriggitSource:
+  PackageName: Spriggit.Yaml.Skyrim
+  Version: 0.40
+ModKey: Zenderal - Apocalypse.esp
+GameRelease: EnderalSE
+ModHeader:
+  Flags:
+  - Small
+  Stats:
+    Version: 1.7
+  Author: Enai Siaion / Zenderal
+  Description: >-
+    Enderal patch for Apocalypse - Magic of Skyrim by Enai Siaion. Requires Enai's mod installed.
+    Removes its Dragonborn dependencies, retires the staff-crafting recipes, cuts the Daedra and
+    Dwemer summons, renames Elder Scrolls-specific spells, and distributes the tomes and scrolls
+    through Enderal's own vendor and loot lists.
+  MasterReferences:
+  - Master: Skyrim.esm
+    FileSize: 0
+  - Master: Update.esm
+    FileSize: 0
+  - Master: Enderal - Forgotten Stories.esm
+    FileSize: 0
+  - Master: Apocalypse - Magic of Skyrim.esp
+    FileSize: 0
+  INTV: 1

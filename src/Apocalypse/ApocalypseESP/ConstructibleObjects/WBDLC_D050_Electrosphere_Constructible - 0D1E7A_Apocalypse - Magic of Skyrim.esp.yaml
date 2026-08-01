@@ -1,0 +1,17 @@
+FormKey: 0D1E7A:Apocalypse - Magic of Skyrim.esp
+EditorID: WBDLC_D050_Electrosphere_Constructible
+Items:
+- Item:
+    Item: 0BE11F:Skyrim.esm
+    Count: 1
+Conditions:
+- MutagenObjectType: ConditionFloat
+  Data:
+    MutagenObjectType: HasSpellConditionData
+    RunOnType: Reference
+    Reference: 000014:Skyrim.esm
+    Spell: 001879:Apocalypse - Magic of Skyrim.esp
+  ComparisonValue: 1
+CreatedObject: 07A7A1:Apocalypse - Magic of Skyrim.esp
+WorkbenchKeyword: Null
+CreatedObjectCount: 1

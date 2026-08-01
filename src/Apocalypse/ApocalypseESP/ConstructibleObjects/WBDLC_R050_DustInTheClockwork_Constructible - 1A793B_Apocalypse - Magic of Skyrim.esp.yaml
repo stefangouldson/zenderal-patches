@@ -1,0 +1,17 @@
+FormKey: 1A793B:Apocalypse - Magic of Skyrim.esp
+EditorID: WBDLC_R050_DustInTheClockwork_Constructible
+Items:
+- Item:
+    Item: 051B0C:Skyrim.esm
+    Count: 1
+Conditions:
+- MutagenObjectType: ConditionFloat
+  Data:
+    MutagenObjectType: HasSpellConditionData
+    RunOnType: Reference
+    Reference: 000014:Skyrim.esm
+    Spell: 1A4A46:Apocalypse - Magic of Skyrim.esp
+  ComparisonValue: 1
+CreatedObject: 1A793A:Apocalypse - Magic of Skyrim.esp
+WorkbenchKeyword: Null
+CreatedObjectCount: 1

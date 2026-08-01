@@ -242,7 +242,20 @@ These are distilled from real failures in this workspace's lineage. They cost te
    compiler. `build/build.ps1` fails on a *missing* `.pex` but cannot detect a *stale* one.
 10. **PowerShell 5.1 is the target** for build scripts and skills: `Set-StrictMode` is on, there is
     no `&&`/`||`, no ternary, no null-coalescing, and no built-in YAML parser. Write `-Encoding utf8`
-    explicitly when a file will be read by other tools.
+    explicitly when a file will be read by other tools. Two further traps when bulk-editing YAML:
+    - **The Spriggit YAML is CRLF, so `$` in a multiline regex does not match.** `'(?m)^Foo: bar$'`
+      silently fails on `Foo: bar\r\n` because `$` anchors before `\n` and the `\r` is in the way.
+      Use `(?=\r?$)` or drop the anchor. **[verified]** — this cost a full pass on the Apocalypse
+      recipes and it fails *silently*, so always assert the replacement count and throw on zero.
+    - `Join-Path` takes **two** arguments in 5.1; `Join-Path $a $b $c` is a parameter-binding error.
+      Nest the calls.
+11. **Bulk record edits should be scripted, verified by count, and re-validated after.** When a patch
+    touches dozens of records, generate them from `reference/` with a script that *asserts* what it
+    changed (entry counts before/after, every intended replacement matched at least once) and fails
+    loudly otherwise. Then re-resolve every FormKey the patch emits against the serialized masters —
+    that catches the dangling references xEdit would, without needing the mod installed. Note
+    `000014:Skyrim.esm` (PlayerRef) is **absent from `reference/base/Skyrim/`** despite being valid
+    and used by 77 of Enderal's own recipes, so allow-list it rather than chasing it. **[verified]**
 
 ## FormKey discipline
 
@@ -292,6 +305,7 @@ Each patch's own ESL block. Overrides are not listed — they consume nothing.
 | Patch / plugin | Block | Contents |
 |---|---|---|
 | `RelentlessSword` → `Zenderal - Relentless Sword.esp` | `0x800–0x827` | `800–806` statics (1st-person models), `809–80F` weapons, `811–81F` forge + temper recipes (johnskyrim's original offsets, preserved for traceability), `820–825` dismantle recipes (new, this repo's), `826` crafting blueprint, `827` its placed reference in Riverville Temple |
+| `Apocalypse` → `Zenderal - Apocalypse.esp` | `0x800–0x805` | `800–804` `ZP_Apoc_Tomes_R000/R025/R050/R075/R100` — one LeveledItem per Apocalypse spell rank; `805` `ZP_Apoc_Scrolls`. Everything else in that patch is an override and costs no FormID |
 
 > **`Enderal - Forgotten Stories.esm` survives as a declared master.** It is an *implicit* base
 > master under `GameRelease.EnderalSE`, so there was reason to fear Mutagen would drop it from the
@@ -309,10 +323,17 @@ Scripts go through extract → decompile → edit → compile → package. Use t
 
 | Step | Tool | Config key |
 |------|------|------------|
-| Extract `.bsa` | `bsab.exe` | `$Tools.bsab` |
+| Extract `.bsa` | `bsab.exe`, or `BSArch64.exe` (see below) | `$Tools.bsab` / `$Tools.bsarch` |
 | Decompile `.pex`→`.psc` | `Champollion.exe` | `$Tools.champollion` |
 | Compile `.psc`→`.pex` | `PapyrusCompiler.exe` (from Skyrim SE) | `$Tools.papyrusCompiler` |
 | Open Creation Kit | `CreationKit.exe` (from Skyrim SE) | `$Tools.creationKit` |
+
+> **`bae.exe` has no usable CLI — do not reach for it.** **[verified]** It rejects `-e`,
+> `--extract` and even `--help` ("Unknown option"); the `extract` string in the binary is a Qt slot
+> name, not a command-line option. It is GUI/drag-and-drop only. When `bsab` is not installed, use
+> **`BSArch64.exe unpack "<archive.bsa>" "<outdir>" -mt`** (bundled in xEdit's folder,
+> `$Tools.bsarch`) — it is the reliable headless extractor here. Note it **requires the output
+> directory to already exist** and fails with "Folder does not exist" otherwise.
 
 ### The import path is first-wins, and Enderal must be first
 
@@ -448,6 +469,29 @@ Enderal."* **[verified — `enderal readme.txt`]** In practice a Skyrim mod that
 `Skyrim.esm` records may load, but Enderal has usually already overridden the record you care about,
 and Enderal's copy wins or loses purely on load order.
 
+**The five magic schools are renamed, not replaced.** Enderal keeps all five vanilla magic
+ActorValues and only changes what they are *called*. **[verified]** — read off the `AlchFortify*`
+magic effects' display strings in `reference/base/Skyrim/MagicEffects/`, and corroborated by
+`_00E_BookMagicDisciplines*` and the `_00E_MagicSchool*` load screens:
+
+| Vanilla `MagicSkill` | Enderal discipline | Higher school |
+|---|---|---|
+| Destruction | **Elementalism** | (an art of its own) |
+| Conjuration | **Entropy** | Sinistra |
+| Restoration | **Light Magic** | Thaumaturgy |
+| Alteration | **Mentalism** | Thaumaturgy |
+| Illusion | **Psionics** | Sinistra |
+
+> Note the last two: **Alteration is Mentalism and Illusion is Psionics.** The intuitive pairing
+> (Illusion→Mentalism) is wrong, and getting it backwards mis-files every spell in a magic patch.
+
+The consequence is good news for ported spell mods: a Skyrim spell's `MagicSkill`, magicka cost and
+skill scaling all work unchanged in Enderal. What does *not* carry over is anything user-visible
+that names a school — spell tomes, load screens, descriptions — because the player has never heard
+of "the School of Conjuration". Enderal's own magic metaphysics vocabulary, for rewriting those
+strings, is the **Sea of Eventualities** (mages "manifest an eventuality"), **Lost Ones** (its
+undead), and the two higher schools above. All from `_00E_BookMagicDisciplines*`.
+
 **Enderal-only systems to look for** before touching anything nearby (script names verified in
 `ScriptsEnderal.zip`): Arcane Fever (`_00E_FS_AlchAddArcaneFever`), Phasmalism/Apparitions
 (`_fs_phasmalist_controlquest`, `_00E_Phasmalist_*`), the affinity system inside
@@ -489,6 +533,37 @@ For weapon balance, Enderal's scale runs ~1.6× Skyrim's: its shadowsteel (ebony
 **23 damage / crit 6** and its greatsword **37 / crit 11** **[verified]**. Note also that
 `05AD9D:Skyrim.esm` is **`IngotShadowsteel`** here, Enderal's rename of ebony — so an ebony-tier
 Skyrim recipe's *materials* usually port across unchanged even when its gating does not.
+
+**A ported mod's DISTRIBUTION is the most likely thing to be silently dead — check it first.**
+**[verified]** on Apocalypse — Magic of Skyrim, whose entire loot/vendor system is inert in Enderal.
+It runs a `StartGameEnabled` quest (`WB_PopulateLists_Quest`) that copies three FormLists into **54
+vanilla Skyrim vendor and loot leveled lists** — and **not one of those 54 exists in Enderal**.
+Neither do the five College-of-Winterhold ritual globals it gates on (`0FDE72`–`0FDE76`), nor the
+`Tamriel` worldspace it places its containers in. The mod loads, its 373 spells are all present and
+mechanically fine, and the player can never obtain a single one.
+
+This generalises: **Enderal's `Skyrim.esm` is Enderal**, so a vanilla FormID is only present if
+Enderal happened to keep it. Bethesda's leveled-list IDs largely did *not* survive. So for any mod
+that distributes items, the port checklist is: resolve its leveled-list targets against
+`reference/base/Skyrim/` **before** assuming anything else about it — a dead distribution makes every
+other consideration moot. The same applies to `MenuDisplayObject`, `LoadingScreenNif`,
+`FirstPersonModel` and script `Object` properties, all of which are commonly vanilla FormIDs that
+Enderal lacks.
+
+**Enderal's own distribution slots**, for re-homing a ported mod's items **[verified]**
+(`reference/base/Skyrim/LeveledItems/`). Note Enderal has **no spell tomes at all** — it teaches
+spells from `_01E_SpellBook*` Books:
+
+| Purpose | Lists | Level bands |
+|---|---|---|
+| Spell books, vendor | `_00ETraderSpellBooksLevelA/B/C/D` = `118209` / `11820A` / `1376C8` / `14479B` | 1–12 / 1–18 / 14–40 / 30–55 |
+| Spell books, loot | `_00E_SpellBooksLootA/B/C/D` = `13798C` / `13798D` / `1447A2` / `1447A3` | 1–7 / 10–18 / 18–33 / 30–55 |
+| Scrolls, loot | `00E_ScrollsLowChance` = `0905A5` | 1+, `ChanceNone: 0.5` |
+| Crafting blueprints, vendor | `_00ETraderCraftingPlans` / `…PlansB` / `…PlansC` = `137A06` / `148ABD` / `148ABE` | 1 / 10+ / 19–30 |
+
+**Inject, don't rewrite.** Add a single entry per host list pointing at your own sublist, and carry
+every existing entry through untouched (guardrail 5). One new LeveledItem per tier keeps the diff
+readable and leaves Enderal's own list contents byte-identical.
 
 ## Useful FormKey constants
 
@@ -546,6 +621,18 @@ These are **engine-hardcoded** FormIDs — Bethesda's own code depends on them, 
   found in `E - Meshes.bsa`, check `E - Update.bsa` before concluding your patch is wrong.
 - **A DLC master silently breaks the plugin.** Spriggit accepts it (Mutagen's implicit base-master
   set for `EnderalSE` includes the DLC) but Enderal does not load them. See "Masters" above.
+  **Never give a patch you author a DLC master.** There is, however, a distinction worth knowing when
+  you are patching *someone else's* plugin that already has one — you cannot remove a master from
+  another author's file, and you do not have to:
+  - Enderal ships the DLC stubs in `Data/`, so **enabling the stub in the MO2 profile satisfies the
+    master requirement** and the third-party plugin loads. This is why SureAI ships them.
+  - What you get is *loading*, not *working*: every FormID into that stub resolves to null, because
+    the stubs hold 1–2 records between them. `Dragonborn.esm`'s single record is `DLC2MiraakRace`
+    `03CA97`. **[verified]**
+  - So the patch's job is to override each record carrying a DLC reference and repoint or drop it.
+    Null (`0x00000000`) is a real engine sentinel and is strictly better than a dangling FormID —
+    Spriggit writes `Foo: Null` as a present subrecord with value zero. **[verified]** on 67 `COBJ`
+    `BNAM`s in `Zenderal - Apocalypse.esp`.
 - **Compiling against vanilla signatures.** If a script compiles clean and then misbehaves on an
   Enderal type, check the `-i` order — Enderal's tree must be first. 55 names collide.
 - **FOMOD images that actually render in MO2** — a config can build clean, pass

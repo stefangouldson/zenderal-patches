@@ -1,0 +1,17 @@
+FormKey: 0D1E8A:Apocalypse - Magic of Skyrim.esp
+EditorID: WBDLC_R050_FingerOfDeath_Constructible
+Items:
+- Item:
+    Item: 051B0C:Skyrim.esm
+    Count: 1
+Conditions:
+- MutagenObjectType: ConditionFloat
+  Data:
+    MutagenObjectType: HasSpellConditionData
+    RunOnType: Reference
+    Reference: 000014:Skyrim.esm
+    Spell: 035452:Apocalypse - Magic of Skyrim.esp
+  ComparisonValue: 1
+CreatedObject: 07A7AF:Apocalypse - Magic of Skyrim.esp
+WorkbenchKeyword: Null
+CreatedObjectCount: 1

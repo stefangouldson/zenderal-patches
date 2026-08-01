@@ -1,0 +1,17 @@
+FormKey: 0D1E69:Apocalypse - Magic of Skyrim.esp
+EditorID: WBDLC_A025_Wither_Constructible
+Items:
+- Item:
+    Item: 07E646:Skyrim.esm
+    Count: 1
+Conditions:
+- MutagenObjectType: ConditionFloat
+  Data:
+    MutagenObjectType: HasSpellConditionData
+    RunOnType: Reference
+    Reference: 000014:Skyrim.esm
+    Spell: 12649C:Apocalypse - Magic of Skyrim.esp
+  ComparisonValue: 1
+CreatedObject: 07A79A:Apocalypse - Magic of Skyrim.esp
+WorkbenchKeyword: Null
+CreatedObjectCount: 1

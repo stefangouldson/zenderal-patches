@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fomod>
+  <Name>Zenderal - Apocalypse</Name>
+  <Author>Enai Siaion (records) / Zenderal (Enderal patch)</Author>
+  <Version MachineVersion="1.0.0">1.0.0</Version>
+  <Website>https://www.nexusmods.com/skyrimspecialedition/mods/1090</Website>
+  <Description>
+    Enderal: Forgotten Stories SE patch for Apocalypse - Magic of Skyrim by Enai Siaion.
+
+    Apocalypse does nothing in Enderal on its own. Its spell tomes, scrolls and staves are
+    distributed by copying into 54 vanilla Skyrim vendor and loot leveled lists, and not one of
+    those lists exists in Enderal - so no vendor stocks a tome and no chest drops one. Its staff
+    recipes are built at the Dragonborn staff enchanter out of heart stones, neither of which
+    exists here either.
+
+    This patch distributes the tomes and scrolls through Enderal's own spell-book vendor and loot
+    lists, retires the unbuildable staff recipes, clears the Dragonborn references from the records
+    that carry them, removes the Daedra and Dwemer summons as un-Enderal, and renames the spells
+    named after Elder Scrolls gods and mages.
+
+    REQUIRES Apocalypse - Magic of Skyrim 10.2.3 installed, and Enderal's stub Dragonborn.esm
+    enabled in the profile so Apocalypse's own master requirement is satisfied.
+  </Description>
+  <Groups>
+    <element>Magic</element>
+  </Groups>
+</fomod>

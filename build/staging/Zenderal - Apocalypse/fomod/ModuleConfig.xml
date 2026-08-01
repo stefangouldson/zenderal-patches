@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://qconsulting.ca/fo3/ModConfig5.0.xsd">
+  <moduleName>Zenderal - Apocalypse</moduleName>
+
+  <requiredInstallFiles>
+    <file source="Zenderal - Apocalypse.esp" destination="Zenderal - Apocalypse.esp" priority="0" />
+  </requiredInstallFiles>
+
+  <!--
+    A single-plugin patch has no real choices, but the installer still needs one page: it is the
+    only place the install requirements below reliably reach the user, and (per CLAUDE.md's
+    "FOMOD images that actually render in MO2") an <installSteps> block is what gives MO2 a wizard
+    page to draw on at all if a banner is ever added here.
+  -->
+  <installSteps order="Explicit">
+    <installStep name="Before you install">
+      <optionalFileGroups order="Explicit">
+        <group name="Requirements" type="SelectExactlyOne">
+          <plugins order="Explicit">
+            <plugin name="Install the Enderal patch plugin">
+              <description>Adds "Zenderal - Apocalypse.esp".
+
+REQUIRES Apocalypse - Magic of Skyrim 10.2.3 by Enai Siaion, installed separately. Keep its own "Apocalypse - Magic of Skyrim.esp" ENABLED and load this patch after it - unlike most Zenderal conversions, this one patches the original rather than replacing it.
+
+YOU MUST ALSO ENABLE Enderal's stub "Dragonborn.esm" in your profile. Apocalypse declares it as a master and will not load without it. Enderal ships the stub in its Data folder for exactly this purpose; it holds a single record and changes nothing on its own.
+
+WHAT THIS PATCH DOES
+
+Distribution: Apocalypse's spell tomes and scrolls are injected into Enderal's own vendor and loot lists, tiered by spell rank. Without this, nothing Apocalypse adds is obtainable in Enderal at all - its distribution targets 54 vanilla Skyrim leveled lists, none of which exist here.
+
+Staves: the 67 staff-crafting recipes are retired. They are built at the Dragonborn staff enchanter out of heart stones, and Enderal has neither.
+
+Summons removed as un-Enderal: the six Dremora, both Xivilai, Weeping Daedra, Lord of Bindings, Six Demon Bag, Herne, Kyrkrim, Atronach Mark and the Dwemer Craftlord. Their tomes are never distributed.
+
+Renames: spells named after Elder Scrolls gods and mages are renamed to Enderal equivalents.
+
+Fabricate Object drops its Staff Enchanter option, leaving the eight stations Enderal actually has.</description>
+              <typeDescriptor>
+                <type name="Required" />
+              </typeDescriptor>
+            </plugin>
+          </plugins>
+        </group>
+      </optionalFileGroups>
+    </installStep>
+  </installSteps>
+</config>

@@ -1,0 +1,13 @@
+FormKey: 1A7937:Apocalypse - Magic of Skyrim.esp
+EditorID: WBDLC_I075_HrormirsMisdirection_Constructible
+Conditions:
+- MutagenObjectType: ConditionFloat
+  Data:
+    MutagenObjectType: HasSpellConditionData
+    RunOnType: Reference
+    Reference: 000014:Skyrim.esm
+    Spell: 15B847:Apocalypse - Magic of Skyrim.esp
+  ComparisonValue: 1
+CreatedObject: 1A7934:Apocalypse - Magic of Skyrim.esp
+WorkbenchKeyword: Null
+CreatedObjectCount: 1

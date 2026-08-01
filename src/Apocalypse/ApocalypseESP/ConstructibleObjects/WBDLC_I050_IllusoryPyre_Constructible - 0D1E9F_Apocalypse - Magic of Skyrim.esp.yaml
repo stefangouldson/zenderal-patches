@@ -1,0 +1,13 @@
+FormKey: 0D1E9F:Apocalypse - Magic of Skyrim.esp
+EditorID: WBDLC_I050_IllusoryPyre_Constructible
+Conditions:
+- MutagenObjectType: ConditionFloat
+  Data:
+    MutagenObjectType: HasSpellConditionData
+    RunOnType: Reference
+    Reference: 000014:Skyrim.esm
+    Spell: 032C8B:Apocalypse - Magic of Skyrim.esp
+  ComparisonValue: 1
+CreatedObject: 0BB968:Apocalypse - Magic of Skyrim.esp
+WorkbenchKeyword: Null
+CreatedObjectCount: 1

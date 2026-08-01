@@ -1,0 +1,167 @@
+FormKey: 11820A:Skyrim.esm
+EditorID: _00ETraderSpellBooksLevelB
+Version2: 14
+Flags:
+- CalculateFromAllLevelsLessThanOrEqualPlayer
+- CalculateForEachItemInCount
+Entries:
+- Data:
+    Level: 1
+    Reference: 0F769A:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 5
+    Reference: 135728:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 9
+    Reference: 085658:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 9
+    Reference: 08565E:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 9
+    Reference: 085659:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 10
+    Reference: 11A6BF:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 10
+    Reference: 08565B:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 10
+    Reference: 0F7695:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 10
+    Reference: 085663:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 10
+    Reference: 05BB22:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 10
+    Reference: 12E151:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 10
+    Reference: 11A50F:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 10
+    Reference: 11C390:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 10
+    Reference: 1377AF:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 10
+    Reference: 11C392:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 10
+    Reference: 05BB22:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 10
+    Reference: 135730:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 10
+    Reference: 11A6BF:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 10
+    Reference: 11A50F:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 10
+    Reference: 135730:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 10
+    Reference: 0F7695:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 10
+    Reference: 085657:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 12
+    Reference: 085661:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 12
+    Reference: 085661:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 12
+    Reference: 144795:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 12
+    Reference: 13744A:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 12
+    Reference: 08565A:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 13
+    Reference: 137455:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 14
+    Reference: 08565F:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 14
+    Reference: 085660:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 14
+    Reference: 0F7693:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 15
+    Reference: 137794:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 15
+    Reference: 144796:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 15
+    Reference: 1377A9:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 16
+    Reference: 13744B:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 17
+    Reference: 13779E:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 17
+    Reference: 1377B4:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 18
+    Reference: 144797:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 18
+    Reference: 137456:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 10
+    Reference: 000801:Zenderal - Apocalypse.esp
+    Count: 1

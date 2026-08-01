@@ -1,0 +1,17 @@
+FormKey: 0D1E91:Apocalypse - Magic of Skyrim.esp
+EditorID: WBDLC_C050_SummoningRune_Constructible
+Items:
+- Item:
+    Item: 07E647:Skyrim.esm
+    Count: 1
+Conditions:
+- MutagenObjectType: ConditionFloat
+  Data:
+    MutagenObjectType: HasSpellConditionData
+    RunOnType: Reference
+    Reference: 000014:Skyrim.esm
+    Spell: 124EC5:Apocalypse - Magic of Skyrim.esp
+  ComparisonValue: 1
+CreatedObject: 0BB97A:Apocalypse - Magic of Skyrim.esp
+WorkbenchKeyword: Null
+CreatedObjectCount: 1

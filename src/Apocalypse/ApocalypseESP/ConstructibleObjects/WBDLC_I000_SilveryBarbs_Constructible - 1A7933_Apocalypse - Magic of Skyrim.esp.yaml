@@ -1,0 +1,13 @@
+FormKey: 1A7933:Apocalypse - Magic of Skyrim.esp
+EditorID: WBDLC_I000_SilveryBarbs_Constructible
+Conditions:
+- MutagenObjectType: ConditionFloat
+  Data:
+    MutagenObjectType: HasSpellConditionData
+    RunOnType: Reference
+    Reference: 000014:Skyrim.esm
+    Spell: 15B843:Apocalypse - Magic of Skyrim.esp
+  ComparisonValue: 1
+CreatedObject: 1A7932:Apocalypse - Magic of Skyrim.esp
+WorkbenchKeyword: Null
+CreatedObjectCount: 1

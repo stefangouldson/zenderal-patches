@@ -1,0 +1,119 @@
+FormKey: 118209:Skyrim.esm
+EditorID: _00ETraderSpellBooksLevelA
+Version2: 9
+Flags:
+- CalculateFromAllLevelsLessThanOrEqualPlayer
+- CalculateForEachItemInCount
+Entries:
+- Data:
+    Level: 1
+    Reference: 04D007:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 0E426D:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 0E426D:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 0F769A:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 11C38C:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 137982:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 137987:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 5
+    Reference: 04DC94:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 5
+    Reference: 04DC94:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 5
+    Reference: 08564A:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 5
+    Reference: 08564B:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 5
+    Reference: 11C38E:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 5
+    Reference: 135728:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 5
+    Reference: 13572B:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 5
+    Reference: 045DC2:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 7
+    Reference: 0E7678:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 7
+    Reference: 0E7678:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 7
+    Reference: 137449:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 8
+    Reference: 0E426C:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 8
+    Reference: 0E426C:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 9
+    Reference: 137454:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 10
+    Reference: 13779D:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 10
+    Reference: 1377AF:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 12
+    Reference: 13797E:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 12
+    Reference: 137983:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 12
+    Reference: 137988:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000800:Zenderal - Apocalypse.esp
+    Count: 1
+- Data:
+    Level: 8
+    Reference: 000801:Zenderal - Apocalypse.esp
+    Count: 1

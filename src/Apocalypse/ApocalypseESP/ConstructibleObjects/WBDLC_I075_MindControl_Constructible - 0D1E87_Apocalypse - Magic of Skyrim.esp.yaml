@@ -1,0 +1,13 @@
+FormKey: 0D1E87:Apocalypse - Magic of Skyrim.esp
+EditorID: WBDLC_I075_MindControl_Constructible
+Conditions:
+- MutagenObjectType: ConditionFloat
+  Data:
+    MutagenObjectType: HasSpellConditionData
+    RunOnType: Reference
+    Reference: 000014:Skyrim.esm
+    Spell: 0378AE:Apocalypse - Magic of Skyrim.esp
+  ComparisonValue: 1
+CreatedObject: 07A7AD:Apocalypse - Magic of Skyrim.esp
+WorkbenchKeyword: Null
+CreatedObjectCount: 1

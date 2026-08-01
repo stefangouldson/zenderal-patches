@@ -93,6 +93,58 @@ including the **temper** recipes, whose `HasPerk 05218E` condition resolves here
 `_00E_Class_Phasmalist_P04_B_ArcaneSmith` ("You can improve enchanted armors and weapons"), which
 means exactly what johnskyrim intended it to mean.
 
+| [Apocalypse — Magic of Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/1090) — Enai Siaion | 10.2.3 | 373 spells across all five schools; the standard answer to Enderal's thin mage offering. Enderal keeps all five vanilla magic ActorValues, so the spells themselves need no mechanical conversion. | **Apocalypse** | **Keep its own `.esp` enabled** and load the patch after it — unlike Relentless Sword this is a patch, not a replacement. **Enderal's stub `Dragonborn.esm` must be enabled in the profile**, or Apocalypse will not load at all. |
+
+**Why Apocalypse needed a patch, and what the patch does** (all verified against `reference/`,
+2026-08-02). Unusually, the mod is not merely unbalanced in Enderal — **out of the box it delivers
+literally nothing**:
+
+1. **Its entire distribution system is dead.** `WB_PopulateLists_Quest` copies three FormLists into
+   **54 vanilla vendor and loot leveled lists, none of which exist in Enderal**; the five College of
+   Winterhold ritual globals it gates on are absent too, as is the `Tamriel` worldspace it places its
+   utility containers in. 373 spells, zero obtainable. The patch re-homes them into Enderal's own
+   slots — 160 tomes across `_00ETraderSpellBooksLevelA–D` and `_00E_SpellBooksLootA–D`, and 130
+   scrolls into `00E_ScrollsLowChance` — by appending **one entry per host list** pointing at six new
+   sublists (`ZP_Apoc_Tomes_R000`–`R100`, `ZP_Apoc_Scrolls`), leaving every existing entry untouched.
+   Apocalypse's spell ranks map onto Enderal's four tiers: 000→A, 025→A/B, 050→C, 075→C/D, 100→D.
+2. **It masters `Dragonborn.esm`.** 138 references across 70 records, resolving to six DLC FormIDs.
+   A patch cannot remove another plugin's master, so the stub is enabled instead and the patch
+   repoints or drops every reference. All six were one of two things: the **Staff Enchanter crafting
+   system** (`DLC2StaffEnchanter` + `DLC2HeartStone`, 134 of the 138 refs) and three cosmetic
+   one-offs. `DLC2MiraakRace` is the one record Enderal's stub actually contains, so it resolves.
+3. **Staff crafting is retired.** All 67 recipes built Apocalypse's staves at the Dragonborn staff
+   enchanter out of heart stones — Enderal has neither, and no enchanting-bench ConstructibleObject
+   keyword exists to repoint them to without overriding Enderal's own Arcane Enchanter. The recipes
+   are overridden with a null `WorkbenchKeyword` (a real engine sentinel, unlike the dangling
+   FormID it replaces) so they match no bench, and the staves get no distribution. 13 of them also
+   referenced `StaffTemplateIllusion`, which Enderal lacks — dropped.
+4. **Fabricate Object loses its Staff Enchanter option.** The spell's `WB_MinorCreation_Script` does
+   `PlaceAtMe(WB_Furniture[j])` where `j` is the button index from message `08FDEA` — array and
+   message are index-coupled 1:1. Staff Enchanter is **last in both**, so dropping the tail of each
+   keeps every other station valid. The other eight all exist in Enderal unchanged.
+5. **15 summons cut as un-Enderal** — six Dremora, both Xivilai, Weeping Daedra, Lord of Bindings,
+   Six Demon Bag, Herne, Kyrkrim, Atronach Mark and the Dwemer Craftlord. Enderal has no Daedra and
+   no Dwemer. They are simply never added to distribution, so no disabling machinery is needed; the
+   records lie dormant. *Daedric Crescent survives* — it binds a weapon, not a creature — but is
+   renamed.
+6. **Tamriel names removed.** 17 spells named for Elder Scrolls gods and mages were renamed from
+   Enderal's own vocabulary, chased through every user-visible string (tome, spell, magic effect,
+   scroll, enchantment, book text): e.g. *Lamb of Mara → Lamb of Irlanda*, *Meridia's Wrath →
+   Malphas' Wrath*, *Breath of Arkay → Breath of Tyr*, *Medora's Memory → Esara's Memory*, *Talons
+   of Nirn → Talons of Vyn*, *Oblivion Unbound → Sinistra Unbound*. Only the two figures Enderal
+   actually establishes as arcanists keep possessives — *Ocato's Recital → Baledor's Recital* and
+   *Tharn's Prison → Girathû's Prison*; the rest became descriptive rather than attributing spells
+   to figures who were never mages. Also fixed: all five **load screens** named the vanilla schools
+   ("The School of Conjuration" → "The discipline of Entropy"), and the ten **Conjure Battlemage**
+   summons were named by Tamriel race (Nord, Khajiit, Altmer…) → Endralean / Nehrimese / Qyranian /
+   Kiléan.
+
+**Known residue.** Four references in surviving records still point at vanilla Skyrim records Enderal
+lacks, all cosmetic and all inherited from Apocalypse: a `TopicToSay` dialogue topic on Breath of Tyr
+(×2) and Banish Living (×1), so those scripts' `Say()` calls do nothing, and Banish Living's
+`BanishTargetFXActivator`, so the banish has no visual effect. Guessing replacements would be
+inventing mechanisms, so they are left and recorded here instead.
+
 ### Modern visuals
 
 | Mod | Version | Why | Patch | Notes |

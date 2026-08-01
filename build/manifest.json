@@ -10,6 +10,16 @@
           "dest": "Zenderal - Relentless Sword.esp"
         }
       ]
+    },
+    {
+      "name": "Zenderal - Apocalypse",
+      "archiveName": "Zenderal - Apocalypse",
+      "plugins": [
+        {
+          "yamlSource": "src/Apocalypse/ApocalypseESP",
+          "dest": "Zenderal - Apocalypse.esp"
+        }
+      ]
     }
   ]
 }
