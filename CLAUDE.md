@@ -291,7 +291,7 @@ Each patch's own ESL block. Overrides are not listed — they consume nothing.
 
 | Patch / plugin | Block | Contents |
 |---|---|---|
-| `RelentlessSword` → `Zenderal - Relentless Sword.esp` | `0x800–0x825` | `800–806` statics (1st-person models), `809–80F` weapons, `811–81F` forge + temper recipes (johnskyrim's original offsets, preserved for traceability), `820–825` dismantle recipes (new, this repo's) |
+| `RelentlessSword` → `Zenderal - Relentless Sword.esp` | `0x800–0x827` | `800–806` statics (1st-person models), `809–80F` weapons, `811–81F` forge + temper recipes (johnskyrim's original offsets, preserved for traceability), `820–825` dismantle recipes (new, this repo's), `826` crafting blueprint, `827` its placed reference in Riverville Temple |
 
 > **`Enderal - Forgotten Stories.esm` survives as a declared master.** It is an *implicit* base
 > master under `GameRelease.EnderalSE`, so there was reason to fear Mutagen would drop it from the
@@ -469,8 +469,21 @@ Enderal's own forge recipes gate on **`GetActorValue Smithing >= N`** (`RunOnTyp
 `Reference: 000014:Skyrim.esm`) plus, usually, owning a `_00E_CraftingPlan_*` blueprint — **not** on
 smithing perks. The vanilla smithing perks `0CB40D–0CB414` all still exist, but Enderal's `Player`
 NPC record **grants every one of them at rank 1 from the start** **[verified]**, so `HasPerk
-EbonySmithing` is a condition that is always true and gates nothing. Copy the AV shape from
-`_03E_RecipeWeapon_27_SwordOfTheRighteousPathForged` (`148A89:Skyrim.esm`) instead.
+EbonySmithing` is a condition that is always true and gates nothing. Copy **both** conditions from
+`_03E_RecipeWeapon_27_SwordOfTheRighteousPathForged` (`148A89:Skyrim.esm`) instead — the AV check and
+the `GetItemCount <blueprint> >= 1` that follows it. Shipping only the first is the easy mistake:
+the recipe works, but the item unlocks on level alone, unlike every one of its tier peers.
+
+**Blueprints are `MiscItem`s, not Books** **[verified]** — `_00E_CraftingPlan_*`, model
+`Enderal\books\Craftingplans\Craftingplan.nif` with an `AlternateTextures` entry selecting a
+per-weapon-type TextureSet (`_00E_CraftingPlan_OneHandedSword` `09D079`, `…TwoHandedSword` `09D07A`,
+and 22 more). Keywords `VendorItemClutter` + `VendorItemTool` + `Blueprint` (`0493B5`), `Value: 150`,
+`Weight: 0.1`. Their in-game names read **`Blueprint: <item> (Handicraft <N>)`** — note **Enderal
+displays the `Smithing` AV as "Handicraft"** (`_00E_Levelsystem_sSkillNameSmithing`), so a blueprint
+naming the vanilla skill will look wrong to a player. Vendors stock them through three level-tiered
+leveled lists — `_00ETraderCraftingPlans` `137A06` (level 1), `…PlansB` `148ABD` (10+), `…PlansC`
+`148ABE` (19–30). A Handicraft-50 blueprint belongs in **C at Level 30**, where the Righteous Path
+and Aeterna plans sit.
 
 For weapon balance, Enderal's scale runs ~1.6× Skyrim's: its shadowsteel (ebony) tier sword is
 **23 damage / crit 6** and its greatsword **37 / crit 11** **[verified]**. Note also that
@@ -505,6 +518,30 @@ These are **engine-hardcoded** FormIDs — Bethesda's own code depends on them, 
 
 ## Gotchas
 
+- **Enderal's cell EditorIDs are German; the display names are English.** Riverville is
+  **`Flusshaim*`**, Ark is **`CapitalCity*`**, and the Sun Temple is `Suntemple*`. **[verified]**
+  Searching `reference/base/*/Cells/` by the English town name returns **nothing** — grep the
+  localized `String:` values instead, then read the EditorID off the match. This is also what a `coc`
+  command needs: `coc FlusshaimShopSura` lands in "Riverville, Sura's Sharp Steel".
+- **Placed references live inside the cell's single `RecordData.yaml`, not in per-ref files.**
+  Interior cells serialize to one file (`Cells/<block>/<sub>/<EditorID> - <hex>_<master>/RecordData.yaml`)
+  holding the cell record, its `NavigationMeshes:`, then `Persistent:` and `Temporary:` lists.
+  Exterior refs are under `Worldspaces/`. **[verified]** A `find` that turns up only `RecordData.yaml`
+  does not mean the refs are missing.
+- **To add one object to an existing cell, copy the winning cell record and give it a one-entry
+  child group.** **[verified]** — this is exactly what FS does to `FlusshaimTemple`, and what
+  `Zenderal - Relentless Sword.esp` now does. Three rules learned building it:
+  1. Copy the cell from the **winning** plugin, not from `Skyrim/`. FS overrides many cells and
+     changes their data (for `FlusshaimTemple` it rewrites the `Name` from 3 localisations to 10) —
+     copying base Enderal's version silently reverts that. Guardrail 5 applies to cells too.
+  2. **Delete the `NavigationMeshes:` block.** Those are full NAVM record overrides carrying vertex
+     and grid data; carrying them means overriding Enderal's navmesh for no reason.
+  3. List **only** your new ref under `Temporary:`. Refs are independent records — omitting the
+     hundreds you aren't touching does not remove them, and re-listing them invites conflicts.
+
+  Spriggit 0.40.0 round-trips this correctly, emitting the canonical
+  `GRUP CELL → block → sub-block → CELL → GRUP cellchildren → GRUP celltemp → REFR` nesting, and a
+  new `REFR` in an ESL-flagged plugin keeps the flag. **[verified]**
 - **`E - Update.bsa` loads last and wins.** When a record or asset doesn't look like the one you
   found in `E - Meshes.bsa`, check `E - Update.bsa` before concluding your patch is wrong.
 - **A DLC master silently breaks the plugin.** Spriggit accepts it (Mutagen's implicit base-master

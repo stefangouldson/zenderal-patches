@@ -24,7 +24,11 @@ REQUIRES johnskyrim's Relentless Sword SE, installed separately for its meshes a
 
 Then DISABLE "Relentless Sword SE - Johnskyrim.esp". It masters the Skyrim DLC, which Enderal does not load, and its recipes are gated on the Skyforge - it cannot work here. This plugin replaces it.
 
-The swords are forged at any forge once the Smithing crafting talent reaches 50, tempered at a sharpening wheel, and can be dismantled back into shadowsteel.</description>
+To forge the swords you need Handicraft 50 AND the blueprint, exactly like Enderal's own shadowsteel weapons.
+
+"Blueprint: Relentless Sword (Handicraft 50)" sits on the noble shelf in Riverville Temple, and blacksmiths who deal in blueprints will stock it from level 30. One copy unlocks all six swords.
+
+They temper at a sharpening wheel and dismantle back into shadowsteel at a smelter.</description>
               <typeDescriptor>
                 <type name="Required" />
               </typeDescriptor>
