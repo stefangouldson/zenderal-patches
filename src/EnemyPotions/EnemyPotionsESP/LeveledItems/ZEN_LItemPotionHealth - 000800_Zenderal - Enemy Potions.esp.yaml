@@ -1,0 +1,26 @@
+FormKey: 000800:Zenderal - Enemy Potions.esp
+EditorID: ZEN_LItemPotionHealth
+Version2: 1
+Flags:
+- CalculateFromAllLevelsLessThanOrEqualPlayer
+Entries:
+- Data:
+    Level: 1
+    Reference: 0028C8:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 10
+    Reference: 0028C5:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 20
+    Reference: 0028C6:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 30
+    Reference: 0028C7:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 40
+    Reference: 0028C9:Skyrim.esm
+    Count: 1

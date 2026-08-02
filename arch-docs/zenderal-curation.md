@@ -60,6 +60,35 @@ if it needed none.
 | Mod | Version | Why | Patch | Notes |
 |---|---|---|---|---|
 | [Relentless Sword SE](https://www.nexusmods.com/skyrimspecialedition/mods/114022) — johnskyrim | 1.0 | A craftable high-tier longsword in 1H and 2H, in Enderal's own dark-metal register. Small (34 records); overrides only two existing records — the Riverville Temple cell and one blueprint vendor list. | **RelentlessSword** | **Install for meshes/textures only — its own `.esp` must be disabled.** Install the **CORE** (runed) branch; the fire/ice glow intensity stays johnskyrim's FOMOD choice and is asset-only. The shipped plugin cannot load or function in Enderal on four counts, all fixed in the patch — see below. |
+| _(none — original work)_ | — | Enderal's enemies effectively never drop potions, which makes sustained fights a resource-management problem solved at a shop rather than in the field. Nine records, ESL, no assets. | **EnemyPotions** | Level-banded restore health/mana/stamina on the three loot lists Enderal's enemies actually share — 353 base NPC records: every bandit tier and every Lost One. ~35% of covered enemies drop one potion. **Must load after any mod that touches enemy loot or leveled lists** — see below. |
+
+**Why Enemy Potions exists, and what it deliberately does not do** (all verified against
+`reference/base/`, 2026-08-02):
+
+1. **The gap is real, not assumed.** `01E_Traenke` (`0028E3`), Enderal's main potion list, is
+   referenced by **8** NPC records — seven are dead-body props. `01E_FS_ClutterUseful`
+   (`02E68C:EFS`), the one list SureAI filled with all 15 restore potions *and* level-banded
+   properly, is on **75 NPCs, all peaceful citizens and guards**. No enemy uses either.
+2. **There is no scaffolding to patch.** Enderal has **zero `LeveledNpc` records** and **zero NPCs
+   that inherit `Inventory` from a template** (652 carry `Template:`; none list `Inventory`). Loot
+   reaches only the NPCs that explicitly name a list. Three lists cover the bulk of what you fight:
+   `00E_MOB_Bandit` (`04C982`, 109), `_00E_FS_DeathItem_Human` (`02F32B:EFS`, 106) and
+   `DeathItemDraugr` (`03AD7F`, 186) — union 353.
+3. **Nothing is removed.** Appending to a leveled list *dilutes* it, so each of the first two lists
+   is restructured into a `UseAll` parent holding a verbatim copy of its original body plus the new
+   potion list, which resolve independently. `DeathItemDraugr` is already `UseAll` and is simply
+   appended to. The pattern is Enderal's own — `LootSmokingPipePeaceweed1` (`04815B`).
+4. **Two obvious targets are deliberately skipped.** `00E_MOB_BanditWeapon01` (`014EBA`) and
+   `03E_MOB_SkelettWeapon01` (`090A14`) have no `Flags:` and no `ChanceNone:` — single-pick
+   **weapon** lists. Adding a potion would spawn the enemy holding a potion *instead of a weapon*.
+   `01E_Gold` (`0028E4`, the widest hook at 235 NPCs) is skipped because many NPCs stack it twice,
+   making the rate uncontrollable, and it also sits on friendlies.
+5. **Known scope limit, not a bug.** Magier (59), Vatyr (56), Arpsplitter (36), Skelett (98) and
+   Hexe (12) carry hand-placed weapons with no loot list, so they get nothing. Reaching them needs
+   per-NPC overrides — a large forward-compat burden against any future combat or enemy overhaul,
+   judged not worth it.
+
+**Removal is safe** mid-playthrough: already-generated corpses keep whatever they rolled.
 
 **Why Relentless Sword needed a conversion rather than a patch** (all verified against
 `reference/base/`, 2026-08-01):

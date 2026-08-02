@@ -10,6 +10,16 @@
           "dest": "Zenderal - Relentless Sword.esp"
         }
       ]
+    },
+    {
+      "name": "Zenderal - Enemy Potions",
+      "archiveName": "Zenderal - Enemy Potions",
+      "plugins": [
+        {
+          "yamlSource": "src/EnemyPotions/EnemyPotionsESP",
+          "dest": "Zenderal - Enemy Potions.esp"
+        }
+      ]
     }
   ]
 }

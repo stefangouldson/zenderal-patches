@@ -1,0 +1,14 @@
+FormKey: 03AD7F:Skyrim.esm
+EditorID: DeathItemDraugr
+Version2: 9
+Flags:
+- UseAll
+Entries:
+- Data:
+    Level: 1
+    Reference: 10F91D:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000803:Zenderal - Enemy Potions.esp
+    Count: 1

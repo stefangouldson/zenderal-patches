@@ -1,0 +1,13 @@
+FormKey: 02F32B:Enderal - Forgotten Stories.esm
+EditorID: _00E_FS_DeathItem_Human
+Flags:
+- UseAll
+Entries:
+- Data:
+    Level: 1
+    Reference: 000805:Zenderal - Enemy Potions.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000803:Zenderal - Enemy Potions.esp
+    Count: 1

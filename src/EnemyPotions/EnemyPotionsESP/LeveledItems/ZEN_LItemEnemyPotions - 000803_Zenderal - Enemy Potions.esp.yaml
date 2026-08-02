@@ -1,0 +1,23 @@
+FormKey: 000803:Zenderal - Enemy Potions.esp
+EditorID: ZEN_LItemEnemyPotions
+Version2: 1
+ChanceNone: 0.65
+Flags:
+- CalculateFromAllLevelsLessThanOrEqualPlayer
+Entries:
+- Data:
+    Level: 1
+    Reference: 000800:Zenderal - Enemy Potions.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000800:Zenderal - Enemy Potions.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000801:Zenderal - Enemy Potions.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000802:Zenderal - Enemy Potions.esp
+    Count: 1
