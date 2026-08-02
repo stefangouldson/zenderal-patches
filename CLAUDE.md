@@ -636,6 +636,18 @@ spells from `_01E_SpellBook*` Books:
 | Scrolls, loot | `00E_ScrollsLowChance` = `0905A5` | 1+, `ChanceNone: 0.5` |
 | Crafting blueprints, vendor | `_00ETraderCraftingPlans` / `…PlansB` / `…PlansC` = `137A06` / `148ABD` / `148ABE` | 1 / 10+ / 19–30 |
 
+> **`(Rank N)` on an Enderal spell tome is an upgrade chain, not a power tier — do not add it to a
+> ported mod's tomes.** **[verified]** Enderal ships the *same spell* at six strengths, and the record
+> prefix is the **player level** each unlocks at: `_01E_SpellBookFireBolt` = *Spell Tome: Firebolt
+> (Rank I)* at level 1, then `_10E_` (II), `_18E_` (III), `_28E_` (IV), `_38E_` (V), `_48E_` (VI) at
+> levels 10/18/28/38/48. So "(Rank I)" promises the player a Rank II of that exact spell exists.
+>
+> Enderal follows its own rule: **13 of its 201 spell tomes carry no suffix** — Clairvoyance, Mark,
+> Return, Telekinesis, Detect Life, Detect Dead, the three Wall spells, the ghostly summons, Death
+> Storm — precisely the spells that exist at one strength only. A ported spell with a single version
+> therefore belongs in that group, unsuffixed. Apocalypse's tomes ship as `Spell Tome: <name>` for
+> this reason; it looks inconsistent next to Enderal's and is in fact the consistent choice.
+
 **Inject, don't rewrite.** Add entries to the host list pointing at your own sublist, and carry
 every existing entry through untouched (guardrail 5). One new LeveledItem per tier keeps the diff
 readable and leaves Enderal's own list contents byte-identical.
@@ -651,7 +663,13 @@ readable and leaves Enderal's own list contents byte-identical.
 > Do the arithmetic before shipping: `draws x (your entries / entries at or below player level)`.
 > Duplicating the injected entry — same `Level`, same `Reference` — is the lever, because it still
 > touches none of Enderal's own entries. `src/Apocalypse/tools/06-weight-distribution.ps1` tops each
-> injection up to a target multiplicity (4x vendor, 3x loot) and is idempotent.
+> injection up to a target multiplicity and is idempotent.
+>
+> Two traps when picking that multiplicity, both found by measuring rather than reasoning:
+> **`ChanceNone` does not dilute your share** — it gates whether the list yields anything at all, so
+> a loot list does *not* need a higher weight to compensate. And **a list whose band takes only one
+> of your sublists ends up on half the share of its neighbours**, so weight per *list*, not per
+> injection: Enderal's `…LevelB` / `…LootB` bands admit one Apocalypse rank where A/C/D admit two.
 >
 > Two things that make this look like a bug when it is not: vendor stock is **cached in the save**
 > (`iDaysToRespawnVendor: 2`, so a merchant only re-rolls every 2 in-game days), and

@@ -19,18 +19,31 @@ $repo = 'C:\modding\mod-projects\zenderal-patches'
 $out  = Join-Path $repo 'src\Apocalypse\ApocalypseESP\LeveledItems'
 $enc  = New-Object System.Text.UTF8Encoding($false)
 
-# Vendor lists are weighted higher than loot lists: loot already carries a ChanceNone of 0.3-0.7,
-# and a vendor's shelf is where a player actually goes looking for spells.
+# Target multiplicity per host list. The aim is a comparable Apocalypse share (~11-19% of the spell
+# books a player sees) across every list, so no route to the spells is dead.
+#
+# Two corrections to the first pass, both measured rather than assumed:
+#
+#  * Loot was set to 3 on the reasoning that those lists "already carry a ChanceNone of 0.3-0.7".
+#    That was wrong. ChanceNone gates whether the list yields anything at all; it does not change
+#    the ratio of our entries to Enderal's. There is no reason for loot to sit below vendor.
+#
+#  * The B lists get 8, not 4, because only ONE of our sublists falls in their level band (R025)
+#    where A/C/D take two. Left at 4 they end up on half the share of their neighbours - an
+#    artifact of how the ranks map onto Enderal's bands, not a decision anyone made.
+#
+# LevelA keeps 4 and lands at ~38%, the highest here. It is a 13-entry list, so it is small rather
+# than over-weighted, and it is the only thing a level 1-8 character can buy from.
 $targets = @{
   '_00ETraderSpellBooksLevelA - 118209_Skyrim.esm.yaml' = 4
-  '_00ETraderSpellBooksLevelB - 11820A_Skyrim.esm.yaml' = 4
+  '_00ETraderSpellBooksLevelB - 11820A_Skyrim.esm.yaml' = 8
   '_00ETraderSpellBooksLevelC - 1376C8_Skyrim.esm.yaml' = 4
   '_00ETraderSpellBooksLevelD - 14479B_Skyrim.esm.yaml' = 4
-  '_00E_SpellBooksLootA - 13798C_Skyrim.esm.yaml'       = 3
-  '_00E_SpellBooksLootB - 13798D_Skyrim.esm.yaml'       = 3
-  '_00E_SpellBooksLootC - 1447A2_Skyrim.esm.yaml'       = 3
-  '_00E_SpellBooksLootD - 1447A3_Skyrim.esm.yaml'       = 3
-  '00E_ScrollsLowChance - 0905A5_Skyrim.esm.yaml'       = 3
+  '_00E_SpellBooksLootA - 13798C_Skyrim.esm.yaml'       = 4
+  '_00E_SpellBooksLootB - 13798D_Skyrim.esm.yaml'       = 8
+  '_00E_SpellBooksLootC - 1447A2_Skyrim.esm.yaml'       = 4
+  '_00E_SpellBooksLootD - 1447A3_Skyrim.esm.yaml'       = 4
+  '00E_ScrollsLowChance - 0905A5_Skyrim.esm.yaml'       = 4
 }
 
 # NOTE: the YAML is CRLF, so '$' in a multiline regex will not match (CLAUDE.md guardrail 10).

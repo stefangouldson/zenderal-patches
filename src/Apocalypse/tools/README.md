@@ -28,7 +28,7 @@ Run against a fresh `reference/mods/Apocalypse/esp/` produced by `/spriggit-deco
 | 3 | `03-forward-leveled-lists.ps1` | Rebuilds those nine host lists from the **winning** record — Forgotten Stories overrides eight of them, and building from base Enderal silently reverts FS's edits |
 | 4 | `04-forward-worldspace.ps1` | Replaces Apocalypse's `Tamriel` override of `00003C` with Enderal's `MQP01Home`, **keeping Apocalypse's three persistent refs** — a quest and a faction still point at them |
 | 5 | `05-merge-tree.ps1` | Merges Enai's tree with our edits, drops the 67 staff recipes, re-homes our six new records into Apocalypse's own FormID space, writes the header at form version 1.7 |
-| 6 | `06-weight-distribution.ps1` | Duplicates each injected entry up to 4x (vendor lists) / 3x (loot lists). One entry per host list gives 160 tomes the same odds as a single Enderal book — see below. Idempotent; run after 05 |
+| 6 | `06-weight-distribution.ps1` | Duplicates each injected entry until every host list is ~11–19% Apocalypse. One entry per host list gives 160 tomes the same odds as a single Enderal book — see below. Idempotent; run after 05 |
 
 The AddonNode re-index (`WB_IllusionNightmare_MPS_Seidsigil` 110 → 746) is a single committed record,
 not a script. `verify-addonnode-indices.ps1` is what found the collision.
@@ -61,5 +61,15 @@ is `1C1E70`). This is not an ESL block — the merged plugin has ~3,890 records 
   empty: 160 tomes behind a single slot in a 15-entry list meant ~1 Apocalypse book at the game's
   richest spell vendor and usually none at the smaller ones. Step 6 fixes it. Re-do the arithmetic
   (`draws x your-entries / entries-at-or-below-player-level`) if the host lists change.
+- **`ChanceNone` is not dilution.** It decides whether the list yields anything at all, not what
+  share of the yield is ours — so the loot lists need the same weight as the vendor lists, not less.
+  Weighting loot lower on that reasoning was the first pass's mistake.
+- **Weight per host list, not per injection.** Enderal's `…LevelB` / `…LootB` bands admit only one
+  Apocalypse rank (R025) where A/C/D admit two, so an equal per-injection multiplier leaves B on half
+  the share of its neighbours. B carries 8x to land in the same band as everything else.
+- **Do not add `(Rank N)` to the tome names.** In Enderal that suffix means the same spell exists at
+  another strength, gated on player level (`_01E_`/`_10E_`/`_18E_`/`_28E_`/`_38E_`/`_48E_` = levels
+  1/10/18/28/38/48). Apocalypse spells have one version each, and Enderal leaves its own 13
+  single-strength tomes unsuffixed for exactly that reason. `Spell Tome: <name>` is correct.
 - Vendor inventories are cached in the save (`iDaysToRespawnVendor: 2`). To test distribution without
   waiting, `player.additem <LVLI FormID> 1` resolves the leveled list directly.
