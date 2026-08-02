@@ -1,31 +1,39 @@
-[size=5]Apocalypse — Magic of Skyrim — Enderal Patch[/size]
+[size=5]Apocalypse — Magic of Skyrim — Enderal Conversion[/size]
 
-[i]Enai Siaion's Apocalypse, made to actually work in Enderal: Forgotten Stories — and to stop sounding like Tamriel.[/i]
+[i]Enai Siaion's Apocalypse, rebuilt so Enderal will actually load it — and so it stops sounding like Tamriel.[/i]
 
-Apocalypse adds 373 spells. In Enderal, out of the box, you can obtain [b]none of them[/b]. Not one vendor stocks a tome, not one chest drops a scroll, and not one staff can be crafted. The spells are all there, mechanically fine, sitting in a plugin that has no way to hand them to you.
+Apocalypse adds 373 spells. In Enderal, out of the box, you get [b]none of them[/b] — and not for the reason anyone expects. The mod does not load at all. Not "loads but distributes nothing": the engine skips the plugin outright, silently, with no warning and nothing in any log. Every spell, every scroll, every record is simply not in your game.
 
-This patch gives them a way in, retires the parts that cannot work here, and takes the Daedra out of a world that has never heard of them.
-
-[line]
-
-[size=4]⚠ Requirements — read this part[/size]
-
-[list]
-[*][b][url=https://www.nexusmods.com/skyrimspecialedition/mods/1090]Apocalypse — Magic of Skyrim by Enai Siaion[/url][/b], version [b]10.2.3[/b]. Install it normally.
-[*][b]Keep [font=Courier New]Apocalypse - Magic of Skyrim.esp[/font] ENABLED[/b] and load this patch [b]after[/b] it. This is a patch, not a replacement — all the spells, meshes and textures come from Enai's mod.
-[/list]
-
-[b]That is the whole list — there is nothing to tick.[/b] Apocalypse declares [font=Courier New]Dragonborn.esm[/font] as a master, which normally sounds alarming in Enderal. It isn't: Enderal ships a 44 KB stub of that file and the SSE engine force-loads it along with the other two DLC stubs whether or not they appear in your plugin list. Confirmed by reading the plugin table out of a running game — [font=Courier New]Dragonborn.esm[/font] sits at index 3 in a profile that never enabled it. This patch still clears the references that pointed into it, so nothing meaningful is left dangling.
+This conversion fixes that, gives the spells a way into Enderal's economy, removes the parts that cannot work here, and takes the Daedra out of a world that has never heard of them.
 
 [line]
 
-[size=4]Why Apocalypse does nothing in Enderal[/size]
-
-Not an exaggeration, and not a balance complaint. Two independent failures:
+[size=4]⚠ Requirements and install order — read this part[/size]
 
 [list=1]
-[*][b]Its entire distribution system targets records Enderal does not have.[/b] Apocalypse runs a quest at game start that copies its tomes, scrolls and staves into [b]54 vanilla Skyrim vendor and loot leveled lists[/b]. Enderal replaced [font=Courier New]Skyrim.esm[/font] wholesale — it is base Enderal, not Bethesda's game — and [b]not one of those 54 lists exists[/b]. Neither do the five College of Winterhold ritual globals the mod gates part of its distribution on, nor the [font=Courier New]Tamriel[/font] worldspace it places its utility containers in. The quest runs, copies nothing into nothing, and reports success.
-[*][b]Its staff crafting is built on Dragonborn content.[/b] All 67 staff recipes are made at the [b]Staff Enchanter[/b] out of [b]Heart Stones[/b]. Enderal has neither.
+[*][b][url=https://www.nexusmods.com/skyrimspecialedition/mods/1090]Apocalypse — Magic of Skyrim by Enai Siaion[/url][/b], version [b]10.2.3[/b] exactly. Install it first and normally. Its two BSAs supply every mesh, texture, sound and script — this download contains none of them.
+[*]Install this and [b]LET IT OVERWRITE[/b]. It replaces [font=Courier New]Apocalypse - Magic of Skyrim.esp[/font] with a converted build of the same plugin.
+[*]Keep [font=Courier New]Apocalypse - Magic of Skyrim.esp[/font] [b]enabled[/b], exactly where it already sits in your load order.
+[*]If you used an earlier build of this mod, [b]delete [font=Courier New]Zenderal - Apocalypse.esp[/font][/b]. It no longer exists and will crash the game if left enabled.
+[/list]
+
+[b]Do not use this with any other version of Apocalypse.[/b] It overrides records by ID; a different version moves them.
+
+[line]
+
+[size=4]Why a replacement and not a patch[/size]
+
+[b]Enderal runs Skyrim SE 1.5.97, and that engine refuses to load any plugin whose header form version is 1.71.[/b] It does not warn you. It does not log it. The plugin is just absent. Apocalypse is 1.71.
+
+You can watch it happen: with Apocalypse installed and enabled, open the console and type [font=Courier New]help wither 4[/font]. Apocalypse defines a spell called Wither. You will get nothing back. Change four bytes in the plugin header — 1.71 to 1.70, every other byte identical — and the spell is there.
+
+A patch loaded on top cannot fix this, because a patch has to declare Apocalypse as a master, and the engine has already skipped it. The patch then binds to a master that does not exist and the game crashes during load, about nine seconds in, at the main menu. So the plugin itself has to be rebuilt at form version 1.70 — which is what this is.
+
+Once you are rebuilding the plugin anyway, the rest gets fixed properly rather than worked around:
+
+[list=1]
+[*][b]Its entire distribution system targets records Enderal does not have.[/b] Apocalypse runs a quest at game start that copies its tomes, scrolls and staves into [b]54 vanilla Skyrim vendor and loot leveled lists[/b]. Enderal replaced [font=Courier New]Skyrim.esm[/font] wholesale — it is base Enderal, not Bethesda's game — and [b]not one of those 54 lists exists[/b]. Neither do the five College of Winterhold ritual globals it gates part of its distribution on. The quest runs, copies nothing into nothing, and reports success.
+[*][b]Its staff crafting is built on Dragonborn content.[/b] All 67 staff recipes are made at the [b]Staff Enchanter[/b] out of [b]Heart Stones[/b]. Enderal has neither. The recipes are deleted, and with them the [font=Courier New]Dragonborn.esm[/font] master.
 [*][b]It overwrites one of Enderal's worldspaces.[/b] Apocalypse edits worldspace [font=Courier New]00003C[/font], which in Skyrim is [b]Tamriel[/b] — but in Enderal that ID belongs to [b]MQP01Home[/b], the prologue house. Its edit stamps Tamriel's map grid over it, drops the parent link to Vyn and the no-fast-travel flags, and attaches a region list of five IDs of which four do not exist in Enderal and the fifth is a stone wall.
 [/list]
 
@@ -52,11 +60,11 @@ Scrolls go into Enderal's general scroll loot pool. Buy tomes from mages and tra
 
 This is done by [b]adding[/b] a single entry to each of Enderal's nine lists, pointing at this patch's own sublists. Every entry Enderal already had is carried through untouched — nothing of the base game's loot is displaced or replaced.
 
-[b]2. Staff crafting stays dead, and the patch leaves it alone.[/b]
+[b]2. Staff crafting is deleted, and with it the Dragonborn master.[/b]
 
-All 67 recipes are built at the [b]Staff Enchanter[/b] out of [b]Heart Stones[/b], and Enderal has neither — so every one of them is already unreachable in Apocalypse's own records, before this patch does anything. Both the bench keyword and the component point at Dragonborn FormIDs that resolve to nothing here, which means the recipes belong to no crafting menu and can never be listed. The staves are not distributed either.
+All 67 recipes are built at the [b]Staff Enchanter[/b] out of [b]Heart Stones[/b], and Enderal has neither. Both the bench keyword and the component are Dragonborn FormIDs that resolve to nothing here, so the recipes could never have appeared in any crafting menu. They are removed outright, which takes 134 of the mod's 138 Dragonborn references with them; the remaining four are repointed. The finished plugin declares [b]no Dragonborn master at all[/b].
 
-Earlier builds of this patch overrode all 67 records to null their bench keyword. That has been dropped: it changed nothing a player could observe, and no recipe anywhere in Enderal's 1,859 has a null bench keyword, so it was inventing a record shape the game never uses. Enderal's own enchanter is untouched.
+The staves themselves remain as dormant records and get no distribution. Enderal's own enchanter is untouched.
 
 [b]3. Fabricate Object drops its Staff Enchanter option.[/b]
 
@@ -64,7 +72,9 @@ The spell that conjures a temporary crafting station offered nine, one of them t
 
 [b]3b. The prologue house is put back.[/b]
 
-Apocalypse's edit to worldspace [font=Courier New]00003C[/font] is reverted to Enderal's own [font=Courier New]MQP01Home[/font] record, forwarded from Forgotten Stories so nothing FS changed is lost. That restores its parent link to Vyn, its map offsets, its [i]small world[/i] and [i]no fast travel[/i] flags, and removes the region list pointing at forms Enderal does not have.
+Apocalypse's edit to worldspace [font=Courier New]00003C[/font] is replaced with Enderal's own [font=Courier New]MQP01Home[/font] record, taken from Forgotten Stories so nothing FS changed is lost. That restores its parent link to Vyn, its map offsets, its [i]small world[/i] and [i]no fast travel[/i] flags, and removes the region list pointing at forms Enderal does not have.
+
+Apocalypse's three utility references inside it are kept — one of its quests and one of its factions still point at them, and dropping them would break both.
 
 [b]4. Fifteen summons removed.[/b]
 
@@ -179,7 +189,7 @@ Load it [b]after[/b] [font=Courier New]Apocalypse - Magic of Skyrim.esp[/font]. 
 
 If another mod also edits those nine lists, the later plugin wins outright and one mod's additions are lost — either load order accordingly or merge them with a Bashed/Smashed patch, as with any leveled list conflict.
 
-[b]Pinned to Apocalypse 10.2.3.[/b] This patch overrides specific records by ID. If Enai releases a version that moves things, the patch needs refreshing — do not assume a newer Apocalypse is safe with it.
+[b]Pinned to Apocalypse 10.2.3.[/b] This ships a rebuilt copy of that exact version's plugin. A newer Apocalypse must not be used with it — install 10.2.3, or wait for this to be refreshed.
 
 [line]
 
@@ -188,7 +198,8 @@ If another mod also edits those nine lists, the later plugin wins outright and o
 [list]
 [*][b]The 67 staves are unobtainable.[/b] Deliberate — see above. If you want them, the console still works.
 [*][b]Banish Living has no visual effect[/b], and a couple of spells that would have spoken a line stay silent. Both are Apocalypse pointing at vanilla Skyrim records Enderal does not have. They are cosmetic, and inventing replacements would have meant guessing at Enai's intent, so they were left alone and written down instead.
-[*][b]Scroll inventory previews and one summoned sword's first-person model are missing[/b] — Apocalypse points all 144 scrolls at a vanilla display model Enderal lacks. The patch forwards that reference unchanged rather than stripping it from the handful of scrolls it touches, so all 144 behave identically instead of ten being quietly different.
+[*][b]Scroll inventory previews and one summoned sword's first-person model are missing[/b] — Apocalypse points all 144 scrolls at a vanilla display model Enderal lacks. That reference is left exactly as Enai wrote it, so all 144 behave identically instead of a handful being quietly different.
+[*][b]The Nightmare ground sigil may show the wrong particle effect.[/b] Its addon node index collided with one of Enderal's own effects, which would have replaced an Enderal visual with Apocalypse's. The conflict is resolved in Enderal's favour — protecting the base game — which leaves Apocalypse's mesh looking for a node that has moved. Fixing it properly needs an edited mesh, and this release ships no assets.
 [*][b]Spell tome tiering is by rank name, not by playtested power.[/b] A master-rank Apocalypse spell arrives around level 40 because it is master-rank, not because it was measured against Enderal's difficulty curve. Feedback welcome.
 [*][b]Requires Enderal SE[/b], which is pinned to Skyrim SE [b]1.5.97[/b]. This is a plugin only, so no SKSE version concerns apply to it.
 [/list]
@@ -197,7 +208,7 @@ If another mod also edits those nine lists, the later plugin wins outright and o
 
 [size=4]Credits[/size]
 
-[b]Enai Siaion[/b] — Apocalypse, all 373 spells, and every asset involved. This patch contains no assets and no spells of its own; it is plumbing so that his work reaches you in a different game. Go endorse [url=https://www.nexusmods.com/skyrimspecialedition/mods/1090]the original[/url].
+[b]Enai Siaion[/b] — Apocalypse: every one of the 373 spells, all the design, and every asset. [b]This release is his plugin, modified.[/b] It contains no assets, no spells and no ideas of its own; it exists so his work reaches you in a different game. Redistributed under the mod's stated permissions, which allow modification and re-upload with credit. [url=https://www.nexusmods.com/skyrimspecialedition/mods/1090]Go and endorse the original[/url] — you need it installed anyway.
 [b]SureAI[/b] — Enderal: Forgotten Stories, and the written lore every replacement name was taken from.
 
-Built from Spriggit YAML sources. Every record was checked against Enderal's own serialized plugins rather than assumed from Skyrim modding habits — which is how the dead distribution was found in the first place.
+Built from Spriggit YAML sources, and every change is reviewable as a diff. Each record was checked against Enderal's own serialized plugins rather than assumed from Skyrim modding habits — which is how the dead distribution, the overwritten worldspace and finally the form-version ceiling were all found.

@@ -25,7 +25,7 @@ ground truth"). They rule mods out before taste does.
 |---|---|
 | Enderal SE is pinned to **SSE 1.5.97** (ships `skse64_1_5_97.dll`) | Every SKSE `.dll` plugin must be a **1.5.97 / pre-AE** build. AE (1.6.x) builds do not load. This eliminates a large share of modern Skyrim combat and UI mods outright, or restricts them to their legacy versions. **Check this first — it is the cheapest possible rejection.** |
 | Enderal masters **only** `Skyrim.esm` + `Update.esm`, but ships DLC stubs the engine force-loads | A mod mastering `Dawnguard.esm`/`HearthFires.esm`/`Dragonborn.esm` **still loads** — the stubs are always active, no profile change needed. What it does not get is content: every FormID into a stub resolves to nothing, so audit what the mod actually referenced there. |
-| A patch must declare a `HEDR` form version **≥ its master's** | Most SSE mods are 1.70, but anything saved by a newer tool is **1.71**, and Spriggit emits 1.70 by default. Mismatch = hard CTD during data load. Read the target's header before authoring. |
+| The engine **will not load** a plugin at `HEDR` form version **1.71** | Silently — no warning, no log line, the plugin is just absent. 1.70 is the ceiling; 1.71 comes from the AE-era CK and newer tools. **Check this second, right after the SKSE version.** A 1.71 mod cannot be patched, only rebuilt at 1.70, which needs the author's permission. Five plugins currently in The Path are 1.71 and therefore inert: CS Light, DynDOLOD, Enderal Weather - HDR, standard_lighting_templates, TerrainHelper. |
 | **SkyUI is built into Enderal** | Never install SkyUI separately. UI mods that assume a stock SkyUI install need checking against Enderal's copy. |
 | Enderal replaces **all light settings** (SureAI's own readme) | Skyrim ENB/weather presets are starting points, not drop-ins. Cutscene fades are the canonical regression. |
 | Progression is **talents (3-tier perks + WordOfPower)** in a custom menu | Mods that add to vanilla perk trees are invisible to the player. See `enderal-record-patterns.md` §0.2. |
@@ -94,7 +94,7 @@ including the **temper** recipes, whose `HasPerk 05218E` condition resolves here
 `_00E_Class_Phasmalist_P04_B_ArcaneSmith` ("You can improve enchanted armors and weapons"), which
 means exactly what johnskyrim intended it to mean.
 
-| [Apocalypse — Magic of Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/1090) — Enai Siaion | 10.2.3 | 373 spells across all five schools; the standard answer to Enderal's thin mage offering. Enderal keeps all five vanilla magic ActorValues, so the spells themselves need no mechanical conversion. | **Apocalypse** | **Keep its own `.esp` enabled** and load the patch after it — unlike Relentless Sword this is a patch, not a replacement. Nothing else to enable: the engine force-loads Enderal's DLC stubs, so Apocalypse's `Dragonborn.esm` master is satisfied automatically. The patch declares `HEDR` form version **1.71** to match Apocalypse; a lower version crashes the game at load. |
+| [Apocalypse — Magic of Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/1090) — Enai Siaion | 10.2.3 | 373 spells across all five schools; the standard answer to Enderal's thin mage offering. Enderal keeps all five vanilla magic ActorValues, so the spells themselves need no mechanical conversion. | **Apocalypse** | **Replaces `Apocalypse - Magic of Skyrim.esp`.** Install Enai's mod for its two BSAs, then let this overwrite the plugin. Apocalypse ships at `HEDR` form version **1.71**, which Enderal's 1.5.97 engine silently refuses to load, so a patch is impossible — the plugin itself is rebuilt at 1.70. Delete any old `Zenderal - Apocalypse.esp`. |
 
 **Why Apocalypse needed a patch, and what the patch does** (all verified against `reference/`,
 2026-08-02). Unusually, the mod is not merely unbalanced in Enderal — **out of the box it delivers
@@ -148,18 +148,26 @@ literally nothing**:
    summons were named by Tamriel race (Nord, Khajiit, Altmer…) → Endralean / Nehrimese / Qyranian /
    Kiléan.
 
-7. **It overwrites Enderal's prologue worldspace, and it crashed the game for a different reason.**
-   Apocalypse overrides exactly one Enderal record: worldspace `00003C`, which is `Tamriel` in Skyrim
-   but **`MQP01Home`** in Enderal. The patch forwards Enderal's own record back, taken from Forgotten
-   Stories (which also overrides it). Details in CLAUDE.md.
-   > **The actual load crash was the plugin header, not any record.** With the patch enabled the game
-   > died ~9 s in, at the main menu, every time: `EXCEPTION_ACCESS_VIOLATION … mov rdx, [rax+0x158]`
-   > with `PLUGINS: Total: 0`. Cause: **Apocalypse is written at `HEDR` form version 1.71 and Spriggit
-   > emits 1.70**, and a plugin must not declare a lower form version than its master. Fix was one
-   > line, `Stats: Version: 1.71`. Six record-level hypotheses were tested and falsified first —
-   > the null bench keywords, the worldspace, the leveled lists, the actor records, the renames, the
-   > ESL flag — before an empty-plugin control located it in the header. See CLAUDE.md for the rule
-   > and for the bisection order that should have been used from the start.
+7. **Apocalypse never loaded in Enderal at all, and that is why this is a replacement.**
+   Enderal's 1.5.97 engine **silently refuses any plugin at `HEDR` form version 1.71** — no warning,
+   no log line, the plugin is simply absent. Apocalypse is 1.71. Proven by changing four bytes in a
+   copy (1.71 → 1.70) and watching `help wither 4` go from finding nothing to finding the spell.
+   A patch cannot fix this from outside: it must master Apocalypse, and binding to a master the
+   engine skipped is a null-pointer CTD during data load (`mov rdx, [rax+0x158]`, `rax=0`,
+   `PLUGINS: Total: 0`). So the plugin itself is rebuilt at 1.70 and shipped under Enai's filename,
+   which also keeps his BSAs loading. Permissions allow modification and re-upload with credit.
+   > **Owning the plugin made three earlier compromises unnecessary.** The `Dragonborn.esm` master is
+   > now *removed* rather than worked around; the 67 staff recipes are *deleted* rather than
+   > neutralised; and the `Tamriel` worldspace override of `00003C` — which is Enderal's prologue
+   > house `MQP01Home`, not Tamriel — is replaced with Enderal's own record (from Forgotten Stories,
+   > which also overrides it), keeping Apocalypse's three persistent refs because a quest and a
+   > faction still point at them.
+   >
+   > **Cost of getting there:** eleven game launches and six falsified record-level hypotheses
+   > before an empty-plugin control located the fault in the 24-byte header. An interim "fix" that
+   > set our patch to 1.71 was shipped and was wrong — it stopped the crash only by making our
+   > plugin invisible too. CLAUDE.md now carries both the rule and the bisection order that finds it
+   > in three launches instead of eleven.
 8. **Two unintended field drops, corrected.** The rename passes had silently removed
    `MenuDisplayObject` from 10 scrolls and `FirstPersonModel` from one summoned weapon — both vanilla
    FormIDs Enderal lacks. Restored: Apocalypse's other 134 scrolls carry the same dangling reference,

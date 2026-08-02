@@ -174,6 +174,7 @@ src/                       # EVERY patch lives here — one folder per patch
     <PatchName>ESP/        # Spriggit YAML — COMMITTED, source of truth
     Scripts/source/*.psc   # Papyrus source — COMMITTED
     Scripts/compiled/*.pex # COMMITTED via a .gitignore exception (CI can't compile Papyrus)
+    tools/*.ps1            # only for REPLACEMENT releases — the generators that rebuild the tree
 build/                     # build.ps1 + manifest.json + committed FOMOD trees
 arch-docs/                 # patch-authoring guide, curation docs, generated build report
 reference/base/            # gitignored — Enderal/vanilla decompiles + script source, LOOKUP ONLY
@@ -181,6 +182,16 @@ reference/mods/            # gitignored — third-party list mods, serialized fo
 modlist/                   # gitignored — the installed Zenderal MO2 instance, hundreds of GB
 papyrus-source/            # gitignored — spare slot for unpacked .psc trees (see reference/base)
 ```
+
+> **Two shapes of release live here.** Most are **patches**: a small plugin of overrides that masters
+> the mod it fixes. A few must be **replacements**: the third-party plugin itself, rebuilt with our
+> changes and shipped under its *original filename* so its BSAs keep loading. `Apocalypse` is a
+> replacement, forced by the form-version ceiling below — its `src/Apocalypse/ApocalypseESP/` holds
+> **all ~3,890 of Enai's records**, not just our edits, because that is what the build deserializes.
+> A replacement is only legitimate when the author's permissions allow modification and re-upload,
+> and it must ship credit in the plugin header, the FOMOD and the mod page. Its `tools/` folder holds
+> the scripts that regenerate the tree against a new upstream version — without those, an update
+> means redoing the analysis from scratch.
 
 `src/` is the only place patch content goes, and it holds as many patches as the list needs. Each
 gets its own `src/<PatchName>/` folder and its own `build/manifest.json` release entry; the
@@ -316,12 +327,14 @@ These are distilled from real failures in this workspace's lineage. They cost te
 
 ### Allocations in use
 
-Each patch's own ESL block. Overrides are not listed — they consume nothing.
+Each patch's own ESL block. Overrides are not listed — they consume nothing. One release
+(`Apocalypse`) is a *replacement plugin* rather than a patch and allocates in its host's space
+instead; the row says so.
 
 | Patch / plugin | Block | Contents |
 |---|---|---|
 | `RelentlessSword` → `Zenderal - Relentless Sword.esp` | `0x800–0x827` | `800–806` statics (1st-person models), `809–80F` weapons, `811–81F` forge + temper recipes (johnskyrim's original offsets, preserved for traceability), `820–825` dismantle recipes (new, this repo's), `826` crafting blueprint, `827` its placed reference in Riverville Temple |
-| `Apocalypse` → `Zenderal - Apocalypse.esp` | `0x800–0x805` | `800–804` `ZP_Apoc_Tomes_R000/R025/R050/R075/R100` — one LeveledItem per Apocalypse spell rank; `805` `ZP_Apoc_Scrolls`. Everything else in that patch is an override and costs no FormID |
+| `Apocalypse` → **`Apocalypse - Magic of Skyrim.esp`** | `0x1C1E71–0x1C1E76` | **Not an ESL block.** This release *replaces* Enai's plugin rather than patching it (see the form-version ceiling above), so new records are allocated in **Apocalypse's own FormID space**, just past its highest own ID `1C1E70`. `1C1E71–75` `ZP_Apoc_Tomes_R000/R025/R050/R075/R100` — one LeveledItem per spell rank; `1C1E76` `ZP_Apoc_Scrolls`. ~3,890 records, full ESP, no ESL flag |
 
 > **`Enderal - Forgotten Stories.esm` survives as a declared master.** It is an *implicit* base
 > master under `GameRelease.EnderalSE`, so there was reason to fear Mutagen would drop it from the
@@ -691,29 +704,48 @@ These are **engine-hardcoded** FormIDs — Bethesda's own code depends on them, 
     alone** — that is the proven archetype (guardrail 3), and an override that achieves nothing is
     still a record you have to be right about.
 
-> ### The form-version rule: a plugin must not declare a LOWER `HEDR` version than its master
+> ### THE FORM-VERSION CEILING: Enderal will not load a plugin whose `HEDR` version is 1.71
 >
-> **[verified 2026-08-02 — this cost a full debugging session and eleven game launches.]**
+> **[verified in-game 2026-08-02. Read this before porting any Skyrim mod.]**
 >
-> `Apocalypse - Magic of Skyrim.esp` is written at **`HEDR` form version 1.71**. Spriggit/Mutagen
-> writes **1.70** by default (`ModHeader.Stats.Version` in `RecordData.yaml`). A patch that masters
-> Apocalypse while declaring 1.70 makes Enderal **crash during data load, every time**, ~9 s in,
-> at the main menu:
+> Enderal SE runs SSE **1.5.97**, and that engine **silently refuses any plugin written at `HEDR`
+> form version 1.71**. No warning, no log entry, no missing-master dialog — the plugin is simply
+> absent from the game. `HEDR` 1.70 is the ceiling; 1.71 is what the 1.6/AE-era Creation Kit and
+> newer tools emit.
 >
-> ```
-> EXCEPTION_ACCESS_VIOLATION  SkyrimSE.exe+05E1F22   mov rdx, [rax+0x158]     rax = 0
-> PROBABLE CALL STACK: ... InitTESThread
-> PLUGINS: Light: 0  Regular: 0  Total: 0      <-- data handler never finished
-> ```
+> **Proof:** `Apocalypse - Magic of Skyrim.esp` is 1.71. With it enabled, `help wither 4` in the
+> console finds nothing, though the mod defines a spell whose EditorID and name both contain
+> "Wither". Change **four bytes** — the `HEDR` version float at file offset 30 — from 1.71 to 1.70,
+> leave every other byte identical, and the spell appears. Single variable, both directions.
 >
-> The fix is one line — `Stats: Version: 1.71` — and it is **the master's version that matters**, not
-> the game's. Proven by a single-variable A/B on a hand-built plugin with **no masters but Apocalypse
-> and no records at all**: 1.70 crashed, 1.71 booted.
+> **How this presents, and why it is so hard to spot:**
 >
-> **Before authoring any patch over a third-party plugin, read its `HEDR` version and match or exceed
-> it.** Most SSE-era mods are 1.70 and this never comes up; anything saved by a newer CK/tool is 1.71.
-> `PLUGINS: Total: 0` in a crash log is the tell that this is a file-loading failure, not a content
-> one — compare against a known-good crash log, where the plugin list is fully populated.
+> - The mod appears installed and enabled. MO2 is happy. The game launches.
+> - Nothing it adds exists. `help <anything> 4` finds none of its records.
+> - **A patch that masters it crashes the game**, because the patch loads, tries to bind to a master
+>   the engine skipped, and dereferences null during data load:
+>   ```
+>   EXCEPTION_ACCESS_VIOLATION  SkyrimSE.exe+05E1F22   mov rdx, [rax+0x158]   rax = 0
+>   PROBABLE CALL STACK: ... InitTESThread
+>   PLUGINS: Light: 0  Regular: 0  Total: 0      <-- data handler never finished
+>   ```
+> - Setting the *patch* to 1.71 makes the crash disappear — because the patch is now skipped too.
+>   **That is a false fix and it was shipped once.** A crash that vanishes because both plugins
+>   became invisible looks exactly like a crash that was fixed.
+>
+> **Check `HEDR` before you plan anything.** Read the float at offset 30 of the `.esp`
+> (`src/Apocalypse/tools/verify-plugin-structure.ps1` prints it). If it is 1.71:
+>
+> - a patch plugin **cannot** work — the only route is to rebuild the mod's own plugin at 1.70,
+>   which means shipping a modified copy under the same filename (keeps its BSAs loading). Check the
+>   author's permissions first.
+> - when authoring with Spriggit, set `ModHeader.Stats.Version: 1.7` **explicitly**. Mutagen's
+>   default is **1.71**, so a plugin that never mentions the field builds itself invisible.
+>
+> **This is not rare.** Five other plugins in the `thepath` modlist are 1.71 and therefore inert:
+> `CS Light.esp`, `DynDOLOD.esp`, `Enderal Weather - HDR.esp`, `standard_lighting_templates.esp`,
+> `TerrainHelper.esp` — most of a visuals layer, loading nothing, with no error anywhere. Audit any
+> Enderal list for this.
 
 > ### Debugging a load crash: bisect the PLUGIN, not the records
 >

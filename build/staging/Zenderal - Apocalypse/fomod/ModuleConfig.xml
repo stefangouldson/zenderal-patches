@@ -3,7 +3,7 @@
   <moduleName>Zenderal - Apocalypse</moduleName>
 
   <requiredInstallFiles>
-    <file source="Zenderal - Apocalypse.esp" destination="Zenderal - Apocalypse.esp" priority="0" />
+    <file source="Apocalypse - Magic of Skyrim.esp" destination="Apocalypse - Magic of Skyrim.esp" priority="0" />
   </requiredInstallFiles>
 
   <!--
@@ -17,24 +17,38 @@
       <optionalFileGroups order="Explicit">
         <group name="Requirements" type="SelectExactlyOne">
           <plugins order="Explicit">
-            <plugin name="Install the Enderal patch plugin">
-              <description>Adds "Zenderal - Apocalypse.esp".
+            <plugin name="Install the converted Apocalypse plugin">
+              <description>REPLACES "Apocalypse - Magic of Skyrim.esp" with an Enderal-converted version. This is not a patch loaded on top - it overwrites Enai's plugin file.
 
-REQUIRES Apocalypse - Magic of Skyrim 10.2.3 by Enai Siaion, installed separately. Keep its own "Apocalypse - Magic of Skyrim.esp" ENABLED and load this patch after it - unlike most Zenderal conversions, this one patches the original rather than replacing it.
+INSTALL ORDER
+1. Install Apocalypse - Magic of Skyrim 10.2.3 by Enai Siaion first. Its two BSAs supply every mesh, texture, sound and script; this download contains none of them and cannot work without it.
+2. Install this and LET IT OVERWRITE.
+3. Keep "Apocalypse - Magic of Skyrim.esp" enabled, exactly where it already was.
+4. If you used an earlier build of this mod, DELETE "Zenderal - Apocalypse.esp" - it no longer exists and will crash the game if left enabled.
 
-Nothing else to enable. Apocalypse declares "Dragonborn.esm" as a master, but Enderal ships that stub and the engine loads it automatically whether or not it appears in your plugin list - verified from a running game's own plugin table.
+Pinned to Apocalypse 10.2.3. A different version will not match and must not be used with this.
 
-WHAT THIS PATCH DOES
+WHY A REPLACEMENT AND NOT A PATCH
 
-Distribution: Apocalypse's spell tomes and scrolls are injected into Enderal's own vendor and loot lists, tiered by spell rank. Without this, nothing Apocalypse adds is obtainable in Enderal at all - its distribution targets 54 vanilla Skyrim leveled lists, none of which exist here.
+Enderal runs on Skyrim SE 1.5.97, and that engine silently refuses to load any plugin whose header form version is 1.71 - no warning, no log entry, the plugin is just absent. Apocalypse is 1.71, so in Enderal it has never loaded at all. No patch can fix that from the outside, because a patch has to declare Apocalypse as a master and the engine has already skipped it. The plugin itself has to be rebuilt at form version 1.70.
 
-Staves: the 67 staff-crafting recipes never appear. They are built at the Dragonborn staff enchanter out of heart stones, and Enderal has neither, so every one of them is already unreachable in Apocalypse's own records. This patch leaves them exactly as Enai wrote them rather than overriding 67 records to no effect. Enderal's own enchanter is untouched.
+WHAT ELSE CHANGED
+
+Distribution: spell tomes and scrolls are added to Enderal's own vendor and loot lists, tiered by spell rank. Apocalypse's own distribution targets 54 vanilla Skyrim leveled lists, none of which exist in Enderal.
+
+Dragonborn master removed entirely. The 67 staff-crafting recipes are deleted - they need a Staff Enchanter and Heart Stones, neither of which Enderal has - and the remaining DLC references are repointed. Enderal's own enchanter is untouched.
+
+The Tamriel worldspace override is deleted. That record ID belongs to Enderal's prologue house, and Apocalypse was stamping Skyrim's map grid over it.
 
 Summons removed as un-Enderal: the six Dremora, both Xivilai, Weeping Daedra, Lord of Bindings, Six Demon Bag, Herne, Kyrkrim, Atronach Mark and the Dwemer Craftlord. Their tomes are never distributed.
 
-Renames: spells named after Elder Scrolls gods and mages are renamed to Enderal equivalents.
+Renames: spells named after Elder Scrolls gods and mages become Enderal equivalents.
 
-Fabricate Object drops its Staff Enchanter option, leaving the eight stations Enderal actually has.</description>
+Fabricate Object drops its Staff Enchanter option, leaving the eight stations Enderal actually has.
+
+An addon node index that collided with one of Enderal's own effects is moved.
+
+All spells, assets and design are Enai Siaion's. Please endorse the original.</description>
               <typeDescriptor>
                 <type name="Required" />
               </typeDescriptor>
