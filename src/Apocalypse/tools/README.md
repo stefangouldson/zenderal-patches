@@ -28,6 +28,7 @@ Run against a fresh `reference/mods/Apocalypse/esp/` produced by `/spriggit-deco
 | 3 | `03-forward-leveled-lists.ps1` | Rebuilds those nine host lists from the **winning** record — Forgotten Stories overrides eight of them, and building from base Enderal silently reverts FS's edits |
 | 4 | `04-forward-worldspace.ps1` | Replaces Apocalypse's `Tamriel` override of `00003C` with Enderal's `MQP01Home`, **keeping Apocalypse's three persistent refs** — a quest and a faction still point at them |
 | 5 | `05-merge-tree.ps1` | Merges Enai's tree with our edits, drops the 67 staff recipes, re-homes our six new records into Apocalypse's own FormID space, writes the header at form version 1.7 |
+| 6 | `06-weight-distribution.ps1` | Duplicates each injected entry up to 4x (vendor lists) / 3x (loot lists). One entry per host list gives 160 tomes the same odds as a single Enderal book — see below. Idempotent; run after 05 |
 
 The AddonNode re-index (`WB_IllusionNightmare_MPS_Seidsigil` 110 → 746) is a single committed record,
 not a script. `verify-addonnode-indices.ps1` is what found the collision.
@@ -55,3 +56,10 @@ is `1C1E70`). This is not an ESL block — the merged plugin has ~3,890 records 
 - Set `ModHeader.Stats.Version: 1.7` explicitly. Mutagen defaults to **1.71**, which is exactly the
   value that makes the plugin invisible to Enderal.
 - Never re-add a `Dragonborn.esm` master. After step 5 the tree should contain zero matches for it.
+- **A leveled list picks one entry per draw, so one injected entry ≠ one item's worth of odds — it is
+  one *slot's* worth, shared by everything behind it.** Shipped that way first and merchants looked
+  empty: 160 tomes behind a single slot in a 15-entry list meant ~1 Apocalypse book at the game's
+  richest spell vendor and usually none at the smaller ones. Step 6 fixes it. Re-do the arithmetic
+  (`draws x your-entries / entries-at-or-below-player-level`) if the host lists change.
+- Vendor inventories are cached in the save (`iDaysToRespawnVendor: 2`). To test distribution without
+  waiting, `player.additem <LVLI FormID> 1` resolves the leveled list directly.

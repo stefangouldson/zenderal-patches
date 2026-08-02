@@ -636,9 +636,27 @@ spells from `_01E_SpellBook*` Books:
 | Scrolls, loot | `00E_ScrollsLowChance` = `0905A5` | 1+, `ChanceNone: 0.5` |
 | Crafting blueprints, vendor | `_00ETraderCraftingPlans` / `…PlansB` / `…PlansC` = `137A06` / `148ABD` / `148ABE` | 1 / 10+ / 19–30 |
 
-**Inject, don't rewrite.** Add a single entry per host list pointing at your own sublist, and carry
+**Inject, don't rewrite.** Add entries to the host list pointing at your own sublist, and carry
 every existing entry through untouched (guardrail 5). One new LeveledItem per tier keeps the diff
 readable and leaves Enderal's own list contents byte-identical.
+
+> **But one entry is not enough — weight it, or your items are statistically invisible.**
+> **[verified in-game 2026-08-02]** A host list picks **one entry per draw**, so a single injected
+> entry gives your entire sublist the same odds as one of Enderal's individual books, no matter how
+> many items are behind it. Apocalypse's 160 tomes sat behind one slot in `_00ETraderSpellBooksLevelA`
+> (15 entries): even Tarhutie, the richest spell vendor at 8+10+10 draws, worked out to **~1 Apocalypse
+> tome out of ~28 books**, and Milbert at 3+4 draws expected **0.3** — i.e. usually none. The
+> distribution was correct and looked completely broken.
+>
+> Do the arithmetic before shipping: `draws x (your entries / entries at or below player level)`.
+> Duplicating the injected entry — same `Level`, same `Reference` — is the lever, because it still
+> touches none of Enderal's own entries. `src/Apocalypse/tools/06-weight-distribution.ps1` tops each
+> injection up to a target multiplicity (4x vendor, 3x loot) and is idempotent.
+>
+> Two things that make this look like a bug when it is not: vendor stock is **cached in the save**
+> (`iDaysToRespawnVendor: 2`, so a merchant only re-rolls every 2 in-game days), and
+> `player.additem <LVLI FormID> 1` **resolves a leveled list on the spot** — that command is the way
+> to prove distribution works without waiting or starting a new game.
 
 ## Useful FormKey constants
 
