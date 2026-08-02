@@ -22,13 +22,13 @@
 
 REQUIRES Apocalypse - Magic of Skyrim 10.2.3 by Enai Siaion, installed separately. Keep its own "Apocalypse - Magic of Skyrim.esp" ENABLED and load this patch after it - unlike most Zenderal conversions, this one patches the original rather than replacing it.
 
-YOU MUST ALSO ENABLE Enderal's stub "Dragonborn.esm" in your profile. Apocalypse declares it as a master and will not load without it. Enderal ships the stub in its Data folder for exactly this purpose; it holds a single record and changes nothing on its own.
+Nothing else to enable. Apocalypse declares "Dragonborn.esm" as a master, but Enderal ships that stub and the engine loads it automatically whether or not it appears in your plugin list - verified from a running game's own plugin table.
 
 WHAT THIS PATCH DOES
 
 Distribution: Apocalypse's spell tomes and scrolls are injected into Enderal's own vendor and loot lists, tiered by spell rank. Without this, nothing Apocalypse adds is obtainable in Enderal at all - its distribution targets 54 vanilla Skyrim leveled lists, none of which exist here.
 
-Staves: the 67 staff-crafting recipes are retired. They are built at the Dragonborn staff enchanter out of heart stones, and Enderal has neither.
+Staves: the 67 staff-crafting recipes never appear. They are built at the Dragonborn staff enchanter out of heart stones, and Enderal has neither, so every one of them is already unreachable in Apocalypse's own records. This patch leaves them exactly as Enai wrote them rather than overriding 67 records to no effect. Enderal's own enchanter is untouched.
 
 Summons removed as un-Enderal: the six Dremora, both Xivilai, Weeping Daedra, Lord of Bindings, Six Demon Bag, Herne, Kyrkrim, Atronach Mark and the Dwemer Craftlord. Their tomes are never distributed.
 

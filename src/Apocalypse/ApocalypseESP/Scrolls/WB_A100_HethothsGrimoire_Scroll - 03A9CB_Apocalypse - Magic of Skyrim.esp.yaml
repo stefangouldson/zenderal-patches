@@ -5,6 +5,7 @@ Name:
   Value: Scroll of Eventuality Grimoire
 Keywords:
 - 0A0E57:Skyrim.esm
+MenuDisplayObject: 076E8F:Skyrim.esm
 EquipmentType: 013F42:Skyrim.esm
 Description:
   TargetLanguage: English

@@ -95,9 +95,25 @@ with it. This is the single most common source of "the list doesn't launch" repo
 > filenames it expects.
 >
 > Mutagen's *implicit* base-master list for `EnderalSE` does include them **[upstream]**, so Spriggit
-> will not object if you add one — the game will. A patch that masters a DLC in Enderal is a patch
-> that fails to load, and there is nothing in them to reference anyway. Compare
+> will not object if you add one. There is nothing in them to reference anyway, so don't. Compare
 > `reference/base/Dawnguard-stub/` with `reference/base/EnderalFS/` if you ever doubt it.
+>
+> **But the engine DOES load all three stubs, always, whether or not `plugins.txt` lists them.**
+> **[verified 2026-08-02]** — read straight out of a running game's plugin table via a Crash Logger
+> dump on a profile that never enabled them:
+>
+> ```
+> PLUGINS: Light: 13  Regular: 31  Total: 44
+>   [ 0] Skyrim.esm   [ 1] Dawnguard.esm   [ 2] HearthFires.esm
+>   [ 3] Dragonborn.esm   [ 4] Update.esm   [ 5] Enderal - Forgotten Stories.esm
+> ```
+>
+> Corroborated independently by the plugin array inside a `.ess` save. So the older claim here — that
+> a plugin mastering a DLC "fails to load" and that users must tick the stub — was **wrong**, and it
+> shipped in a patch's FOMOD before anyone tested it. A third-party mod that masters `Dragonborn.esm`
+> loads in Enderal with no user action at all; its references into the stub simply resolve to nothing.
+> Note also that the engine's real order puts the DLC **before** `Update.esm`, which is not the order
+> `loadorder.txt` shows.
 
 **Stock load order** (`%LOCALAPPDATA%\Enderal Special Edition\plugins.txt`) **[verified]**:
 
@@ -408,6 +424,30 @@ Use the `mod-deploy` skill rather than copying by hand.
 **[upstream]** Plain SSEEdit mode reads the Skyrim game folder and INI and will not see Enderal's
 plugins at all. The `xedit-audit` skill passes the switch.
 
+### Crash logs are written to the SKYRIM SE folder, not Enderal's
+
+**[verified]** Crash Logger SSE (and the other SKSE plugin logs — `skse64.log`, `EnderalSE.log`,
+`po3_*.log`) land in:
+
+```
+C:\Users\<you>\Documents\My Games\Skyrim Special Edition\SKSE\crash-<timestamp>.log
+```
+
+**not** `…\My Games\Enderal Special Edition\SKSE\`, which holds only the INIs and saves. Looking in
+the Enderal folder and finding nothing is what makes a crash look like it produced no log at all —
+it did. Read the newest `crash-*.log` by mtime and check `Working Directory:` says Enderal before
+trusting it.
+
+Two fields to read first, before the call stack:
+
+| Field | Means |
+|---|---|
+| `PLUGINS: Total: 0` | crashed **during** file loading — the data handler never populated. Suspect the plugin header/masters, not records |
+| `PLUGINS: Total: <n>` with a full list | plugins loaded fine; it is a content or runtime problem |
+
+The plugin list in a `.ess` save is a second, independent source for what the engine actually
+loaded — useful when the game will not start at all.
+
 ---
 
 # Zenderal — the list
@@ -550,6 +590,22 @@ other consideration moot. The same applies to `MenuDisplayObject`, `LoadingScree
 `FirstPersonModel` and script `Object` properties, all of which are commonly vanilla FormIDs that
 Enderal lacks.
 
+> **A vanilla FormID that survived may be a completely different record — check what a ported mod
+> OVERRIDES, not just what it references.** **[verified]** Apocalypse overrides exactly one Enderal
+> record, and it is worldspace **`00003C`**. In Skyrim that is `Tamriel`; **in Enderal it is
+> `MQP01Home`**, the prologue house. Its override stamps Tamriel's `MaxHeight` grid and map bounds
+> over a `SmallWorld` interior-ish worldspace, drops `Parent: Vyn`, `Location` and the
+> `SmallWorld`/`CannotFastTravel` flags, and gives the persistent cell a `Regions` list of five
+> FormIDs — **four absent from Enderal, and the fifth (`041449`) is `_00E_Ark_1024WallRound01`, a
+> Static.** `Zenderal - Apocalypse.esp` forwards Enderal's own record back (from **Forgotten
+> Stories**, which also overrides it — guardrail 5).
+>
+> Generalise the *check*, not the fix: for any ported mod, list every record it overrides whose
+> FormKey suffix is `:Skyrim.esm` / `:Update.esm` and confirm the Enderal record at that ID is the
+> same record type **and the same thing**. A script that maps FormID → record group for both trees
+> does this in seconds. Note this override was **not** the crash it looked like — it is a real
+> defect, found while chasing an unrelated bug, and worth fixing on its own merits.
+
 **Enderal's own distribution slots**, for re-homing a ported mod's items **[verified]**
 (`reference/base/Skyrim/LeveledItems/`). Note Enderal has **no spell tomes at all** — it teaches
 spells from `_01E_SpellBook*` Books:
@@ -619,20 +675,62 @@ These are **engine-hardcoded** FormIDs — Bethesda's own code depends on them, 
   new `REFR` in an ESL-flagged plugin keeps the flag. **[verified]**
 - **`E - Update.bsa` loads last and wins.** When a record or asset doesn't look like the one you
   found in `E - Meshes.bsa`, check `E - Update.bsa` before concluding your patch is wrong.
-- **A DLC master silently breaks the plugin.** Spriggit accepts it (Mutagen's implicit base-master
-  set for `EnderalSE` includes the DLC) but Enderal does not load them. See "Masters" above.
-  **Never give a patch you author a DLC master.** There is, however, a distinction worth knowing when
-  you are patching *someone else's* plugin that already has one — you cannot remove a master from
-  another author's file, and you do not have to:
-  - Enderal ships the DLC stubs in `Data/`, so **enabling the stub in the MO2 profile satisfies the
-    master requirement** and the third-party plugin loads. This is why SureAI ships them.
-  - What you get is *loading*, not *working*: every FormID into that stub resolves to null, because
-    the stubs hold 1–2 records between them. `Dragonborn.esm`'s single record is `DLC2MiraakRace`
-    `03CA97`. **[verified]**
-  - So the patch's job is to override each record carrying a DLC reference and repoint or drop it.
-    Null (`0x00000000`) is a real engine sentinel and is strictly better than a dangling FormID —
-    Spriggit writes `Foo: Null` as a present subrecord with value zero. **[verified]** on 67 `COBJ`
-    `BNAM`s in `Zenderal - Apocalypse.esp`.
+- **Don't give a patch you author a DLC master** — there is nothing in the stubs to reference. But
+  the stubs *do* load (see "Masters" above), so a third-party plugin that masters one is fine and
+  needs no user action. What you get is *loading*, not *working*: every FormID into a stub resolves
+  to null, because the stubs hold 1–2 records between them. `Dragonborn.esm`'s single record is
+  `DLC2MiraakRace` `03CA97`. **[verified]** Adding the DLC to your own master list does **not** help a
+  dependent patch either — tested directly, it changes nothing. **[verified]**
+  - A patch may override each record carrying a DLC reference and repoint or drop it, but weigh that
+    against doing nothing: a dangling FormID is **proven harmless** here (Apocalypse ships 67 recipes
+    and 144 scrolls full of them and the game runs), whereas a *null* is not automatically better.
+    **Null `BNAM` on a `COBJ` has zero precedent in Enderal** — all 1,859 of its recipes carry a real
+    bench keyword, none null, none absent. **[verified]** We shipped 67 null ones on the reasoning
+    that null "is a real engine sentinel"; that reasoning was never tested and the overrides were
+    later dropped entirely. If a dangling reference already makes the record unreachable, **leave it
+    alone** — that is the proven archetype (guardrail 3), and an override that achieves nothing is
+    still a record you have to be right about.
+
+> ### The form-version rule: a plugin must not declare a LOWER `HEDR` version than its master
+>
+> **[verified 2026-08-02 — this cost a full debugging session and eleven game launches.]**
+>
+> `Apocalypse - Magic of Skyrim.esp` is written at **`HEDR` form version 1.71**. Spriggit/Mutagen
+> writes **1.70** by default (`ModHeader.Stats.Version` in `RecordData.yaml`). A patch that masters
+> Apocalypse while declaring 1.70 makes Enderal **crash during data load, every time**, ~9 s in,
+> at the main menu:
+>
+> ```
+> EXCEPTION_ACCESS_VIOLATION  SkyrimSE.exe+05E1F22   mov rdx, [rax+0x158]     rax = 0
+> PROBABLE CALL STACK: ... InitTESThread
+> PLUGINS: Light: 0  Regular: 0  Total: 0      <-- data handler never finished
+> ```
+>
+> The fix is one line — `Stats: Version: 1.71` — and it is **the master's version that matters**, not
+> the game's. Proven by a single-variable A/B on a hand-built plugin with **no masters but Apocalypse
+> and no records at all**: 1.70 crashed, 1.71 booted.
+>
+> **Before authoring any patch over a third-party plugin, read its `HEDR` version and match or exceed
+> it.** Most SSE-era mods are 1.70 and this never comes up; anything saved by a newer CK/tool is 1.71.
+> `PLUGINS: Total: 0` in a crash log is the tell that this is a file-loading failure, not a content
+> one — compare against a known-good crash log, where the plugin list is fully populated.
+
+> ### Debugging a load crash: bisect the PLUGIN, not the records
+>
+> **[verified — learned the expensive way on the Apocalypse patch.]** When a patch crashes the game
+> at load, the instinct is to suspect the records. Six record-level hypotheses were tested and all
+> six were wrong, because the cause was in the 24-byte header. **Run the cheap controls first, in
+> this order** — each is one launch and each halves the search space:
+>
+> 1. **Empty plugin.** Hand-write a valid TES4 with no masters and no records under the same
+>    filename. If that crashes, nothing you authored is involved.
+> 2. **Masters only, no records.** Add the real master list, still zero records. This separates
+>    "header/masters" from "content" in one launch.
+> 3. **Bisect the master list**, then the header fields (`HEDR` version, flags), then records.
+>
+> `scratchpad/make-masters.ps1`-style hand-built plugins are better than toolchain output here
+> precisely because they remove the toolchain as a variable. Also: **isolate one variable per
+> launch** — an early run changed the ESL flag and the record set together and proved nothing.
 - **Compiling against vanilla signatures.** If a script compiles clean and then misbehaves on an
   Enderal type, check the `-i` order — Enderal's tree must be first. 55 names collide.
 - **FOMOD images that actually render in MO2** — a config can build clean, pass

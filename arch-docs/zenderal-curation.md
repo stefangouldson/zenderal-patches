@@ -24,7 +24,8 @@ ground truth"). They rule mods out before taste does.
 | Constraint | Consequence for mod selection |
 |---|---|
 | Enderal SE is pinned to **SSE 1.5.97** (ships `skse64_1_5_97.dll`) | Every SKSE `.dll` plugin must be a **1.5.97 / pre-AE** build. AE (1.6.x) builds do not load. This eliminates a large share of modern Skyrim combat and UI mods outright, or restricts them to their legacy versions. **Check this first — it is the cheapest possible rejection.** |
-| Enderal masters **only** `Skyrim.esm` + `Update.esm` | Any mod mastering `Dawnguard.esm`/`HearthFires.esm`/`Dragonborn.esm` needs its masters changed or is out. |
+| Enderal masters **only** `Skyrim.esm` + `Update.esm`, but ships DLC stubs the engine force-loads | A mod mastering `Dawnguard.esm`/`HearthFires.esm`/`Dragonborn.esm` **still loads** — the stubs are always active, no profile change needed. What it does not get is content: every FormID into a stub resolves to nothing, so audit what the mod actually referenced there. |
+| A patch must declare a `HEDR` form version **≥ its master's** | Most SSE mods are 1.70, but anything saved by a newer tool is **1.71**, and Spriggit emits 1.70 by default. Mismatch = hard CTD during data load. Read the target's header before authoring. |
 | **SkyUI is built into Enderal** | Never install SkyUI separately. UI mods that assume a stock SkyUI install need checking against Enderal's copy. |
 | Enderal replaces **all light settings** (SureAI's own readme) | Skyrim ENB/weather presets are starting points, not drop-ins. Cutscene fades are the canonical regression. |
 | Progression is **talents (3-tier perks + WordOfPower)** in a custom menu | Mods that add to vanilla perk trees are invisible to the player. See `enderal-record-patterns.md` §0.2. |
@@ -93,7 +94,7 @@ including the **temper** recipes, whose `HasPerk 05218E` condition resolves here
 `_00E_Class_Phasmalist_P04_B_ArcaneSmith` ("You can improve enchanted armors and weapons"), which
 means exactly what johnskyrim intended it to mean.
 
-| [Apocalypse — Magic of Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/1090) — Enai Siaion | 10.2.3 | 373 spells across all five schools; the standard answer to Enderal's thin mage offering. Enderal keeps all five vanilla magic ActorValues, so the spells themselves need no mechanical conversion. | **Apocalypse** | **Keep its own `.esp` enabled** and load the patch after it — unlike Relentless Sword this is a patch, not a replacement. **Enderal's stub `Dragonborn.esm` must be enabled in the profile**, or Apocalypse will not load at all. |
+| [Apocalypse — Magic of Skyrim](https://www.nexusmods.com/skyrimspecialedition/mods/1090) — Enai Siaion | 10.2.3 | 373 spells across all five schools; the standard answer to Enderal's thin mage offering. Enderal keeps all five vanilla magic ActorValues, so the spells themselves need no mechanical conversion. | **Apocalypse** | **Keep its own `.esp` enabled** and load the patch after it — unlike Relentless Sword this is a patch, not a replacement. Nothing else to enable: the engine force-loads Enderal's DLC stubs, so Apocalypse's `Dragonborn.esm` master is satisfied automatically. The patch declares `HEDR` form version **1.71** to match Apocalypse; a lower version crashes the game at load. |
 
 **Why Apocalypse needed a patch, and what the patch does** (all verified against `reference/`,
 2026-08-02). Unusually, the mod is not merely unbalanced in Enderal — **out of the box it delivers
@@ -108,16 +109,24 @@ literally nothing**:
    sublists (`ZP_Apoc_Tomes_R000`–`R100`, `ZP_Apoc_Scrolls`), leaving every existing entry untouched.
    Apocalypse's spell ranks map onto Enderal's four tiers: 000→A, 025→A/B, 050→C, 075→C/D, 100→D.
 2. **It masters `Dragonborn.esm`.** 138 references across 70 records, resolving to six DLC FormIDs.
-   A patch cannot remove another plugin's master, so the stub is enabled instead and the patch
-   repoints or drops every reference. All six were one of two things: the **Staff Enchanter crafting
-   system** (`DLC2StaffEnchanter` + `DLC2HeartStone`, 134 of the 138 refs) and three cosmetic
-   one-offs. `DLC2MiraakRace` is the one record Enderal's stub actually contains, so it resolves.
-3. **Staff crafting is retired.** All 67 recipes built Apocalypse's staves at the Dragonborn staff
-   enchanter out of heart stones — Enderal has neither, and no enchanting-bench ConstructibleObject
-   keyword exists to repoint them to without overriding Enderal's own Arcane Enchanter. The recipes
-   are overridden with a null `WorkbenchKeyword` (a real engine sentinel, unlike the dangling
-   FormID it replaces) so they match no bench, and the staves get no distribution. 13 of them also
-   referenced `StaffTemplateIllusion`, which Enderal lacks — dropped.
+   A patch cannot remove another plugin's master — and does not need to: **the engine force-loads all
+   three DLC stubs regardless of `plugins.txt`**, so Apocalypse loads with no user action (see
+   CLAUDE.md "Masters"). The patch repoints or drops the references that mattered. All six FormIDs
+   were one of two things: the **Staff Enchanter crafting system** (`DLC2StaffEnchanter` +
+   `DLC2HeartStone`, 134 of the 138 refs) and three cosmetic one-offs. `DLC2MiraakRace` is the one
+   record Enderal's stub actually contains, so it resolves.
+3. **Staff crafting is left alone, because it is already dead.** All 67 recipes build Apocalypse's
+   staves at the Dragonborn staff enchanter out of heart stones. Both the bench keyword and the
+   component are Dragonborn FormIDs that resolve to nothing in Enderal, so every recipe belongs to no
+   crafting menu and can never be listed — no patching required. The staves get no distribution
+   either.
+   > An earlier build overrode all 67 with a null `WorkbenchKeyword`, on the reasoning that a null is
+   > "a real engine sentinel" and better than a dangling FormID. That was untested, and **no recipe
+   > in Enderal has a null bench keyword — all 1,859 carry a real one**. The overrides were dropped:
+   > they changed nothing observable and invented a record shape the game never uses. Apocalypse
+   > loading cleanly on its own is the proof that the dangling reference is harmless.
+   Also note `WorkbenchKeyword: Null` is *not* implicated in the load crash that dominated this
+   patch's testing — see finding 7.
 4. **Fabricate Object loses its Staff Enchanter option.** The spell's `WB_MinorCreation_Script` does
    `PlaceAtMe(WB_Furniture[j])` where `j` is the button index from message `08FDEA` — array and
    message are index-coupled 1:1. Staff Enchanter is **last in both**, so dropping the tail of each
@@ -139,11 +148,32 @@ literally nothing**:
    summons were named by Tamriel race (Nord, Khajiit, Altmer…) → Endralean / Nehrimese / Qyranian /
    Kiléan.
 
-**Known residue.** Four references in surviving records still point at vanilla Skyrim records Enderal
-lacks, all cosmetic and all inherited from Apocalypse: a `TopicToSay` dialogue topic on Breath of Tyr
-(×2) and Banish Living (×1), so those scripts' `Say()` calls do nothing, and Banish Living's
-`BanishTargetFXActivator`, so the banish has no visual effect. Guessing replacements would be
-inventing mechanisms, so they are left and recorded here instead.
+7. **It overwrites Enderal's prologue worldspace, and it crashed the game for a different reason.**
+   Apocalypse overrides exactly one Enderal record: worldspace `00003C`, which is `Tamriel` in Skyrim
+   but **`MQP01Home`** in Enderal. The patch forwards Enderal's own record back, taken from Forgotten
+   Stories (which also overrides it). Details in CLAUDE.md.
+   > **The actual load crash was the plugin header, not any record.** With the patch enabled the game
+   > died ~9 s in, at the main menu, every time: `EXCEPTION_ACCESS_VIOLATION … mov rdx, [rax+0x158]`
+   > with `PLUGINS: Total: 0`. Cause: **Apocalypse is written at `HEDR` form version 1.71 and Spriggit
+   > emits 1.70**, and a plugin must not declare a lower form version than its master. Fix was one
+   > line, `Stats: Version: 1.71`. Six record-level hypotheses were tested and falsified first —
+   > the null bench keywords, the worldspace, the leveled lists, the actor records, the renames, the
+   > ESL flag — before an empty-plugin control located it in the header. See CLAUDE.md for the rule
+   > and for the bisection order that should have been used from the start.
+8. **Two unintended field drops, corrected.** The rename passes had silently removed
+   `MenuDisplayObject` from 10 scrolls and `FirstPersonModel` from one summoned weapon — both vanilla
+   FormIDs Enderal lacks. Restored: Apocalypse's other 134 scrolls carry the same dangling reference,
+   so forwarding it keeps all 144 consistent instead of making ten quietly different. Likewise the
+   eight spell-book leveled lists were regenerated from **Forgotten Stories'** versions after being
+   built from base Enderal's, which had been reverting FS's own edits to every vendor and loot tier.
+
+**Known residue.** Fifteen references in surviving records still point at vanilla Skyrim records
+Enderal lacks, all cosmetic and all inherited verbatim from Apocalypse: `MenuDisplayObject` on 10
+scrolls (`076E8F`), `FirstPersonModel` on the Battlemage sword (`03FA6A`), a `TopicToSay` dialogue
+topic on Breath of Tyr (×2) and Banish Living (×1) so those `Say()` calls do nothing, and Banish
+Living's `BanishTargetFXActivator` so the banish has no visual effect. The patch introduces no
+dangling reference of its own. Guessing replacements would be inventing mechanisms, so they are left
+and recorded here instead.
 
 ### Modern visuals
 
