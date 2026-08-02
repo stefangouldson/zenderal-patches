@@ -28,17 +28,15 @@ $enc  = New-Object System.Text.UTF8Encoding($false)
 #    That was wrong. ChanceNone gates whether the list yields anything at all; it does not change
 #    the ratio of our entries to Enderal's. There is no reason for loot to sit below vendor.
 #
-#  * The B lists get 8, not 4, because only ONE of our sublists falls in their level band (R025)
-#    where A/C/D take two. Left at 4 they end up on half the share of their neighbours - an
-#    artifact of how the ranks map onto Enderal's bands, not a decision anyone made.
+#  * LootB gets 8, not 4, because only ONE of our sublists falls in its level band (R025) where
+#    A/C/D take two. Left at 4 it ends up on half the share of its neighbours - an artifact of how
+#    the ranks map onto Enderal's bands, not a decision anyone made.
 #
-# LevelA keeps 4 and lands at ~38%, the highest here. It is a 13-entry list, so it is small rather
-# than over-weighted, and it is the only thing a level 1-8 character can buy from.
+# The four _00ETraderSpellBooksLevel* vendor lists are NOT here any more. Weighting them was never
+# enough: a list is rolled per draw, so a shop's Apocalypse stock stayed random and most of the 160
+# tomes were purchasable nowhere. 07-place-vendor-tomes.ps1 puts them straight into six named
+# merchant chests instead, and this plugin no longer overrides those four lists at all.
 $targets = @{
-  '_00ETraderSpellBooksLevelA - 118209_Skyrim.esm.yaml' = 4
-  '_00ETraderSpellBooksLevelB - 11820A_Skyrim.esm.yaml' = 8
-  '_00ETraderSpellBooksLevelC - 1376C8_Skyrim.esm.yaml' = 4
-  '_00ETraderSpellBooksLevelD - 14479B_Skyrim.esm.yaml' = 4
   '_00E_SpellBooksLootA - 13798C_Skyrim.esm.yaml'       = 4
   '_00E_SpellBooksLootB - 13798D_Skyrim.esm.yaml'       = 8
   '_00E_SpellBooksLootC - 1447A2_Skyrim.esm.yaml'       = 4

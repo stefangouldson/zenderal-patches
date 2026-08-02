@@ -79,11 +79,13 @@ $cutScrolls | ForEach-Object { "   scroll cut: $($_.EditorID)" }
 
 # --- inject one entry into each Enderal host list -----------------------------
 # hostFile = @( @{ Sub = '000800'; Level = 1 }, ... )
+#
+# LOOT ONLY. The four _00ETraderSpellBooksLevel* vendor lists used to be injected here too, and are
+# not any more: a leveled list is rolled per draw, so a shop's Apocalypse stock stayed random no
+# matter how it was weighted, and most of the 160 tomes were purchasable nowhere at all.
+# 07-place-vendor-tomes.ps1 writes them straight into six named merchant chests instead. Random is
+# the right shape for loot and the wrong shape for a shop.
 $injections = @{
-  '_00ETraderSpellBooksLevelA - 118209_Skyrim.esm.yaml' = @(@{S='000800';L=1},  @{S='000801';L=8})
-  '_00ETraderSpellBooksLevelB - 11820A_Skyrim.esm.yaml' = @(@{S='000801';L=10})
-  '_00ETraderSpellBooksLevelC - 1376C8_Skyrim.esm.yaml' = @(@{S='000802';L=18}, @{S='000803';L=30})
-  '_00ETraderSpellBooksLevelD - 14479B_Skyrim.esm.yaml' = @(@{S='000803';L=30}, @{S='000804';L=40})
   '_00E_SpellBooksLootA - 13798C_Skyrim.esm.yaml'       = @(@{S='000800';L=1},  @{S='000801';L=5})
   '_00E_SpellBooksLootB - 13798D_Skyrim.esm.yaml'       = @(@{S='000801';L=10})
   '_00E_SpellBooksLootC - 1447A2_Skyrim.esm.yaml'       = @(@{S='000802';L=18}, @{S='000803';L=30})

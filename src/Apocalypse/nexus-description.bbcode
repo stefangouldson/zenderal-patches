@@ -45,20 +45,31 @@ Enderal also has no spell tomes at all — it teaches spells from its own spellb
 
 [b]1. Distribution — the part that makes the mod exist.[/b]
 
-[b]160 spell tomes[/b] and [b]130 scrolls[/b] are added to Enderal's own vendor and loot lists, tiered by spell rank so a novice does not find a master spell at level 3:
+All [b]160 spell tomes[/b] are stocked by named merchants, and [b]every one of them is buyable[/b] — no rolling the dice on whether a shop happens to have the spell you want. Vendors are ranked by how much gold they carry, so the richest sells the master spells and the poorest sells the novice ones:
 
 [code]
-  Apocalypse rank      Enderal tier              Roughly
-  Novice   (000)       Trader/Loot A             level 1+
-  Apprentice (025)     Trader/Loot A and B       level 5-10+
-  Adept    (050)       Trader/Loot C             level 18+
-  Expert   (075)       Trader/Loot C and D       level 30+
-  Master   (100)       Trader/Loot D             level 40+
+  Merchant                          Gold    Sells                        Tomes
+  ---------------------------------------------------------------------------
+  Ark, Emberlord and Fireflash      1800    Master     (rank 100)          45
+  Sun Temple, Torius Flameling      1430    Expert     (rank 075)          39
+  Undercity, Barnabas               1050    Adept  - Alteration,           19
+                                                    Conjuration,
+                                                    Destruction
+  Ark, Ora Stonehand                 980    Adept  - Illusion,             14
+                                                    Restoration
+  Duneville, Maxus Tabbakus          620    Apprentice (rank 025)          28
+  Ark, Milbert Foxhand               530    Novice     (rank 000)          15
+  ---------------------------------------------------------------------------
+                                                                          160
 [/code]
 
-Scrolls go into Enderal's general scroll loot pool. Buy tomes from mages and traders, find them in the world, exactly as you find Enderal's own.
+Each tome is sold at exactly one shop, so the whole spell list is a shopping route rather than a lottery. The Adept tier is split by magic school across the two middle merchants.
 
-This is done by [b]adding[/b] a single entry to each of Enderal's nine lists, pointing at this patch's own sublists. Every entry Enderal already had is carried through untouched — nothing of the base game's loot is displaced or replaced.
+[b]Loot is separate and stays random.[/b] Apocalypse tomes and its [b]130 scrolls[/b] are also injected into Enderal's own world-loot lists — the ones feeding chests, rucksacks and scroll caches — so they still turn up as finds while you explore. Random is the right shape for loot and the wrong shape for a shop.
+
+Nothing Enderal already sold or dropped is displaced. Both the merchant inventories and the loot lists are [b]added to[/b]; every existing entry is carried through untouched.
+
+[i]Merchant stock only refreshes every two in-game days, so on an existing save give it 48 hours before judging what a shop carries.[/i]
 
 [b]2. Staff crafting is deleted, and with it the Dragonborn master.[/b]
 
@@ -177,17 +188,19 @@ Note the last two — Alteration is [i]Mentalism[/i] and Illusion is [i]Psionics
 
 [size=4]Compatibility and load order[/size]
 
-The plugin is [b]ESL-flagged[/b], so it costs nothing against the 254-plugin limit.
+This [b]is[/b] [font=Courier New]Apocalypse - Magic of Skyrim.esp[/font] — it takes the original's place in your load order, exactly where that plugin already sat. It is a full ESP, not ESL-flagged, because it carries all ~3,900 of Apocalypse's own records.
 
-Load it [b]after[/b] [font=Courier New]Apocalypse - Magic of Skyrim.esp[/font]. It overrides records from Apocalypse and appends to nine of Enderal's leveled lists:
+Beyond Apocalypse's own records it touches [b]eleven[/b] Enderal records:
 
 [list]
-[*][font=Courier New]_00ETraderSpellBooksLevelA[/font] through [font=Courier New]D[/font] — the spellbook vendor tiers
+[*][b]Six merchant chests[/b] — [font=Courier New]CCFunkentanz[/font], [font=Courier New]STTurious[/font], [font=Courier New]UC_Barnabas[/font], [font=Courier New]CCSteinschlag[/font], [font=Courier New]MaxusTabbakus02[/font], [font=Courier New]CCMilbert[/font] — each gains its tier of spell tomes
 [*][font=Courier New]_00E_SpellBooksLootA[/font] through [font=Courier New]D[/font] — the spellbook loot tiers
 [*][font=Courier New]00E_ScrollsLowChance[/font] — the scroll loot pool
 [/list]
 
-If another mod also edits those nine lists, the later plugin wins outright and one mod's additions are lost — either load order accordingly or merge them with a Bashed/Smashed patch, as with any leveled list conflict.
+If another mod edits those same records, the later plugin wins outright and one mod's additions are lost — either order them accordingly or merge with a Bashed/Smashed patch, as with any leveled list or container conflict.
+
+[b]Known conflict — KataPUMB Spell Package.[/b] That mod adds the same 15 staves to three of Enderal's spell merchants: Emberlord and Fireflash, Torius Flameling and Tarhutie in Riverville. This mod claims the first two, so [b]those staves are no longer sold there[/b]. Tarhutie is deliberately left alone for exactly this reason — the staff set is identical at all three shops, so all 15 remain buyable from him, and nothing of KataPUMB's becomes unobtainable. That is also why the Apprentice tier sits with Maxus Tabbakus in Duneville rather than Tarhutie, whose gold is near-identical.
 
 [b]Pinned to Apocalypse 10.2.3.[/b] This ships a rebuilt copy of that exact version's plugin. A newer Apocalypse must not be used with it — install 10.2.3, or wait for this to be refreshed.
 
@@ -200,7 +213,9 @@ If another mod also edits those nine lists, the later plugin wins outright and o
 [*][b]Banish Living has no visual effect[/b], and a couple of spells that would have spoken a line stay silent. Both are Apocalypse pointing at vanilla Skyrim records Enderal does not have. They are cosmetic, and inventing replacements would have meant guessing at Enai's intent, so they were left alone and written down instead.
 [*][b]Scroll inventory previews and one summoned sword's first-person model are missing[/b] — Apocalypse points all 144 scrolls at a vanilla display model Enderal lacks. That reference is left exactly as Enai wrote it, so all 144 behave identically instead of a handful being quietly different.
 [*][b]The Nightmare ground sigil may show the wrong particle effect.[/b] Its addon node index collided with one of Enderal's own effects, which would have replaced an Enderal visual with Apocalypse's. The conflict is resolved in Enderal's favour — protecting the base game — which leaves Apocalypse's mesh looking for a node that has moved. Fixing it properly needs an edited mesh, and this release ships no assets.
-[*][b]Spell tome tiering is by rank name, not by playtested power.[/b] A master-rank Apocalypse spell arrives around level 40 because it is master-rank, not because it was measured against Enderal's difficulty curve. Feedback welcome.
+[*][b]Spell tome tiering is by rank name, not by playtested power.[/b] Which merchant sells a spell follows its Apocalypse rank, not a measurement against Enderal's difficulty curve. Feedback welcome.
+[*][b]Merchant inventories get long.[/b] Emberlord and Fireflash goes from 96 entries to 141. SkyUI's category filter handles it, but it is a visibly fuller shop than the base game's.
+[*][b]Tome names carry no "(Rank N)" suffix[/b], unlike most of Enderal's. That is intentional: in Enderal that suffix means the same spell exists at another strength, gated on player level, and Apocalypse spells have exactly one version each. Enderal leaves 13 of its own single-strength tomes unsuffixed for the same reason.
 [*][b]Requires Enderal SE[/b], which is pinned to Skyrim SE [b]1.5.97[/b]. This is a plugin only, so no SKSE version concerns apply to it.
 [/list]
 

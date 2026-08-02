@@ -103,11 +103,26 @@ literally nothing**:
 1. **Its entire distribution system is dead.** `WB_PopulateLists_Quest` copies three FormLists into
    **54 vanilla vendor and loot leveled lists, none of which exist in Enderal**; the five College of
    Winterhold ritual globals it gates on are absent too, as is the `Tamriel` worldspace it places its
-   utility containers in. 373 spells, zero obtainable. The patch re-homes them into Enderal's own
-   slots — 160 tomes across `_00ETraderSpellBooksLevelA–D` and `_00E_SpellBooksLootA–D`, and 130
-   scrolls into `00E_ScrollsLowChance` — by appending **one entry per host list** pointing at six new
-   sublists (`ZP_Apoc_Tomes_R000`–`R100`, `ZP_Apoc_Scrolls`), leaving every existing entry untouched.
-   Apocalypse's spell ranks map onto Enderal's four tiers: 000→A, 025→A/B, 050→C, 075→C/D, 100→D.
+   utility containers in. 373 spells, zero obtainable.
+
+   Re-homing them into Enderal's leveled lists was tried first and **is not enough**: a list is
+   rolled per draw, so which tomes a shop had stayed random, and after two rounds of weighting most
+   of the 160 were still purchasable nowhere. So the 160 tomes are now written **directly into six
+   named merchant chests**, tiered by the gold each carries — Emberlord and Fireflash `102AD5` (1800,
+   Master), Torius Flameling `118050` (1430, Expert), Barnabas `13824A` (1050, Adept A/C/D), Ora
+   Stonehand `0F9320` (980, Adept I/R), Maxus Tabbakus `022BF2` (620, Apprentice), Milbert Foxhand
+   `127928` (530, Novice). Every tome is buyable at exactly one shop.
+
+   World loot stays random and keeps the leveled-list route: the tomes and all 130 scrolls are still
+   injected into `_00E_SpellBooksLootA–D` and `00E_ScrollsLowChance` via the six sublists
+   (`ZP_Apoc_Tomes_R000`–`R100`, `ZP_Apoc_Scrolls`), every existing entry untouched. The four
+   `_00ETraderSpellBooksLevel*` overrides were **deleted** once the vendors carried the real thing.
+
+   > **`KataPUMBSpellPack.esp` conflict.** It adds the same 15 staves to three of Enderal's spell
+   > merchants — Funkentanz, Turious and Tarhutie — and those are their only vendor. Apocalypse loads
+   > after it and does not master it, so a claimed chest drops them. Because the set is identical at
+   > all three, **Tarhutie is left unclaimed** and all 15 stay buyable there; that is why the
+   > Apprentice tier sits with Maxus Tabbakus (620 gold) rather than Tarhutie (630).
 2. **It masters `Dragonborn.esm`.** 138 references across 70 records, resolving to six DLC FormIDs.
    A patch cannot remove another plugin's master — and does not need to: **the engine force-loads all
    three DLC stubs regardless of `plugins.txt`**, so Apocalypse loads with no user action (see

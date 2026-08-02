@@ -9,11 +9,11 @@ $base = Join-Path $repo 'reference\base\Skyrim\LeveledItems'
 $enc  = New-Object System.Text.UTF8Encoding($false)
 
 # host list -> the sublists injected into it, with the host's own level band
+#
+# LOOT ONLY - the four _00ETraderSpellBooksLevel* vendor lists were dropped when the tomes moved to
+# direct placement on merchant chests (07-place-vendor-tomes.ps1). This plugin no longer overrides
+# them, so Forgotten Stories' own copies win untouched.
 $inject = [ordered]@{
-  '_00ETraderSpellBooksLevelA - 118209_Skyrim.esm.yaml' = @(@{S='000800';L=1},  @{S='000801';L=8})
-  '_00ETraderSpellBooksLevelB - 11820A_Skyrim.esm.yaml' = @(@{S='000801';L=10})
-  '_00ETraderSpellBooksLevelC - 1376C8_Skyrim.esm.yaml' = @(@{S='000802';L=18}, @{S='000803';L=30})
-  '_00ETraderSpellBooksLevelD - 14479B_Skyrim.esm.yaml' = @(@{S='000803';L=30}, @{S='000804';L=40})
   '_00E_SpellBooksLootA - 13798C_Skyrim.esm.yaml'       = @(@{S='000800';L=1},  @{S='000801';L=5})
   '_00E_SpellBooksLootB - 13798D_Skyrim.esm.yaml'       = @(@{S='000801';L=10})
   '_00E_SpellBooksLootC - 1447A2_Skyrim.esm.yaml'       = @(@{S='000802';L=18}, @{S='000803';L=30})

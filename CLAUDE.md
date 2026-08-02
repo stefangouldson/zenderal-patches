@@ -676,6 +676,38 @@ readable and leaves Enderal's own list contents byte-identical.
 > `player.additem <LVLI FormID> 1` **resolves a leveled list on the spot** — that command is the way
 > to prove distribution works without waiting or starting a new game.
 
+> **Weighting has a ceiling: a leveled list makes an item AVAILABLE, never FINDABLE.** **[verified
+> in-game 2026-08-02]** A list is rolled per draw, so *which* of your items a shop has is random
+> every restock. With 160 tomes behind one sublist, even at a healthy 38% share of a big vendor's
+> spell stock, most of the 160 were purchasable **nowhere**, and a player hunting one named spell had
+> no route to it at all. Two rounds of weighting did not fix that, because it is not a weighting
+> problem.
+>
+> **If every item must be reachable, place it directly** — write the item into a named merchant's
+> `Container` record as an ordinary `Items:` entry. Deterministic, restocks forever, and a player can
+> be told where to go. Enderal's spell merchants, ranked by the gold in their chest (the natural
+> wealth ladder for tiering what each one sells) **[verified]**:
+>
+> | Chest | FormKey | Gold | Shop |
+> |---|---|---|---|
+> | `_00E_Merchant_CCFunkentanz` | `102AD5` | 1800 | Ark, Emberlord and Fireflash (`coc CapitalCityMagierkram`) |
+> | `_00E_Merchant_STTurious` | `118050` | 1430 | Sun Temple, Torius Flameling (`coc SuntempleAlchemy`) |
+> | `_00E_Merchant_UC_Barnabas` | `13824A` | 1050 | Undercity, Barnabas (`coc UndercityBarracks2Barnabas`) |
+> | `_00E_Merchant_CCSteinschlag` | `0F9320` | 980 | Ark, Ora Stonehand |
+> | `_00E_Merchant_MaxusTabbakus02` | `022BF2` | 620 | Duneville, Maxus Tabbakus |
+> | `_00E_Merchant_CCMilbert` | `127928` | 530 | Ark, Milbert Foxhand |
+>
+> Richer merchants exist (`Nordwind_Traveller_01` 3700, `Rhalata_SisterEnvy` 2700, `DunenhaimKarymea`
+> 2700) but draw from only 1–2 spell lists, so they read as incidental rather than as mage shops.
+> **Forgotten Stories overrides all of these**, so copy the FS record, not base Enderal's (guardrail 5).
+>
+> **Check what else overrides the chest before claiming it.** `KataPUMBSpellPack.esp` adds the same 15
+> staves to `CCFunkentanz`, `STTurious` and `FlusshaimTarhutieContainer`, and those three shops are
+> their only vendor. **[verified]** A plugin loading after it that overrides one of those chests
+> without mastering it silently deletes them. Where a mod repeats an identical set across several
+> chests, **sparing one chest preserves the whole set** — that is why `Apocalypse` leaves Tarhutie
+> alone and hosts its Apprentice tier at Maxus Tabbakus (620 gold vs Tarhutie's 630) instead.
+
 ## Useful FormKey constants
 
 These are **engine-hardcoded** FormIDs — Bethesda's own code depends on them, so Enderal's replacement

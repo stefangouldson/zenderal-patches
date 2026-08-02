@@ -28,7 +28,8 @@ Run against a fresh `reference/mods/Apocalypse/esp/` produced by `/spriggit-deco
 | 3 | `03-forward-leveled-lists.ps1` | Rebuilds those nine host lists from the **winning** record — Forgotten Stories overrides eight of them, and building from base Enderal silently reverts FS's edits |
 | 4 | `04-forward-worldspace.ps1` | Replaces Apocalypse's `Tamriel` override of `00003C` with Enderal's `MQP01Home`, **keeping Apocalypse's three persistent refs** — a quest and a faction still point at them |
 | 5 | `05-merge-tree.ps1` | Merges Enai's tree with our edits, drops the 67 staff recipes, re-homes our six new records into Apocalypse's own FormID space, writes the header at form version 1.7 |
-| 6 | `06-weight-distribution.ps1` | Duplicates each injected entry until every host list is ~11–19% Apocalypse. One entry per host list gives 160 tomes the same odds as a single Enderal book — see below. Idempotent; run after 05 |
+| 6 | `06-weight-distribution.ps1` | Duplicates each injected **loot** entry until those lists are ~11–19% Apocalypse. One entry per host list gives 160 tomes the same odds as a single Enderal book — see below. Idempotent; run after 05 |
+| 7 | `07-place-vendor-tomes.ps1` | Writes all 160 tomes **directly** into six named merchant chests, tiered by the chest's gold. This is what actually makes the spells obtainable; the vendor leveled lists no longer carry them. Idempotent — always rebuilds from the Forgotten Stories record |
 
 The AddonNode re-index (`WB_IllusionNightmare_MPS_Seidsigil` 110 → 746) is a single committed record,
 not a script. `verify-addonnode-indices.ps1` is what found the collision.
@@ -62,11 +63,22 @@ is `1C1E70`). This is not an ESL block — the merged plugin has ~3,890 records 
   richest spell vendor and usually none at the smaller ones. Step 6 fixes it. Re-do the arithmetic
   (`draws x your-entries / entries-at-or-below-player-level`) if the host lists change.
 - **`ChanceNone` is not dilution.** It decides whether the list yields anything at all, not what
-  share of the yield is ours — so the loot lists need the same weight as the vendor lists, not less.
-  Weighting loot lower on that reasoning was the first pass's mistake.
-- **Weight per host list, not per injection.** Enderal's `…LevelB` / `…LootB` bands admit only one
-  Apocalypse rank (R025) where A/C/D admit two, so an equal per-injection multiplier leaves B on half
-  the share of its neighbours. B carries 8x to land in the same band as everything else.
+  share of the yield is ours — so the loot lists need the same weight as the vendor lists did, not
+  less. Weighting loot lower on that reasoning was the first pass's mistake.
+- **Weight per host list, not per injection.** `_00E_SpellBooksLootB`'s band admits only one
+  Apocalypse rank (R025) where A/C/D admit two, so an equal per-injection multiplier leaves it on
+  half the share of its neighbours. It carries 8x to land in the same band as everything else.
+- **Weighting a leveled list has a ceiling, and the vendor lists hit it.** A list is rolled per draw,
+  so which tomes a shop has stays random however heavy the entry is — most of the 160 were
+  purchasable nowhere even at a 38% share. Step 7 replaced that with direct placement and the four
+  `_00ETraderSpellBooksLevel*` overrides were deleted outright, handing those lists back to Forgotten
+  Stories. Do not reintroduce them: the tomes would then be sold twice over.
+- **`KataPUMBSpellPack.esp` adds the same 15 staves to three of the six chests** — `CCFunkentanz`,
+  `STTurious` and `FlusshaimTarhutieContainer` — and those shops are their only vendor. We do not
+  master it, so any chest we claim drops them. Because the set is identical at all three,
+  **Tarhutie is deliberately left unclaimed** and all 15 stay buyable from him; the Apprentice tier
+  went to Maxus Tabbakus (620 gold) instead of Tarhutie (630). Re-run the load-order sweep before
+  moving a tier onto a new chest.
 - **Do not add `(Rank N)` to the tome names.** In Enderal that suffix means the same spell exists at
   another strength, gated on player level (`_01E_`/`_10E_`/`_18E_`/`_28E_`/`_38E_`/`_48E_` = levels
   1/10/18/28/38/48). Apocalypse spells have one version each, and Enderal leaves its own 13
