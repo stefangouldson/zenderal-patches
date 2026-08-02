@@ -30,6 +30,7 @@ Run against a fresh `reference/mods/Apocalypse/esp/` produced by `/spriggit-deco
 | 5 | `05-merge-tree.ps1` | Merges Enai's tree with our edits, drops the 67 staff recipes, re-homes our six new records into Apocalypse's own FormID space, writes the header at form version 1.7 |
 | 6 | `06-weight-distribution.ps1` | Duplicates each injected **loot** entry until those lists are ~11–19% Apocalypse. One entry per host list gives 160 tomes the same odds as a single Enderal book — see below. Idempotent; run after 05 |
 | 7 | `07-place-vendor-tomes.ps1` | Writes all 160 tomes **directly** into six named merchant chests, tiered by the chest's gold. This is what actually makes the spells obtainable; the vendor leveled lists no longer carry them. Idempotent — always rebuilds from the Forgotten Stories record |
+| 8 | `08-reprice.ps1` | Rescales all 175 tome and 144 scroll gold values onto Enderal's economy. Apocalypse prices on vanilla Skyrim's ladder, which Enderal does not use. Idempotent — always recomputes from Enai's untouched tree |
 
 The AddonNode re-index (`WB_IllusionNightmare_MPS_Seidsigil` 110 → 746) is a single committed record,
 not a script. `verify-addonnode-indices.ps1` is what found the collision.
@@ -73,6 +74,12 @@ is `1C1E70`). This is not an ESL block — the merged plugin has ~3,890 records 
   purchasable nowhere even at a 38% share. Step 7 replaced that with direct placement and the four
   `_00ETraderSpellBooksLevel*` overrides were deleted outright, handing those lists back to Forgotten
   Stories. Do not reintroduce them: the tomes would then be sold twice over.
+- **Gold values are Skyrim's, not Enderal's, and nothing warns you.** Apocalypse prices tomes on
+  vanilla Skyrim's ladder (~50/175/330/700/1300 novice→master). **Enderal's entire spell-tome range
+  is 20–350**, with two outliers above it (Paralyze Rank II 400, the unique Death Storm 600); its
+  scrolls run 10–100 with two at 500. Enai's masters at a 1407 median were 5.6x Enderal's top tome
+  and its X-school scrolls at 2500 were 5x Enderal's dearest scroll. Step 8 rescales by a per-tier
+  ratio so his internal ordering survives. Re-derive the ratios if a new Apocalypse version reprices.
 - **`KataPUMBSpellPack.esp` adds the same 15 staves to three of the six chests** — `CCFunkentanz`,
   `STTurious` and `FlusshaimTarhutieContainer` — and those shops are their only vendor. We do not
   master it, so any chest we claim drops them. Because the set is identical at all three,

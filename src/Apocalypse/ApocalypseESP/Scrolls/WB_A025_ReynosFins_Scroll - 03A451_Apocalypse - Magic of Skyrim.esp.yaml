@@ -13,7 +13,7 @@ Description:
 Model:
   File: Clutter\Common\Scroll05.nif
   Data: 0x020000000000000000000000
-Value: 50
+Value: 30
 Weight: 0.5
 BaseCost: 113
 ChargeTime: 2

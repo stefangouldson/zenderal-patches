@@ -699,6 +699,15 @@ readable and leaves Enderal's own list contents byte-identical.
 >
 > Richer merchants exist (`Nordwind_Traveller_01` 3700, `Rhalata_SisterEnvy` 2700, `DunenhaimKarymea`
 > 2700) but draw from only 1–2 spell lists, so they read as incidental rather than as mage shops.
+>
+> **Reprice what you distribute — Enderal's gold scale is much flatter than Skyrim's.** **[verified]**
+> Enderal's *entire* spell-tome range is **20–350**, with two outliers (Paralyze Rank II 400, the
+> unique Death Storm 600); scrolls run **10–100** with two at 500. Vanilla Skyrim's tome ladder is
+> ~50/175/330/700/1300, and a ported mod carries it in silently — Apocalypse's masters sat at a 1407
+> median, 5.6x Enderal's dearest tome, and its X-school scrolls at 2500. For scale, Enderal's
+> *unique weapons and armour* run 1100–4000, so a Skyrim-priced master tome costs about what a unique
+> greataxe does. Rescale by a **per-tier ratio** rather than a flat value so the author's ordering
+> inside each tier survives, and let tiers overlap at the edges — Enderal's own do.
 > **Forgotten Stories overrides all of these**, so copy the FS record, not base Enderal's (guardrail 5).
 >
 > **Check what else overrides the chest before claiming it.** `KataPUMBSpellPack.esp` adds the same 15

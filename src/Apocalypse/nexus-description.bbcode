@@ -69,6 +69,29 @@ Each tome is sold at exactly one shop, so the whole spell list is a shopping rou
 
 Nothing Enderal already sold or dropped is displaced. Both the merchant inventories and the loot lists are [b]added to[/b]; every existing entry is carried through untouched.
 
+[b]1b. Prices are Enderal's, not Skyrim's.[/b]
+
+Apocalypse prices its tomes on vanilla Skyrim's ladder — roughly 50 / 175 / 330 / 700 / 1300 gold for novice through master. Enderal does not use that ladder. Its [b]entire[/b] spell tome range is [b]20–350[/b] gold, with two exceptions in the whole game (Paralyze Rank II at 400, and the unique Death Storm at 600). Left alone, an Apocalypse master tome would sit on the shelf at 1,407 gold next to Enderal's dearest at 350 — about what a unique greataxe costs.
+
+Every tome and scroll is rescaled onto Enderal's economy:
+
+[code]
+  Tier            Tomes  was         now
+  ------------------------------------------------
+  Novice           45- 73  (med   62)    30- 55  (med  45)
+  Apprentice       80-185  (med  101)    75-170  (med  95)
+  Adept           297-460  (med  360)   150-230  (med 180)
+  Expert          608-892  (med  716)   235-350  (med 280)
+  Master         1063-1800 (med 1407)   300-505  (med 395)
+
+  Scrolls        25 / 50 / 100 / 250 / 500  ->  15 / 30 / 60 / 125 / 250
+  Ultimate scrolls          2500           ->          500
+[/code]
+
+It is a [b]per-tier ratio[/b], not a flat price, so Enai's own ordering inside each tier is preserved exactly — the spells he priced high still cost more than their neighbours. Master tomes still land a little above Enderal's top rank, deliberately: an Enderal spell is bought six times as it ranks up, roughly 760 gold all told, while an Apocalypse spell is a single purchase at full strength.
+
+[i]Magicka costs are left exactly as Enai wrote them. Those are his balance, not inherited pricing, and Enderal uses the same five magic ActorValues, so they work unchanged.[/i]
+
 [i]Merchant stock only refreshes every two in-game days, so on an existing save give it 48 hours before judging what a shop carries.[/i]
 
 [b]2. Staff crafting is deleted, and with it the Dragonborn master.[/b]

@@ -123,6 +123,15 @@ literally nothing**:
    > after it and does not master it, so a claimed chest drops them. Because the set is identical at
    > all three, **Tarhutie is left unclaimed** and all 15 stay buyable there; that is why the
    > Apprentice tier sits with Maxus Tabbakus (620 gold) rather than Tarhutie (630).
+
+   **Prices were Skyrim's too.** Apocalypse costs its tomes on vanilla's ladder (~50/175/330/700/1300
+   novice→master), and **Enderal's entire spell-tome range is 20–350** — two exceptions in the whole
+   game, Paralyze Rank II at 400 and the unique Death Storm at 600; scrolls run 10–100 with two at
+   500. An untouched master tome would have listed at 1,407 gold, about the price of a unique
+   greataxe (Enderal's uniques run 1100–4000). All 175 tomes and 144 scrolls are rescaled by a
+   per-tier ratio — medians now 45/95/180/280/395 and scrolls 15/30/60/125/250 — which preserves
+   Enai's ordering inside each tier. Magicka costs are left alone: those are his balance, not
+   inherited pricing.
 2. **It masters `Dragonborn.esm`.** 138 references across 70 records, resolving to six DLC FormIDs.
    A patch cannot remove another plugin's master — and does not need to: **the engine force-loads all
    three DLC stubs regardless of `plugins.txt`**, so Apocalypse loads with no user action (see

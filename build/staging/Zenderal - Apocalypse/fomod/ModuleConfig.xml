@@ -38,6 +38,8 @@ Distribution: Apocalypse's own targets 54 vanilla Skyrim leveled lists, none of 
 
 Merchant stock only refreshes every two in-game days, so on an existing save give it 48 hours.
 
+Pricing: every tome and scroll is rescaled onto Enderal's economy. Apocalypse prices on vanilla Skyrim's ladder, where a master tome is ~1300 gold; Enderal's entire spell tome range is 20-350. Tome medians become 45 / 95 / 180 / 280 / 395 for novice through master, and scrolls 15 / 30 / 60 / 125 / 250. It is a per-tier ratio, so Enai's own ordering within each tier is preserved. Magicka costs are untouched.
+
 KNOWN CONFLICT - KataPUMB Spell Package
 
 That mod adds the same 15 staves to three Enderal spell merchants: Emberlord and Fireflash, Torius Flameling, and Tarhutie in Riverville. This mod claims the first two, so those staves stop being sold there. Tarhutie is deliberately left untouched - the staff set is identical at all three shops, so all 15 stay buyable from him and nothing of KataPUMB's becomes unobtainable. That is why the Apprentice tier sits with Maxus Tabbakus rather than Tarhutie.
