@@ -496,6 +496,12 @@ progression, potions or scripts at
 This is the section to read before assuming a Skyrim mod "just works". Each entry is a verified
 mechanism plus the class of patch it invalidates.
 
+> **Porting a Skyrim mod? Use the `skyrim-to-enderal-porter` subagent first**, before planning or
+> authoring anything. It runs the kill-checks in order — form version, load-proof, SKSE build,
+> masters, distribution, override collisions — and decides whether the mod is portable at all and
+> whether it needs a *patch* or a *replacement plugin*. The first two checks take minutes and both
+> have already cost this repo a full build-and-debug cycle when skipped.
+
 **Progression is not Skyrim's.** There is no learn-by-doing and no vanilla perk tree UI. Enderal's
 *talents* are three-tier **Perks** paired with **WordOfPower** unlocks, read back via
 `_00E_TalentLibrary.GetPlayerTalentLevel(Perk01, Perk02, Perk03)` and
