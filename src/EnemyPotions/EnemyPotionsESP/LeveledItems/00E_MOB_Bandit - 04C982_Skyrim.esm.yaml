@@ -1,0 +1,14 @@
+FormKey: 04C982:Skyrim.esm
+EditorID: 00E_MOB_Bandit
+Version2: 4
+Flags:
+- UseAll
+Entries:
+- Data:
+    Level: 1
+    Reference: 000804:Zenderal - Enemy Potions.esp
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 000803:Zenderal - Enemy Potions.esp
+    Count: 1

@@ -292,6 +292,7 @@ Each patch's own ESL block. Overrides are not listed — they consume nothing.
 | Patch / plugin | Block | Contents |
 |---|---|---|
 | `RelentlessSword` → `Zenderal - Relentless Sword.esp` | `0x800–0x827` | `800–806` statics (1st-person models), `809–80F` weapons, `811–81F` forge + temper recipes (johnskyrim's original offsets, preserved for traceability), `820–825` dismantle recipes (new, this repo's), `826` crafting blueprint, `827` its placed reference in Riverville Temple |
+| `EnemyPotions` → `Zenderal - Enemy Potions.esp` | `0x800–0x805` | `800–802` per-family potion lists (health / mana / stamina, level-banded), `803` the parent `ZEN_LItemEnemyPotions` the hooks point at, `804–805` verbatim copies of the two lists being wrapped (see "Adding loot without taking any away" below) |
 
 > **`Enderal - Forgotten Stories.esm` survives as a declared master.** It is an *implicit* base
 > master under `GameRelease.EnderalSE`, so there was reason to fear Mutagen would drop it from the
@@ -490,6 +491,69 @@ For weapon balance, Enderal's scale runs ~1.6× Skyrim's: its shadowsteel (ebony
 `05AD9D:Skyrim.esm` is **`IngotShadowsteel`** here, Enderal's rename of ebony — so an ebony-tier
 Skyrim recipe's *materials* usually port across unchanged even when its gating does not.
 
+### Enemy loot: there is no leveled-NPC layer to patch
+
+Every distribution technique that works in Skyrim assumes a scaffolding Enderal does not have. All
+three of these were checked against `reference/base/` on 2026-08-02:
+
+| Claim | Evidence |
+|---|---|
+| **Enderal has zero `LeveledNpc` (LVLN) records.** SureAI hand-places every actor. | No `LeveledNpcs/` folder in `Skyrim/` or `EnderalFS/` **[verified]** |
+| **No NPC inherits `Inventory` from a template.** | 652 NPCs carry `Template:`; **0** list `Inventory` under `Configuration.TemplateFlags` **[verified]** |
+| Most hostile NPCs hold a **direct weapon record**, not a loot list | e.g. `_04E_Magier01_Range1100` `04CFDB` → `Items: [0028D2 _01E_02_IronDagger]` **[verified]** |
+
+So there is no LVLN chain and no template lever: an item added to a leveled list reaches only the
+NPCs that explicitly name that list in their `Items:` or `DeathItem:`. Enderal's enemies share
+exactly three such lists, and **they do not overlap by faction the way vanilla's do** — they split
+by *level band*:
+
+| FormKey | EditorID | NPCs | Population | Winning source |
+|---|---|---:|---|---|
+| `04C982:Skyrim.esm` | `00E_MOB_Bandit` | 109 | `_10E_`–`_20E_` bandits, Skaragg, Sunborn, Plunderers, bounty targets | `Skyrim.esm` — FS does **not** override it |
+| `02F32B:Enderal - Forgotten Stories.esm` | `_00E_FS_DeathItem_Human` | 106 | `_03E_`/`_05E_` bandits, FS quest bandits | FS defines it |
+| `03AD7F:Skyrim.esm` | `DeathItemDraugr` | 186 | **Lost Ones** of every variant, Zu'Sherath, forest elementals | `Skyrim.esm` — FS does **not** override it |
+
+Union **353** base NPC records (46 carry the first two both). Everything else — Magier, Vatyr,
+Arpsplitter, Hexe, Skelett, quest uniques — has hand-placed loot and is reachable only by overriding
+the NPC records themselves.
+
+Two related facts worth not rediscovering: **potions in Enderal are a purchase, not a combat
+reward** (`01E_Traenke` `0028E3` is on 8 NPCs, 7 of them corpse props; `01E_FS_ClutterUseful`
+`02E68C:EFS` holds all 15 restore potions properly level-banded but sits on 75 *citizens*), and
+**restore-stamina is `Morgenlufttrank`, not `Ausdauertrank`** — the latter is *fortify* stamina.
+The three base effects are `00E_AlchRestoreHealth` `0028C3`, `00E_AlchRestoreMagicka` `0028DD`,
+`00E_AlchRestoreStamina` `0028DC`. **[verified]**
+
+### Adding loot without taking any away — the `UseAll` wrap
+
+**Appending an entry to a leveled list dilutes it; it does not add to it.** A list resolves to *one*
+entry, so adding a 5th entry to a 4-entry `DeathItem` means your item replaces the original 1-in-5
+times. On `_00E_FS_DeathItem_Human` that would yield ~4% of your item *and* cut the existing
+ingredient drops by a fifth — inert and destructive at once, with no build error either way.
+
+The fix is to **wrap the original inside a `UseAll` parent**. `UseAll` (`LVLF 0x04`) makes the engine
+take *every* entry, so a verbatim copy of the original list and your new list each resolve
+independently, with their own `ChanceNone`:
+
+```
+<original FormKey>            Flags: [UseAll], no ChanceNone
+  ├─ <new> copy of the original list  (its original ChanceNone + flags + entries, untouched)
+  └─ <new> your list                  (your own ChanceNone)
+```
+
+This is **Enderal's own idiom, not an invention**: `LootSmokingPipePeaceweed1` (`04815B:Skyrim.esm`)
+is a two-entry `UseAll` list referenced from NPC `Items:` blocks, and `LItemDraugr02Weapon1HShield50`
+(`0559F8`) from six. **[verified]** A list that is *already* `UseAll` — `DeathItemDraugr` is — needs
+no wrapper; append to it directly. Spriggit 0.40.0 round-trips the restructure byte-identically.
+**[verified]**
+
+> **Never append to a list with no `Flags:` and no `ChanceNone:`.** Those are single-pick lists that
+> always return exactly one entry, and Enderal uses them for **weapons** —
+> `00E_MOB_BanditWeapon01` (`014EBA`, 28 NPCs) and `03E_MOB_SkelettWeapon01` (`090A14`, 54 NPCs).
+> Adding loot to one makes the enemy spawn **holding your item instead of a weapon**. It looks like
+> an AI bug, not a loot bug, and nothing warns you. **[verified]** Check `Flags:` before appending to
+> any `*Weapon*` list.
+
 ## Useful FormKey constants
 
 These are **engine-hardcoded** FormIDs — Bethesda's own code depends on them, so Enderal's replacement
@@ -542,6 +606,11 @@ These are **engine-hardcoded** FormIDs — Bethesda's own code depends on them, 
   Spriggit 0.40.0 round-trips this correctly, emitting the canonical
   `GRUP CELL → block → sub-block → CELL → GRUP cellchildren → GRUP celltemp → REFR` nesting, and a
   new `REFR` in an ESL-flagged plugin keeps the flag. **[verified]**
+- **Appending to a leveled list dilutes it, it does not add to it** — and appending to a *weapon*
+  list can leave enemies unarmed. Enderal also has **no `LeveledNpc` records** and **no NPC that
+  inherits `Inventory` from a template**, so there is no scaffolding layer to patch. See
+  "Enemy loot: there is no leveled-NPC layer to patch" and "Adding loot without taking any away"
+  above before touching any LVLI.
 - **`E - Update.bsa` loads last and wins.** When a record or asset doesn't look like the one you
   found in `E - Meshes.bsa`, check `E - Update.bsa` before concluding your patch is wrong.
 - **A DLC master silently breaks the plugin.** Spriggit accepts it (Mutagen's implicit base-master

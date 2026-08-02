@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fomod>
+  <Name>Zenderal - Enemy Potions</Name>
+  <Author>Zenderal</Author>
+  <Version MachineVersion="1.0.0">1.0.0</Version>
+  <Description>
+    Enderal puts potions on citizens, not on enemies. Its main potion list is referenced by eight
+    NPC records, seven of which are dead-body props, and the one properly level-banded potion list
+    SureAI wrote sits exclusively on townsfolk, guards and dancers as pickpocket loot. Potions are
+    an alchemist purchase, never a combat reward.
+
+    This patch adds a level-banded restore-health / restore-mana / restore-stamina drop to the three
+    leveled lists Enderal's enemies actually share, reaching every bandit tier and every Lost One -
+    353 enemy records in all. Roughly a third of those enemies drop one potion, of a tier
+    appropriate to your level.
+
+    Nothing is taken away. Each list is restructured so the original loot resolves exactly as
+    before and the potion roll happens independently alongside it, using the same "use all" nesting
+    Enderal already uses for its own smoking-pipe and draugr-weapon loot.
+
+    ESL-flagged, nine records, no scripts. Masters Skyrim.esm and Enderal - Forgotten Stories.esm.
+  </Description>
+  <Groups>
+    <element>Gameplay Effects and Changes</element>
+  </Groups>
+</fomod>

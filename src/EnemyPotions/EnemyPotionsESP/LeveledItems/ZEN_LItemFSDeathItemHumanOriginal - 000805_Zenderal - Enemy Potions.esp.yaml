@@ -1,0 +1,22 @@
+FormKey: 000805:Zenderal - Enemy Potions.esp
+EditorID: ZEN_LItemFSDeathItemHumanOriginal
+ChanceNone: 0.4
+Flags:
+- CalculateFromAllLevelsLessThanOrEqualPlayer
+Entries:
+- Data:
+    Level: 1
+    Reference: 0706DD:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 0AF5FD:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 1016B3:Skyrim.esm
+    Count: 1
+- Data:
+    Level: 1
+    Reference: 0B18CD:Skyrim.esm
+    Count: 1

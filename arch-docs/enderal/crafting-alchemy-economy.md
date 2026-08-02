@@ -123,6 +123,64 @@ Both FS classes gate crafting behind tiered perks **[verified]**:
 - Vendor gating uses keywords like `_00E_FS_NQ07_VendorNoSale` and `VendorItemFSBlueprintContainer`.
   **[verified]**
 
+## Enemy loot
+
+Verified against `reference/base/` on 2026-08-02. The headline is that **enemy loot is
+hand-authored**, so most of what you'd reach for in Skyrim is not there:
+
+- **Zero `LeveledNpc` (LVLN) records** in either plugin — no `LeveledNpcs/` folder exists. Every
+  actor is placed by hand. **[verified]**
+- **Zero NPCs inherit `Inventory` from a template** — 652 carry `Template:`, none list `Inventory`
+  under `Configuration.TemplateFlags`. **[verified]**
+- Most hostiles hold a **direct weapon record** rather than a list (`_04E_Magier01_Range1100`
+  `04CFDB` → `Items: [0028D2 _01E_02_IronDagger]`). **[verified]**
+
+**The three lists Enderal's enemies actually share** — note they split by *level band*, not faction:
+
+| FormKey | EditorID | NPCs | Population | Winning source |
+|---|---|---:|---|---|
+| `04C982:Skyrim.esm` | `00E_MOB_Bandit` | 109 | `_10E_`–`_20E_` bandits, Skaragg, Sunborn, Plunderers, bounty targets | `Skyrim.esm` (FS does not override) |
+| `02F32B:Enderal - Forgotten Stories.esm` | `_00E_FS_DeathItem_Human` | 106 | `_03E_`/`_05E_` bandits, FS quest bandits | FS |
+| `03AD7F:Skyrim.esm` | `DeathItemDraugr` | 186 | Lost Ones of every variant, Zu'Sherath, forest elementals | `Skyrim.esm` (FS does not override) |
+
+Union **353** base NPC records; 46 carry the first two both. Magier (59), Vatyr (56), Arpsplitter
+(36), Skelett (98) and Hexe (12) are reachable **only** by overriding the NPC records themselves.
+
+Two traps found the hard way and documented in full in CLAUDE.md → "Adding loot without taking any
+away":
+
+1. **Appending to a leveled list dilutes it.** A list resolves to one entry, so your addition
+   *replaces* the original loot a fraction of the time. Wrap the original in a `UseAll` parent
+   instead — Enderal's own `LootSmokingPipePeaceweed1` (`04815B`) is that pattern. **[verified]**
+2. **Never append to a list with no `Flags:` and no `ChanceNone:`.** Those are single-pick **weapon**
+   lists (`00E_MOB_BanditWeapon01` `014EBA`, `03E_MOB_SkelettWeapon01` `090A14`) — adding loot makes
+   the enemy spawn holding it *instead of a weapon*. **[verified]**
+
+### Potions
+
+Potions in Enderal are an alchemist purchase, not a combat reward: `01E_Traenke` `0028E3` is on
+**8** NPC records, seven of them corpse props, and `01E_FS_ClutterUseful` `02E68C:EFS` — the one
+list holding all 15 restore potions properly level-banded — sits on **75 citizens**. **[verified]**
+`Zenderal - Enemy Potions.esp` closes that gap via the three hooks above.
+
+The three restore families, by tier (all `:Skyrim.esm`). **Stamina is `Morgenlufttrank`, not
+`Ausdauertrank`** — the latter is *fortify* stamina, a false friend. Base effects are
+`00E_AlchRestoreHealth` `0028C3`, `00E_AlchRestoreMagicka` `0028DD`, `00E_AlchRestoreStamina`
+`0028DC`. **[verified]**
+
+| Tier | Health (`…Genesungstrank`) | Mana (`…Manatrank`) | Stamina (`…Morgenlufttrank`) |
+|---|---|---|---|
+| 01E (Rancid) | `0028C8` | `0028DB` | `0028DE` |
+| 02E (Cheap) | `0028C5` | `019E3B` | `085668` |
+| 03E (Standard) | `0028C6` | `090892` | `09B6CA` |
+| 04E (Quality) | `0028C7` | `09B6CB` | `1037F5` |
+| 05E (Exclusive) | `0028C9` | `1037F7` | `1037F6` |
+
+FS overrides the five `Genesungstrank` ALCH records but not the other ten — irrelevant if you only
+*reference* them, since references resolve to the winning version. Enderal's own banding, from
+`01E_FS_ClutterUseful`, is level **1 / 10 / 20 / 30 / 40** with
+`CalculateFromAllLevelsLessThanOrEqualPlayer` so lower tiers stay in circulation. **[verified]**
+
 ## Checklist for a crafting/economy patch
 
 - [ ] Does the recipe point at a real bench keyword? (vanilla FormIDs above)
@@ -131,4 +189,8 @@ Both FS classes gate crafting behind tiered perks **[verified]**:
 - [ ] Does it touch an Arcane-Fever MGEF's **Area** field? That's the fever magnitude.
 - [ ] Does it write `LastFlattered` for any reason? That's Arcane Fever, not a vanilla stat.
 - [ ] Does it edit leveled lists? Confirm the Spriggit version pin before building.
+- [ ] Is it *adding* to a leveled list? Check the target's `Flags:` first — append only to `UseAll`
+      lists, wrap anything else, and never touch a no-flags `*Weapon*` list.
+- [ ] Is it distributing to enemies? There is no LVLN layer and no template inheritance — only the
+      three shared lists above reach more than a handful of NPCs.
 - [ ] Does it assume alchemy skill rises from use? It doesn't.

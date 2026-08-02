@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://qconsulting.ca/fo3/ModConfig5.0.xsd">
+  <moduleName>Zenderal - Enemy Potions</moduleName>
+
+  <requiredInstallFiles>
+    <file source="Zenderal - Enemy Potions.esp" destination="Zenderal - Enemy Potions.esp" priority="0" />
+  </requiredInstallFiles>
+
+  <!--
+    A single-plugin patch has no real choices, but the installer still needs one page: it is the
+    only place the load-order note below reliably reaches the user, and (per CLAUDE.md's
+    "FOMOD images that actually render in MO2") an <installSteps> block is what gives MO2 a wizard
+    page to draw on at all if a banner is ever added here.
+  -->
+  <installSteps order="Explicit">
+    <installStep name="Before you install">
+      <optionalFileGroups order="Explicit">
+        <group name="Load order" type="SelectExactlyOne">
+          <plugins order="Explicit">
+            <plugin name="Install the enemy potion distribution plugin">
+              <description>Adds "Zenderal - Enemy Potions.esp".
+
+Enemies in Enderal almost never carry potions - the game's potion lists sit on townsfolk and on corpse props, not on anything that fights back. This plugin gives bandits of every tier and the Lost Ones a level-appropriate health, mana or stamina potion roughly one kill in three, on top of the loot they already drop.
+
+Potion tiers scale with your level: rancid and cheap potions early, standard from level 20, quality from 30, exclusive from 40.
+
+NOTHING IS REMOVED. The three leveled lists it touches are restructured so their original contents resolve exactly as before, with the potion roll added independently alongside them.
+
+LOAD ORDER: this plugin must load AFTER any mod that changes enemy loot or leveled lists. It overrides "00E_MOB_Bandit", "_00E_FS_DeathItem_Human" and "DeathItemDraugr"; if another loot mod touches those, the later plugin wins and one of the two changes is lost.
+
+No scripts, no new assets, ESL-flagged - it costs no load-order slot and is safe to add to an existing save. Removing it mid-playthrough is also safe; already-generated corpses keep whatever they rolled.</description>
+              <typeDescriptor>
+                <type name="Required" />
+              </typeDescriptor>
+            </plugin>
+          </plugins>
+        </group>
+      </optionalFileGroups>
+    </installStep>
+  </installSteps>
+</config>
