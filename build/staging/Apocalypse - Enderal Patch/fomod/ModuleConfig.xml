@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://qconsulting.ca/fo3/ModConfig5.0.xsd">
-  <moduleName>Zenderal - Apocalypse</moduleName>
+  <moduleName>Apocalypse - Enderal Patch</moduleName>
 
   <requiredInstallFiles>
     <file source="Apocalypse - Magic of Skyrim.esp" destination="Apocalypse - Magic of Skyrim.esp" priority="0" />
@@ -39,6 +39,8 @@ Distribution: Apocalypse's own targets 54 vanilla Skyrim leveled lists, none of 
 Merchant stock only refreshes every two in-game days, so on an existing save give it 48 hours.
 
 Pricing: every tome and scroll is rescaled onto Enderal's economy. Apocalypse prices on vanilla Skyrim's ladder, where a master tome is ~1300 gold; Enderal's entire spell tome range is 20-350. Tome medians become 45 / 95 / 180 / 280 / 395 for novice through master, and scrolls 15 / 30 / 60 / 125 / 250. It is a per-tier ratio, so Enai's own ordering within each tier is preserved. Magicka costs are untouched.
+
+Arcane Fever: Enderal has no healing potions, so magical self-healing is the only heal and every one of Enderal's own raises Arcane Fever - at 100 you die of it. Apocalypse's heals cost nothing, which retires the mechanic outright. The 19 spells and scrolls that heal you now pay the same tax, at rates taken from Enderal's own healing spells, so nothing in Apocalypse is a more efficient heal than Enderal's best. Wild Healing costs 5, Breath of Tyr 5 to 19 depending on how long you channel it, King's Heart 12. Mental Expert reduces all of it by a third, as it does for Enderal's. Spells that heal by draining an enemy are deliberately left untaxed.
 
 KNOWN CONFLICT - KataPUMB Spell Package
 

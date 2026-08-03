@@ -12,8 +12,8 @@
       ]
     },
     {
-      "name": "Zenderal - Apocalypse",
-      "archiveName": "Zenderal - Apocalypse",
+      "name": "Apocalypse - Enderal Patch",
+      "archiveName": "Apocalypse - Enderal Patch",
       "plugins": [
         {
           "yamlSource": "src/Apocalypse/ApocalypseESP",
