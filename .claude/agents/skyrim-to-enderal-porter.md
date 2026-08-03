@@ -187,9 +187,9 @@ unchanged, but every user-visible string naming a school must be rewritten. Alte
 
 > **If the mod is a SPELL or MAGIC mod, hand off to `enderal-magic-porter` once this triage is done.**
 > It owns the magic-specific work that goes well beyond the school renames: Enderal has no spell tomes
-> and no healing potions, so distribution has to be rebuilt from scratch, prices rescaled onto a
-> 20–350 range, self-heals made to pay Arcane Fever, the Elder Scrolls gods renamed out of every
-> string, and the Daedra and Dwemer summons cut. Do not re-derive any of that here.
+> at all, so distribution has to be rebuilt from scratch, prices rescaled onto a 20–350 range,
+> self-heals made to pay Arcane Fever the way every Enderal healing spell does, the Elder Scrolls gods
+> renamed out of every string, and the Daedra and Dwemer summons cut. Do not re-derive any of that here.
 
 ---
 

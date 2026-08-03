@@ -31,7 +31,7 @@ Run against a fresh `reference/mods/Apocalypse/esp/` produced by `/spriggit-deco
 | 6 | `06-weight-distribution.ps1` | Duplicates each injected **loot** entry until those lists are ~11–19% Apocalypse. One entry per host list gives 160 tomes the same odds as a single Enderal book — see below. Idempotent; run after 05 |
 | 7 | `07-place-vendor-tomes.ps1` | Writes all 160 tomes **directly** into six named merchant chests, tiered by the chest's gold. This is what actually makes the spells obtainable; the vendor leveled lists no longer carry them. Idempotent — always rebuilds from the Forgotten Stories record |
 | 8 | `08-reprice.ps1` | Rescales all 175 tome and 144 scroll gold values onto Enderal's economy. Apocalypse prices on vanilla Skyrim's ladder, which Enderal does not use. Idempotent — always recomputes from Enai's untouched tree |
-| 9 | `09-arcane-fever-heals.ps1` | Appends Enderal's Arcane Fever effect to the 19 player self-heals (14 spells, 5 scrolls). Enderal has no healing potions, so self-healing is the taxed resource; Apocalypse's heals were free. Idempotent — strips its own block and re-appends |
+| 9 | `09-arcane-fever-heals.ps1` | Appends Enderal's Arcane Fever effect to the 19 player self-heals (14 spells, 5 scrolls). Every Enderal healing spell pays Fever; Apocalypse's paid nothing. Idempotent — strips its own block and re-appends |
 
 The AddonNode re-index (`WB_IllusionNightmare_MPS_Seidsigil` 110 → 746) is a single committed record,
 not a script. `verify-addonnode-indices.ps1` is what found the collision.
@@ -93,9 +93,14 @@ is `1C1E70`). This is not an ESL block — the merged plugin has ~3,890 records 
   single-strength tomes unsuffixed for exactly that reason. `Spell Tome: <name>` is correct.
 - Vendor inventories are cached in the save (`iDaysToRespawnVendor: 2`). To test distribution without
   waiting, `player.additem <LVLI FormID> 1` resolves the leveled list directly.
-- **Enderal has no healing potions — self-healing IS the taxed resource, and Apocalypse's heals were
-  free.** Step 9 appends `11A4B6:Skyrim.esm` (`_00E_IncreaseArcaneFeverFFSelf`) to the 19 player
-  self-heals. Rates are Enderal's own ceilings, never beaten: **26 HP per fever point** for burst
+- **Enderal taxes healing MAGIC, and Apocalypse's heals paid nothing.** Every one of Enderal's own
+  healing spells raises Arcane Fever; only 11 of its 837 spells raise it at all and every one is a
+  self-heal. Note Enderal **does** have healing potions — five `_NNE_Genesungstrank` tiers (36–160 HP,
+  25–190 gold) plus `_00E_Medicine` — and none of them costs Fever, so the design is a trade: potions
+  are the finite gold-priced heal, magic is the renewable one that costs Fever. An untaxed Apocalypse
+  heal beat both. (This README previously claimed Enderal had no healing potions; that was wrong, from
+  an English-only name search — the EditorIDs are German.) Step 9 appends `11A4B6:Skyrim.esm`
+  (`_00E_IncreaseArcaneFeverFFSelf`) to the 19 player self-heals. Rates are Enderal's own ceilings, never beaten: **26 HP per fever point** for burst
   (`_55E_SpellFlashHeal 12E168`, 130 HP / 5) and **78** for over-time (`_40E_SpellBoon 12E165`,
   39 HP/s ÷ 0.5). Floors are 5 for spells and 2.5 for scrolls, both Enderal's own. The script asserts
   each record's heal magnitude still matches what the rate was derived from, so an upstream rebalance

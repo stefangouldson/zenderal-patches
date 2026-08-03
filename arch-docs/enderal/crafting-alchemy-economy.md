@@ -65,10 +65,37 @@ The `MagicAlch*` family is intact **[verified]**: `MagicAlchBeneficial`, `MagicA
 So potion-effect classification works the vanilla way. **55 Ingredients and 66 Ingestibles** ship in
 FS alone. **[verified]**
 
+### Healing potions exist — and they cost no Arcane Fever
+
+**[verified 2026-08-03]** Worth stating plainly, because this workspace asserted the opposite for a
+while: Enderal **does** ship healing potions, and none of them raises Fever.
+
+| Ingestible | FormKey | Heals | Value |
+|---|---|---|---|
+| `_00E_Medicine` | `07071F` | 6/s × 4 s = 24 | 25 |
+| `01E_Genesungstrank` | `0028C8` | 9/s × 4 s = 36 | 25 |
+| `02E_Genesungstrank` | `0028C5` | 15/s × 4 s = 60 | 45 |
+| `03E_Genesungstrank` | `0028C6` | 22/s × 4 s = 88 | 70 |
+| `04E_Genesungstrank` | `0028C7` | 32/s × 4 s = 128 | 140 |
+| `05E_Genesungstrank` | `0028C9` | 40/s × 4 s = 160 | 190 |
+
+All six carry `00E_AlchRestoreHealth` `0028C3` (`Archetype: ActorValue → Health`,
+`PowerAffectsMagnitude`) and nothing else. `_02E_Genesungstrank` is handed to the player by
+`_00E_MQ01_Functions`.
+
+**How the false claim happened, so it doesn't happen again:** the search was for English names
+(`Healing Potion`, `Potion of Healing`, `Elixir`) in `Ingestibles/`, which returns nothing. Enderal's
+EditorIDs are **German** — *Genesungstrank* is "convalescence potion" — while the localized display
+strings are English (`"Health Potion (Cheap)"`). **Search Ingestibles by effect FormKey, not by
+English EditorID.** Same trap as the German cell names in CLAUDE.md's gotchas.
+
+So the design is a **trade, not a prohibition**: potions are the finite, gold-priced heal; healing
+*magic* is the renewable one, and Arcane Fever is its price.
+
 ## Arcane Fever
 
 Enderal's signature survival mechanic, and the one most likely to be broken by a careless potion or
-healing patch.
+healing patch. Note it taxes healing **magic** specifically — see the potion table above.
 
 **It is stored in the repurposed vanilla ActorValue `LastFlattered`, negated.** **[verified]**
 

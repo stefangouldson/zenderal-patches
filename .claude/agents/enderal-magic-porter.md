@@ -122,9 +122,19 @@ Leave **magicka** costs alone. Those are the author's balance and they work unch
 
 ## 3. Arcane Fever — the one mechanic a ported healing spell must join
 
-**Enderal ships no healing potions.** Magical self-healing is the only heal in the game and it is
-deliberately taxed. **A ported heal that costs nothing retires the mechanic outright** — one free
-heal and the player never needs Enderal's own again, and never accrues a point.
+**Enderal taxes healing MAGIC, not healing.** **[verified 2026-08-03]** It *does* have healing
+potions — five tiers of `_NNE_Genesungstrank` (`01E` `0028C8` → `05E` `0028C9`, 36 → 160 HP over 4 s,
+25 → 190 gold) plus `_00E_Medicine` `07071F` — and **not one of them raises Arcane Fever**. What pays
+Fever is *casting*: all 11 of Enderal's 837 fever-raising spells are self-heals.
+
+So the design is a trade, not a prohibition: potions are the finite, gold-priced heal; healing magic
+is the renewable one, and Fever is its price. **A ported healing spell that costs nothing is
+inconsistent with every Enderal spell in its class** — and strictly better than the potions as well,
+since it is free in both gold and Fever.
+
+(Do not repeat the claim that Enderal has no healing potions. It is wrong, it was asserted in this
+repo once from an English-only name search — Enderal's EditorIDs are German, and `Genesungstrank`
+renders in-game as *"Health Potion (Cheap)"* and friends.)
 
 Fever lives in the negated `LastFlattered` ActorValue; at 100 you die (`_00E_EPUpdateFunctions` polls
 it, warns at ≥90, `Player.Kill()` at 100). Only **11 of Enderal's 837 spells** raise it and **every

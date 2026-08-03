@@ -4,11 +4,16 @@ $ErrorActionPreference = 'Stop'
 
 # Make Apocalypse's self-heals pay Enderal's Arcane Fever tax.
 #
-# WHY. Enderal ships NO healing potions. Magical self-healing is the only heal in the game, and it is
-# deliberately taxed by Arcane Fever - the negated LastFlattered ActorValue, where 100 = death. Every
-# one of Enderal's own self-heals pays into it and nothing else does. Apocalypse adds ~16 self-heals
-# that cost nothing, so a player with Wild Healing never needs Boon and never accrues Fever: the mod
-# bypasses the central resource system of the game it is being ported into.
+# WHY. Enderal taxes healing MAGIC. Every one of its own healing spells pays Arcane Fever - the
+# negated LastFlattered ActorValue, where 100 = death - and only 11 of its 837 spells raise Fever at
+# all, every one of them a self-heal. Apocalypse adds 19 self-heals that pay nothing, which makes
+# them inconsistent with every Enderal spell in their class.
+#
+# NOTE Enderal DOES have healing potions - five tiers of _NNE_Genesungstrank (36-160 HP over 4s,
+# 25-190 gold) plus _00E_Medicine - and none of them costs Fever. So the design is a trade, not a
+# prohibition: potions are the finite gold-priced heal, magic is the renewable one and Fever is its
+# price. An untaxed Apocalypse heal beats both. (This script's header used to claim Enderal had no
+# healing potions; that was wrong, from an English-only name search - the EditorIDs are German.)
 #
 # HOW ENDERAL DOES IT. _00E_IncreaseArcaneFeverFFSelf (11A4B6:Skyrim.esm) - FireAndForget, Self (no
 # TargetType line), Archetype Type: Script -> _00E_ArkanistenfieberBlitzheilungSCN. That script reads

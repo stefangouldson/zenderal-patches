@@ -564,11 +564,19 @@ undead), and the two higher schools above. All from `_00E_BookMagicDisciplines*`
 `_00E_Lehrbuch_Plus2SkillPointsScript`), crafting books (`_00E_Handwerksbuch*`), and the
 talent cooldown/control quests (`_00E_Game_TalentControlSC`, `_00E_Game_TalentCooldownSC`).
 
-> **Enderal has NO healing potions — magical self-healing is the taxed resource, so a ported healing
-> spell is free money unless you tax it.** **[verified 2026-08-03]** Only 11 of base Enderal's 837
-> spells raise Arcane Fever and every one is a self-heal (the `_NNE_SpellBoon` and
-> `_NNE_SpellFlashHeal` lines), plus FS's Mystical Panacea and two Boon scrolls. Nothing else in the
-> game raises it — a master-tier damage spell costs zero, so a ported one costing zero is *correct*.
+> **Enderal taxes healing MAGIC, not healing — so a ported healing spell is free money unless you tax
+> it.** **[verified 2026-08-03]** Only 11 of base Enderal's 837 spells raise Arcane Fever and every
+> one is a self-heal (the `_NNE_SpellBoon` and `_NNE_SpellFlashHeal` lines), plus FS's Mystical
+> Panacea and two Boon scrolls. Nothing else in the game raises it — a master-tier damage spell costs
+> zero, so a ported one costing zero is *correct*.
+>
+> **Enderal DOES have healing potions**, and none of them costs Fever: five tiers of
+> `_NNE_Genesungstrank` (`01E` `0028C8` → `05E` `0028C9`, 36 → 160 HP over 4 s, 25 → 190 gold) plus
+> `_00E_Medicine` `07071F`. **[verified]** So the design is a trade — potions are the finite,
+> gold-priced heal and magic is the renewable one that costs Fever instead. This repo asserted the
+> opposite ("Enderal has no healing potions") for a while, from an English-only name search;
+> Enderal's EditorIDs are German and `Genesungstrank` displays as *"Health Potion (Cheap)"*. **Search
+> `reference/base/Skyrim/Ingestibles/` by effect FormKey, not by English name.**
 > Attach `11A4B6:Skyrim.esm` (`_00E_IncreaseArcaneFeverFFSelf`, FireAndForget/**Self**) as an extra
 > effect item with `Magnitude` + `Duration: 1`; its script applies the Mental Expert reduction for
 > you. Concentration casts need `106EA4` paired with FS's `02F42E` instead. Price against Enderal's
