@@ -185,6 +185,12 @@ Also remember Enderal's five magic disciplines are **renamed vanilla ActorValues
 unchanged, but every user-visible string naming a school must be rewritten. Alteration is
 **Mentalism** and Illusion is **Psionics**; the intuitive pairing is wrong.
 
+> **If the mod is a SPELL or MAGIC mod, hand off to `enderal-magic-porter` once this triage is done.**
+> It owns the magic-specific work that goes well beyond the school renames: Enderal has no spell tomes
+> and no healing potions, so distribution has to be rebuilt from scratch, prices rescaled onto a
+> 20–350 range, self-heals made to pay Arcane Fever, the Elder Scrolls gods renamed out of every
+> string, and the Daedra and Dwemer summons cut. Do not re-derive any of that here.
+
 ---
 
 ## Debugging a load crash — controls first, one variable per launch

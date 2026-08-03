@@ -501,6 +501,12 @@ mechanism plus the class of patch it invalidates.
 > masters, distribution, override collisions — and decides whether the mod is portable at all and
 > whether it needs a *patch* or a *replacement plugin*. The first two checks take minutes and both
 > have already cost this repo a full build-and-debug cycle when skipped.
+>
+> **For a spell or magic mod, follow it with `enderal-magic-porter`.** That one carries everything the
+> Apocalypse port cost: the five renamed schools (Alteration is *Mentalism*, Illusion is *Psionics* —
+> the intuitive pairing is wrong), rebuilding distribution when Enderal has no spell tomes at all,
+> repricing onto a 20–350 range, making self-heals pay Arcane Fever, renaming the Elder Scrolls gods
+> out of every string, and cutting the Daedra and Dwemer summons.
 
 **Progression is not Skyrim's.** There is no learn-by-doing and no vanilla perk tree UI. Enderal's
 *talents* are three-tier **Perks** paired with **WordOfPower** unlocks, read back via
