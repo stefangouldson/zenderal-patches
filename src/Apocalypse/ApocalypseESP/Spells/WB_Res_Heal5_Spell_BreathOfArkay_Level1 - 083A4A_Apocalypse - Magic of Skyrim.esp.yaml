@@ -28,3 +28,7 @@ Effects:
       MutagenObjectType: HasPerkConditionData
       Perk: 0581F9:Skyrim.esm
     ComparisonValue: 1
+- BaseEffect: 11A4B6:Skyrim.esm
+  Data:
+    Magnitude: 5
+    Duration: 1

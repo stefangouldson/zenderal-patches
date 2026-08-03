@@ -39,3 +39,7 @@ Effects:
     Data:
       MutagenObjectType: HasMagicEffectConditionData
       MagicEffect: 05F74B:Apocalypse - Magic of Skyrim.esp
+- BaseEffect: 11A4B6:Skyrim.esm
+  Data:
+    Magnitude: 8
+    Duration: 1

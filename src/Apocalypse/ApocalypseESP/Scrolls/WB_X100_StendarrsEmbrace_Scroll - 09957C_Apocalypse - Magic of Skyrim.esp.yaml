@@ -25,3 +25,7 @@ Effects:
 - BaseEffect: 09957B:Apocalypse - Magic of Skyrim.esp
   Data:
     Duration: 60
+- BaseEffect: 11A4B6:Skyrim.esm
+  Data:
+    Magnitude: 20
+    Duration: 1

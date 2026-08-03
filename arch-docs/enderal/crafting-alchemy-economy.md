@@ -93,6 +93,50 @@ Three things to notice:
    only feedback that fever went up. A blanket imagespace override removes the signal while leaving
    the mechanic.
 
+### The SPELL path is a different script, and it reads Magnitude, not Area
+
+**[verified 2026-08-03]** The block above is the *ingestible* path. Spells use a separate pair of
+magic effects, and the difference in where the number comes from is a live trap.
+
+| MGEF | FormKey | Shape |
+|---|---|---|
+| `_00E_IncreaseArcaneFeverFFSelf` | `11A4B6:Skyrim.esm` | FireAndForget, **Self**, `Archetype: Type: Script` → `_00E_ArkanistenfieberBlitzheilungSCN`. Used by all five FlashHeals, both Boon scrolls and Mystical Panacea |
+| `_00E_IncreaseArcaneFeverConcSelf` | `106EA4:Skyrim.esm` | Concentration, `Archetype: ActorValue → LastFlattered`. Used by the six Boons |
+
+```papyrus
+; _00E_ArkanistenfieberBlitzheilungSCN  — the FireAndForget path
+fMagnitude = Self.GetMagnitude()                      ; <- the EFFECT ITEM's Magnitude, not Area
+If PlayerREF.HasPerK(_00E_Class_Thaumaturge_P07_MentalExpert)
+    fMagnitude = fMagnitude*0.67
+EndIf
+PlayerREF.ModAV("lastFlattered", -fMagnitude)
+```
+
+Two consequences:
+
+- **`11A4B6` applies the Mental Expert reduction itself**, so a spell using it needs no perk
+  condition. The Concentration path cannot (a concentration archetype can't be script-scaled), so
+  Enderal gates it at the *spell* level instead: `106EA4` conditioned `HasPerk 069D07` with **no**
+  `ComparisonValue` (implicit 0 = lacks the perk), plus FS's `02F42E` at 0.68× conditioned
+  `ComparisonValue: 1`. Base Enderal shipped only the first half, so taking Mental Expert made Boons
+  cost *zero* fever; FS's `02F42E` is the fix.
+- The script fires on `akCaster == PlayerREF || akTarget == PlayerREF`.
+
+### The reference rates, for pricing a ported heal
+
+Enderal charges a **flat** fever cost per line — every FlashHeal 5, every Boon 0.5/s, both scrolls
+2.5, Panacea 10 — so HP-per-fever-point *improves* with tier rather than staying constant:
+
+| Line | Range | HP per fever point |
+|---|---|---|
+| FlashHeal `_07E`→`_55E` | 25 → 130 HP, flat 5 AF | 5.0 → **26.0** |
+| Boon `_05E`→`_40E` | 6 → 39 HP/s, flat 0.5 AF/s | 12 → **78.0** |
+
+Those two ceilings — **26 burst, 78 over-time** — are the numbers to price a ported healing mod
+against (30 / 92 with the Ambrosia perk `069D05`). `src/Apocalypse/tools/09-arcane-fever-heals.ps1`
+is the worked example. Note **`11A4B6` is Self-delivery**: there is no precedent anywhere in Enderal,
+FS or Apocalypse for it on an Aimed spell, so leech-style heals cannot be taxed this way.
+
 Related records and scripts **[verified]**: `_00E_MagicAlchArcaneFever` keyword,
 `_00E_ArkanistenfieberEffect`, `_00E_ArkanistenfieberTriggerbox`,
 `_00E_ArkanistenfieberBlitzheilungSCN`, `_00E_ArkanistenfieberWohltatSCN`, `_00E_AmbrosiaEffect`,

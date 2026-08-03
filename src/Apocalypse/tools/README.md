@@ -31,6 +31,7 @@ Run against a fresh `reference/mods/Apocalypse/esp/` produced by `/spriggit-deco
 | 6 | `06-weight-distribution.ps1` | Duplicates each injected **loot** entry until those lists are ~11–19% Apocalypse. One entry per host list gives 160 tomes the same odds as a single Enderal book — see below. Idempotent; run after 05 |
 | 7 | `07-place-vendor-tomes.ps1` | Writes all 160 tomes **directly** into six named merchant chests, tiered by the chest's gold. This is what actually makes the spells obtainable; the vendor leveled lists no longer carry them. Idempotent — always rebuilds from the Forgotten Stories record |
 | 8 | `08-reprice.ps1` | Rescales all 175 tome and 144 scroll gold values onto Enderal's economy. Apocalypse prices on vanilla Skyrim's ladder, which Enderal does not use. Idempotent — always recomputes from Enai's untouched tree |
+| 9 | `09-arcane-fever-heals.ps1` | Appends Enderal's Arcane Fever effect to the 19 player self-heals (14 spells, 5 scrolls). Enderal has no healing potions, so self-healing is the taxed resource; Apocalypse's heals were free. Idempotent — strips its own block and re-appends |
 
 The AddonNode re-index (`WB_IllusionNightmare_MPS_Seidsigil` 110 → 746) is a single committed record,
 not a script. `verify-addonnode-indices.ps1` is what found the collision.
@@ -92,3 +93,29 @@ is `1C1E70`). This is not an ESL block — the merged plugin has ~3,890 records 
   single-strength tomes unsuffixed for exactly that reason. `Spell Tome: <name>` is correct.
 - Vendor inventories are cached in the save (`iDaysToRespawnVendor: 2`). To test distribution without
   waiting, `player.additem <LVLI FormID> 1` resolves the leveled list directly.
+- **Enderal has no healing potions — self-healing IS the taxed resource, and Apocalypse's heals were
+  free.** Step 9 appends `11A4B6:Skyrim.esm` (`_00E_IncreaseArcaneFeverFFSelf`) to the 19 player
+  self-heals. Rates are Enderal's own ceilings, never beaten: **26 HP per fever point** for burst
+  (`_55E_SpellFlashHeal 12E168`, 130 HP / 5) and **78** for over-time (`_40E_SpellBoon 12E165`,
+  39 HP/s ÷ 0.5). Floors are 5 for spells and 2.5 for scrolls, both Enderal's own. The script asserts
+  each record's heal magnitude still matches what the rate was derived from, so an upstream rebalance
+  is a script failure rather than a silently stale tax.
+- **The leech/absorb spells are `TargetType: Aimed` and `11A4B6` is Self — do not add them.**
+  Decompose, Leech Seed, Lamb of Irlanda, Poisoned Chalice and Nature's Balance all heal by draining
+  a target. A Self-delivery MGEF on an Aimed spell has **zero precedent across 370 non-Self spells**
+  in base Enderal, Forgotten Stories and Apocalypse combined: it would build clean, pass xEdit, and
+  do nothing in-game. Step 9 throws on any record carrying a top-level `TargetType`, specifically to
+  stop that. Two of them also heal an unbounded variable amount, so there is no number to price.
+  If they must be taxed one day, the only shape with precedent is a **new Aimed MGEF** in
+  Apocalypse's own space (`1C1E77+`) carrying `_00E_ArkanistenfieberBlitzheilungSCN` — that script
+  charges on `akCaster == PlayerREF`, so it would still bill the player. Separate job.
+- **`WB_Alt_Metamagic3_Spell_SpellTwine_Proc3 0870D1` is not a heal.** It restores 5 HP total as one
+  of nine random procs. The minimum meaningful charge would cost a fever point per HP. Left alone
+  deliberately — do not "discover" it and add it.
+- **Respite (`0581F9:Skyrim.esm`) is unobtainable in Enderal.** The record exists but is not on the
+  `Player` NPC and Enderal has no vanilla perk UI, so every `HasPerk 0581F9` effect item in
+  Apocalypse — the Stamina twin on each heal — is permanently inert. The base magnitudes are the real
+  heal numbers, which is what step 9's rates are derived from.
+- **Never open these 19 records in the Creation Kit.** None carries `ManualCostCalc`, so the CK
+  recalculates `BaseCost` on save and would silently inflate every one of them by the fever effect's
+  contribution. Edit the YAML only.

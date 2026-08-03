@@ -124,7 +124,41 @@ Enderal has no Daedra and no Dwemer. These are never added to any vendor or loot
 
 Everything else in Apocalypse's conjuration school stays: the wraiths, liches, totem spirits, the Battlemage, the Necrowitch, the Deadeye Captain, Bag of Rats. Enderal's own magic already raises the dead and binds spirits — [i]Entropy[/i] is one of its five disciplines — so undead and spirit summoning is entirely at home here. Only the Oblivion natives had to go.
 
-[b]5. Elder Scrolls names replaced.[/b]
+[b]5. Healing spells now raise Arcane Fever.[/b]
+
+[b]Enderal has no healing potions.[/b] Magical self-healing is the only way to restore health, and it is deliberately taxed — every heal raises your Arcane Fever, and at 100 you die of it. It is the mechanic the whole survival layer is built on. Out of Enderal's 837 spells, exactly [b]11[/b] raise Fever, and every single one is a self-heal.
+
+Apocalypse's heals cost nothing. Left as they were, a single Wild Healing tome retires the mechanic for the rest of the game: you would never need Enderal's Boon or Flash Heal again, and never accrue a point of Fever.
+
+So the [b]19 spells and scrolls that heal you[/b] now pay the same tax. The rates are taken from Enderal's own healing spells rather than invented — [b]nothing in Apocalypse is a more efficient heal than Enderal's best[/b]:
+
+[code]
+  Spell / scroll                     Heals    Arcane Fever
+  ---------------------------------------------------------
+  Wild Healing                          40      5
+  Breath of Tyr        (per second)  50-500     5 - 19
+  Resurgence                           300      5
+  Healing Blossom                      600      8
+  King's Heart                         900     12
+
+  Scroll: Wild Healing                  40      2.5
+  Scroll: Resurgence                   300      4
+  Scroll: Healing Blossom              600      8
+  Scroll: King's Heart                 900     12
+  Scroll: Erodan's Embrace       full heal     20
+  ---------------------------------------------------------
+  for comparison, Enderal's own:
+  Flash Heal (best rank)               130      5
+  Boon       (best rank)          39 / sec      0.5 / sec
+[/code]
+
+[b]Breath of Tyr is charged per second channelled[/b], the same way it heals — a quick tap costs 5, a full ten-second channel costs 19 for its 500 points. [b]Resurgence only charges when it actually heals[/b]; it does nothing above half health, so it costs nothing there either.
+
+The [b]Mental Expert[/b] perk reduces all of it by a third, exactly as it does for Enderal's own healing — no extra work, it runs through Enderal's own script.
+
+[i]Spells that heal you by draining an enemy — Decompose, Leech Seed, Lamb of Irlanda, Poisoned Chalice, Nature's Balance — are deliberately left untaxed. They are conditional combat rewards rather than a panic button, and Enderal's Fever mechanic has only ever taxed self-targeted healing.[/i]
+
+[b]6. Elder Scrolls names replaced.[/b]
 
 See the table below.
 
@@ -189,7 +223,7 @@ Only the two figures Enderal actually establishes as arcanists keep a spell name
 [size=4]What is NOT changed[/size]
 
 [list]
-[*][b]No spell balance changes.[/b] Damage, cost, duration and cooldowns are Enai's. Enderal keeps all five of Skyrim's magic skills and only renames them, so Apocalypse's spells scale off your Elementalism, Entropy, Light Magic, Mentalism and Psionics without any conversion at all.
+[*][b]No spell balance changes, with one deliberate exception.[/b] Damage, magicka cost, duration and cooldowns are all Enai's, untouched. Enderal keeps all five of Skyrim's magic skills and only renames them, so Apocalypse's spells scale off your Elementalism, Entropy, Light Magic, Mentalism and Psionics without any conversion at all. The exception is Arcane Fever on the 19 self-heals (see above) — that is not a rebalance of Enai's numbers but the addition of a cost that only exists in Enderal, and without it those spells bypass the game's central survival mechanic entirely.
 [*][b]No new spells, no removed records.[/b] The fifteen cut summons are still in Apocalypse; they are simply never handed to you.
 [*][b]No Enderal records rewritten.[/b] The nine leveled lists are appended to, never edited.
 [/list]
@@ -237,6 +271,7 @@ If another mod edits those same records, the later plugin wins outright and one 
 [*][b]Scroll inventory previews and one summoned sword's first-person model are missing[/b] — Apocalypse points all 144 scrolls at a vanilla display model Enderal lacks. That reference is left exactly as Enai wrote it, so all 144 behave identically instead of a handful being quietly different.
 [*][b]The Nightmare ground sigil may show the wrong particle effect.[/b] Its addon node index collided with one of Enderal's own effects, which would have replaced an Enderal visual with Apocalypse's. The conflict is resolved in Enderal's favour — protecting the base game — which leaves Apocalypse's mesh looking for a node that has moved. Fixing it properly needs an edited mesh, and this release ships no assets.
 [*][b]Spell tome tiering is by rank name, not by playtested power.[/b] Which merchant sells a spell follows its Apocalypse rank, not a measurement against Enderal's difficulty curve. Feedback welcome.
+[*][b]Erodan's Embrace costs a flat 20 Arcane Fever.[/b] Every other heal is priced off the exact number of points it restores, but that one is scripted to heal you to full — there is no number in the record to price, so 20 assumes a late-game health pool. If it feels wrong at your level, say so.
 [*][b]Merchant inventories get long.[/b] Emberlord and Fireflash goes from 96 entries to 141. SkyUI's category filter handles it, but it is a visibly fuller shop than the base game's.
 [*][b]Tome names carry no "(Rank N)" suffix[/b], unlike most of Enderal's. That is intentional: in Enderal that suffix means the same spell exists at another strength, gated on player level, and Apocalypse spells have exactly one version each. Enderal leaves 13 of its own single-strength tomes unsuffixed for the same reason.
 [*][b]Requires Enderal SE[/b], which is pinned to Skyrim SE [b]1.5.97[/b]. This is a plugin only, so no SKSE version concerns apply to it.

@@ -34,3 +34,14 @@ Effects:
   Data:
     Magnitude: 20
     Duration: 15
+- BaseEffect: 11A4B6:Skyrim.esm
+  Data:
+    Magnitude: 4
+    Duration: 1
+  Conditions:
+  - MutagenObjectType: ConditionFloat
+    CompareOperator: LessThan
+    Data:
+      MutagenObjectType: GetActorValuePercentConditionData
+      ActorValue: Health
+    ComparisonValue: 0.5

@@ -558,6 +558,21 @@ undead), and the two higher schools above. All from `_00E_BookMagicDisciplines*`
 `_00E_Lehrbuch_Plus2SkillPointsScript`), crafting books (`_00E_Handwerksbuch*`), and the
 talent cooldown/control quests (`_00E_Game_TalentControlSC`, `_00E_Game_TalentCooldownSC`).
 
+> **Enderal has NO healing potions — magical self-healing is the taxed resource, so a ported healing
+> spell is free money unless you tax it.** **[verified 2026-08-03]** Only 11 of base Enderal's 837
+> spells raise Arcane Fever and every one is a self-heal (the `_NNE_SpellBoon` and
+> `_NNE_SpellFlashHeal` lines), plus FS's Mystical Panacea and two Boon scrolls. Nothing else in the
+> game raises it — a master-tier damage spell costs zero, so a ported one costing zero is *correct*.
+> Attach `11A4B6:Skyrim.esm` (`_00E_IncreaseArcaneFeverFFSelf`, FireAndForget/**Self**) as an extra
+> effect item with `Magnitude` + `Duration: 1`; its script applies the Mental Expert reduction for
+> you. Concentration casts need `106EA4` paired with FS's `02F42E` instead. Price against Enderal's
+> own ceilings — **26 HP per fever point burst, 78 over-time** — and note that Enderal charges a
+> *flat* cost per line, so HP-per-point improves with tier. **`11A4B6` is Self-delivery and has zero
+> precedent on an Aimed spell across 370 non-Self spells**, so leech/drain heals cannot be taxed this
+> way. Full mechanism and the worked example in
+> [`crafting-alchemy-economy.md`](arch-docs/enderal/crafting-alchemy-economy.md#arcane-fever) and
+> `src/Apocalypse/tools/09-arcane-fever-heals.ps1`.
+
 **A ported Skyrim gear mod's recipes are the part most likely to be silently inert.** Enderal keeps
 the crafting *plumbing* (bench keywords are vanilla — see
 [`crafting-alchemy-economy.md`](arch-docs/enderal/crafting-alchemy-economy.md)) but not everything
