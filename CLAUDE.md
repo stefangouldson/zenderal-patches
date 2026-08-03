@@ -175,7 +175,7 @@ src/                       # EVERY patch lives here — one folder per patch
     Scripts/source/*.psc   # Papyrus source — COMMITTED
     Scripts/compiled/*.pex # COMMITTED via a .gitignore exception (CI can't compile Papyrus)
     tools/*.ps1            # only for REPLACEMENT releases — the generators that rebuild the tree
-build/                     # build.ps1 + manifest.json + committed FOMOD trees
+build/                     # build.ps1 + manifest.json + committed FOMOD trees (opt out: "fomod": false)
 arch-docs/                 # patch-authoring guide, curation docs, generated build report
 reference/base/            # gitignored — Enderal/vanilla decompiles + script source, LOOKUP ONLY
 reference/mods/            # gitignored — third-party list mods, serialized for lookup
