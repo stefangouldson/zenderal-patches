@@ -179,6 +179,7 @@ build/                     # build.ps1 + manifest.json + committed FOMOD trees (
 arch-docs/                 # patch-authoring guide, curation docs, generated build report
 reference/base/            # gitignored — Enderal/vanilla decompiles + script source, LOOKUP ONLY
 reference/mods/            # gitignored — third-party list mods, serialized for lookup
+reference/mods/EGO/        #   `-- EGO's .esp + its loose scripts; documented in arch-docs/EGO/
 modlist/                   # gitignored — the installed Zenderal MO2 instance, hundreds of GB
 papyrus-source/            # gitignored — spare slot for unpacked .psc trees (see reference/base)
 ```
@@ -334,6 +335,7 @@ instead; the row says so.
 | Patch / plugin | Block | Contents |
 |---|---|---|
 | `RelentlessSword` → `Zenderal - Relentless Sword.esp` | `0x800–0x827` | `800–806` statics (1st-person models), `809–80F` weapons, `811–81F` forge + temper recipes (johnskyrim's original offsets, preserved for traceability), `820–825` dismantle recipes (new, this repo's), `826` crafting blueprint, `827` its placed reference in Riverville Temple |
+| `SkipToTamingTheWaves` → `Zenderal - Skip To Taming The Waves.esp` | `0x800–0x803` | `800` Quest `ZP_SkipTTW`, `801` Activator `ZP_SkipTTW_StartTrigger`, `802` its placed trigger ref in Ark market cell `070793`, `803` Message `ZP_SkipTTW_sClassChoice`. Overrides `MQ101 03372B` (alias 183 `StartMarkerRef` → `TeleportMarker_ArkMarket 0EAB74`) and forwards FS's `CapitalCityMarketArea 07072A` header — neither costs anything from the block. **No `MQP01PrologStart` override**: `QF_MQ101_0003372B.Fragment_332` only does `MoveTo(StartMarkerRef)`, and nothing else starts the prologue — `MQP01` is started by the trigger inside `MQP01Home`, which a player spawning in Ark never reaches. SkipIntro disables that trigger defensively; it is not needed |
 | `Apocalypse` → **`Apocalypse - Magic of Skyrim.esp`** | `0x1C1E71–0x1C1E76` | **Not an ESL block.** This release *replaces* Enai's plugin rather than patching it (see the form-version ceiling above), so new records are allocated in **Apocalypse's own FormID space**, just past its highest own ID `1C1E70`. `1C1E71–75` `ZP_Apoc_Tomes_R000/R025/R050/R075/R100` — one LeveledItem per spell rank; `1C1E76` `ZP_Apoc_Scrolls`. ~3,890 records, full ESP, no ESL flag |
 
 > **`Enderal - Forgotten Stories.esm` survives as a declared master.** It is an *implicit* base
@@ -481,6 +483,7 @@ different repo.
 | Read this | For |
 |---|---|
 | **[`arch-docs/enderal/`](arch-docs/enderal/)** | **How Enderal actually works** — six documents mined from the serialized plugins and SureAI's own source. Start with [`plugin-architecture.md`](arch-docs/enderal/plugin-architecture.md) |
+| **[`arch-docs/EGO/`](arch-docs/EGO/)** | **How EGO works and how to patch around it** — the list's gameplay overhaul, 6203 overridden records. Start with [`patching-ego.md`](arch-docs/EGO/patching-ego.md) before any combat/loot/crafting patch |
 | `arch-docs/enderal-record-patterns.md` | Record shapes that build clean and do nothing in-game |
 | `arch-docs/zenderal-curation.md` | What is actually in the list and why |
 
@@ -490,6 +493,30 @@ progression, potions or scripts at
 [`progression-and-classes.md`](arch-docs/enderal/progression-and-classes.md) /
 [`crafting-alchemy-economy.md`](arch-docs/enderal/crafting-alchemy-economy.md) /
 [`scripting-and-actorvalues.md`](arch-docs/enderal/scripting-and-actorvalues.md).
+
+### EGO is the list's dominant conflict source
+
+`Enderal SE - Gameplay Overhaul.esp` (v1.93.1.0, author *Ixion XVII*) overrides **6203** records and
+adds **974**. **[verified 2026-08-04]** Zenderal patches load **after** it. Four facts that change
+how you write a patch, all documented in [`arch-docs/EGO/`](arch-docs/EGO/):
+
+1. **EGO is not `Localized`.** Every string on every record it overrides collapses from a
+   multi-language `Values:` list to a single English `Value:`. So `['Name', 'Description',
+   'Version2']` is the **null diff** — filter it out — and copying the FS/Skyrim version of a record
+   EGO also overrides re-adds the `Values:` block, which is the tell that you copied the wrong source.
+2. **`Player 000007:Skyrim.esm` carries 42 EGO perks.** That record *is* EGO's player ruleset.
+   Overriding it without forwarding them deletes the mod's combat, economy, alchemy and mana rules
+   while everything else still looks installed.
+3. **61 records are injected**, not overridden — FormIDs in `Skyrim.esm`'s space that `Skyrim.esm`
+   does not define (`ChaurusChitin 03AD57`, `DeflectArrows 058F68`, the Dragon Priest masks, six
+   `DeathItem*` lists…). Referencing one means declaring EGO as a master.
+4. **EGO rewrites all three blueprint vendor lists** (`_00ETraderCraftingPlansA/B/C`) — the exact
+   records a new craftable-weapon patch needs — plus 123 other leveled lists, 99 GMSTs and 18 GMSTs
+   it creates outright.
+
+Before touching a record, `grep` its FormKey in
+[`arch-docs/EGO/conflict-index.md`](arch-docs/EGO/conflict-index.md); if it is listed, build your
+version from **EGO's** YAML file, not the master's.
 
 ## How Enderal differs (and what that breaks)
 
@@ -798,6 +825,36 @@ These are **engine-hardcoded** FormIDs — Bethesda's own code depends on them, 
   Spriggit 0.40.0 round-trips this correctly, emitting the canonical
   `GRUP CELL → block → sub-block → CELL → GRUP cellchildren → GRUP celltemp → REFR` nesting, and a
   new `REFR` in an ESL-flagged plugin keeps the flag. **[verified]**
+- **Placing a ref in an EXTERIOR cell needs three scaffolding files, or Spriggit silently drops the
+  whole tree.** **[verified 2026-08-03]** An interior cell is one `RecordData.yaml` (see above), but
+  a worldspace cell will not build from the cell file alone — the plugin comes out with **zero**
+  `WRLD`/`CELL`/`REFR` records, no error, no warning. The build succeeds and the ref simply is not
+  there. Four files are required:
+
+  ```
+  Worldspaces/<WS EditorID> - <hex>_<master>/RecordData.yaml   # the WRLD record itself
+  Worldspaces/<WS…>/<blockX, blockY>/GroupRecordData.yaml      # GroupType: ExteriorCellBlock
+  Worldspaces/<WS…>/<blockX, blockY>/<subX, subY>/GroupRecordData.yaml  # ExteriorCellSubBlock
+  Worldspaces/<WS…>/<blockX, blockY>/<subX, subY>/<cell>/RecordData.yaml
+  ```
+
+  Folder names are `<X>, <Y>`; block = `floor(coord/32)`, sub-block = `floor(coord/8)`. Inside the
+  `GroupRecordData.yaml` the fields are `BlockNumberY` **then** `BlockNumberX` plus `GroupType`, and
+  a zero is **omitted** (Spriggit drops defaults) — so folder `0, -1` yields only `BlockNumberY: -1`.
+  A cell with no EditorID gets a folder of just `<hex>_<master>` with no `" - "` prefix.
+
+  **Truncate the WRLD record before its `TopCell:` block** unless you actually mean to override the
+  worldspace's persistent cell. Copying the master's record whole drags in every persistent ref
+  (Ark's market is ~40 of them) as an override you then have to be right about. Header-only builds
+  fine and keeps the conflict surface to the WRLD fields. Copy the file and cut it with a script —
+  do not retype it (guardrail 4).
+- **Never rewrite a UTF-8 doc with PowerShell 5.1's `Set-Content -Encoding utf8`.** **[verified
+  2026-08-03]** It reads the file as the system ANSI codepage and writes it back as UTF-8 **with a
+  BOM**, double-encoding every non-ASCII character — every `—` in this file became `â€"` in one
+  pass, and `git diff` then reports the whole file as changed. It happened here while resolving a
+  rebase conflict in `CLAUDE.md`. Use the Edit tool for surgical text changes, or `git checkout` the
+  file and redo them; if you must script it, read and write with an explicit
+  `[System.Text.UTF8Encoding]::new($false)` rather than the `-Encoding utf8` shorthand.
 - **`E - Update.bsa` loads last and wins.** When a record or asset doesn't look like the one you
   found in `E - Meshes.bsa`, check `E - Update.bsa` before concluding your patch is wrong.
 - **Don't give a patch you author a DLC master** — there is nothing in the stubs to reference. But
