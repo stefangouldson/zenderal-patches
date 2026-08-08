@@ -77,7 +77,7 @@ public static class Reports
     {
         var sb = new StringBuilder();
         sb.AppendLine("Form Key,Editor Id,Name,Enchant Type,Cast Type,Target Type,Enchantment Cost," +
-                      "Computed Auto Cost,Enchantment Amount,Charge Time,Winner Overwrite");
+                      "Enchantment Amount,Charge Time,Winner Overwrite");
         var ordered = enchantments.Winners
             .OrderBy(e => e.EnchantType, StringComparer.Ordinal)
             .ThenBy(e => e.Name, StringComparer.Ordinal)
@@ -86,8 +86,7 @@ public static class Reports
         {
             sb.AppendLine(string.Join(",",
                 Csv(e.FormKey), Csv(e.EditorId), Csv(e.Name), Csv(e.EnchantType), Csv(e.CastType),
-                Csv(e.TargetType), e.EnchantmentCost.ToString(),
-                e.ComputedAutoCost?.ToString() ?? "", e.EnchantmentAmount.ToString(),
+                Csv(e.TargetType), e.EnchantmentCost.ToString(), e.EnchantmentAmount.ToString(),
                 e.ChargeTime.ToString(System.Globalization.CultureInfo.InvariantCulture),
                 Csv(e.Provenance!.Winner)));
         }

@@ -168,9 +168,6 @@ public sealed class EnchantmentDto : IRecordDto
     public string? Name { get; set; }
     public uint EnchantmentCost { get; set; }
     public uint EnchantmentAmount { get; set; }
-    /// <summary>Sum of per-effect floors using winning MGEFs — what CK auto-calc would store
-    /// in EnchantmentCost. Null if any base effect is unresolvable.</summary>
-    public int? ComputedAutoCost { get; set; }
     public string? EnchantType { get; set; }
     public string? CastType { get; set; }
     public string? TargetType { get; set; }
