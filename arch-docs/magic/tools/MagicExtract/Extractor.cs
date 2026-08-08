@@ -100,6 +100,8 @@ public static class Extractor
         EmitLoadOrder(outDir, lo);
         EmitProvenance(outDir, mgefDs, spelDs, enchDs, scrlDs, alchDs, shouDs, lvspDs, gmstDs);
         Reports.SpellsCsv(Path.Combine(outDir, "spells.csv"), spelDs);
+        Reports.ScrollsCsv(Path.Combine(outDir, "scrolls.csv"), scrlDs);
+        Reports.EnchantmentsCsv(Path.Combine(outDir, "enchantments.csv"), enchDs);
         Reports.Overview(Path.Combine(reportsDir, "magic-overview.md"), lo, spelDs, mgefDs, enchDs,
             scrlDs, alchDs, shouDs, lvspDs, gmstDs, schoolNames, costModelOk, beesLogEmulatedCount, beesLogTime);
         Reports.Conflicts(Path.Combine(reportsDir, "magic-conflicts.md"),

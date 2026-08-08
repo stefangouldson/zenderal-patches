@@ -1,0 +1,37 @@
+Form Key,Editor Id,Name,Cast Type,Target Type,Base Cost,Computed Auto Cost,Charge Time,Value,Weight,Winner Overwrite
+0F04BB:Skyrim.esm,_00E_PowderMineFireballscroll,Confiscated Scroll,Scroll,Aimed,28,25,0.5,0,0.2,Enderal SE - Gameplay Overhaul.esp
+0905A9:Skyrim.esm,01E_RolleKerzenlicht,Scroll of Candle Light,Scroll,Self,21,77,0.5,10,0.2,Enderal SE - Gameplay Overhaul.esp
+0905A6:Skyrim.esm,01E_RolleKettenblitz,Scroll of Chain Lightning,Scroll,Aimed,105,101,0.5,33,0.2,Enderal SE - Gameplay Overhaul.esp
+08D952:Skyrim.esm,_00E_MQ11c_DetectLifeScroll,Scroll of Detect Life,FireAndForget,Self,3528,3528,0.5,500,0.2,Enderal SE - Gameplay Overhaul.esp
+014CB4:Skyrim.esm,01E_RolleFeuerball,Scroll of Fireball,Scroll,Aimed,62,62,0.5,28,0.2,Enderal SE - Gameplay Overhaul.esp
+001CC5:Enderal SE - Gameplay Overhaul.esp,XionRolleFeuerpfeil2,Scroll of Firebolt,Scroll,Aimed,27,37,0.5,23,0.2,Enderal SE - Gameplay Overhaul.esp
+0458DB:Skyrim.esm,01E_RolleWohltat,Scroll of Flash Heal (Cheap),Scroll,Self,50,42,0.5,32,0.2,Enderal SE - Gameplay Overhaul.esp
+0D941D:Skyrim.esm,02E_RolleWohltat,Scroll of Flash Heal (Standard),Scroll,Self,108,90,0.5,75,0.2,Enderal SE - Gameplay Overhaul.esp
+10A85F:Skyrim.esm,_02_RolleHysterie,Scroll of Hysteria,Scroll,Self,866,494,3,400,0.2,Enderal SE - Gameplay Overhaul.esp
+01D18D:Skyrim.esm,01E_RolleEispfeil,Scroll of Ice Spike,Scroll,Aimed,23,25,0.5,18,0.2,Enderal SE - Gameplay Overhaul.esp
+04C97E:Skyrim.esm,01E_RolleArkanrune,Scroll of Lightning Rune,Scroll,TargetLocation,117,124,0.5,30,0.2,Enderal SE - Gameplay Overhaul.esp
+04C97F:Skyrim.esm,01E_Magielicht,Scroll of Mage Light,Scroll,Aimed,180,141,0.5,10,0.2,Enderal SE - Gameplay Overhaul.esp
+0905AA:Skyrim.esm,01E_RolleUnlock2,Scroll of Magic Key (Adept),Scroll,Aimed,0,0,0.5,30,0.2,Enderal SE - Gameplay Overhaul.esp
+0905A8:Skyrim.esm,01E_RolleUnlock1,Scroll of Magic Key (Apprentice),Scroll,Aimed,0,0,0.5,14,0.2,Enderal SE - Gameplay Overhaul.esp
+0F857B:Skyrim.esm,01E_RolleUnlock3,Scroll of Magic Key (Expert),Scroll,Aimed,0,0,0.5,65,0.2,Enderal SE - Gameplay Overhaul.esp
+0F857A:Skyrim.esm,01E_RolleUnlock4,Scroll of Magic Key (Master),Scroll,Aimed,0,0,0.5,140,0.2,Enderal SE - Gameplay Overhaul.esp
+0905A7:Skyrim.esm,_01E_RolleEichenhaut,Scroll of Oakflesh,Scroll,Self,48,132,0.5,25,0.2,Enderal SE - Gameplay Overhaul.esp
+032E7A:Skyrim.esm,_02E_RolleLaehmung,Scroll of Paralyze,Scroll,Aimed,76,76,0.5,80,0.2,Enderal SE - Gameplay Overhaul.esp
+01F8B1:Skyrim.esm,01E_RolleSeelenfalle,Scroll of Soul Trap,Scroll,TargetActor,30,32,0.5,13,0.2,Enderal SE - Gameplay Overhaul.esp
+02A04B:Skyrim.esm,01E_RolleWasseratmung,Scroll of Water Breathing,Scroll,Self,40,222,0.5,20,0.2,Enderal SE - Gameplay Overhaul.esp
+001CC6:Enderal SE - Gameplay Overhaul.esp,XionFrostCloak,Scroll of Winter Skin,Scroll,Self,126,316,0.5,40,0.2,Enderal SE - Gameplay Overhaul.esp
+04C97D:Skyrim.esm,01E_RolleUntotebannen,Scroll of the Light Herald,Scroll,Self,360,563,3,30,0.2,Enderal SE - Gameplay Overhaul.esp
+1370A5:Skyrim.esm,_01E_TeleportrolleKurmaiCave,Scroll: Teleport in Kurmai's Cave,Scroll,Self,0,0,3,50,0.2,Enderal SE - Gameplay Overhaul.esp
+0EAB75:Skyrim.esm,_01E_TeleportrolleArk,Scroll: Teleport to Ark,Scroll,Self,0,0,3,45,0.2,Enderal SE - Gameplay Overhaul.esp
+136D1E:Skyrim.esm,_01E_TeleportrolleDuenenhaim,Scroll: Teleport to Duneville,Scroll,Self,0,0,3,45,0.2,Enderal SE - Gameplay Overhaul.esp
+10A860:Skyrim.esm,_01E_TeleportrolleNebelhaim,Scroll: Teleport to Fogville,Scroll,Self,0,0,3,45,0.2,Enderal SE - Gameplay Overhaul.esp
+0375D6:Skyrim.esm,_01E_TeleportrolleSchneefelstaverne,Scroll: Teleport to Frostcliff Tavern,Scroll,Self,0,0,3,45,0.2,Enderal SE - Gameplay Overhaul.esp
+0375D2:Skyrim.esm,_01E_TeleportrolleNordwindlager,Scroll: Teleport to Northwind Camp,Scroll,Self,0,0,3,45,0.2,Enderal SE - Gameplay Overhaul.esp
+07B2F8:Skyrim.esm,_01E_TeleportrolleFlusshaim,Scroll: Teleport to Riverville,Scroll,Self,0,0,3,40,0.2,Enderal SE - Gameplay Overhaul.esp
+15031F:Skyrim.esm,_01E_TeleportrolleUnknownPlace,Scroll: Teleport to a Strange Place,Scroll,Self,0,0,3,50,0.2,Enderal SE - Gameplay Overhaul.esp
+12970F:Skyrim.esm,_01E_TeleportrolleBauenkueste,Scroll: Teleport to the Farmers Coast,Scroll,Self,0,0,3,40,0.2,Enderal SE - Gameplay Overhaul.esp
+129711:Skyrim.esm,_01E_TeleportrolleHerzlandGrenze,Scroll: Teleport to the Heartland's Border,Scroll,Self,0,0,3,40,0.2,Enderal SE - Gameplay Overhaul.esp
+129710:Skyrim.esm,_01E_TeleportrolleHerzlandNord,Scroll: Teleport to the Northern Heartland,Scroll,Self,0,0,3,40,0.2,Enderal SE - Gameplay Overhaul.esp
+0F9101:Skyrim.esm,_01E_TeleportrolleSonnentempel,Scroll: Teleport to the Sun Temple,Scroll,Self,0,0,3,45,0.2,Enderal SE - Gameplay Overhaul.esp
+02E68E:Enderal - Forgotten Stories.esm,_01E_FS_TeleportrolleRhalataTemple,Scroll: Teleport to the Temple of the Rhalâta,Scroll,Self,0,0,3,40,0.2,Enderal SE - Gameplay Overhaul.esp
+01E8FC:Enderal - Forgotten Stories.esm,_01E_FS_TeleportrolleUnterstadt,"Scroll: Teleport to the Undercity, Barracks",Scroll,Self,0,0,3,40,0.2,Enderal SE - Gameplay Overhaul.esp

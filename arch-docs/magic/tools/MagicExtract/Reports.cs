@@ -44,6 +44,55 @@ public static class Reports
         File.WriteAllText(path, sb.ToString(), new UTF8Encoding(false));
     }
 
+    // ---- scrolls.csv — all 36 winners; scrolls are loot/vendor items, no teach-book filter ----
+
+    public static void ScrollsCsv(string path, Dataset<ScrollDto> scrolls)
+    {
+        var sb = new StringBuilder();
+        sb.AppendLine("Form Key,Editor Id,Name,Cast Type,Target Type,Base Cost,Computed Auto Cost," +
+                      "Charge Time,Value,Weight,Winner Overwrite");
+        var ordered = scrolls.Winners
+            .OrderBy(s => s.Name, StringComparer.Ordinal)
+            .ThenBy(s => s.FormKey, StringComparer.Ordinal);
+        foreach (var s in ordered)
+        {
+            // CK cast type 3 = "Scroll"; Mutagen's CastType enum has no member for it, so the
+            // raw value leaks through ToString(). scrolls.json keeps the raw "3" (it must match
+            // Spriggit's identical encoding for verify_against_yaml.py); the sheet reads better.
+            sb.AppendLine(string.Join(",",
+                Csv(s.FormKey), Csv(s.EditorId), Csv(s.Name),
+                Csv(s.CastType == "3" ? "Scroll" : s.CastType), Csv(s.TargetType),
+                s.Cost?.BaseCost.ToString() ?? "", s.Cost?.ComputedAutoCost?.ToString() ?? "",
+                s.ChargeTime.ToString(System.Globalization.CultureInfo.InvariantCulture),
+                s.Value.ToString(),
+                s.Weight.ToString(System.Globalization.CultureInfo.InvariantCulture),
+                Csv(s.Provenance!.Winner)));
+        }
+        File.WriteAllText(path, sb.ToString(), new UTF8Encoding(false));
+    }
+
+    // ---- enchantments.csv — all winners, grouped by enchant type ------------------------------
+
+    public static void EnchantmentsCsv(string path, Dataset<EnchantmentDto> enchantments)
+    {
+        var sb = new StringBuilder();
+        sb.AppendLine("Form Key,Editor Id,Name,Enchant Type,Cast Type,Target Type,Enchantment Cost," +
+                      "Enchantment Amount,Charge Time,Winner Overwrite");
+        var ordered = enchantments.Winners
+            .OrderBy(e => e.EnchantType, StringComparer.Ordinal)
+            .ThenBy(e => e.Name, StringComparer.Ordinal)
+            .ThenBy(e => e.FormKey, StringComparer.Ordinal);
+        foreach (var e in ordered)
+        {
+            sb.AppendLine(string.Join(",",
+                Csv(e.FormKey), Csv(e.EditorId), Csv(e.Name), Csv(e.EnchantType), Csv(e.CastType),
+                Csv(e.TargetType), e.EnchantmentCost.ToString(), e.EnchantmentAmount.ToString(),
+                e.ChargeTime.ToString(System.Globalization.CultureInfo.InvariantCulture),
+                Csv(e.Provenance!.Winner)));
+        }
+        File.WriteAllText(path, sb.ToString(), new UTF8Encoding(false));
+    }
+
     private static string Csv(string? v)
     {
         if (string.IsNullOrEmpty(v)) return "";
