@@ -25,6 +25,14 @@
       ]
     },
     {
+      "$comment": "SCRIPT-ONLY release - 'plugins': [] on purpose, there is no .esp. It ships one recompiled .pex that overrides the loose copy in 'KataPUMB Magic Package' (KataPUMB_SpellPackage.esp, Nexus Enderal SE 47), removing the modal 'activate debug mode?' prompt its quest script shows on every new game. MUST sort AFTER that mod in MO2's mod order or the author's .pex wins the file conflict. Source: src/KataNoDebugPrompt/Scripts/source.",
+      "name": "Zenderal - No Kata Debug Prompt",
+      "archiveName": "Zenderal - No Kata Debug Prompt",
+      "fomod": false,
+      "scripts": { "from": "src/KataNoDebugPrompt/Scripts/compiled", "to": "Scripts" },
+      "plugins": []
+    },
+    {
       "name": "Zenderal - Skip To Taming The Waves",
       "archiveName": "Zenderal - Skip To Taming The Waves",
       "fomod": false,
