@@ -14,9 +14,8 @@ public static class Reports
     public static void SpellsCsv(string path, Dataset<SpellDto> spells)
     {
         var sb = new StringBuilder();
-        sb.AppendLine("formKey,editorId,name,school,type,castType,targetType,baseCost,computedAutoCost," +
-                      "costDrift,manualCostCalc,chargeTime,effectCount,effect0Magnitude,effect0Area," +
-                      "effect0Duration,winner,chainLength,winnerNeedsBees,taughtBy");
+        sb.AppendLine("Form Key,Editor Id,Name,School,Type,Cast Type,Target Type,Base Cost," +
+                      "Computed Auto Cost,Charge Time,Winner Overwrite,Taught By");
         // Player-obtainable spells only: a winning Book must teach it. This drops NPC-cast copies,
         // trap projectiles, voice/shout spells and unused leftovers that share a display name with
         // the player spell ("Fireball" exists 30+ times as distinct records). The full set stays
@@ -34,18 +33,12 @@ public static class Reports
             .ThenBy(s => s.FormKey, StringComparer.Ordinal);
         foreach (var s in ordered)
         {
-            var e0 = s.Effects?.FirstOrDefault();
-            var p = s.Provenance!;
             sb.AppendLine(string.Join(",",
                 Csv(s.FormKey), Csv(s.EditorId), Csv(s.Name), Csv(s.School?.DisplayName), Csv(s.Type),
                 Csv(s.CastType), Csv(s.TargetType), s.Cost?.BaseCost.ToString() ?? "",
-                s.Cost?.ComputedAutoCost?.ToString() ?? "", s.Cost?.CostDrift?.ToString() ?? "",
-                s.Cost?.ManualCostCalc == true ? "true" : "false",
+                s.Cost?.ComputedAutoCost?.ToString() ?? "",
                 s.ChargeTime.ToString(System.Globalization.CultureInfo.InvariantCulture),
-                (s.Effects?.Count ?? 0).ToString(),
-                e0?.Magnitude.ToString(System.Globalization.CultureInfo.InvariantCulture) ?? "",
-                e0?.Area.ToString() ?? "", e0?.Duration.ToString() ?? "",
-                Csv(p.Winner), p.Chain.Count.ToString(), p.WinnerNeedsBees ? "true" : "false",
+                Csv(s.Provenance!.Winner),
                 Csv(string.Join("; ", s.TaughtBy!.Select(b => b.EditorId ?? b.FormKey)))));
         }
         File.WriteAllText(path, sb.ToString(), new UTF8Encoding(false));
@@ -131,7 +124,7 @@ public static class Reports
               " the remainder are four known authored-drift records in base Enderal itself)." +
               " `costDrift ≠ 0` on a non-`ManualCostCalc` spell means its stored cost no longer matches its" +
               " live effect data — an override edited a shared MGEF or the spell's durations without a CK" +
-              " recompute. Those are rebalancing findings, filter for them in `spells.csv`.\n"
+              " recompute. Those are rebalancing findings, filter `costDrift` in `data/spells.json`.\n"
             : "\n**DISABLED this run** — formula validation fell below 97%, so `computedAutoCost`/`costDrift` are null.\n");
         sb.AppendLine("Runtime cost past `baseCost` is skill/perk-dependent; see `costModel` in " +
                       "[`data/lookups.json`](data/lookups.json) for the winning GMST curve " +

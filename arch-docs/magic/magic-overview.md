@@ -71,7 +71,7 @@ durFactor     = 1 for Concentration effects (charged per second)
 spellAutoCost = Σ effectCost   // per-effect floor, then sum
 ```
 
-Formula validated this run against base Enderal's own self-consistent spells (≥97% exact; the remainder are four known authored-drift records in base Enderal itself). `costDrift ≠ 0` on a non-`ManualCostCalc` spell means its stored cost no longer matches its live effect data — an override edited a shared MGEF or the spell's durations without a CK recompute. Those are rebalancing findings, filter for them in `spells.csv`.
+Formula validated this run against base Enderal's own self-consistent spells (≥97% exact; the remainder are four known authored-drift records in base Enderal itself). `costDrift ≠ 0` on a non-`ManualCostCalc` spell means its stored cost no longer matches its live effect data — an override edited a shared MGEF or the spell's durations without a CK recompute. Those are rebalancing findings, filter `costDrift` in `data/spells.json`.
 
 Runtime cost past `baseCost` is skill/perk-dependent; see `costModel` in [`data/lookups.json`](data/lookups.json) for the winning GMST curve (approximate — the 1/400 constant is engine-side).
 

@@ -86,7 +86,7 @@ public sealed class SelfCheck(List<string> warnings)
         }
         Console.WriteLine($"cost drift (winner context): {drifted}/{total} auto-calc spells have " +
                           "costDrift ≠ 0 — stored BaseCost no longer matches the live effect data " +
-                          "(rebalancing findings, see spells.csv)");
+                          "(rebalancing findings, filter costDrift in spells.json)");
     }
 
     // ---- L3a: every BaseEffect resolves ---------------------------------------------------
