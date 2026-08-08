@@ -17,7 +17,15 @@ public static class Reports
         sb.AppendLine("formKey,editorId,name,school,type,castType,targetType,baseCost,computedAutoCost," +
                       "costDrift,manualCostCalc,chargeTime,effectCount,effect0Magnitude,effect0Area," +
                       "effect0Duration,winner,chainLength,winnerNeedsBees");
-        foreach (var s in spells.Winners)
+        // Grouped by school then type for spreadsheet work; schoolless spells sort last.
+        // Name/FormKey tiebreakers keep the row order deterministic so re-runs diff cleanly.
+        var ordered = spells.Winners
+            .OrderBy(s => string.IsNullOrEmpty(s.School?.DisplayName) ? 1 : 0)
+            .ThenBy(s => s.School?.DisplayName, StringComparer.Ordinal)
+            .ThenBy(s => s.Type, StringComparer.Ordinal)
+            .ThenBy(s => s.Name, StringComparer.Ordinal)
+            .ThenBy(s => s.FormKey, StringComparer.Ordinal);
+        foreach (var s in ordered)
         {
             var e0 = s.Effects?.FirstOrDefault();
             var p = s.Provenance!;
