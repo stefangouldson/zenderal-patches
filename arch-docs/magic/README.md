@@ -21,7 +21,7 @@ python arch-docs/magic/tools/verify_against_yaml.py             # optional cross
 | `data/spells.json` … `data/game-settings.json` | The datasets: SPEL, MGEF, ENCH, SCRL, ALCH, SHOU, LVSP, GMST |
 | `data/spells.csv` | Flat balance sheet for spreadsheet work — **player-obtainable spells only** (a winning Book must teach it; NPC/trap/voice variants and script-granted spells are excluded), grouped by school then type. The complete spell set is in `spells.json`, where each teachable spell carries `taughtBy` |
 | `data/scrolls.csv` | Flat balance sheet of all winning scrolls (cost, value, weight), sorted by name |
-| `data/enchantments.csv` | Flat balance sheet of all winning enchantments, grouped by enchant type |
+| `data/enchantments.csv` | Flat balance sheet of all winning enchantments, grouped by enchant type. `Computed Auto Cost` is the spell cost formula over the winning MGEFs (90.7% exact against stored cost on fully self-consistent base records); ENCH records carry no manual-cost flag, so a gap is either drift or hand pricing — the sheet can't tell them apart |
 | `data/lookups.json` | School names, cost-model GMST curve, PERK/KYWD/PROJ/EQUP name tables |
 | `data/load-order.json` | Per-plugin: enabled, header version, BEES dependency, exclusion reason |
 | `data/manifest.json` | Run metadata, counts, warnings |

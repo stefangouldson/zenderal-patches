@@ -316,6 +316,9 @@ public static class Builders
             Name = Str(e.Name),
             EnchantmentCost = e.EnchantmentCost,
             EnchantmentAmount = (uint)e.EnchantmentAmount,
+            // Same per-effect formula as spells, against the WINNING MGEFs. The CK's enchantment
+            // auto-calc fills EnchantmentCost from this when NoAutoCalculation is not flagged.
+            ComputedAutoCost = CostCalculator.SpellAutoCost(e.Effects, winningMgef),
             EnchantType = e.EnchantType.ToString(),
             CastType = e.CastType.ToString(),
             TargetType = e.TargetType.ToString(),

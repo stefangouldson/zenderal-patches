@@ -82,6 +82,7 @@ public static class Extractor
         {
             foreach (var s in spelDs.Winners) NullCost(s.Cost);
             foreach (var s in scrlDs.Winners) NullCost(s.Cost);
+            foreach (var e in enchDs.Winners) e.ComputedAutoCost = null;
         }
         else check.DriftStats(spelDs);
         check.BaseEffectResolution(spelDs, scrlDs, enchDs, alchDs, mgefDs, lo);
