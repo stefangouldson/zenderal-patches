@@ -16,10 +16,17 @@ public static class Reports
         var sb = new StringBuilder();
         sb.AppendLine("formKey,editorId,name,school,type,castType,targetType,baseCost,computedAutoCost," +
                       "costDrift,manualCostCalc,chargeTime,effectCount,effect0Magnitude,effect0Area," +
-                      "effect0Duration,winner,chainLength,winnerNeedsBees");
+                      "effect0Duration,winner,chainLength,winnerNeedsBees,taughtBy");
+        // Player-obtainable spells only: a winning Book must teach it. This drops NPC-cast copies,
+        // trap projectiles, voice/shout spells and unused leftovers that share a display name with
+        // the player spell ("Fireball" exists 30+ times as distinct records). The full set stays
+        // in spells.json; script/quest-granted spells have no teaching book and are dropped too.
+        // A ">" name prefix is EGO's marker for spells it removed from the game (all also cost
+        // 999); their books survive as records but are not distributed, so drop those as well.
         // Grouped by school then type for spreadsheet work; schoolless spells sort last.
         // Name/FormKey tiebreakers keep the row order deterministic so re-runs diff cleanly.
         var ordered = spells.Winners
+            .Where(s => s.TaughtBy is { Count: > 0 } && s.Name?.StartsWith('>') != true)
             .OrderBy(s => string.IsNullOrEmpty(s.School?.DisplayName) ? 1 : 0)
             .ThenBy(s => s.School?.DisplayName, StringComparer.Ordinal)
             .ThenBy(s => s.Type, StringComparer.Ordinal)
@@ -38,7 +45,8 @@ public static class Reports
                 (s.Effects?.Count ?? 0).ToString(),
                 e0?.Magnitude.ToString(System.Globalization.CultureInfo.InvariantCulture) ?? "",
                 e0?.Area.ToString() ?? "", e0?.Duration.ToString() ?? "",
-                Csv(p.Winner), p.Chain.Count.ToString(), p.WinnerNeedsBees ? "true" : "false"));
+                Csv(p.Winner), p.Chain.Count.ToString(), p.WinnerNeedsBees ? "true" : "false",
+                Csv(string.Join("; ", s.TaughtBy!.Select(b => b.EditorId ?? b.FormKey)))));
         }
         File.WriteAllText(path, sb.ToString(), new UTF8Encoding(false));
     }

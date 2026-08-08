@@ -93,6 +93,9 @@ public sealed class SpellDto : IRecordDto
     public List<RefDto>? Keywords { get; set; }
     public List<string>? Flags { get; set; }
     public List<EffectDto>? Effects { get; set; }
+    /// <summary>Winning Book records whose Teaches points at this spell — the player-obtainable set.
+    /// Null means no book teaches it (NPC-only, trap, voice, script-granted, …).</summary>
+    public List<RefDto>? TaughtBy { get; set; }
     public ProvenanceDto? Provenance { get; set; }
 }
 

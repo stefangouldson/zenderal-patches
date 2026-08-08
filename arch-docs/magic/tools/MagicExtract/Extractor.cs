@@ -49,6 +49,7 @@ public static class Extractor
         var explChains = Chains.Build(loaded, m => m.Explosions);
         var globChains = Chains.Build(loaded, m => m.Globals);
         var raceChains = Chains.Build(loaded, m => m.Races);
+        var bookChains = Chains.Build(loaded, m => m.Books); // for taughtBy — not emitted as a dataset
 
         var names = new NameIndex();
         names.Add(mgefChains); names.Add(spelChains); names.Add(enchChains); names.Add(scrlChains);
@@ -70,8 +71,9 @@ public static class Extractor
         var lvspDs = Project(lvspChains, "leveled-spells", "LVSP", l => Builders.LeveledSpell(l, names));
         var gmstDs = Project(gmstChains, "game-settings", "GMST", Builders.GameSetting);
 
-        // usedBy AFTER diffing, so it never appears as a changed field.
+        // usedBy/taughtBy AFTER diffing, so they never appear as changed fields.
         FillUsedBy(mgefDs, spelDs, scrlDs, enchDs, alchDs);
+        FillTaughtBy(spelDs, bookChains);
 
         // ---- self-checks -------------------------------------------------------------------
         var check = new SelfCheck(warnings);
@@ -263,6 +265,29 @@ public static class Extractor
         Collect(scrl.Winners.Select(s => (s.FormKey, s.Effects)), (u, k) => u.Scrolls = Add(u.Scrolls, k));
         Collect(ench.Winners.Select(s => (s.FormKey, s.Effects)), (u, k) => u.Enchantments = Add(u.Enchantments, k));
         Collect(alch.Winners.Select(s => (s.FormKey, s.Effects)), (u, k) => u.Ingestibles = Add(u.Ingestibles, k));
+    }
+
+    /// <summary>Mark every spell some winning Book record teaches — the player-obtainable set.
+    /// Enderal's _01E_SpellBook* Books use the standard Teaches/BookSpell field, as do
+    /// third-party spell packs, so this is ground truth rather than an EditorID heuristic.
+    /// Spells granted only by scripts/quests are not caught and stay untagged.</summary>
+    private static void FillTaughtBy(Dataset<SpellDto> spel,
+        Dictionary<FormKey, List<(PluginEntry, IBookGetter)>> bookChains)
+    {
+        foreach (var (fk, chain) in bookChains)
+        {
+            var book = chain[^1].Item2;
+            if (book.Teaches is not IBookSpellGetter t || t.Spell.FormKey.IsNull) continue;
+            if (!spel.ByKey.TryGetValue(t.Spell.FormKey.ToString(), out var s)) continue;
+            (s.TaughtBy ??= new List<RefDto>()).Add(new RefDto
+            {
+                FormKey = fk.ToString(),
+                EditorId = book.EditorID,
+                Name = book.Name?.String,
+            });
+        }
+        foreach (var s in spel.Winners)
+            s.TaughtBy?.Sort((a, b) => string.CompareOrdinal(a.FormKey, b.FormKey));
     }
 
     private static Dictionary<ActorValue, string> SchoolNames(
