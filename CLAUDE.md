@@ -178,6 +178,8 @@ src/                       # EVERY patch lives here — one folder per patch
 build/                     # build.ps1 + manifest.json (+ a committed FOMOD tree per release that has
                            #   one - none currently do; releases carry "fomod": false)
 arch-docs/                 # patch-authoring guide, curation docs, generated build report
+arch-docs/magic/           # GENERATED magic dataset: every SPEL/MGEF/ENCH/SCRL/ALCH/SHOU/GMST with
+                           #   load-order-WINNING values + provenance; /magic-extract regenerates it
 reference/base/            # gitignored — Enderal/vanilla decompiles + script source, LOOKUP ONLY
 reference/mods/            # gitignored — third-party list mods, serialized for lookup
 reference/mods/EGO/        #   `-- EGO's .esp + its loose scripts; documented in arch-docs/EGO/
@@ -200,6 +202,30 @@ papyrus-source/            # gitignored — spare slot for unpacked .psc trees (
 > [`enderal-mods`](https://github.com/stefangouldson/enderal-mods) repo, which holds Enderal SE mods
 > in general rather than this list's patches. `Apocalypse - Magic of Skyrim` is the worked example and
 > the source of most of what the ceiling section below records.
+
+> **A third shape: the SCRIPT-ONLY release — no plugin at all.** **[verified 2026-08-08]** When a
+> third-party mod's misbehaviour lives entirely in a *loose* `.pex` and not in its records, the patch
+> is one recompiled script and nothing else. `build/manifest.json` supports it directly: set
+> `"plugins": []` alongside `"fomod": false` and a `"scripts": { "from": …, "to": "Scripts" }` block.
+> `build.ps1` handles that without changes — the `foreach ($p in $rel.plugins)` loop simply runs zero
+> times, and the release contributes an archive but no row to the build report's Plugins table.
+>
+> Four rules, learned building `Zenderal - No Kata Debug Prompt`:
+> 1. **Start from the author's own `.psc`, copied verbatim**, and change the fewest lines possible
+>    (guardrail 4). Most mods that ship loose scripts ship their `source/` next to them.
+> 2. **Never add or remove a `Property` declaration.** The host plugin's quest record stores the
+>    property *values* in its `VMAD` and binds them **by name** at load. Drop a declaration and
+>    Papyrus logs an unresolved property every load; rename one and its value silently never arrives.
+>    Read the values out of the serialized record and diff the property set against your script before
+>    compiling — `rg -a -o '<names>' both.pex | sort -u` on the two `.pex` is the cheap confirmation.
+> 3. **It only wins if it sorts ABOVE the mod it overrides in `modlist.txt`** — MO2 writes that file
+>    highest-priority-first (the list's `EGO SE - *` patches sit ~20 lines above the `KataPUMB *` mods
+>    they patch). Getting this backwards is invisible: the game runs and the original script wins.
+> 4. **A `.pex` override only bites where the script re-runs.** An `OnInit()` fix reaches new games
+>    and saves that never had the mod; a save where `OnInit` already fired is untouched.
+>
+> This shape carries an obligation the others don't: it redistributes a **modified copy of someone
+> else's script**, so check the author's permissions and credit them in the source header.
 
 `src/` is the only place patch content goes, and it holds as many patches as the list needs. Each
 gets its own `src/<PatchName>/` folder and its own `build/manifest.json` release entry; the
@@ -518,6 +544,7 @@ different repo.
 | **[`arch-docs/EGO/`](arch-docs/EGO/)** | **How EGO works and how to patch around it** — the list's gameplay overhaul, 6203 overridden records. Start with [`patching-ego.md`](arch-docs/EGO/patching-ego.md) before any combat/loot/crafting patch |
 | `arch-docs/enderal-record-patterns.md` | Record shapes that build clean and do nothing in-game |
 | `arch-docs/zenderal-curation.md` | What is actually in the list and why |
+| **[`arch-docs/magic/`](arch-docs/magic/)** | **The actual in-game value of every magic record** — load-order-winning SPEL/MGEF/ENCH/SCRL/ALCH/SHOU/GMST as JSON/CSV, with override chains, per-field diffs and recomputed spell costs. Start any magic-rebalance work here; regenerate with the `magic-extract` skill |
 
 Per pillar: combat patches start at [`arch-docs/enderal/combat.md`](arch-docs/enderal/combat.md),
 visuals at [`visuals-and-world.md`](arch-docs/enderal/visuals-and-world.md), and anything touching
@@ -914,6 +941,25 @@ These are **engine-hardcoded** FormIDs — Bethesda's own code depends on them, 
 > form version 1.71**. No warning, no log entry, no missing-master dialog — the plugin is simply
 > absent from the game. `HEDR` 1.70 is the ceiling; 1.71 is what the 1.6/AE-era Creation Kit and
 > newer tools emit.
+>
+> **BUT: the Zenderal modlist lifts this ceiling with BEES.** **[verified in-game 2026-08-08]**
+> The list ships **Backported Extended ESL Support** (Nukem, Nexus 106441, v1.2.0.0 — SKSE plugin,
+> `mods\Backported Extended ESL Support\`), which replicates SSE 1.6.1130's plugin-loading code on
+> 1.5.97 so 1.71 plugins load normally. Proof from a live run:
+> `Documents\My Games\Skyrim Special Edition\SKSE\BackportedESLSupport.log` logs
+> `Emulated old header version for <plugin>` for **exactly the 68 plugins** an independent HEDR
+> scan of the profile found at 1.71 (`DynDOLOD.esp`, the `Pretty * Armory` set, `ForHonorBFCO.esp`,
+> `Smart_NPC_Potions.esp`, …). BEES was added to the list on 2026-08-08 — *after* the 2026-08-02
+> ceiling verification; both observations were correct when made.
+>
+> Consequences: (a) everything below still applies verbatim to a BEES-less Enderal install, to
+> plugins WE author (keep writing `Version: 1.7` — do not make Zenderal patches depend on BEES),
+> and to debugging reports from users who dropped BEES; (b) inside *this* list, a 1.71 third-party
+> plugin is **not** inert — the "five inert `thepath` plugins" note below describes a list without
+> BEES, so audit any Enderal list for 1.71 **or** for BEES; (c) BEES
+> is now load-bearing — removing it silently disables 68 plugins. `arch-docs/magic/` datasets mark
+> every record whose winner needs it (`winnerNeedsBees`), and the `magic-extract` tool hard-fails
+> if 1.71 plugins are present without BEES.
 >
 > **Proof:** `Apocalypse - Magic of Skyrim.esp` is 1.71. With it enabled, `help wither 4` in the
 > console finds nothing, though the mod defines a spell whose EditorID and name both contain

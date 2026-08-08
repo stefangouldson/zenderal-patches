@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "generatedBy": "MagicExtract (Mutagen.Bethesda.Skyrim 0.54.4, read-only)",
+  "extractedAt": "2026-08-08 22:24:32",
+  "requiresBees": true,
+  "beesLogEmulatedCount": 68,
+  "beesLogTime": "2026-08-08 20:32:52",
+  "costModelEnabled": true,
+  "counts": {
+    "spells": 1977,
+    "magicEffects": 2224,
+    "enchantments": 766,
+    "scrolls": 36,
+    "ingestibles": 400,
+    "shouts": 66,
+    "leveledSpells": 9,
+    "gameSettings": 1709
+  },
+  "warnings": [
+    "_Fuse00_ArmorHelga.esp: enabled in plugins.txt but file not found in any enabled mod folder",
+    "3 effect entries reference a MGEF absent from the load order (these are REAL dangling links in game): ALCH 00088B:Dynamic Things Alternative.esp \u2192 MGEF 018EF4:Dawnguard.esm; ALCH 00088B:Dynamic Things Alternative.esp \u2192 MGEF 013812:Dawnguard.esm; ALCH 05F6DF:Skyrim.esm \u2192 MGEF 0A05C8:Skyrim.esm"
+  ]
+}

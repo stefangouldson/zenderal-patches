@@ -1,0 +1,2350 @@
+{
+  "schemaVersion": 1,
+  "recordType": "SCRL",
+  "records": [
+    {
+      "formKey": "001CC5:Enderal SE - Gameplay Overhaul.esp",
+      "editorId": "XionRolleFeuerpfeil2",
+      "name": "Scroll of Firebolt",
+      "type": "Spell",
+      "castType": "3",
+      "targetType": "Aimed",
+      "cost": {
+        "baseCost": 27,
+        "manualCostCalc": false,
+        "computedAutoCost": 37,
+        "costDrift": 10,
+        "costMatchesStored": false
+      },
+      "chargeTime": 0.5,
+      "castDuration": 0,
+      "range": 0,
+      "value": 23,
+      "weight": 0.2,
+      "keywords": [
+        {
+          "formKey": "0A0E57:Skyrim.esm",
+          "editorId": "VendorItemScroll"
+        }
+      ],
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "012F03:Skyrim.esm",
+            "editorId": "FireDamageFFAimed",
+            "name": "Firebolt"
+          },
+          "magnitude": 23,
+          "area": 0,
+          "duration": 0,
+          "effectCost": 37,
+          "archetype": "ValueModifier",
+          "actorValue": "Health"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Enderal SE - Gameplay Overhaul.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Enderal SE - Gameplay Overhaul.esp",
+        "winnerLoadOrderIndex": 49,
+        "chain": [
+          "Enderal SE - Gameplay Overhaul.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "001CC6:Enderal SE - Gameplay Overhaul.esp",
+      "editorId": "XionFrostCloak",
+      "name": "Scroll of Winter Skin",
+      "type": "Spell",
+      "castType": "3",
+      "targetType": "Self",
+      "cost": {
+        "baseCost": 126,
+        "manualCostCalc": false,
+        "computedAutoCost": 316,
+        "costDrift": 190,
+        "costMatchesStored": false
+      },
+      "chargeTime": 0.5,
+      "castDuration": 0,
+      "range": 0,
+      "value": 40,
+      "weight": 0.2,
+      "keywords": [
+        {
+          "formKey": "0A0E57:Skyrim.esm",
+          "editorId": "VendorItemScroll"
+        }
+      ],
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "03AEA0:Skyrim.esm",
+            "editorId": "FrostCloakFFSelfDUPLICATE001",
+            "name": "Winter Skin"
+          },
+          "magnitude": 10,
+          "area": 0,
+          "duration": 60,
+          "effectCost": 316,
+          "archetype": "Cloak"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Enderal SE - Gameplay Overhaul.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Enderal SE - Gameplay Overhaul.esp",
+        "winnerLoadOrderIndex": 49,
+        "chain": [
+          "Enderal SE - Gameplay Overhaul.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "014CB4:Skyrim.esm",
+      "editorId": "01E_RolleFeuerball",
+      "name": "Scroll of Fireball",
+      "type": "Spell",
+      "castType": "3",
+      "targetType": "Aimed",
+      "cost": {
+        "baseCost": 62,
+        "manualCostCalc": true,
+        "computedAutoCost": 62
+      },
+      "chargeTime": 0.5,
+      "castDuration": 0,
+      "range": 0,
+      "value": 28,
+      "weight": 0.2,
+      "keywords": [
+        {
+          "formKey": "0A0E57:Skyrim.esm",
+          "editorId": "VendorItemScroll"
+        }
+      ],
+      "flags": [
+        "ManualCostCalc"
+      ],
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "01CEA1:Skyrim.esm",
+            "editorId": "FireDamageFFAimedArea",
+            "name": "Fireball"
+          },
+          "magnitude": 23,
+          "area": 12,
+          "duration": 0,
+          "effectCost": 62,
+          "archetype": "ValueModifier",
+          "actorValue": "Health"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Skyrim.esm",
+        "isNewRecord": false,
+        "isInjected": false,
+        "winner": "Enderal SE - Gameplay Overhaul.esp",
+        "winnerLoadOrderIndex": 49,
+        "chain": [
+          "Skyrim.esm",
+          "Enderal SE - Gameplay Overhaul.esp"
+        ],
+        "changedFields": [
+          "name",
+          "cost",
+          "value",
+          "effects"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "01D18D:Skyrim.esm",
+      "editorId": "01E_RolleEispfeil",
+      "name": "Scroll of Ice Spike",
+      "type": "Spell",
+      "castType": "3",
+      "targetType": "Aimed",
+      "cost": {
+        "baseCost": 23,
+        "manualCostCalc": true,
+        "computedAutoCost": 25
+      },
+      "chargeTime": 0.5,
+      "castDuration": 0,
+      "range": 0,
+      "value": 18,
+      "weight": 0.2,
+      "keywords": [
+        {
+          "formKey": "0A0E57:Skyrim.esm",
+          "editorId": "VendorItemScroll"
+        }
+      ],
+      "flags": [
+        "ManualCostCalc"
+      ],
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "01CEA2:Skyrim.esm",
+            "editorId": "FrostDamageFFAimed",
+            "name": "Ice Spike"
+          },
+          "magnitude": 16,
+          "area": 0,
+          "duration": 0,
+          "effectCost": 25,
+          "archetype": "DualValueModifier",
+          "actorValue": "Health"
+        },
+        {
+          "index": 1,
+          "baseEffect": {
+            "formKey": "0A44C0:Skyrim.esm",
+            "editorId": "StaggerPushFFAimed",
+            "name": "Repel"
+          },
+          "magnitude": 1,
+          "area": 0,
+          "duration": 0,
+          "effectCost": 0,
+          "archetype": "Stagger"
+        },
+        {
+          "index": 2,
+          "baseEffect": {
+            "formKey": "0B729F:Skyrim.esm",
+            "editorId": "FrostSlowFFAimed",
+            "name": "Slowdown"
+          },
+          "magnitude": 50,
+          "area": 0,
+          "duration": 3,
+          "effectCost": 0,
+          "archetype": "Script"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Skyrim.esm",
+        "isNewRecord": false,
+        "isInjected": false,
+        "winner": "Enderal SE - Gameplay Overhaul.esp",
+        "winnerLoadOrderIndex": 49,
+        "chain": [
+          "Skyrim.esm",
+          "Enderal SE - Gameplay Overhaul.esp"
+        ],
+        "changedFields": [
+          "cost",
+          "value",
+          "weight",
+          "effects"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "01E8FC:Enderal - Forgotten Stories.esm",
+      "editorId": "_01E_FS_TeleportrolleUnterstadt",
+      "name": "Scroll: Teleport to the Undercity, Barracks",
+      "type": "Spell",
+      "castType": "3",
+      "targetType": "Self",
+      "cost": {
+        "baseCost": 0,
+        "manualCostCalc": true,
+        "computedAutoCost": 0
+      },
+      "chargeTime": 3,
+      "castDuration": 0,
+      "range": 0,
+      "value": 40,
+      "weight": 0.2,
+      "keywords": [
+        {
+          "formKey": "0914E9:Skyrim.esm",
+          "editorId": "VendorItemClutter"
+        },
+        {
+          "formKey": "0A0E57:Skyrim.esm",
+          "editorId": "VendorItemScroll"
+        }
+      ],
+      "flags": [
+        "ManualCostCalc"
+      ],
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "01E8FB:Enderal - Forgotten Stories.esm",
+            "editorId": "_00E_Teleport_Undercity",
+            "name": "Teleport: Undercity, Barracks"
+          },
+          "magnitude": 0,
+          "area": 0,
+          "duration": 2,
+          "effectCost": 0,
+          "archetype": "Script"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Enderal - Forgotten Stories.esm",
+        "isNewRecord": false,
+        "isInjected": false,
+        "winner": "Enderal SE - Gameplay Overhaul.esp",
+        "winnerLoadOrderIndex": 49,
+        "chain": [
+          "Enderal - Forgotten Stories.esm",
+          "Enderal SE - Gameplay Overhaul.esp"
+        ],
+        "changedFields": [
+          "value",
+          "weight",
+          "keywords"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "01F8B1:Skyrim.esm",
+      "editorId": "01E_RolleSeelenfalle",
+      "name": "Scroll of Soul Trap",
+      "type": "Spell",
+      "castType": "3",
+      "targetType": "TargetActor",
+      "cost": {
+        "baseCost": 30,
+        "manualCostCalc": true,
+        "computedAutoCost": 32
+      },
+      "chargeTime": 0.5,
+      "castDuration": 0,
+      "range": 0,
+      "value": 13,
+      "weight": 0.2,
+      "keywords": [
+        {
+          "formKey": "0A0E57:Skyrim.esm",
+          "editorId": "VendorItemScroll"
+        }
+      ],
+      "flags": [
+        "ManualCostCalc"
+      ],
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "04DBA3:Skyrim.esm",
+            "editorId": "SoulTrapFFActor25",
+            "name": "Soul Trap"
+          },
+          "magnitude": 0,
+          "area": 0,
+          "duration": 20,
+          "effectCost": 32,
+          "archetype": "Script"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Skyrim.esm",
+        "isNewRecord": false,
+        "isInjected": false,
+        "winner": "Enderal SE - Gameplay Overhaul.esp",
+        "winnerLoadOrderIndex": 49,
+        "chain": [
+          "Skyrim.esm",
+          "Enderal SE - Gameplay Overhaul.esp"
+        ],
+        "changedFields": [
+          "cost",
+          "value",
+          "weight",
+          "effects"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "02A04B:Skyrim.esm",
+      "editorId": "01E_RolleWasseratmung",
+      "name": "Scroll of Water Breathing",
+      "type": "Spell",
+      "castType": "3",
+      "targetType": "Self",
+      "cost": {
+        "baseCost": 40,
+        "manualCostCalc": true,
+        "computedAutoCost": 222
+      },
+      "chargeTime": 0.5,
+      "castDuration": 0,
+      "range": 0,
+      "value": 20,
+      "weight": 0.2,
+      "keywords": [
+        {
+          "formKey": "0A0E57:Skyrim.esm",
+          "editorId": "VendorItemScroll"
+        }
+      ],
+      "flags": [
+        "ManualCostCalc"
+      ],
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "01EA73:Skyrim.esm",
+            "editorId": "WaterbreathingFFSelf50",
+            "name": "Water Breathing"
+          },
+          "magnitude": 0,
+          "area": 0,
+          "duration": 60,
+          "effectCost": 222,
+          "archetype": "PeakValueModifier",
+          "actorValue": "WaterBreathing"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Skyrim.esm",
+        "isNewRecord": false,
+        "isInjected": false,
+        "winner": "Enderal SE - Gameplay Overhaul.esp",
+        "winnerLoadOrderIndex": 49,
+        "chain": [
+          "Skyrim.esm",
+          "Enderal SE - Gameplay Overhaul.esp"
+        ],
+        "changedFields": [
+          "name",
+          "chargeTime",
+          "value",
+          "weight"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "02E68E:Enderal - Forgotten Stories.esm",
+      "editorId": "_01E_FS_TeleportrolleRhalataTemple",
+      "name": "Scroll: Teleport to the Temple of the Rhal\u00E2ta",
+      "type": "Spell",
+      "castType": "3",
+      "targetType": "Self",
+      "cost": {
+        "baseCost": 0,
+        "manualCostCalc": true,
+        "computedAutoCost": 0
+      },
+      "chargeTime": 3,
+      "castDuration": 0,
+      "range": 0,
+      "value": 40,
+      "weight": 0.2,
+      "keywords": [
+        {
+          "formKey": "0914E9:Skyrim.esm",
+          "editorId": "VendorItemClutter"
+        },
+        {
+          "formKey": "0A0E57:Skyrim.esm",
+          "editorId": "VendorItemScroll"
+        }
+      ],
+      "flags": [
+        "ManualCostCalc"
+      ],
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "02E68D:Enderal - Forgotten Stories.esm",
+            "editorId": "_00E_FS_Teleport_RhalataTemple",
+            "name": "Teleport: Temple of the Rhal\u00E2ta"
+          },
+          "magnitude": 0,
+          "area": 0,
+          "duration": 2,
+          "effectCost": 0,
+          "archetype": "Script"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Enderal - Forgotten Stories.esm",
+        "isNewRecord": false,
+        "isInjected": false,
+        "winner": "Enderal SE - Gameplay Overhaul.esp",
+        "winnerLoadOrderIndex": 49,
+        "chain": [
+          "Enderal - Forgotten Stories.esm",
+          "Enderal SE - Gameplay Overhaul.esp"
+        ],
+        "changedFields": [
+          "name",
+          "value",
+          "weight",
+          "keywords"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "032E7A:Skyrim.esm",
+      "editorId": "_02E_RolleLaehmung",
+      "name": "Scroll of Paralyze",
+      "type": "Spell",
+      "castType": "3",
+      "targetType": "Aimed",
+      "cost": {
+        "baseCost": 76,
+        "manualCostCalc": true,
+        "computedAutoCost": 76
+      },
+      "chargeTime": 0.5,
+      "castDuration": 0,
+      "range": 0,
+      "value": 80,
+      "weight": 0.2,
+      "keywords": [
+        {
+          "formKey": "0A0E57:Skyrim.esm",
+          "editorId": "VendorItemScroll"
+        }
+      ],
+      "flags": [
+        "ManualCostCalc"
+      ],
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "01EA6E:Skyrim.esm",
+            "editorId": "ParalysisFFAimed75",
+            "name": "Paralyze"
+          },
+          "magnitude": 0,
+          "area": 0,
+          "duration": 2,
+          "effectCost": 76,
+          "archetype": "Paralysis",
+          "actorValue": "Paralysis"
+        },
+        {
+          "index": 1,
+          "baseEffect": {
+            "formKey": "0A44C0:Skyrim.esm",
+            "editorId": "StaggerPushFFAimed",
+            "name": "Repel"
+          },
+          "magnitude": 100,
+          "area": 0,
+          "duration": 0,
+          "effectCost": 0,
+          "archetype": "Stagger",
+          "conditions": [
+            {
+              "function": "HasKeyword",
+              "runOn": "Subject",
+              "parameters": {
+                "Keyword": "035D59:Skyrim.esm",
+                "SecondUnusedIntParameter": "0",
+                "RunOnTypeIndex": "-1"
+              },
+              "operator": "EqualTo",
+              "value": 1,
+              "or": false
+            }
+          ]
+        }
+      ],
+      "provenance": {
+        "definedIn": "Skyrim.esm",
+        "isNewRecord": false,
+        "isInjected": false,
+        "winner": "Enderal SE - Gameplay Overhaul.esp",
+        "winnerLoadOrderIndex": 49,
+        "chain": [
+          "Skyrim.esm",
+          "Enderal SE - Gameplay Overhaul.esp"
+        ],
+        "changedFields": [
+          "value",
+          "weight"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "0375D2:Skyrim.esm",
+      "editorId": "_01E_TeleportrolleNordwindlager",
+      "name": "Scroll: Teleport to Northwind Camp",
+      "type": "Spell",
+      "castType": "3",
+      "targetType": "Self",
+      "cost": {
+        "baseCost": 0,
+        "manualCostCalc": true,
+        "computedAutoCost": 0
+      },
+      "chargeTime": 3,
+      "castDuration": 0,
+      "range": 0,
+      "value": 45,
+      "weight": 0.2,
+      "keywords": [
+        {
+          "formKey": "0914E9:Skyrim.esm",
+          "editorId": "VendorItemClutter"
+        },
+        {
+          "formKey": "0A0E57:Skyrim.esm",
+          "editorId": "VendorItemScroll"
+        }
+      ],
+      "flags": [
+        "ManualCostCalc"
+      ],
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "0375D0:Skyrim.esm",
+            "editorId": "_00E_Teleport_Nordwindlager",
+            "name": "Teleport: Northwind Camp"
+          },
+          "magnitude": 0,
+          "area": 0,
+          "duration": 2,
+          "effectCost": 0,
+          "archetype": "Script"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Skyrim.esm",
+        "isNewRecord": false,
+        "isInjected": false,
+        "winner": "Enderal SE - Gameplay Overhaul.esp",
+        "winnerLoadOrderIndex": 49,
+        "chain": [
+          "Skyrim.esm",
+          "Enderal SE - Gameplay Overhaul.esp"
+        ],
+        "changedFields": [
+          "value",
+          "weight",
+          "keywords"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "0375D6:Skyrim.esm",
+      "editorId": "_01E_TeleportrolleSchneefelstaverne",
+      "name": "Scroll: Teleport to Frostcliff Tavern",
+      "type": "Spell",
+      "castType": "3",
+      "targetType": "Self",
+      "cost": {
+        "baseCost": 0,
+        "manualCostCalc": true,
+        "computedAutoCost": 0
+      },
+      "chargeTime": 3,
+      "castDuration": 0,
+      "range": 0,
+      "value": 45,
+      "weight": 0.2,
+      "keywords": [
+        {
+          "formKey": "0914E9:Skyrim.esm",
+          "editorId": "VendorItemClutter"
+        },
+        {
+          "formKey": "0A0E57:Skyrim.esm",
+          "editorId": "VendorItemScroll"
+        }
+      ],
+      "flags": [
+        "ManualCostCalc"
+      ],
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "0375D5:Skyrim.esm",
+            "editorId": "_00E_Teleport_Schneefelstaverne",
+            "name": "Teleport: Frostcliff Tavern"
+          },
+          "magnitude": 0,
+          "area": 0,
+          "duration": 2,
+          "effectCost": 0,
+          "archetype": "Script"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Skyrim.esm",
+        "isNewRecord": false,
+        "isInjected": false,
+        "winner": "Enderal SE - Gameplay Overhaul.esp",
+        "winnerLoadOrderIndex": 49,
+        "chain": [
+          "Skyrim.esm",
+          "Enderal SE - Gameplay Overhaul.esp"
+        ],
+        "changedFields": [
+          "value",
+          "weight",
+          "keywords"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "0458DB:Skyrim.esm",
+      "editorId": "01E_RolleWohltat",
+      "name": "Scroll of Flash Heal (Cheap)",
+      "type": "Spell",
+      "castType": "3",
+      "targetType": "Self",
+      "cost": {
+        "baseCost": 50,
+        "manualCostCalc": false,
+        "computedAutoCost": 42,
+        "costDrift": -8,
+        "costMatchesStored": false
+      },
+      "chargeTime": 0.5,
+      "castDuration": 0,
+      "range": 0,
+      "value": 32,
+      "weight": 0.2,
+      "keywords": [
+        {
+          "formKey": "0A0E57:Skyrim.esm",
+          "editorId": "VendorItemScroll"
+        }
+      ],
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "01CEA6:Skyrim.esm",
+            "editorId": "RestoreHealthFFSelf",
+            "name": "Restore Health"
+          },
+          "magnitude": 30,
+          "area": 0,
+          "duration": 0,
+          "effectCost": 42,
+          "archetype": "ValueModifier",
+          "actorValue": "Health"
+        },
+        {
+          "index": 1,
+          "baseEffect": {
+            "formKey": "11A4B6:Skyrim.esm",
+            "editorId": "_00E_IncreaseArcaneFeverFFSelf",
+            "name": "Arcane Fever"
+          },
+          "magnitude": 1.5,
+          "area": 0,
+          "duration": 1,
+          "effectCost": 0,
+          "archetype": "Script"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Skyrim.esm",
+        "isNewRecord": false,
+        "isInjected": false,
+        "winner": "Enderal SE - Gameplay Overhaul.esp",
+        "winnerLoadOrderIndex": 49,
+        "chain": [
+          "Skyrim.esm",
+          "Enderal SE - Gameplay Overhaul.esp"
+        ],
+        "changedFields": [
+          "editorId",
+          "name",
+          "cost",
+          "chargeTime",
+          "value",
+          "weight",
+          "effects"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "04C97D:Skyrim.esm",
+      "editorId": "01E_RolleUntotebannen",
+      "name": "Scroll of the Light Herald",
+      "type": "Spell",
+      "castType": "3",
+      "targetType": "Self",
+      "cost": {
+        "baseCost": 360,
+        "manualCostCalc": true,
+        "computedAutoCost": 563
+      },
+      "chargeTime": 3,
+      "castDuration": 0,
+      "range": 0,
+      "value": 30,
+      "weight": 0.2,
+      "keywords": [
+        {
+          "formKey": "0A0E57:Skyrim.esm",
+          "editorId": "VendorItemScroll"
+        }
+      ],
+      "flags": [
+        "ManualCostCalc"
+      ],
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "08C1AA:Skyrim.esm",
+            "editorId": "TurnUndeadFFMassSelfArea",
+            "name": "Turn Greater Undead"
+          },
+          "magnitude": 18,
+          "area": 80,
+          "duration": 30,
+          "effectCost": 563,
+          "archetype": "TurnUndead",
+          "actorValue": "Confidence"
+        },
+        {
+          "index": 1,
+          "baseEffect": {
+            "formKey": "0C5C0A:Skyrim.esm",
+            "editorId": "FireDamageFFSelfAreaUndead",
+            "name": "Turn Undead"
+          },
+          "magnitude": 25,
+          "area": 80,
+          "duration": 0,
+          "effectCost": 0,
+          "archetype": "ValueModifier",
+          "actorValue": "Health"
+        },
+        {
+          "index": 2,
+          "baseEffect": {
+            "formKey": "0C5C0B:Skyrim.esm",
+            "editorId": "StaggerAttackAreaEffectUndead80",
+            "name": "Stagger Area Attack"
+          },
+          "magnitude": 0.05,
+          "area": 80,
+          "duration": 0,
+          "effectCost": 0,
+          "archetype": "Stagger"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Skyrim.esm",
+        "isNewRecord": false,
+        "isInjected": false,
+        "winner": "Enderal SE - Gameplay Overhaul.esp",
+        "winnerLoadOrderIndex": 49,
+        "chain": [
+          "Skyrim.esm",
+          "Enderal SE - Gameplay Overhaul.esp"
+        ],
+        "changedFields": [
+          "name",
+          "cost",
+          "chargeTime",
+          "weight",
+          "effects"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "04C97E:Skyrim.esm",
+      "editorId": "01E_RolleArkanrune",
+      "name": "Scroll of Lightning Rune",
+      "type": "Spell",
+      "castType": "3",
+      "targetType": "TargetLocation",
+      "cost": {
+        "baseCost": 117,
+        "manualCostCalc": true,
+        "computedAutoCost": 124
+      },
+      "chargeTime": 0.5,
+      "castDuration": 0,
+      "range": 0,
+      "value": 30,
+      "weight": 0.2,
+      "keywords": [
+        {
+          "formKey": "0A0E57:Skyrim.esm",
+          "editorId": "VendorItemScroll"
+        }
+      ],
+      "flags": [
+        "ManualCostCalc"
+      ],
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "06796E:Skyrim.esm",
+            "editorId": "RuneShockFFLocation",
+            "name": "Lightning Rune"
+          },
+          "magnitude": 21,
+          "area": 0,
+          "duration": 1,
+          "effectCost": 124,
+          "archetype": "DualValueModifier",
+          "actorValue": "Health"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Skyrim.esm",
+        "isNewRecord": false,
+        "isInjected": false,
+        "winner": "Enderal SE - Gameplay Overhaul.esp",
+        "winnerLoadOrderIndex": 49,
+        "chain": [
+          "Skyrim.esm",
+          "Enderal SE - Gameplay Overhaul.esp"
+        ],
+        "changedFields": [
+          "name",
+          "cost",
+          "value",
+          "weight",
+          "effects"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "04C97F:Skyrim.esm",
+      "editorId": "01E_Magielicht",
+      "name": "Scroll of Mage Light",
+      "type": "Spell",
+      "castType": "3",
+      "targetType": "Aimed",
+      "cost": {
+        "baseCost": 180,
+        "manualCostCalc": false,
+        "computedAutoCost": 141,
+        "costDrift": -39,
+        "costMatchesStored": false
+      },
+      "chargeTime": 0.5,
+      "castDuration": 0,
+      "range": 0,
+      "value": 10,
+      "weight": 0.2,
+      "keywords": [
+        {
+          "formKey": "0A0E57:Skyrim.esm",
+          "editorId": "VendorItemScroll"
+        }
+      ],
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "01EA6D:Skyrim.esm",
+            "editorId": "LightFFAimed",
+            "name": "Magelight"
+          },
+          "magnitude": 10,
+          "area": 0,
+          "duration": 90,
+          "effectCost": 141,
+          "archetype": "Light"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Skyrim.esm",
+        "isNewRecord": false,
+        "isInjected": false,
+        "winner": "Enderal SE - Gameplay Overhaul.esp",
+        "winnerLoadOrderIndex": 49,
+        "chain": [
+          "Skyrim.esm",
+          "Enderal SE - Gameplay Overhaul.esp"
+        ],
+        "changedFields": [
+          "name",
+          "cost",
+          "chargeTime",
+          "value",
+          "weight",
+          "effects"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "07B2F8:Skyrim.esm",
+      "editorId": "_01E_TeleportrolleFlusshaim",
+      "name": "Scroll: Teleport to Riverville",
+      "type": "Spell",
+      "castType": "3",
+      "targetType": "Self",
+      "cost": {
+        "baseCost": 0,
+        "manualCostCalc": true,
+        "computedAutoCost": 0
+      },
+      "chargeTime": 3,
+      "castDuration": 0,
+      "range": 0,
+      "value": 40,
+      "weight": 0.2,
+      "keywords": [
+        {
+          "formKey": "0914E9:Skyrim.esm",
+          "editorId": "VendorItemClutter"
+        },
+        {
+          "formKey": "0A0E57:Skyrim.esm",
+          "editorId": "VendorItemScroll"
+        }
+      ],
+      "flags": [
+        "ManualCostCalc"
+      ],
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "07B2F9:Skyrim.esm",
+            "editorId": "_00E_Teleport_Flusshaim",
+            "name": "Teleport: Riverville"
+          },
+          "magnitude": 0,
+          "area": 0,
+          "duration": 2,
+          "effectCost": 0,
+          "archetype": "Script"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Skyrim.esm",
+        "isNewRecord": false,
+        "isInjected": false,
+        "winner": "Enderal SE - Gameplay Overhaul.esp",
+        "winnerLoadOrderIndex": 49,
+        "chain": [
+          "Skyrim.esm",
+          "Enderal SE - Gameplay Overhaul.esp"
+        ],
+        "changedFields": [
+          "value",
+          "weight",
+          "keywords"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "08D952:Skyrim.esm",
+      "editorId": "_00E_MQ11c_DetectLifeScroll",
+      "name": "Scroll of Detect Life",
+      "description": "This spell shows your the auras of nearby friends and enemies - the undead are exempted of this effect.",
+      "type": "Spell",
+      "castType": "FireAndForget",
+      "targetType": "Self",
+      "cost": {
+        "baseCost": 3528,
+        "manualCostCalc": false,
+        "computedAutoCost": 3528,
+        "costDrift": 0,
+        "costMatchesStored": true
+      },
+      "chargeTime": 0.5,
+      "castDuration": 0,
+      "range": 0,
+      "value": 500,
+      "weight": 0.2,
+      "keywords": [
+        {
+          "formKey": "0A0E57:Skyrim.esm",
+          "editorId": "VendorItemScroll"
+        }
+      ],
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "08D953:Skyrim.esm",
+            "editorId": "_00E_MQ11c_DetectLifeSpecial",
+            "name": "Detect Life Special"
+          },
+          "magnitude": 0,
+          "area": 0,
+          "duration": 900,
+          "effectCost": 3528,
+          "archetype": "ValueModifier",
+          "actorValue": "Health"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Skyrim.esm",
+        "isNewRecord": false,
+        "isInjected": false,
+        "winner": "Enderal SE - Gameplay Overhaul.esp",
+        "winnerLoadOrderIndex": 49,
+        "chain": [
+          "Skyrim.esm",
+          "Enderal SE - Gameplay Overhaul.esp"
+        ],
+        "changedFields": [
+          "chargeTime",
+          "weight"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "0905A6:Skyrim.esm",
+      "editorId": "01E_RolleKettenblitz",
+      "name": "Scroll of Chain Lightning",
+      "type": "Spell",
+      "castType": "3",
+      "targetType": "Aimed",
+      "cost": {
+        "baseCost": 105,
+        "manualCostCalc": true,
+        "computedAutoCost": 101
+      },
+      "chargeTime": 0.5,
+      "castDuration": 0,
+      "range": 0,
+      "value": 33,
+      "weight": 0.2,
+      "keywords": [
+        {
+          "formKey": "0A0E57:Skyrim.esm",
+          "editorId": "VendorItemScroll"
+        }
+      ],
+      "flags": [
+        "ManualCostCalc"
+      ],
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "05DBAE:Skyrim.esm",
+            "editorId": "ShockDamageFFAimedArea",
+            "name": "Chain Lightning"
+          },
+          "magnitude": 27,
+          "area": 20,
+          "duration": 0,
+          "effectCost": 101,
+          "archetype": "DualValueModifier",
+          "actorValue": "Health"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Skyrim.esm",
+        "isNewRecord": false,
+        "isInjected": false,
+        "winner": "Enderal SE - Gameplay Overhaul.esp",
+        "winnerLoadOrderIndex": 49,
+        "chain": [
+          "Skyrim.esm",
+          "Enderal SE - Gameplay Overhaul.esp"
+        ],
+        "changedFields": [
+          "name",
+          "cost",
+          "value",
+          "weight",
+          "effects"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "0905A7:Skyrim.esm",
+      "editorId": "_01E_RolleEichenhaut",
+      "name": "Scroll of Oakflesh",
+      "type": "Spell",
+      "castType": "3",
+      "targetType": "Self",
+      "cost": {
+        "baseCost": 48,
+        "manualCostCalc": true,
+        "computedAutoCost": 132
+      },
+      "chargeTime": 0.5,
+      "castDuration": 0,
+      "range": 0,
+      "value": 25,
+      "weight": 0.2,
+      "keywords": [
+        {
+          "formKey": "0A0E57:Skyrim.esm",
+          "editorId": "VendorItemScroll"
+        }
+      ],
+      "flags": [
+        "ManualCostCalc"
+      ],
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "051B15:Skyrim.esm",
+            "editorId": "ArmorFFSelf0",
+            "name": "Divine Shield"
+          },
+          "magnitude": 25,
+          "area": 0,
+          "duration": 120,
+          "effectCost": 132,
+          "archetype": "PeakValueModifier",
+          "actorValue": "DamageResist"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Skyrim.esm",
+        "isNewRecord": false,
+        "isInjected": false,
+        "winner": "Enderal SE - Gameplay Overhaul.esp",
+        "winnerLoadOrderIndex": 49,
+        "chain": [
+          "Skyrim.esm",
+          "Enderal SE - Gameplay Overhaul.esp"
+        ],
+        "changedFields": [
+          "cost",
+          "value",
+          "weight",
+          "effects"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "0905A8:Skyrim.esm",
+      "editorId": "01E_RolleUnlock1",
+      "name": "Scroll of Magic Key (Apprentice)",
+      "type": "Spell",
+      "castType": "3",
+      "targetType": "Aimed",
+      "cost": {
+        "baseCost": 0,
+        "manualCostCalc": false,
+        "computedAutoCost": 0,
+        "costDrift": 0,
+        "costMatchesStored": true
+      },
+      "chargeTime": 0.5,
+      "castDuration": 0,
+      "range": 0,
+      "value": 14,
+      "weight": 0.2,
+      "keywords": [
+        {
+          "formKey": "0A0E57:Skyrim.esm",
+          "editorId": "VendorItemScroll"
+        }
+      ],
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "085940:Skyrim.esm",
+            "editorId": "_00E_UnlockChest_Apprentice",
+            "name": "Unlock Lock: Apprentice"
+          },
+          "magnitude": 0,
+          "area": 0,
+          "duration": 0,
+          "effectCost": 0,
+          "archetype": "SoulTrap"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Skyrim.esm",
+        "isNewRecord": false,
+        "isInjected": false,
+        "winner": "Enderal SE - Gameplay Overhaul.esp",
+        "winnerLoadOrderIndex": 49,
+        "chain": [
+          "Skyrim.esm",
+          "Enderal SE - Gameplay Overhaul.esp"
+        ],
+        "changedFields": [
+          "name",
+          "chargeTime",
+          "value",
+          "weight"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "0905A9:Skyrim.esm",
+      "editorId": "01E_RolleKerzenlicht",
+      "name": "Scroll of Candle Light",
+      "type": "Spell",
+      "castType": "3",
+      "targetType": "Self",
+      "cost": {
+        "baseCost": 21,
+        "manualCostCalc": false,
+        "computedAutoCost": 77,
+        "costDrift": 56,
+        "costMatchesStored": false
+      },
+      "chargeTime": 0.5,
+      "castDuration": 0,
+      "range": 0,
+      "value": 10,
+      "weight": 0.2,
+      "keywords": [
+        {
+          "formKey": "0A0E57:Skyrim.esm",
+          "editorId": "VendorItemScroll"
+        }
+      ],
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "01EA6C:Skyrim.esm",
+            "editorId": "LightFFSelf",
+            "name": "Candlelight"
+          },
+          "magnitude": 10,
+          "area": 0,
+          "duration": 120,
+          "effectCost": 77,
+          "archetype": "Light"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Skyrim.esm",
+        "isNewRecord": false,
+        "isInjected": false,
+        "winner": "Enderal SE - Gameplay Overhaul.esp",
+        "winnerLoadOrderIndex": 49,
+        "chain": [
+          "Skyrim.esm",
+          "Enderal SE - Gameplay Overhaul.esp"
+        ],
+        "changedFields": [
+          "name",
+          "cost",
+          "chargeTime",
+          "value",
+          "weight",
+          "effects"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "0905AA:Skyrim.esm",
+      "editorId": "01E_RolleUnlock2",
+      "name": "Scroll of Magic Key (Adept)",
+      "type": "Spell",
+      "castType": "3",
+      "targetType": "Aimed",
+      "cost": {
+        "baseCost": 0,
+        "manualCostCalc": false,
+        "computedAutoCost": 0,
+        "costDrift": 0,
+        "costMatchesStored": true
+      },
+      "chargeTime": 0.5,
+      "castDuration": 0,
+      "range": 0,
+      "value": 30,
+      "weight": 0.2,
+      "keywords": [
+        {
+          "formKey": "0A0E57:Skyrim.esm",
+          "editorId": "VendorItemScroll"
+        }
+      ],
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "08593F:Skyrim.esm",
+            "editorId": "_00E_UnlockChest_Adept",
+            "name": "Unlock lock: Adept"
+          },
+          "magnitude": 0,
+          "area": 0,
+          "duration": 0,
+          "effectCost": 0,
+          "archetype": "Script"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Skyrim.esm",
+        "isNewRecord": false,
+        "isInjected": false,
+        "winner": "Enderal SE - Gameplay Overhaul.esp",
+        "winnerLoadOrderIndex": 49,
+        "chain": [
+          "Skyrim.esm",
+          "Enderal SE - Gameplay Overhaul.esp"
+        ],
+        "changedFields": [
+          "name",
+          "chargeTime",
+          "value",
+          "weight"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "0D941D:Skyrim.esm",
+      "editorId": "02E_RolleWohltat",
+      "name": "Scroll of Flash Heal (Standard)",
+      "type": "Spell",
+      "castType": "3",
+      "targetType": "Self",
+      "cost": {
+        "baseCost": 108,
+        "manualCostCalc": false,
+        "computedAutoCost": 90,
+        "costDrift": -18,
+        "costMatchesStored": false
+      },
+      "chargeTime": 0.5,
+      "castDuration": 0,
+      "range": 0,
+      "value": 75,
+      "weight": 0.2,
+      "keywords": [
+        {
+          "formKey": "0A0E57:Skyrim.esm",
+          "editorId": "VendorItemScroll"
+        }
+      ],
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "01CEA6:Skyrim.esm",
+            "editorId": "RestoreHealthFFSelf",
+            "name": "Restore Health"
+          },
+          "magnitude": 60,
+          "area": 0,
+          "duration": 0,
+          "effectCost": 90,
+          "archetype": "ValueModifier",
+          "actorValue": "Health"
+        },
+        {
+          "index": 1,
+          "baseEffect": {
+            "formKey": "11A4B6:Skyrim.esm",
+            "editorId": "_00E_IncreaseArcaneFeverFFSelf",
+            "name": "Arcane Fever"
+          },
+          "magnitude": 1.5,
+          "area": 0,
+          "duration": 1,
+          "effectCost": 0,
+          "archetype": "Script"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Skyrim.esm",
+        "isNewRecord": false,
+        "isInjected": false,
+        "winner": "Enderal SE - Gameplay Overhaul.esp",
+        "winnerLoadOrderIndex": 49,
+        "chain": [
+          "Skyrim.esm",
+          "Enderal SE - Gameplay Overhaul.esp"
+        ],
+        "changedFields": [
+          "editorId",
+          "name",
+          "cost",
+          "chargeTime",
+          "value",
+          "weight",
+          "effects"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "0EAB75:Skyrim.esm",
+      "editorId": "_01E_TeleportrolleArk",
+      "name": "Scroll: Teleport to Ark",
+      "type": "Spell",
+      "castType": "3",
+      "targetType": "Self",
+      "cost": {
+        "baseCost": 0,
+        "manualCostCalc": true,
+        "computedAutoCost": 0
+      },
+      "chargeTime": 3,
+      "castDuration": 0,
+      "range": 0,
+      "value": 45,
+      "weight": 0.2,
+      "keywords": [
+        {
+          "formKey": "0914E9:Skyrim.esm",
+          "editorId": "VendorItemClutter"
+        },
+        {
+          "formKey": "0A0E57:Skyrim.esm",
+          "editorId": "VendorItemScroll"
+        }
+      ],
+      "flags": [
+        "ManualCostCalc"
+      ],
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "0EAB73:Skyrim.esm",
+            "editorId": "_00E_Teleport_Ark",
+            "name": "Teleport: Ark"
+          },
+          "magnitude": 0,
+          "area": 0,
+          "duration": 2,
+          "effectCost": 0,
+          "archetype": "Script"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Skyrim.esm",
+        "isNewRecord": false,
+        "isInjected": false,
+        "winner": "Enderal SE - Gameplay Overhaul.esp",
+        "winnerLoadOrderIndex": 49,
+        "chain": [
+          "Skyrim.esm",
+          "Enderal SE - Gameplay Overhaul.esp"
+        ],
+        "changedFields": [
+          "value",
+          "weight",
+          "keywords"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "0F04BB:Skyrim.esm",
+      "editorId": "_00E_PowderMineFireballscroll",
+      "name": "Confiscated Scroll",
+      "type": "Spell",
+      "castType": "3",
+      "targetType": "Aimed",
+      "cost": {
+        "baseCost": 28,
+        "manualCostCalc": false,
+        "computedAutoCost": 25,
+        "costDrift": -3,
+        "costMatchesStored": false
+      },
+      "chargeTime": 0.5,
+      "castDuration": 0,
+      "range": 0,
+      "value": 0,
+      "weight": 0.2,
+      "keywords": [
+        {
+          "formKey": "0A0E57:Skyrim.esm",
+          "editorId": "VendorItemScroll"
+        }
+      ],
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "01CEA1:Skyrim.esm",
+            "editorId": "FireDamageFFAimedArea",
+            "name": "Fireball"
+          },
+          "magnitude": 10,
+          "area": 15,
+          "duration": 0,
+          "effectCost": 25,
+          "archetype": "ValueModifier",
+          "actorValue": "Health"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Skyrim.esm",
+        "isNewRecord": false,
+        "isInjected": false,
+        "winner": "Enderal SE - Gameplay Overhaul.esp",
+        "winnerLoadOrderIndex": 49,
+        "chain": [
+          "Skyrim.esm",
+          "Enderal SE - Gameplay Overhaul.esp"
+        ],
+        "changedFields": [
+          "cost",
+          "chargeTime",
+          "weight"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "0F857A:Skyrim.esm",
+      "editorId": "01E_RolleUnlock4",
+      "name": "Scroll of Magic Key (Master)",
+      "type": "Spell",
+      "castType": "3",
+      "targetType": "Aimed",
+      "cost": {
+        "baseCost": 0,
+        "manualCostCalc": false,
+        "computedAutoCost": 0,
+        "costDrift": 0,
+        "costMatchesStored": true
+      },
+      "chargeTime": 0.5,
+      "castDuration": 0,
+      "range": 0,
+      "value": 140,
+      "weight": 0.2,
+      "keywords": [
+        {
+          "formKey": "0A0E57:Skyrim.esm",
+          "editorId": "VendorItemScroll"
+        }
+      ],
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "08593E:Skyrim.esm",
+            "editorId": "_00E_UnlockChest_Master",
+            "name": "Unlock Lock: Master"
+          },
+          "magnitude": 0,
+          "area": 0,
+          "duration": 0,
+          "effectCost": 0,
+          "archetype": "Script"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Skyrim.esm",
+        "isNewRecord": false,
+        "isInjected": false,
+        "winner": "Enderal SE - Gameplay Overhaul.esp",
+        "winnerLoadOrderIndex": 49,
+        "chain": [
+          "Skyrim.esm",
+          "Enderal SE - Gameplay Overhaul.esp"
+        ],
+        "changedFields": [
+          "name",
+          "chargeTime",
+          "value",
+          "weight"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "0F857B:Skyrim.esm",
+      "editorId": "01E_RolleUnlock3",
+      "name": "Scroll of Magic Key (Expert)",
+      "type": "Spell",
+      "castType": "3",
+      "targetType": "Aimed",
+      "cost": {
+        "baseCost": 0,
+        "manualCostCalc": false,
+        "computedAutoCost": 0,
+        "costDrift": 0,
+        "costMatchesStored": true
+      },
+      "chargeTime": 0.5,
+      "castDuration": 0,
+      "range": 0,
+      "value": 65,
+      "weight": 0.2,
+      "keywords": [
+        {
+          "formKey": "0A0E57:Skyrim.esm",
+          "editorId": "VendorItemScroll"
+        }
+      ],
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "08593D:Skyrim.esm",
+            "editorId": "_00E_UnlockChest_Expert",
+            "name": "Unlock Lock: Expert"
+          },
+          "magnitude": 0,
+          "area": 0,
+          "duration": 0,
+          "effectCost": 0,
+          "archetype": "Script"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Skyrim.esm",
+        "isNewRecord": false,
+        "isInjected": false,
+        "winner": "Enderal SE - Gameplay Overhaul.esp",
+        "winnerLoadOrderIndex": 49,
+        "chain": [
+          "Skyrim.esm",
+          "Enderal SE - Gameplay Overhaul.esp"
+        ],
+        "changedFields": [
+          "name",
+          "chargeTime",
+          "value",
+          "weight"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "0F9101:Skyrim.esm",
+      "editorId": "_01E_TeleportrolleSonnentempel",
+      "name": "Scroll: Teleport to the Sun Temple",
+      "type": "Spell",
+      "castType": "3",
+      "targetType": "Self",
+      "cost": {
+        "baseCost": 0,
+        "manualCostCalc": true,
+        "computedAutoCost": 0
+      },
+      "chargeTime": 3,
+      "castDuration": 0,
+      "range": 0,
+      "value": 45,
+      "weight": 0.2,
+      "keywords": [
+        {
+          "formKey": "0914E9:Skyrim.esm",
+          "editorId": "VendorItemClutter"
+        },
+        {
+          "formKey": "0A0E57:Skyrim.esm",
+          "editorId": "VendorItemScroll"
+        }
+      ],
+      "flags": [
+        "ManualCostCalc"
+      ],
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "0F9315:Skyrim.esm",
+            "editorId": "_00E_Teleport_Sonnentempel",
+            "name": "Teleport: Sun Temple"
+          },
+          "magnitude": 0,
+          "area": 0,
+          "duration": 2,
+          "effectCost": 0,
+          "archetype": "Script"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Skyrim.esm",
+        "isNewRecord": false,
+        "isInjected": false,
+        "winner": "Enderal SE - Gameplay Overhaul.esp",
+        "winnerLoadOrderIndex": 49,
+        "chain": [
+          "Skyrim.esm",
+          "Enderal SE - Gameplay Overhaul.esp"
+        ],
+        "changedFields": [
+          "value",
+          "weight",
+          "keywords"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "10A85F:Skyrim.esm",
+      "editorId": "_02_RolleHysterie",
+      "name": "Scroll of Hysteria",
+      "type": "Spell",
+      "castType": "3",
+      "targetType": "Self",
+      "cost": {
+        "baseCost": 866,
+        "manualCostCalc": true,
+        "computedAutoCost": 494
+      },
+      "chargeTime": 3,
+      "castDuration": 0,
+      "range": 0,
+      "value": 400,
+      "weight": 0.2,
+      "keywords": [
+        {
+          "formKey": "0A0E57:Skyrim.esm",
+          "editorId": "VendorItemScroll"
+        }
+      ],
+      "flags": [
+        "ManualCostCalc"
+      ],
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "07E8D8:Skyrim.esm",
+            "editorId": "InfluenceConfDownFFSelfArea250",
+            "name": "Hysteria"
+          },
+          "magnitude": 30,
+          "area": 250,
+          "duration": 30,
+          "effectCost": 494,
+          "archetype": "Demoralize",
+          "actorValue": "Confidence"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Skyrim.esm",
+        "isNewRecord": false,
+        "isInjected": false,
+        "winner": "Enderal SE - Gameplay Overhaul.esp",
+        "winnerLoadOrderIndex": 49,
+        "chain": [
+          "Skyrim.esm",
+          "Enderal SE - Gameplay Overhaul.esp"
+        ],
+        "changedFields": [
+          "name",
+          "cost",
+          "chargeTime",
+          "value",
+          "weight",
+          "effects"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "10A860:Skyrim.esm",
+      "editorId": "_01E_TeleportrolleNebelhaim",
+      "name": "Scroll: Teleport to Fogville",
+      "type": "Spell",
+      "castType": "3",
+      "targetType": "Self",
+      "cost": {
+        "baseCost": 0,
+        "manualCostCalc": true,
+        "computedAutoCost": 0
+      },
+      "chargeTime": 3,
+      "castDuration": 0,
+      "range": 0,
+      "value": 45,
+      "weight": 0.2,
+      "keywords": [
+        {
+          "formKey": "0914E9:Skyrim.esm",
+          "editorId": "VendorItemClutter"
+        },
+        {
+          "formKey": "0A0E57:Skyrim.esm",
+          "editorId": "VendorItemScroll"
+        }
+      ],
+      "flags": [
+        "ManualCostCalc"
+      ],
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "10A85E:Skyrim.esm",
+            "editorId": "_00E_Teleport_Nebelhaim",
+            "name": "Teleport: Fogville"
+          },
+          "magnitude": 0,
+          "area": 0,
+          "duration": 2,
+          "effectCost": 0,
+          "archetype": "Script"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Skyrim.esm",
+        "isNewRecord": false,
+        "isInjected": false,
+        "winner": "Enderal SE - Gameplay Overhaul.esp",
+        "winnerLoadOrderIndex": 49,
+        "chain": [
+          "Skyrim.esm",
+          "Enderal SE - Gameplay Overhaul.esp"
+        ],
+        "changedFields": [
+          "value",
+          "weight",
+          "keywords"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "12970F:Skyrim.esm",
+      "editorId": "_01E_TeleportrolleBauenkueste",
+      "name": "Scroll: Teleport to the Farmers Coast",
+      "type": "Spell",
+      "castType": "3",
+      "targetType": "Self",
+      "cost": {
+        "baseCost": 0,
+        "manualCostCalc": true,
+        "computedAutoCost": 0
+      },
+      "chargeTime": 3,
+      "castDuration": 0,
+      "range": 0,
+      "value": 40,
+      "weight": 0.2,
+      "keywords": [
+        {
+          "formKey": "0914E9:Skyrim.esm",
+          "editorId": "VendorItemClutter"
+        },
+        {
+          "formKey": "0A0E57:Skyrim.esm",
+          "editorId": "VendorItemScroll"
+        }
+      ],
+      "flags": [
+        "ManualCostCalc"
+      ],
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "129709:Skyrim.esm",
+            "editorId": "_00E_Teleport_Bauernkueste",
+            "name": "Teleport: Farmers Coast"
+          },
+          "magnitude": 0,
+          "area": 0,
+          "duration": 2,
+          "effectCost": 0,
+          "archetype": "Script"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Skyrim.esm",
+        "isNewRecord": false,
+        "isInjected": false,
+        "winner": "Enderal SE - Gameplay Overhaul.esp",
+        "winnerLoadOrderIndex": 49,
+        "chain": [
+          "Skyrim.esm",
+          "Enderal SE - Gameplay Overhaul.esp"
+        ],
+        "changedFields": [
+          "value",
+          "weight",
+          "keywords"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "129710:Skyrim.esm",
+      "editorId": "_01E_TeleportrolleHerzlandNord",
+      "name": "Scroll: Teleport to the Northern Heartland",
+      "type": "Spell",
+      "castType": "3",
+      "targetType": "Self",
+      "cost": {
+        "baseCost": 0,
+        "manualCostCalc": true,
+        "computedAutoCost": 0
+      },
+      "chargeTime": 3,
+      "castDuration": 0,
+      "range": 0,
+      "value": 40,
+      "weight": 0.2,
+      "keywords": [
+        {
+          "formKey": "0914E9:Skyrim.esm",
+          "editorId": "VendorItemClutter"
+        },
+        {
+          "formKey": "0A0E57:Skyrim.esm",
+          "editorId": "VendorItemScroll"
+        }
+      ],
+      "flags": [
+        "ManualCostCalc"
+      ],
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "12970C:Skyrim.esm",
+            "editorId": "_00E_Teleport_HerzlandNord",
+            "name": "Teleport: Northern Heartland"
+          },
+          "magnitude": 0,
+          "area": 0,
+          "duration": 2,
+          "effectCost": 0,
+          "archetype": "Script"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Skyrim.esm",
+        "isNewRecord": false,
+        "isInjected": false,
+        "winner": "Enderal SE - Gameplay Overhaul.esp",
+        "winnerLoadOrderIndex": 49,
+        "chain": [
+          "Skyrim.esm",
+          "Enderal SE - Gameplay Overhaul.esp"
+        ],
+        "changedFields": [
+          "value",
+          "weight",
+          "keywords"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "129711:Skyrim.esm",
+      "editorId": "_01E_TeleportrolleHerzlandGrenze",
+      "name": "Scroll: Teleport to the Heartland\u0027s Border",
+      "type": "Spell",
+      "castType": "3",
+      "targetType": "Self",
+      "cost": {
+        "baseCost": 0,
+        "manualCostCalc": true,
+        "computedAutoCost": 0
+      },
+      "chargeTime": 3,
+      "castDuration": 0,
+      "range": 0,
+      "value": 40,
+      "weight": 0.2,
+      "keywords": [
+        {
+          "formKey": "0914E9:Skyrim.esm",
+          "editorId": "VendorItemClutter"
+        },
+        {
+          "formKey": "0A0E57:Skyrim.esm",
+          "editorId": "VendorItemScroll"
+        }
+      ],
+      "flags": [
+        "ManualCostCalc"
+      ],
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "12970E:Skyrim.esm",
+            "editorId": "_00E_Teleport_HerzlandGrenze",
+            "name": "Teleport: Border of the Heartland"
+          },
+          "magnitude": 0,
+          "area": 0,
+          "duration": 2,
+          "effectCost": 0,
+          "archetype": "Script"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Skyrim.esm",
+        "isNewRecord": false,
+        "isInjected": false,
+        "winner": "Enderal SE - Gameplay Overhaul.esp",
+        "winnerLoadOrderIndex": 49,
+        "chain": [
+          "Skyrim.esm",
+          "Enderal SE - Gameplay Overhaul.esp"
+        ],
+        "changedFields": [
+          "value",
+          "weight",
+          "keywords"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "136D1E:Skyrim.esm",
+      "editorId": "_01E_TeleportrolleDuenenhaim",
+      "name": "Scroll: Teleport to Duneville",
+      "type": "Spell",
+      "castType": "3",
+      "targetType": "Self",
+      "cost": {
+        "baseCost": 0,
+        "manualCostCalc": true,
+        "computedAutoCost": 0
+      },
+      "chargeTime": 3,
+      "castDuration": 0,
+      "range": 0,
+      "value": 45,
+      "weight": 0.2,
+      "keywords": [
+        {
+          "formKey": "0914E9:Skyrim.esm",
+          "editorId": "VendorItemClutter"
+        },
+        {
+          "formKey": "0A0E57:Skyrim.esm",
+          "editorId": "VendorItemScroll"
+        }
+      ],
+      "flags": [
+        "ManualCostCalc"
+      ],
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "136D20:Skyrim.esm",
+            "editorId": "_00E_Teleport_Duenenhaim",
+            "name": "Teleport: Duneville"
+          },
+          "magnitude": 0,
+          "area": 0,
+          "duration": 2,
+          "effectCost": 0,
+          "archetype": "Script"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Skyrim.esm",
+        "isNewRecord": false,
+        "isInjected": false,
+        "winner": "Enderal SE - Gameplay Overhaul.esp",
+        "winnerLoadOrderIndex": 49,
+        "chain": [
+          "Skyrim.esm",
+          "Enderal SE - Gameplay Overhaul.esp"
+        ],
+        "changedFields": [
+          "value",
+          "weight",
+          "keywords"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "1370A5:Skyrim.esm",
+      "editorId": "_01E_TeleportrolleKurmaiCave",
+      "name": "Scroll: Teleport in Kurmai\u0027s Cave",
+      "type": "Spell",
+      "castType": "3",
+      "targetType": "Self",
+      "cost": {
+        "baseCost": 0,
+        "manualCostCalc": true,
+        "computedAutoCost": 0
+      },
+      "chargeTime": 3,
+      "castDuration": 0,
+      "range": 0,
+      "value": 50,
+      "weight": 0.2,
+      "keywords": [
+        {
+          "formKey": "0914E9:Skyrim.esm",
+          "editorId": "VendorItemClutter"
+        },
+        {
+          "formKey": "0A0E57:Skyrim.esm",
+          "editorId": "VendorItemScroll"
+        }
+      ],
+      "flags": [
+        "ManualCostCalc"
+      ],
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "1370A4:Skyrim.esm",
+            "editorId": "_00E_Teleport_MQ13aCave",
+            "name": "Teleport: Kurmai\u0027s Cave"
+          },
+          "magnitude": 0,
+          "area": 0,
+          "duration": 2,
+          "effectCost": 0,
+          "archetype": "Script"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Skyrim.esm",
+        "isNewRecord": false,
+        "isInjected": false,
+        "winner": "Enderal SE - Gameplay Overhaul.esp",
+        "winnerLoadOrderIndex": 49,
+        "chain": [
+          "Skyrim.esm",
+          "Enderal SE - Gameplay Overhaul.esp"
+        ],
+        "changedFields": [
+          "value",
+          "weight",
+          "keywords"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "15031F:Skyrim.esm",
+      "editorId": "_01E_TeleportrolleUnknownPlace",
+      "name": "Scroll: Teleport to a Strange Place",
+      "type": "Spell",
+      "castType": "3",
+      "targetType": "Self",
+      "cost": {
+        "baseCost": 0,
+        "manualCostCalc": true,
+        "computedAutoCost": 0
+      },
+      "chargeTime": 3,
+      "castDuration": 0,
+      "range": 0,
+      "value": 50,
+      "weight": 0.2,
+      "keywords": [
+        {
+          "formKey": "0914E9:Skyrim.esm",
+          "editorId": "VendorItemClutter"
+        },
+        {
+          "formKey": "0A0E57:Skyrim.esm",
+          "editorId": "VendorItemScroll"
+        }
+      ],
+      "flags": [
+        "ManualCostCalc"
+      ],
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "150308:Skyrim.esm",
+            "editorId": "_00E_Teleport_UnknownPlace",
+            "name": "Teleport: Unknown Place"
+          },
+          "magnitude": 0,
+          "area": 0,
+          "duration": 2,
+          "effectCost": 0,
+          "archetype": "Script"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Skyrim.esm",
+        "isNewRecord": false,
+        "isInjected": false,
+        "winner": "Enderal SE - Gameplay Overhaul.esp",
+        "winnerLoadOrderIndex": 49,
+        "chain": [
+          "Skyrim.esm",
+          "Enderal SE - Gameplay Overhaul.esp"
+        ],
+        "changedFields": [
+          "value",
+          "weight",
+          "keywords"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    }
+  ]
+}
