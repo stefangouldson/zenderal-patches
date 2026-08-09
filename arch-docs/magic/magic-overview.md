@@ -7,13 +7,13 @@ Load-order-winning values for every magic record in the installed Zenderal modli
 
 **67 enabled plugins have HEDR 1.71** and load only because *Backported Extended ESL Support* is installed. Records whose winner is one of them carry `winnerNeedsBees: true`. Remove BEES and this dataset is wrong for all of them with no error anywhere.
 
-Runtime corroboration: the BEES log reports **68** plugins emulated (log written 2026-08-08 20:32).
+Runtime corroboration: the BEES log reports **69** plugins emulated (log written 2026-08-09 16:31).
 
 ## Datasets
 
 | Dataset | Winning records | With overrides | New (non-master) |
 |---|---:|---:|---:|
-| `spells.json` (SPEL) | 2350 | 704 | 1209 |
+| `spells.json` (SPEL) | 2350 | 879 | 1209 |
 | `magic-effects.json` (MGEF) | 2780 | 489 | 1496 |
 | `enchantments.json` (ENCH) | 838 | 275 | 128 |
 | `scrolls.json` (SCRL) | 180 | 34 | 146 |
@@ -28,7 +28,8 @@ Plugins ranked by how many overridden magic records they end up winning:
 
 | Plugin | Conflicted records won |
 |---|---:|
-| Enderal SE - Gameplay Overhaul.esp | 1470 |
+| Enderal SE - Gameplay Overhaul.esp | 1469 |
+| Zenderal - Magic Patches.esp | 176 |
 | EGO - KataPUMB Spell Package.esp | 149 |
 | EGO SE - KataPUMB Hidden Powers.esp | 63 |
 | EGO SE - KataPUMB New Affinities.esp | 37 |
@@ -47,7 +48,6 @@ Plugins ranked by how many overridden magic records they end up winning:
 | WadeInWaterRedone.esp | 1 |
 | EGO SE - Increased Food Health Regeneration.esp | 1 |
 | Enderal SE - Bug Fixes.esp | 1 |
-| EGO SE - Ice Claw (1 carry capacity).esp | 1 |
 
 ## Spells by school
 

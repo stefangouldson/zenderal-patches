@@ -892,71 +892,78 @@
       "source": "KataPUMB Hidden Powers"
     },
     {
-      "name": "Unique Amulet Replacer.esp",
+      "name": "Apocalypse - Magic of Skyrim.esp",
       "index": 123,
+      "enabled": true,
+      "headerVersion": 1.7,
+      "source": "Apocalypse - Enderal Patch"
+    },
+    {
+      "name": "Unique Amulet Replacer.esp",
+      "index": 124,
       "enabled": true,
       "headerVersion": 1.7,
       "source": "Unique Amulets and Masks (Ancient and Qalians Last Smile) SE"
     },
     {
       "name": "Unique Amulets and Masks Fixes.esp",
-      "index": 124,
+      "index": 125,
       "enabled": true,
       "headerVersion": 1.7,
       "source": "Unique Amulets and Masks SE Fixes"
     },
     {
       "name": "DF - Official Creature Pack.esp",
-      "index": 125,
+      "index": 126,
       "enabled": true,
       "headerVersion": 1.7,
       "source": "DF - Official Creature Asset Pack"
     },
     {
       "name": "Enderal SE - NPC Pathing Fixes (Whisperwood).esp",
-      "index": 126,
+      "index": 127,
       "enabled": true,
       "headerVersion": 1.7,
       "source": "NPC Pathing Fixes (Whisperwood)"
     },
     {
       "name": "Enderal SE - NPC Pathing Fixes (Heartland).esp",
-      "index": 127,
+      "index": 128,
       "enabled": true,
       "headerVersion": 1.7,
       "source": "NPC Pathing Fixes (Heartland)"
     },
     {
       "name": "Enderal SE - NPC Pathing Fixes (Sun Coast).esp",
-      "index": 128,
+      "index": 129,
       "enabled": true,
       "headerVersion": 1.7,
       "source": "NPC Pathing Fixes (Suncoast)"
     },
     {
       "name": "EGO SE - Ice Claw (1 carry capacity).esp",
-      "index": 129,
+      "index": 130,
       "enabled": true,
       "headerVersion": 1.7,
       "source": "EGO SE - Ice Claw buff"
     },
     {
       "name": "EGO SE - Increased Carry Weight.esp",
-      "index": 130,
+      "index": 131,
       "enabled": true,
       "headerVersion": 1.7,
       "source": "Official EGO SE Patches"
     },
     {
       "name": "EGO SE - Unique Amulets and Masks.esp",
-      "index": 131,
+      "index": 132,
       "enabled": true,
       "headerVersion": 1.7,
       "source": "EGO SE - Unique Amulets and Masks"
     },
     {
       "name": "MythicalGiantsReplacer.esp",
-      "index": 132,
+      "index": 133,
       "enabled": true,
       "headerVersion": 1.71,
       "needsBees": true,
@@ -964,133 +971,133 @@
     },
     {
       "name": "EGO SE - Secure Chests.esp",
-      "index": 133,
-      "enabled": true,
-      "headerVersion": 1.7,
-      "source": "Official EGO SE Patches"
-    },
-    {
-      "name": "EGO SE - Reduced Enemy Damage.esp",
       "index": 134,
       "enabled": true,
       "headerVersion": 1.7,
       "source": "Official EGO SE Patches"
     },
     {
-      "name": "EGO SE - Quest Shader.esp",
+      "name": "EGO SE - Reduced Enemy Damage.esp",
       "index": 135,
       "enabled": true,
       "headerVersion": 1.7,
       "source": "Official EGO SE Patches"
     },
     {
-      "name": "EGO SE - Psionic affects Constructs.esp",
+      "name": "EGO SE - Quest Shader.esp",
       "index": 136,
       "enabled": true,
       "headerVersion": 1.7,
       "source": "Official EGO SE Patches"
     },
     {
-      "name": "EGO SE - Faster Level Up.esp",
+      "name": "EGO SE - Psionic affects Constructs.esp",
       "index": 137,
       "enabled": true,
       "headerVersion": 1.7,
       "source": "Official EGO SE Patches"
     },
     {
-      "name": "EGO SE - Apparition Regeneration.esp",
+      "name": "EGO SE - Faster Level Up.esp",
       "index": 138,
       "enabled": true,
       "headerVersion": 1.7,
       "source": "Official EGO SE Patches"
     },
     {
-      "name": "EGO SE - Relationship Messages.esp",
+      "name": "EGO SE - Apparition Regeneration.esp",
       "index": 139,
       "enabled": true,
       "headerVersion": 1.7,
       "source": "Official EGO SE Patches"
     },
     {
-      "name": "EGO SE - Higher Starting Skills.esp",
+      "name": "EGO SE - Relationship Messages.esp",
       "index": 140,
       "enabled": true,
       "headerVersion": 1.7,
       "source": "Official EGO SE Patches"
     },
     {
-      "name": "EGO - KataPUMB Spell Package.esp",
+      "name": "EGO SE - Higher Starting Skills.esp",
       "index": 141,
+      "enabled": true,
+      "headerVersion": 1.7,
+      "source": "Official EGO SE Patches"
+    },
+    {
+      "name": "EGO - KataPUMB Spell Package.esp",
+      "index": 142,
       "enabled": true,
       "headerVersion": 1.7,
       "source": "EGO SE - KataPUMB Spell Package"
     },
     {
       "name": "EGO SE - Increased Food Health Regeneration.esp",
-      "index": 142,
+      "index": 143,
       "enabled": true,
       "headerVersion": 1.7,
       "source": "Official EGO SE Patches"
     },
     {
       "name": "EGO SE - KataPUMB Hidden Powers.esp",
-      "index": 143,
+      "index": 144,
       "enabled": true,
       "headerVersion": 1.7,
       "source": "EGO SE - KataPUMB Hidden Powers"
     },
     {
       "name": "EGO SE - KataPUMB New Affinities.esp",
-      "index": 144,
+      "index": 145,
       "enabled": true,
       "headerVersion": 1.7,
       "source": "EGO SE - KataPUMB New Affinities"
     },
     {
       "name": "EGO SE - Priests Cure Diseases.esp",
-      "index": 145,
+      "index": 146,
       "enabled": true,
       "headerVersion": 1.7,
       "source": "Official EGO SE Patches"
     },
     {
       "name": "EGO SE - KataPUMB Spells - Emberlord sells all spells.esp",
-      "index": 146,
+      "index": 147,
       "enabled": true,
       "headerVersion": 1.7,
       "source": "EGO SE - Emberlord sells all spells"
     },
     {
       "name": "EGO SE - Bears of the North.esp",
-      "index": 147,
+      "index": 148,
       "enabled": true,
       "headerVersion": 1.7,
       "source": "Enderal SE - Bears of the North"
     },
     {
       "name": "EVGConditionalIdles.esp",
-      "index": 148,
+      "index": 149,
       "enabled": true,
       "headerVersion": 1.7,
       "source": "EVG Conditional Idles"
     },
     {
       "name": "DynamicBlockHit.esp",
-      "index": 149,
+      "index": 150,
       "enabled": true,
       "headerVersion": 1.7,
       "source": "Dynamic Block Hit"
     },
     {
       "name": "scar-adxp-patch.esp",
-      "index": 150,
+      "index": 151,
       "enabled": true,
       "headerVersion": 1.7,
       "source": "SCAR - Skyrim Combos AI Revolution"
     },
     {
       "name": "SprintFixes.esp",
-      "index": 151,
+      "index": 152,
       "enabled": true,
       "headerVersion": 1.71,
       "needsBees": true,
@@ -1098,7 +1105,7 @@
     },
     {
       "name": "Better Help.esp",
-      "index": 152,
+      "index": 153,
       "enabled": true,
       "headerVersion": 1.71,
       "needsBees": true,
@@ -1106,7 +1113,7 @@
     },
     {
       "name": "Easy Console Commands.esp",
-      "index": 153,
+      "index": 154,
       "enabled": true,
       "headerVersion": 1.71,
       "needsBees": true,
@@ -1114,35 +1121,35 @@
     },
     {
       "name": "SRP Bug Fixes Enderal.esp",
-      "index": 154,
+      "index": 155,
       "enabled": true,
       "headerVersion": 1.7,
       "source": "SRP Bug fixes"
     },
     {
       "name": "SNRP Parallax Fix.esp",
-      "index": 155,
+      "index": 156,
       "enabled": true,
       "headerVersion": 1.7,
       "source": "SRP Enderal - Parallax Material Fix"
     },
     {
       "name": "NB-Scars.esp",
-      "index": 156,
+      "index": 157,
       "enabled": true,
       "headerVersion": 1.7,
       "source": "Northborn Scars for High Poly Head"
     },
     {
       "name": "Zenderal - Faster Sprint.esp",
-      "index": 157,
+      "index": 158,
       "enabled": true,
       "headerVersion": 1,
       "source": "Zenderal - Faster Sprint"
     },
     {
       "name": "Wellwatch Redone - Bridges of Enderal Patch.esp",
-      "index": 158,
+      "index": 159,
       "enabled": true,
       "headerVersion": 1.71,
       "needsBees": true,
@@ -1150,7 +1157,7 @@
     },
     {
       "name": "Wellwatch Redone - EPPI Improved Locations Patch.esp",
-      "index": 159,
+      "index": 160,
       "enabled": true,
       "headerVersion": 1.71,
       "needsBees": true,
@@ -1158,7 +1165,7 @@
     },
     {
       "name": "Wellwatch Redone - EPPI Obstacles Patch.esp",
-      "index": 160,
+      "index": 161,
       "enabled": true,
       "headerVersion": 1.71,
       "needsBees": true,
@@ -1166,18 +1173,11 @@
     },
     {
       "name": "Pretty Enderal Backpacks.esp",
-      "index": 161,
+      "index": 162,
       "enabled": true,
       "headerVersion": 1.71,
       "needsBees": true,
       "source": "Pretty Enderal Backpacks"
-    },
-    {
-      "name": "Skip Intro SE.esp",
-      "index": 162,
-      "enabled": true,
-      "headerVersion": 1.7,
-      "source": "Skip Intro SE"
     },
     {
       "name": "Leveling Redone.esp",
@@ -2193,8 +2193,15 @@
       "source": "Enderal Amnesia Shrine (Skill - Stat - Memory reset) - EnderalSE"
     },
     {
-      "name": "Water for ENB - Waterfalls Add-On.esp",
+      "name": "Zenderal - Magic Patches.esp",
       "index": 301,
+      "enabled": true,
+      "headerVersion": 1.7,
+      "source": "Zenderal - Magic Patches"
+    },
+    {
+      "name": "Water for ENB - Waterfalls Add-On.esp",
+      "index": 302,
       "enabled": false,
       "headerVersion": 1.71,
       "needsBees": true,
@@ -2203,21 +2210,13 @@
     },
     {
       "name": "Water for ENB for Enderal.esp",
-      "index": 302,
+      "index": 303,
       "enabled": true,
       "headerVersion": 1.7,
       "source": "Water for ENB"
     },
     {
       "name": "Occlusion.esp",
-      "index": 303,
-      "enabled": true,
-      "headerVersion": 1.71,
-      "needsBees": true,
-      "source": "DynDOLOD_Output"
-    },
-    {
-      "name": "DynDOLOD.esp",
       "index": 304,
       "enabled": true,
       "headerVersion": 1.71,
@@ -2225,11 +2224,19 @@
       "source": "DynDOLOD_Output"
     },
     {
-      "name": "Apocalypse - Magic of Skyrim.esp",
+      "name": "DynDOLOD.esp",
       "index": 305,
       "enabled": true,
+      "headerVersion": 1.71,
+      "needsBees": true,
+      "source": "DynDOLOD_Output"
+    },
+    {
+      "name": "Zenderal - Skip To Taming The Waves.esp",
+      "index": 306,
+      "enabled": true,
       "headerVersion": 1.7,
-      "source": "Apocalypse - Enderal Patch"
+      "source": "Zenderal - Skip To Taming The Waves"
     }
   ]
 }
