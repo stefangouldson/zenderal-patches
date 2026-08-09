@@ -15,7 +15,7 @@ public static class Reports
     {
         var sb = new StringBuilder();
         sb.AppendLine("Form Key,Editor Id,Name,School,Type,Cast Type,Target Type,Base Cost," +
-                      "Computed Auto Cost,Charge Time,Winner Overwrite,Taught By");
+                      "Computed Auto Cost,Charge Time,Arcane Fever,Winner Overwrite,Taught By");
         // Player-obtainable spells only: a winning Book must teach it. This drops NPC-cast copies,
         // trap projectiles, voice/shout spells and unused leftovers that share a display name with
         // the player spell ("Fireball" exists 30+ times as distinct records). The full set stays
@@ -38,6 +38,7 @@ public static class Reports
                 Csv(s.CastType), Csv(s.TargetType), s.Cost?.BaseCost.ToString() ?? "",
                 s.Cost?.ComputedAutoCost?.ToString() ?? "",
                 s.ChargeTime.ToString(System.Globalization.CultureInfo.InvariantCulture),
+                ArcaneFever(s.Effects),
                 Csv(s.Provenance!.Winner),
                 Csv(string.Join("; ", s.TaughtBy!.Select(b => b.EditorId ?? b.FormKey)))));
         }
@@ -50,7 +51,7 @@ public static class Reports
     {
         var sb = new StringBuilder();
         sb.AppendLine("Form Key,Editor Id,Name,Cast Type,Target Type,Base Cost,Computed Auto Cost," +
-                      "Charge Time,Value,Weight,Winner Overwrite");
+                      "Charge Time,Arcane Fever,Value,Weight,Winner Overwrite");
         var ordered = scrolls.Winners
             .OrderBy(s => s.Name, StringComparer.Ordinal)
             .ThenBy(s => s.FormKey, StringComparer.Ordinal);
@@ -64,6 +65,7 @@ public static class Reports
                 Csv(s.CastType == "3" ? "Scroll" : s.CastType), Csv(s.TargetType),
                 s.Cost?.BaseCost.ToString() ?? "", s.Cost?.ComputedAutoCost?.ToString() ?? "",
                 s.ChargeTime.ToString(System.Globalization.CultureInfo.InvariantCulture),
+                ArcaneFever(s.Effects),
                 s.Value.ToString(),
                 s.Weight.ToString(System.Globalization.CultureInfo.InvariantCulture),
                 Csv(s.Provenance!.Winner)));
@@ -77,7 +79,7 @@ public static class Reports
     {
         var sb = new StringBuilder();
         sb.AppendLine("Form Key,Editor Id,Name,Enchant Type,Cast Type,Target Type,Enchantment Cost," +
-                      "Enchantment Amount,Charge Time,Winner Overwrite");
+                      "Enchantment Amount,Charge Time,Arcane Fever,Winner Overwrite");
         var ordered = enchantments.Winners
             .OrderBy(e => e.EnchantType, StringComparer.Ordinal)
             .ThenBy(e => e.Name, StringComparer.Ordinal)
@@ -88,6 +90,7 @@ public static class Reports
                 Csv(e.FormKey), Csv(e.EditorId), Csv(e.Name), Csv(e.EnchantType), Csv(e.CastType),
                 Csv(e.TargetType), e.EnchantmentCost.ToString(), e.EnchantmentAmount.ToString(),
                 e.ChargeTime.ToString(System.Globalization.CultureInfo.InvariantCulture),
+                ArcaneFever(e.Effects),
                 Csv(e.Provenance!.Winner)));
         }
         File.WriteAllText(path, sb.ToString(), new UTF8Encoding(false));
@@ -98,6 +101,26 @@ public static class Reports
         if (string.IsNullOrEmpty(v)) return "";
         return v.Contains(',') || v.Contains('"') || v.Contains('\n')
             ? "\"" + v.Replace("\"", "\"\"") + "\"" : v;
+    }
+
+    /// <summary>Base (no-perk) Arcane Fever a cast inflicts, read off the record's own fever
+    /// effect items. Enderal applies fever via _00E_IncreaseArcaneFever* / the Boon spells'
+    /// _00E_WohltatArkanistenfieber MGEFs; EGO adds HIDDEN perk-gated variants of each at
+    /// reduced magnitude, mutually exclusive by HasPerk conditions — so the no-perk value is
+    /// the MAX magnitude among fever effects, never the sum. Reduce effects (Ambrosia) and the
+    /// fever-consequence effects (AbDamageHealthConstantFever*) deliberately do not match.
+    /// Empty = the record raises no fever.</summary>
+    private static string ArcaneFever(IEnumerable<EffectDto>? effects)
+    {
+        float max = 0; bool any = false;
+        foreach (var e in effects ?? [])
+        {
+            var id = e.BaseEffect?.EditorId ?? "";
+            if (!id.Contains("IncreaseArcaneFever") && !id.Contains("WohltatArkanistenfieber")) continue;
+            any = true;
+            if (e.Magnitude > max) max = e.Magnitude;
+        }
+        return any ? max.ToString(System.Globalization.CultureInfo.InvariantCulture) : "";
     }
 
     // ---- magic-overview.md --------------------------------------------------------------------

@@ -22,6 +22,11 @@ python arch-docs/magic/tools/verify_against_yaml.py             # optional cross
 | `data/spells.csv` | Flat balance sheet for spreadsheet work — **player-obtainable spells only** (a winning Book must teach it; NPC/trap/voice variants and script-granted spells are excluded), grouped by school then type. The complete spell set is in `spells.json`, where each teachable spell carries `taughtBy` |
 | `data/scrolls.csv` | Flat balance sheet of all winning scrolls (cost, value, weight), sorted by name |
 | `data/enchantments.csv` | Flat balance sheet of all winning enchantments, grouped by enchant type |
+
+All three CSVs carry an **Arcane Fever** column: the base no-perk fever one cast/use inflicts, read
+off the record's own `_00E_IncreaseArcaneFever*` / `_00E_WohltatArkanistenfieber` effect items. EGO
+ships perk-gated HIDDEN variants of these at reduced magnitude, mutually exclusive by `HasPerk`
+conditions, so the column takes the MAX fever-effect magnitude, never the sum. Empty = no fever.
 | `data/lookups.json` | School names, cost-model GMST curve, PERK/KYWD/PROJ/EQUP name tables |
 | `data/load-order.json` | Per-plugin: enabled, header version, BEES dependency, exclusion reason |
 | `data/manifest.json` | Run metadata, counts, warnings |
