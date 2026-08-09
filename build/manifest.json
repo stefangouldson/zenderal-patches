@@ -33,6 +33,18 @@
       "plugins": []
     },
     {
+      "$comment": "All magic compatibility/balance patches for the list in ONE plugin. Currently: Apocalypse cost-ladder repricing (175 player-spell overrides, ManualCostCalc + hand BaseCost onto the EGO ladder). Regenerate the overrides with src/MagicPatches/tools/01-apocalypse-cost-ladder.ps1; the pricing table it applies is committed next to it.",
+      "name": "Zenderal - Magic Patches",
+      "archiveName": "Zenderal - Magic Patches",
+      "fomod": false,
+      "plugins": [
+        {
+          "yamlSource": "src/MagicPatches/MagicPatchesESP",
+          "dest": "Zenderal - Magic Patches.esp"
+        }
+      ]
+    },
+    {
       "name": "Zenderal - Skip To Taming The Waves",
       "archiveName": "Zenderal - Skip To Taming The Waves",
       "fomod": false,
