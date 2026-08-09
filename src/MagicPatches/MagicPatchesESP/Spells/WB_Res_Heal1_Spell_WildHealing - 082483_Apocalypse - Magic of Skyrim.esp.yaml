@@ -29,5 +29,5 @@ Effects:
     ComparisonValue: 1
 - BaseEffect: 11A4B6:Skyrim.esm
   Data:
-    Magnitude: 5
+    Magnitude: 1.5
     Duration: 1
