@@ -1,14 +1,29 @@
 Scriptname Kata_Enderal_SpellPackageAddToLLists extends Quest
 
 ; ---------------------------------------------------------------------------
-; ZENDERAL PATCH - "Zenderal - No Kata Debug Prompt"
+; ZENDERAL PATCH - "Zenderal - Kata Fixes"
+; (formerly shipped alone as "Zenderal - No Kata Debug Prompt")
 ;
 ; Original script by KataPUMB, shipped with "KataPUMB Spell Package"
 ; (Nexus / Enderal SE mod 47, KataPUMB_SpellPackage.esp). Redistributed here
 ; MODIFIED, as a loose Scripts/ override of the author's own loose .pex.
 ;
-; ONE line differs from the author's source. In the original, OnInit() opens a
-; message box on every new game:
+; TWO changes from the author's source:
+;
+; 1) DEDUPE - 58 AddForm lines below are commented out with ";ZP-DEDUPE".
+;    They injected the 29 spell lines this pack shares with KataPUMBSpellPack
+;    (Death Beam, Death Mantle, Fire/Frost/Shock Nova, Holy Cross, Holy Ray,
+;    Lightborn Recital) into the vendor/loot lists - giving the player two
+;    same-named copies of each spell, and bypassing the EGO rebalance that
+;    only covers pack 1's copies. The books, spells and this pack's UNIQUE
+;    lines are untouched; only the duplicates' distribution is suppressed.
+;    The injection is Books.GetAt(<index>) with hardcoded indices, so this
+;    script is the ONLY place it can be fixed - editing the FormList would
+;    shift every index and scramble the rest of the distribution.
+;    NOTE: the quest is StartGameEnabled + RunOnce - saves where it already
+;    ran keep their injected duplicates; this bites on new games.
+;
+; 2) In the original, OnInit() opens a message box on every new game:
 ;
 ;     Int msg = DoYouWannaCheat.Show()
 ;     "Do you want to activate debug mode? (this means everything this mod
@@ -19,7 +34,7 @@ Scriptname Kata_Enderal_SpellPackageAddToLLists extends Quest
 ;
 ;     Int msg = 1
 ;
-; Everything else - the property list, the whole leveled-list injection below -
+; Everything else - the property list, the non-duplicate injections below -
 ; is byte-for-byte the author's. The DoYouWannaCheat property is deliberately
 ; left DECLARED even though it is now unused: the quest record's VMAD still
 ; stores a value for it (007182:KataPUMB_SpellPackage.esp), and removing the
@@ -199,16 +214,16 @@ Event OnInit()
 ;7 Trader D
 
 	;DeathBeam
-	SpellTomesLI[0].AddForm(Books.GetAt(0), 1, 1)
-	SpellTomesLI[1].AddForm(Books.GetAt(0), 1, 1)
-	SpellTomesLI[0].AddForm(Books.GetAt(1), 8, 1)
-	SpellTomesLI[1].AddForm(Books.GetAt(1), 8, 1)
-	SpellTomesLI[2].AddForm(Books.GetAt(2), 11, 1)
-	SpellTomesLI[3].AddForm(Books.GetAt(2), 11, 1)
-	SpellTomesLI[4].AddForm(Books.GetAt(3), 22, 1)
-	SpellTomesLI[5].AddForm(Books.GetAt(3), 22, 1)
-	SpellTomesLI[4].AddForm(Books.GetAt(4), 33, 1)
-	SpellTomesLI[5].AddForm(Books.GetAt(4), 33, 1)
+	;ZP-DEDUPE SpellTomesLI[0].AddForm(Books.GetAt(0), 1, 1)
+	;ZP-DEDUPE SpellTomesLI[1].AddForm(Books.GetAt(0), 1, 1)
+	;ZP-DEDUPE SpellTomesLI[0].AddForm(Books.GetAt(1), 8, 1)
+	;ZP-DEDUPE SpellTomesLI[1].AddForm(Books.GetAt(1), 8, 1)
+	;ZP-DEDUPE SpellTomesLI[2].AddForm(Books.GetAt(2), 11, 1)
+	;ZP-DEDUPE SpellTomesLI[3].AddForm(Books.GetAt(2), 11, 1)
+	;ZP-DEDUPE SpellTomesLI[4].AddForm(Books.GetAt(3), 22, 1)
+	;ZP-DEDUPE SpellTomesLI[5].AddForm(Books.GetAt(3), 22, 1)
+	;ZP-DEDUPE SpellTomesLI[4].AddForm(Books.GetAt(4), 33, 1)
+	;ZP-DEDUPE SpellTomesLI[5].AddForm(Books.GetAt(4), 33, 1)
 	SpellTomesLI[6].AddForm(Books.GetAt(5), 44, 1)
 	SpellTomesLI[7].AddForm(Books.GetAt(5), 44, 1)
 
@@ -216,54 +231,54 @@ Event OnInit()
 	;FireShield Frost Shield & Shockshield
 	SpellTomesLI[0].AddForm(Books.GetAt(6), 2, 1)
 	SpellTomesLI[0].AddForm(Books.GetAt(11), 3, 1)
-	SpellTomesLI[0].AddForm(Books.GetAt(16), 4, 1)
+	;ZP-DEDUPE SpellTomesLI[0].AddForm(Books.GetAt(16), 4, 1)
 	SpellTomesLI[1].AddForm(Books.GetAt(6), 2, 1)
 	SpellTomesLI[1].AddForm(Books.GetAt(11), 3, 1)
-	SpellTomesLI[1].AddForm(Books.GetAt(16), 4, 1)
+	;ZP-DEDUPE SpellTomesLI[1].AddForm(Books.GetAt(16), 4, 1)
 
 	SpellTomesLI[2].AddForm(Books.GetAt(7), 11, 1)
 	SpellTomesLI[2].AddForm(Books.GetAt(12), 11, 1)
-	SpellTomesLI[2].AddForm(Books.GetAt(17), 11, 1)
+	;ZP-DEDUPE SpellTomesLI[2].AddForm(Books.GetAt(17), 11, 1)
 	SpellTomesLI[3].AddForm(Books.GetAt(7), 11, 1)
 	SpellTomesLI[3].AddForm(Books.GetAt(12), 11, 1)
-	SpellTomesLI[3].AddForm(Books.GetAt(17), 11, 1)
+	;ZP-DEDUPE SpellTomesLI[3].AddForm(Books.GetAt(17), 11, 1)
 
 	SpellTomesLI[4].AddForm(Books.GetAt(8), 24, 1)
 	SpellTomesLI[4].AddForm(Books.GetAt(13), 24, 1)
-	SpellTomesLI[4].AddForm(Books.GetAt(18), 24, 1)
+	;ZP-DEDUPE SpellTomesLI[4].AddForm(Books.GetAt(18), 24, 1)
 	SpellTomesLI[5].AddForm(Books.GetAt(8), 24, 1)
 	SpellTomesLI[5].AddForm(Books.GetAt(13), 24, 1)
-	SpellTomesLI[5].AddForm(Books.GetAt(18), 24, 1)
+	;ZP-DEDUPE SpellTomesLI[5].AddForm(Books.GetAt(18), 24, 1)
 
 	SpellTomesLI[6].AddForm(Books.GetAt(9), 33, 1)
 	SpellTomesLI[6].AddForm(Books.GetAt(14), 33, 1)
-	SpellTomesLI[6].AddForm(Books.GetAt(19), 33, 1)
+	;ZP-DEDUPE SpellTomesLI[6].AddForm(Books.GetAt(19), 33, 1)
 	SpellTomesLI[7].AddForm(Books.GetAt(9), 33, 1)
 	SpellTomesLI[7].AddForm(Books.GetAt(14), 33, 1)
-	SpellTomesLI[7].AddForm(Books.GetAt(19), 33, 1)
+	;ZP-DEDUPE SpellTomesLI[7].AddForm(Books.GetAt(19), 33, 1)
 
 	SpellTomesLI[0].AddForm(Books.GetAt(10), 45, 1)
 	SpellTomesLI[0].AddForm(Books.GetAt(15), 45, 1)
-	SpellTomesLI[0].AddForm(Books.GetAt(20), 45, 1)
+	;ZP-DEDUPE SpellTomesLI[0].AddForm(Books.GetAt(20), 45, 1)
 	SpellTomesLI[0].AddForm(Books.GetAt(10), 45, 1)
 	SpellTomesLI[0].AddForm(Books.GetAt(15), 45, 1)
-	SpellTomesLI[0].AddForm(Books.GetAt(20), 45, 1)
+	;ZP-DEDUPE SpellTomesLI[0].AddForm(Books.GetAt(20), 45, 1)
 
 
 	;Holy Cross
-	SpellTomesLI[2].AddForm(Books.GetAt(21), 15, 1)
-	SpellTomesLI[3].AddForm(Books.GetAt(21), 15, 1)
-	SpellTomesLI[4].AddForm(Books.GetAt(22), 28, 1)
-	SpellTomesLI[5].AddForm(Books.GetAt(22), 28, 1)
-	SpellTomesLI[6].AddForm(Books.GetAt(23), 40, 1)
-	SpellTomesLI[7].AddForm(Books.GetAt(23), 40, 1)
+	;ZP-DEDUPE SpellTomesLI[2].AddForm(Books.GetAt(21), 15, 1)
+	;ZP-DEDUPE SpellTomesLI[3].AddForm(Books.GetAt(21), 15, 1)
+	;ZP-DEDUPE SpellTomesLI[4].AddForm(Books.GetAt(22), 28, 1)
+	;ZP-DEDUPE SpellTomesLI[5].AddForm(Books.GetAt(22), 28, 1)
+	;ZP-DEDUPE SpellTomesLI[6].AddForm(Books.GetAt(23), 40, 1)
+	;ZP-DEDUPE SpellTomesLI[7].AddForm(Books.GetAt(23), 40, 1)
 	
 	
 	;HolyRay
-	SpellTomesLI[0].AddForm(Books.GetAt(24), 2, 1)
-	SpellTomesLI[1].AddForm(Books.GetAt(24), 2, 1)
-	SpellTomesLI[2].AddForm(Books.GetAt(25), 5, 1)
-	SpellTomesLI[3].AddForm(Books.GetAt(25), 5, 1)
+	;ZP-DEDUPE SpellTomesLI[0].AddForm(Books.GetAt(24), 2, 1)
+	;ZP-DEDUPE SpellTomesLI[1].AddForm(Books.GetAt(24), 2, 1)
+	;ZP-DEDUPE SpellTomesLI[2].AddForm(Books.GetAt(25), 5, 1)
+	;ZP-DEDUPE SpellTomesLI[3].AddForm(Books.GetAt(25), 5, 1)
 	SpellTomesLI[4].AddForm(Books.GetAt(26), 11, 1)
 	SpellTomesLI[5].AddForm(Books.GetAt(26), 11, 1)
 	SpellTomesLI[6].AddForm(Books.GetAt(27), 22, 1)
@@ -297,10 +312,10 @@ Event OnInit()
 	SpellTomesLI[3].AddForm(Books.GetAt(35), 15, 1)
 
 	;DeathMantle
-	SpellTomesLI[2].AddForm(Books.GetAt(36), 13, 1)
-	SpellTomesLI[3].AddForm(Books.GetAt(36), 13, 1)
-	SpellTomesLI[6].AddForm(Books.GetAt(37), 44, 1)
-	SpellTomesLI[7].AddForm(Books.GetAt(37), 44, 1)
+	;ZP-DEDUPE SpellTomesLI[2].AddForm(Books.GetAt(36), 13, 1)
+	;ZP-DEDUPE SpellTomesLI[3].AddForm(Books.GetAt(36), 13, 1)
+	;ZP-DEDUPE SpellTomesLI[6].AddForm(Books.GetAt(37), 44, 1)
+	;ZP-DEDUPE SpellTomesLI[7].AddForm(Books.GetAt(37), 44, 1)
 
 	;Mantras
 	SpellTomesLI[0].AddForm(Books.GetAt(38), 1, 1)
@@ -337,33 +352,33 @@ Event OnInit()
 	SpellTomesLI[7].AddForm(Books.GetAt(51), 36, 1)
 
 	;Novas
-	SpellTomesLI[0].AddForm(Books.GetAt(52), 2, 1)
-	SpellTomesLI[1].AddForm(Books.GetAt(52), 2, 1)
-	SpellTomesLI[0].AddForm(Books.GetAt(56), 3, 1)
-	SpellTomesLI[1].AddForm(Books.GetAt(56), 3, 1)
-	SpellTomesLI[0].AddForm(Books.GetAt(60), 5, 1)
-	SpellTomesLI[1].AddForm(Books.GetAt(60), 5, 1)
+	;ZP-DEDUPE SpellTomesLI[0].AddForm(Books.GetAt(52), 2, 1)
+	;ZP-DEDUPE SpellTomesLI[1].AddForm(Books.GetAt(52), 2, 1)
+	;ZP-DEDUPE SpellTomesLI[0].AddForm(Books.GetAt(56), 3, 1)
+	;ZP-DEDUPE SpellTomesLI[1].AddForm(Books.GetAt(56), 3, 1)
+	;ZP-DEDUPE SpellTomesLI[0].AddForm(Books.GetAt(60), 5, 1)
+	;ZP-DEDUPE SpellTomesLI[1].AddForm(Books.GetAt(60), 5, 1)
 
-	SpellTomesLI[2].AddForm(Books.GetAt(53), 9, 1)
-	SpellTomesLI[3].AddForm(Books.GetAt(53), 9, 1)
-	SpellTomesLI[2].AddForm(Books.GetAt(57), 10, 1)
-	SpellTomesLI[3].AddForm(Books.GetAt(57), 10, 1)
-	SpellTomesLI[2].AddForm(Books.GetAt(61), 12, 1)
-	SpellTomesLI[3].AddForm(Books.GetAt(61), 12, 1)
+	;ZP-DEDUPE SpellTomesLI[2].AddForm(Books.GetAt(53), 9, 1)
+	;ZP-DEDUPE SpellTomesLI[3].AddForm(Books.GetAt(53), 9, 1)
+	;ZP-DEDUPE SpellTomesLI[2].AddForm(Books.GetAt(57), 10, 1)
+	;ZP-DEDUPE SpellTomesLI[3].AddForm(Books.GetAt(57), 10, 1)
+	;ZP-DEDUPE SpellTomesLI[2].AddForm(Books.GetAt(61), 12, 1)
+	;ZP-DEDUPE SpellTomesLI[3].AddForm(Books.GetAt(61), 12, 1)
 
-	SpellTomesLI[4].AddForm(Books.GetAt(54), 22, 1)
-	SpellTomesLI[5].AddForm(Books.GetAt(54), 22, 1)
-	SpellTomesLI[4].AddForm(Books.GetAt(58), 24, 1)
-	SpellTomesLI[5].AddForm(Books.GetAt(58), 24, 1)
-	SpellTomesLI[4].AddForm(Books.GetAt(62), 26, 1)
-	SpellTomesLI[5].AddForm(Books.GetAt(62), 26, 1)
+	;ZP-DEDUPE SpellTomesLI[4].AddForm(Books.GetAt(54), 22, 1)
+	;ZP-DEDUPE SpellTomesLI[5].AddForm(Books.GetAt(54), 22, 1)
+	;ZP-DEDUPE SpellTomesLI[4].AddForm(Books.GetAt(58), 24, 1)
+	;ZP-DEDUPE SpellTomesLI[5].AddForm(Books.GetAt(58), 24, 1)
+	;ZP-DEDUPE SpellTomesLI[4].AddForm(Books.GetAt(62), 26, 1)
+	;ZP-DEDUPE SpellTomesLI[5].AddForm(Books.GetAt(62), 26, 1)
 
-	SpellTomesLI[4].AddForm(Books.GetAt(55), 32, 1)
-	SpellTomesLI[5].AddForm(Books.GetAt(55), 32, 1)
-	SpellTomesLI[4].AddForm(Books.GetAt(59), 34, 1)
-	SpellTomesLI[5].AddForm(Books.GetAt(59), 34, 1)
-	SpellTomesLI[4].AddForm(Books.GetAt(63), 36, 1)
-	SpellTomesLI[5].AddForm(Books.GetAt(63), 36, 1)
+	;ZP-DEDUPE SpellTomesLI[4].AddForm(Books.GetAt(55), 32, 1)
+	;ZP-DEDUPE SpellTomesLI[5].AddForm(Books.GetAt(55), 32, 1)
+	;ZP-DEDUPE SpellTomesLI[4].AddForm(Books.GetAt(59), 34, 1)
+	;ZP-DEDUPE SpellTomesLI[5].AddForm(Books.GetAt(59), 34, 1)
+	;ZP-DEDUPE SpellTomesLI[4].AddForm(Books.GetAt(63), 36, 1)
+	;ZP-DEDUPE SpellTomesLI[5].AddForm(Books.GetAt(63), 36, 1)
 
 	;Entropy Curse
 	SpellTomesLI[2].AddForm(Books.GetAt(64), 22, 1)

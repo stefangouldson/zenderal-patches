@@ -63,8 +63,8 @@ Thumbs.db
 # !src/<PatchName>/Scripts/compiled/*.pex
 !src/SkipToTamingTheWaves/Scripts/compiled/
 !src/SkipToTamingTheWaves/Scripts/compiled/*.pex
-!src/KataNoDebugPrompt/Scripts/compiled/
-!src/KataNoDebugPrompt/Scripts/compiled/*.pex
+!src/KataFixes/Scripts/compiled/
+!src/KataFixes/Scripts/compiled/*.pex
 
 # Reference decompiles — Enderal's ESM and third-party plugins serialized ONLY for FormKey
 # lookups. Large, regenerated locally from each machine's own copy, never committed.
