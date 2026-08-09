@@ -33,7 +33,7 @@
         "isNewRecord": true,
         "isInjected": false,
         "winner": "_Fuse00_AdventurerArmor.esp",
-        "winnerLoadOrderIndex": 78,
+        "winnerLoadOrderIndex": 77,
         "chain": [
           "_Fuse00_AdventurerArmor.esp"
         ],
@@ -71,7 +71,7 @@
         "isNewRecord": true,
         "isInjected": false,
         "winner": "FEC.esp",
-        "winnerLoadOrderIndex": 218,
+        "winnerLoadOrderIndex": 217,
         "chain": [
           "FEC.esp"
         ],
@@ -288,7 +288,7 @@
         "isNewRecord": true,
         "isInjected": false,
         "winner": "EGO SE - KataPUMB Hidden Powers.esp",
-        "winnerLoadOrderIndex": 144,
+        "winnerLoadOrderIndex": 143,
         "chain": [
           "KataHiddenPowers.esp",
           "EGO SE - KataPUMB Hidden Powers.esp"
@@ -1253,7 +1253,7 @@
         "isNewRecord": true,
         "isInjected": false,
         "winner": "KataPUMB_SpellPackage.esp",
-        "winnerLoadOrderIndex": 87,
+        "winnerLoadOrderIndex": 86,
         "chain": [
           "KataPUMB_SpellPackage.esp"
         ],
@@ -1292,7 +1292,7 @@
         "isNewRecord": true,
         "isInjected": false,
         "winner": "KataPUMB_SpellPackage.esp",
-        "winnerLoadOrderIndex": 87,
+        "winnerLoadOrderIndex": 86,
         "chain": [
           "KataPUMB_SpellPackage.esp"
         ],
@@ -1331,7 +1331,7 @@
         "isNewRecord": true,
         "isInjected": false,
         "winner": "KataPUMB_SpellPackage.esp",
-        "winnerLoadOrderIndex": 87,
+        "winnerLoadOrderIndex": 86,
         "chain": [
           "KataPUMB_SpellPackage.esp"
         ],
@@ -1370,7 +1370,7 @@
         "isNewRecord": true,
         "isInjected": false,
         "winner": "KataPUMB_SpellPackage.esp",
-        "winnerLoadOrderIndex": 87,
+        "winnerLoadOrderIndex": 86,
         "chain": [
           "KataPUMB_SpellPackage.esp"
         ],
@@ -1409,7 +1409,7 @@
         "isNewRecord": true,
         "isInjected": false,
         "winner": "KataPUMB_SpellPackage.esp",
-        "winnerLoadOrderIndex": 87,
+        "winnerLoadOrderIndex": 86,
         "chain": [
           "KataPUMB_SpellPackage.esp"
         ],
@@ -1448,7 +1448,7 @@
         "isNewRecord": true,
         "isInjected": false,
         "winner": "KataPUMB_SpellPackage.esp",
-        "winnerLoadOrderIndex": 87,
+        "winnerLoadOrderIndex": 86,
         "chain": [
           "KataPUMB_SpellPackage.esp"
         ],
@@ -1649,7 +1649,7 @@
         "isNewRecord": true,
         "isInjected": false,
         "winner": "KataPUMB_SpellPackage.esp",
-        "winnerLoadOrderIndex": 87,
+        "winnerLoadOrderIndex": 86,
         "chain": [
           "KataPUMB_SpellPackage.esp"
         ],
@@ -1702,7 +1702,7 @@
         "isNewRecord": true,
         "isInjected": false,
         "winner": "KataPUMB_SpellPackage.esp",
-        "winnerLoadOrderIndex": 87,
+        "winnerLoadOrderIndex": 86,
         "chain": [
           "KataPUMB_SpellPackage.esp"
         ],
@@ -1769,7 +1769,7 @@
         "isNewRecord": true,
         "isInjected": false,
         "winner": "KataPUMB_SpellPackage.esp",
-        "winnerLoadOrderIndex": 87,
+        "winnerLoadOrderIndex": 86,
         "chain": [
           "KataPUMB_SpellPackage.esp"
         ],
@@ -1864,7 +1864,7 @@
         "isNewRecord": true,
         "isInjected": false,
         "winner": "KataPUMB_SpellPackage.esp",
-        "winnerLoadOrderIndex": 87,
+        "winnerLoadOrderIndex": 86,
         "chain": [
           "KataPUMB_SpellPackage.esp"
         ],
@@ -1997,7 +1997,7 @@
         "isNewRecord": true,
         "isInjected": false,
         "winner": "KataPUMB_SpellPackage.esp",
-        "winnerLoadOrderIndex": 87,
+        "winnerLoadOrderIndex": 86,
         "chain": [
           "KataPUMB_SpellPackage.esp"
         ],
@@ -2525,7 +2525,7 @@
         "isNewRecord": true,
         "isInjected": false,
         "winner": "EGO - KataPUMB Spell Package.esp",
-        "winnerLoadOrderIndex": 142,
+        "winnerLoadOrderIndex": 141,
         "chain": [
           "KataPUMBSpellPack.esp",
           "EGO - KataPUMB Spell Package.esp"
@@ -2708,7 +2708,7 @@
         "isNewRecord": true,
         "isInjected": false,
         "winner": "EGO - KataPUMB Spell Package.esp",
-        "winnerLoadOrderIndex": 142,
+        "winnerLoadOrderIndex": 141,
         "chain": [
           "KataPUMBSpellPack.esp",
           "EGO - KataPUMB Spell Package.esp"
@@ -2796,7 +2796,7 @@
         "isNewRecord": true,
         "isInjected": false,
         "winner": "EGO - KataPUMB Spell Package.esp",
-        "winnerLoadOrderIndex": 142,
+        "winnerLoadOrderIndex": 141,
         "chain": [
           "KataPUMBSpellPack.esp",
           "EGO - KataPUMB Spell Package.esp"
@@ -2887,6 +2887,59 @@
         "winnerLoadOrderIndex": 0,
         "chain": [
           "Skyrim.esm"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "0159E9:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_A050_TechBlast_ConjuredActorStaffEnchantment",
+      "name": "Tech Blast",
+      "enchantmentCost": 115,
+      "enchantmentAmount": 115,
+      "enchantType": "StaffEnchantment",
+      "castType": "FireAndForget",
+      "targetType": "Aimed",
+      "chargeTime": 2,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "0159EF:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Con_Human5_Effect_ConjureRadac_TechBlast",
+            "name": "Tech Blast"
+          },
+          "magnitude": 75,
+          "area": 5,
+          "duration": 0,
+          "effectCost": 115,
+          "archetype": "ValueModifier",
+          "actorValue": "Health"
+        },
+        {
+          "index": 1,
+          "baseEffect": {
+            "formKey": "0159F1:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Con_Human5_Effect_ConjureRadac_TechBlastCrit",
+            "name": "Tech Blast - Critical Hit"
+          },
+          "magnitude": 75,
+          "area": 5,
+          "duration": 0,
+          "effectCost": 0,
+          "archetype": "ValueModifier",
+          "actorValue": "Health"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
         ],
         "winnerHeaderVersion": 1.7,
         "winnerNeedsBees": false
@@ -3015,6 +3068,61 @@
         "winnerLoadOrderIndex": 0,
         "chain": [
           "Skyrim.esm"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "01A0A8:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_C050_DaedricCrescent_SummonedWeaponEnchantment",
+      "name": "Entropic Crescent",
+      "enchantmentCost": 1000,
+      "enchantmentAmount": 1000,
+      "enchantType": "Enchantment",
+      "castType": "FireAndForget",
+      "targetType": "Touch",
+      "chargeTime": 0,
+      "flags": [
+        "NoAutoCalc"
+      ],
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "01A0A7:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Con_Buff3_Effect_DaedricCrescent_EnchStagger",
+            "name": "Entropic Crescent - Stagger"
+          },
+          "magnitude": 0.25,
+          "area": 0,
+          "duration": 0,
+          "effectCost": 5,
+          "archetype": "Stagger"
+        },
+        {
+          "index": 1,
+          "baseEffect": {
+            "formKey": "01A0AA:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Con_Buff3_Effect_DaedricCrescent_EnchDamage",
+            "name": "Entropic Crescent - Damage"
+          },
+          "magnitude": 50,
+          "area": 0,
+          "duration": 0,
+          "effectCost": 110,
+          "archetype": "ValueModifier",
+          "actorValue": "Health"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
         ],
         "winnerHeaderVersion": 1.7,
         "winnerNeedsBees": false
@@ -18212,6 +18320,2140 @@
       }
     },
     {
+      "formKey": "07A1E4:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_C075_ConjureAvengingWraith_StaffEnchantment",
+      "name": "Conjure Avenging Wraith",
+      "enchantmentCost": 351,
+      "enchantmentAmount": 351,
+      "enchantType": "StaffEnchantment",
+      "castType": "FireAndForget",
+      "targetType": "TargetLocation",
+      "chargeTime": 0.5,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "017524:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Con_Ghost4_Effect_ConjureAvengingWraith",
+            "name": "Conjure Avenging Wraith"
+          },
+          "magnitude": 0,
+          "area": 0,
+          "duration": 60,
+          "effectCost": 351,
+          "archetype": "SummonCreature"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "07A1E6:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_C025_ConjureDremoraChurl_StaffEnchantment",
+      "name": "Conjure Dremora Churl",
+      "enchantmentCost": 157,
+      "enchantmentAmount": 157,
+      "enchantType": "StaffEnchantment",
+      "castType": "FireAndForget",
+      "targetType": "TargetLocation",
+      "chargeTime": 0.5,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "012358:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Con_Dremora2_Effect_ConjureDremoraChurl",
+            "name": "Conjure Dremora Churl"
+          },
+          "magnitude": 0,
+          "area": 0,
+          "duration": 60,
+          "effectCost": 157,
+          "archetype": "SummonCreature"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "07A1E8:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_C025_ConjureCatTotem_StaffEnchantment",
+      "name": "Conjure Cat Totem",
+      "enchantmentCost": 161,
+      "enchantmentAmount": 161,
+      "enchantType": "StaffEnchantment",
+      "castType": "FireAndForget",
+      "targetType": "TargetLocation",
+      "chargeTime": 0.5,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "0B21A6:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Con_Spirit2_Effect_ConjureCatTotem",
+            "name": "Conjure Cat Totem"
+          },
+          "magnitude": 0,
+          "area": 0,
+          "duration": 60,
+          "effectCost": 161,
+          "archetype": "SummonCreature"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "07A1E9:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_C050_ConjureDremoraPitFighter_StaffEnchantment",
+      "name": "Conjure Dremora Pit Fighter",
+      "enchantmentCost": 229,
+      "enchantmentAmount": 229,
+      "enchantType": "StaffEnchantment",
+      "castType": "FireAndForget",
+      "targetType": "TargetLocation",
+      "chargeTime": 0.5,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "012363:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Con_Dremora3_Effect_ConjureDremoraPitFighter",
+            "name": "Conjure Dremora Pit Fighter"
+          },
+          "magnitude": 0,
+          "area": 0,
+          "duration": 60,
+          "effectCost": 229,
+          "archetype": "SummonCreature"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "07A1EE:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_C050_ConjureXivilaiSorcerer_StaffEnchantment",
+      "name": "Conjure Xivilai Sorcerer",
+      "enchantmentCost": 229,
+      "enchantmentAmount": 229,
+      "enchantType": "StaffEnchantment",
+      "castType": "FireAndForget",
+      "targetType": "TargetLocation",
+      "chargeTime": 0.5,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "1228A7:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Con_Xivilai3_Effect_ConjureXivilaiSorcerer",
+            "name": "Conjure Xivilai Sorcerer"
+          },
+          "magnitude": 0,
+          "area": 0,
+          "duration": 60,
+          "effectCost": 229,
+          "archetype": "SummonCreature"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "07A1F0:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_C075_ConjureDremoraChampion_StaffEnchantment",
+      "name": "Conjure Dremora Champion",
+      "enchantmentCost": 366,
+      "enchantmentAmount": 366,
+      "enchantType": "StaffEnchantment",
+      "castType": "FireAndForget",
+      "targetType": "TargetLocation",
+      "chargeTime": 0.5,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "0128DE:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Con_Dremora4_Effect_ConjureDremoraChampion",
+            "name": "Conjure Dremora Champion"
+          },
+          "magnitude": 0,
+          "area": 0,
+          "duration": 60,
+          "effectCost": 366,
+          "archetype": "SummonCreature"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "07A1F2:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_C075_ConjureDremoraHonorGuard_StaffEnchantment",
+      "name": "Conjure Dremora Honor Guard",
+      "enchantmentCost": 380,
+      "enchantmentAmount": 380,
+      "enchantType": "StaffEnchantment",
+      "castType": "FireAndForget",
+      "targetType": "TargetLocation",
+      "chargeTime": 0.5,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "0128EC:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Con_Dremora4_Effect_ConjureDremoraHonorGuard",
+            "name": "Conjure Dremora Honor Guard"
+          },
+          "magnitude": 0,
+          "area": 0,
+          "duration": 60,
+          "effectCost": 380,
+          "archetype": "SummonCreature"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "07A1F4:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_C075_ConjureHerne_StaffEnchantment",
+      "name": "Conjure Herne",
+      "enchantmentCost": 394,
+      "enchantmentAmount": 394,
+      "enchantType": "StaffEnchantment",
+      "castType": "FireAndForget",
+      "targetType": "TargetLocation",
+      "chargeTime": 0.5,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "0128E7:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Con_Dremora4_Effect_ConjureHerne",
+            "name": "Conjure Herne"
+          },
+          "magnitude": 0,
+          "area": 0,
+          "duration": 60,
+          "effectCost": 394,
+          "archetype": "SummonCreature"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "07A1F6:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_C075_ConjureXivilaiLord_StaffEnchantment",
+      "name": "Conjure Xivilai Lord",
+      "enchantmentCost": 344,
+      "enchantmentAmount": 344,
+      "enchantType": "StaffEnchantment",
+      "castType": "FireAndForget",
+      "targetType": "TargetLocation",
+      "chargeTime": 0.5,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "01236F:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Con_Xivilai4_Effect_ConjureXivilaiLord",
+            "name": "Conjure Xivilai Lord"
+          },
+          "magnitude": 0,
+          "area": 0,
+          "duration": 60,
+          "effectCost": 344,
+          "archetype": "SummonCreature"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "07A1F8:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_D000_Crackle_StaffEnchantment",
+      "name": "Crackle",
+      "enchantmentCost": 31,
+      "enchantmentAmount": 31,
+      "enchantType": "StaffEnchantment",
+      "castType": "FireAndForget",
+      "targetType": "Aimed",
+      "chargeTime": 0.5,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "0B2C77:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Des_Shock1_Effect_Crackle",
+            "name": "Crackle"
+          },
+          "magnitude": 10,
+          "area": 0,
+          "duration": 0,
+          "effectCost": 31,
+          "archetype": "DualValueModifier",
+          "actorValue": "Health"
+        },
+        {
+          "index": 1,
+          "baseEffect": {
+            "formKey": "0B2C78:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Des_Shock1_Effect_Crackle_HappyCloud",
+            "name": "Happy Cloud"
+          },
+          "magnitude": 50,
+          "area": 0,
+          "duration": 10,
+          "effectCost": 0,
+          "archetype": "Script"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "07A1FA:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_D000_Hailstone_StaffEnchantment",
+      "name": "Hailstone",
+      "enchantmentCost": 31,
+      "enchantmentAmount": 31,
+      "enchantType": "StaffEnchantment",
+      "castType": "FireAndForget",
+      "targetType": "Aimed",
+      "chargeTime": 0.5,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "0B2C7F:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Des_Frost1_Effect_Hailstone",
+            "name": "Hailstone"
+          },
+          "magnitude": 15,
+          "area": 0,
+          "duration": 0,
+          "effectCost": 14,
+          "archetype": "DualValueModifier",
+          "actorValue": "Health"
+        },
+        {
+          "index": 1,
+          "baseEffect": {
+            "formKey": "0B374E:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Des_Frost1_Effect_Hailstone_Shatter",
+            "name": "Hailstone - Shatter"
+          },
+          "magnitude": 15,
+          "area": 10,
+          "duration": 0,
+          "effectCost": 17,
+          "archetype": "DualValueModifier",
+          "actorValue": "Health"
+        },
+        {
+          "index": 2,
+          "baseEffect": {
+            "formKey": "0B729F:Skyrim.esm",
+            "editorId": "FrostSlowFFAimed",
+            "name": "Slowdown"
+          },
+          "magnitude": 50,
+          "area": 0,
+          "duration": 3,
+          "effectCost": 0,
+          "archetype": "Script"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "07A1FC:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_D025_CreepingCold_StaffEnchantment",
+      "name": "Creeping Cold",
+      "enchantmentCost": 19,
+      "enchantmentAmount": 19,
+      "enchantType": "StaffEnchantment",
+      "castType": "Concentration",
+      "targetType": "Aimed",
+      "chargeTime": 0,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "13AE9A:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Des_Frost2_Effect_CreepingCold",
+            "name": "Creeping Cold"
+          },
+          "magnitude": 10,
+          "area": 0,
+          "duration": 1,
+          "effectCost": 19,
+          "archetype": "DualValueModifier",
+          "actorValue": "Health"
+        },
+        {
+          "index": 1,
+          "baseEffect": {
+            "formKey": "0279BF:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Des_Frost2_Effect_CreepingCold_Desc",
+            "name": "Creeping Cold"
+          },
+          "magnitude": 60,
+          "area": 0,
+          "duration": 0,
+          "effectCost": 0,
+          "archetype": "Script"
+        },
+        {
+          "index": 2,
+          "baseEffect": {
+            "formKey": "0B729D:Skyrim.esm",
+            "editorId": "FrostSlowConcAimed",
+            "name": "Slowdown"
+          },
+          "magnitude": 50,
+          "area": 0,
+          "duration": 3,
+          "effectCost": 0,
+          "archetype": "Script"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "07A1FE:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_D025_Fracture_StaffEnchantment",
+      "name": "Fracture",
+      "enchantmentCost": 54,
+      "enchantmentAmount": 54,
+      "enchantType": "StaffEnchantment",
+      "castType": "FireAndForget",
+      "targetType": "Aimed",
+      "chargeTime": 0.5,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "00E121:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Des_Frost2_Effect_Fracture",
+            "name": "Fracture"
+          },
+          "magnitude": 5,
+          "area": 0,
+          "duration": 3,
+          "effectCost": 54,
+          "archetype": "DualValueModifier",
+          "actorValue": "Health"
+        },
+        {
+          "index": 1,
+          "baseEffect": {
+            "formKey": "142B82:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Des_Frost2_Effect_Fracture_Desc",
+            "name": "Fracture"
+          },
+          "magnitude": 35,
+          "area": 0,
+          "duration": 0,
+          "effectCost": 0,
+          "archetype": "Script"
+        },
+        {
+          "index": 2,
+          "baseEffect": {
+            "formKey": "0B729F:Skyrim.esm",
+            "editorId": "FrostSlowFFAimed",
+            "name": "Slowdown"
+          },
+          "magnitude": 50,
+          "area": 0,
+          "duration": 3,
+          "effectCost": 0,
+          "archetype": "Script"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "07A200:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_D025_RiftBolt_StaffEnchantment",
+      "name": "Rift Bolt",
+      "enchantmentCost": 56,
+      "enchantmentAmount": 56,
+      "enchantType": "StaffEnchantment",
+      "castType": "FireAndForget",
+      "targetType": "Aimed",
+      "chargeTime": 0.5,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "0253BE:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Des_Shock2_Effect_RiftBolt",
+            "name": "Rift Bolt"
+          },
+          "magnitude": 20,
+          "area": 0,
+          "duration": 0,
+          "effectCost": 56,
+          "archetype": "DualValueModifier",
+          "actorValue": "Health"
+        },
+        {
+          "index": 1,
+          "baseEffect": {
+            "formKey": "076116:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Des_Shock2_Effect_RiftBolt_Teleport",
+            "name": "Rift Bolt - Teleport"
+          },
+          "magnitude": 0.35,
+          "area": 0,
+          "duration": 0,
+          "effectCost": 0,
+          "archetype": "Script"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "07A202:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_D050_Bolide_StaffEnchantment",
+      "name": "Bolide",
+      "enchantmentCost": 134,
+      "enchantmentAmount": 134,
+      "enchantType": "StaffEnchantment",
+      "castType": "FireAndForget",
+      "targetType": "Aimed",
+      "chargeTime": 0.5,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "028F67:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Des_Fire3_Effect_Bolide",
+            "name": "Bolide"
+          },
+          "magnitude": 25,
+          "area": 0,
+          "duration": 0,
+          "effectCost": 34,
+          "archetype": "ValueModifier",
+          "actorValue": "Health"
+        },
+        {
+          "index": 1,
+          "baseEffect": {
+            "formKey": "0294CB:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Des_Fire3_Effect_Bolide_Distance1",
+            "name": "Bolide - Distance 1"
+          },
+          "magnitude": 25,
+          "area": 0,
+          "duration": 0,
+          "effectCost": 25,
+          "archetype": "ValueModifier",
+          "actorValue": "Health"
+        },
+        {
+          "index": 2,
+          "baseEffect": {
+            "formKey": "02AA75:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Des_Fire3_Effect_Bolide_Distance2",
+            "name": "Bolide - Distance 2"
+          },
+          "magnitude": 25,
+          "area": 0,
+          "duration": 0,
+          "effectCost": 25,
+          "archetype": "ValueModifier",
+          "actorValue": "Health"
+        },
+        {
+          "index": 3,
+          "baseEffect": {
+            "formKey": "02AA76:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Des_Fire3_Effect_Bolide_Distance3",
+            "name": "Bolide - Distance 3"
+          },
+          "magnitude": 25,
+          "area": 0,
+          "duration": 0,
+          "effectCost": 25,
+          "archetype": "ValueModifier",
+          "actorValue": "Health"
+        },
+        {
+          "index": 4,
+          "baseEffect": {
+            "formKey": "02AA77:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Des_Fire3_Effect_Bolide_Distance4",
+            "name": "Bolide - Distance 4"
+          },
+          "magnitude": 25,
+          "area": 0,
+          "duration": 0,
+          "effectCost": 25,
+          "archetype": "ValueModifier",
+          "actorValue": "Health"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "07A204:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_D050_Electrosphere_StaffEnchantment",
+      "name": "Electrosphere",
+      "enchantmentCost": 131,
+      "enchantmentAmount": 131,
+      "enchantType": "StaffEnchantment",
+      "castType": "FireAndForget",
+      "targetType": "Aimed",
+      "chargeTime": 0.5,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "001875:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Des_Shock3_Effect_Electrosphere",
+            "name": "Electrosphere"
+          },
+          "magnitude": 55,
+          "area": 0,
+          "duration": 0,
+          "effectCost": 131,
+          "archetype": "DualValueModifier",
+          "actorValue": "Health"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "07A206:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_D050_IceShiv_StaffEnchantment",
+      "name": "Ice Shiv",
+      "enchantmentCost": 140,
+      "enchantmentAmount": 140,
+      "enchantType": "StaffEnchantment",
+      "castType": "FireAndForget",
+      "targetType": "Aimed",
+      "chargeTime": 0.5,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "020A5B:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Des_Frost3_Effect_IceShiv",
+            "name": "Ice Shiv"
+          },
+          "magnitude": 30,
+          "area": 0,
+          "duration": 0,
+          "effectCost": 50,
+          "archetype": "DualValueModifier",
+          "actorValue": "Health"
+        },
+        {
+          "index": 1,
+          "baseEffect": {
+            "formKey": "024B41:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Des_Frost3_Effect_IceShiv_Backstab",
+            "name": "Ice Shiv - Backstab"
+          },
+          "magnitude": 60,
+          "area": 0,
+          "duration": 0,
+          "effectCost": 90,
+          "archetype": "DualValueModifier",
+          "actorValue": "Health"
+        },
+        {
+          "index": 2,
+          "baseEffect": {
+            "formKey": "0B729F:Skyrim.esm",
+            "editorId": "FrostSlowFFAimed",
+            "name": "Slowdown"
+          },
+          "magnitude": 50,
+          "area": 0,
+          "duration": 3,
+          "effectCost": 0,
+          "archetype": "Script"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "07A208:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_D050_IncendiaryFlow_StaffEnchantment",
+      "name": "Incendiary Flow",
+      "enchantmentCost": 134,
+      "enchantmentAmount": 134,
+      "enchantType": "StaffEnchantment",
+      "castType": "FireAndForget",
+      "targetType": "Aimed",
+      "chargeTime": 0.5,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "0F218B:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Des_Fire3_Effect_IncendiaryFlow",
+            "name": "Incendiary Flow"
+          },
+          "magnitude": 20,
+          "area": 0,
+          "duration": 10,
+          "effectCost": 134,
+          "archetype": "ValueModifier",
+          "actorValue": "Health"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "07A20A:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_D050_Scattershock_StaffEnchantment",
+      "name": "Scattershock",
+      "enchantmentCost": 36,
+      "enchantmentAmount": 36,
+      "enchantType": "StaffEnchantment",
+      "castType": "Concentration",
+      "targetType": "Aimed",
+      "chargeTime": 2.5,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "09CB6E:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Des_Shock3_Effect_Scattershock",
+            "name": "Scattershock"
+          },
+          "magnitude": 30,
+          "area": 0,
+          "duration": 1,
+          "effectCost": 36,
+          "archetype": "DualValueModifier",
+          "actorValue": "Health"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "07A20B:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_D075_SleetStorm_StaffEnchantment",
+      "name": "Sleet Storm",
+      "enchantmentCost": 117,
+      "enchantmentAmount": 117,
+      "enchantType": "StaffEnchantment",
+      "castType": "Concentration",
+      "targetType": "Aimed",
+      "chargeTime": 1.5,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "09C0A0:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Des_Frost4_Effect_SleetStorm",
+            "name": "Sleet Storm"
+          },
+          "magnitude": 60,
+          "area": 0,
+          "duration": 1,
+          "effectCost": 117,
+          "archetype": "DualValueModifier",
+          "actorValue": "Health"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "07A20E:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_D075_LightningStrike_StaffEnchantment",
+      "name": "Lightning Strike",
+      "enchantmentCost": 361,
+      "enchantmentAmount": 361,
+      "enchantType": "StaffEnchantment",
+      "castType": "FireAndForget",
+      "targetType": "TargetLocation",
+      "chargeTime": 0.5,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "0FADFD:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Des_Shock4_Effect_LightningStrike",
+            "name": "Lightning Strike"
+          },
+          "magnitude": 60,
+          "area": 0,
+          "duration": 0,
+          "effectCost": 361,
+          "archetype": "DualValueModifier",
+          "actorValue": "Health"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "07A210:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_D075_Bombardment_StaffEnchantment",
+      "name": "Bombardment",
+      "enchantmentCost": 125,
+      "enchantmentAmount": 125,
+      "enchantType": "StaffEnchantment",
+      "castType": "Concentration",
+      "targetType": "Aimed",
+      "chargeTime": 1.5,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "09B5CF:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Des_Fire4_Effect_Bombardment",
+            "name": "Bombardment"
+          },
+          "magnitude": 50,
+          "area": 8,
+          "duration": 1,
+          "effectCost": 125,
+          "archetype": "ValueModifier",
+          "actorValue": "Health"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "07A211:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_I025_CurseOfTheSilent_StaffEnchantment",
+      "name": "Curse of the Silent",
+      "enchantmentCost": 98,
+      "enchantmentAmount": 98,
+      "enchantType": "StaffEnchantment",
+      "castType": "FireAndForget",
+      "targetType": "Aimed",
+      "chargeTime": 0.5,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "016FA4:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Ill_Antimage2_Effect_CurseOfTheSilent",
+            "name": "Curse of the Silent"
+          },
+          "magnitude": 8,
+          "area": 0,
+          "duration": 30,
+          "effectCost": 98,
+          "archetype": "ValueModifier",
+          "actorValue": "Magicka"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "07A214:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_I025_IllusoryFlames_StaffEnchantment",
+      "name": "Illusory Flames",
+      "enchantmentCost": 19,
+      "enchantmentAmount": 19,
+      "enchantType": "StaffEnchantment",
+      "castType": "Concentration",
+      "targetType": "Aimed",
+      "chargeTime": 0.5,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "03682D:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Ill_TempDmg2_Effect_IllusoryFlames",
+            "name": "Illusory Flames"
+          },
+          "magnitude": 5,
+          "area": 0,
+          "duration": 2,
+          "effectCost": 111,
+          "archetype": "PeakValueModifier",
+          "actorValue": "Health"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "07A216:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_I025_MindVision_StaffEnchantment",
+      "name": "Mind Vision",
+      "enchantmentCost": 90,
+      "enchantmentAmount": 90,
+      "enchantType": "StaffEnchantment",
+      "castType": "FireAndForget",
+      "targetType": "TargetActor",
+      "chargeTime": 1,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "0378A6:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Ill_Vision2_Effect_MindVision",
+            "name": "Mind Vision"
+          },
+          "magnitude": 0,
+          "area": 0,
+          "duration": 10,
+          "effectCost": 90,
+          "archetype": "Script"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "07A218:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_I050_CompellingWhispers_StaffEnchantment",
+      "name": "Compelling Whispers",
+      "enchantmentCost": 23,
+      "enchantmentAmount": 23,
+      "enchantType": "StaffEnchantment",
+      "castType": "Concentration",
+      "targetType": "Aimed",
+      "chargeTime": 0.5,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "0580F2:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Ill_Command3_Effect_CompellingWhispers",
+            "name": "Compelling Whispers"
+          },
+          "magnitude": 1,
+          "area": 0,
+          "duration": 1,
+          "effectCost": 23,
+          "archetype": "Script"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "07A21A:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_I050_Shadowbond_StaffEnchantment",
+      "name": "Shadowbond",
+      "enchantmentCost": 182,
+      "enchantmentAmount": 182,
+      "enchantType": "StaffEnchantment",
+      "castType": "FireAndForget",
+      "targetType": "TargetActor",
+      "chargeTime": 0.5,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "055B2F:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Ill_Invis3_Effect_Shadowbond",
+            "name": "Shadowbond"
+          },
+          "magnitude": 0,
+          "area": 0,
+          "duration": 20,
+          "effectCost": 182,
+          "archetype": "Script"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "07A21C:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_I075_EmpathicAgony_StaffEnchantment",
+      "name": "Empathic Agony",
+      "enchantmentCost": 366,
+      "enchantmentAmount": 366,
+      "enchantType": "StaffEnchantment",
+      "castType": "FireAndForget",
+      "targetType": "Aimed",
+      "chargeTime": 0.5,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "0321BC:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Ill_PassthroughDmg4_Effect_EmpathicAgony",
+            "name": "Empathic Agony"
+          },
+          "magnitude": 0,
+          "area": 10,
+          "duration": 45,
+          "effectCost": 366,
+          "archetype": "Script"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "07A21E:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_I075_Seidstone_StaffEnchantment",
+      "name": "Seidstone",
+      "enchantmentCost": 344,
+      "enchantmentAmount": 344,
+      "enchantType": "StaffEnchantment",
+      "castType": "FireAndForget",
+      "targetType": "Aimed",
+      "chargeTime": 0.5,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "109836:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Ill_Simulacrum4_Effect_Seidstone",
+            "name": "Seidstone"
+          },
+          "magnitude": 0,
+          "area": 0,
+          "duration": 40,
+          "effectCost": 344,
+          "archetype": "Script"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "07A220:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_I075_MindControl_StaffEnchantment",
+      "name": "Mind Control",
+      "enchantmentCost": 468,
+      "enchantmentAmount": 468,
+      "enchantType": "StaffEnchantment",
+      "castType": "FireAndForget",
+      "targetType": "Aimed",
+      "chargeTime": 1,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "0378AB:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Ill_Command4_Effect_MindControl",
+            "name": "Mind Control"
+          },
+          "magnitude": 0,
+          "area": 0,
+          "duration": 30,
+          "effectCost": 468,
+          "archetype": "Script"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "07A222:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_R025_LeechSeed_StaffEnchantment",
+      "name": "Leech Seed",
+      "enchantmentCost": 58,
+      "enchantmentAmount": 58,
+      "enchantType": "StaffEnchantment",
+      "castType": "FireAndForget",
+      "targetType": "Aimed",
+      "chargeTime": 0.5,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "0803EB:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Res_Poison2_Effect_LeechSeed",
+            "name": "Leech Seed"
+          },
+          "magnitude": 5,
+          "area": 0,
+          "duration": 10,
+          "effectCost": 0,
+          "archetype": "Script"
+        },
+        {
+          "index": 1,
+          "baseEffect": {
+            "formKey": "13E4FA:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Res_Poison2_Effect_LeechSeed_Absorb",
+            "name": "Leech Seed - Health"
+          },
+          "magnitude": 5,
+          "area": 0,
+          "duration": 10,
+          "effectCost": 58,
+          "archetype": "Absorb",
+          "actorValue": "Health",
+          "conditions": [
+            {
+              "function": "GetActorValuePercent",
+              "runOn": "Target",
+              "parameters": {
+                "ActorValue": "Health",
+                "SecondUnusedIntParameter": "0",
+                "RunOnTypeIndex": "-1"
+              },
+              "operator": "LessThan",
+              "value": 1,
+              "or": false
+            }
+          ]
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "07A224:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_R025_SlayLiving_StaffEnchantment",
+      "name": "Slay Living",
+      "enchantmentCost": 95,
+      "enchantmentAmount": 95,
+      "enchantType": "StaffEnchantment",
+      "castType": "FireAndForget",
+      "targetType": "TargetActor",
+      "chargeTime": 0.5,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "003E0B:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Res_Necro2_Effect_SlayLiving",
+            "name": "Slay Living"
+          },
+          "magnitude": 0,
+          "area": 0,
+          "duration": 0,
+          "effectCost": 95,
+          "archetype": "Script"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "07A226:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_R050_FingerOfDeath_StaffEnchantment",
+      "name": "Finger of Death",
+      "enchantmentCost": 160,
+      "enchantmentAmount": 160,
+      "enchantType": "StaffEnchantment",
+      "castType": "FireAndForget",
+      "targetType": "TargetActor",
+      "chargeTime": 0.5,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "035450:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Res_Necro3_Effect_FingerOfDeath",
+            "name": "Finger of Death"
+          },
+          "magnitude": 0,
+          "area": 0,
+          "duration": 0,
+          "effectCost": 160,
+          "archetype": "Script"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "07A228:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_R075_NaturesBalance_StaffEnchantment",
+      "name": "Nature\u0027s Balance",
+      "enchantmentCost": 405,
+      "enchantmentAmount": 405,
+      "enchantType": "StaffEnchantment",
+      "castType": "FireAndForget",
+      "targetType": "Aimed",
+      "chargeTime": 2,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "0012D6:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Res_Peace4_Effect_NaturesBalance",
+            "name": "Nature\u0027s Balance"
+          },
+          "magnitude": 0,
+          "area": 0,
+          "duration": 0,
+          "effectCost": 750,
+          "archetype": "Script"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "07A22A:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_R050_Ruin_StaffEnchantment",
+      "name": "Ruin",
+      "enchantmentCost": 151,
+      "enchantmentAmount": 151,
+      "enchantType": "StaffEnchantment",
+      "castType": "FireAndForget",
+      "targetType": "Aimed",
+      "chargeTime": 0.5,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "01E708:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Res_Tap3_Effect_Ruin",
+            "name": "Ruin"
+          },
+          "magnitude": 15,
+          "area": 0,
+          "duration": 120,
+          "effectCost": 151,
+          "archetype": "Script"
+        },
+        {
+          "index": 1,
+          "baseEffect": {
+            "formKey": "01E709:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Res_Tap3_Effect_Ruin_Alchemy",
+            "name": "Ruin - Alchemy"
+          },
+          "magnitude": 15,
+          "area": 0,
+          "duration": 120,
+          "effectCost": 0,
+          "archetype": "PeakValueModifier",
+          "actorValue": "Alchemy"
+        },
+        {
+          "index": 2,
+          "baseEffect": {
+            "formKey": "01E70A:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Res_Tap3_Effect_Ruin_Alteration",
+            "name": "Ruin - Alteration"
+          },
+          "magnitude": 15,
+          "area": 0,
+          "duration": 120,
+          "effectCost": 0,
+          "archetype": "PeakValueModifier",
+          "actorValue": "Alteration"
+        },
+        {
+          "index": 3,
+          "baseEffect": {
+            "formKey": "01E70B:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Res_Tap3_Effect_Ruin_Block",
+            "name": "Ruin - Block"
+          },
+          "magnitude": 15,
+          "area": 0,
+          "duration": 120,
+          "effectCost": 0,
+          "archetype": "PeakValueModifier",
+          "actorValue": "Block"
+        },
+        {
+          "index": 4,
+          "baseEffect": {
+            "formKey": "01E70C:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Res_Tap3_Effect_Ruin_Conjuration",
+            "name": "Ruin - Conjuration"
+          },
+          "magnitude": 15,
+          "area": 0,
+          "duration": 120,
+          "effectCost": 0,
+          "archetype": "PeakValueModifier",
+          "actorValue": "Conjuration"
+        },
+        {
+          "index": 5,
+          "baseEffect": {
+            "formKey": "01E70D:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Res_Tap3_Effect_Ruin_Destruction",
+            "name": "Ruin - Destruction"
+          },
+          "magnitude": 15,
+          "area": 0,
+          "duration": 120,
+          "effectCost": 0,
+          "archetype": "PeakValueModifier",
+          "actorValue": "Destruction"
+        },
+        {
+          "index": 6,
+          "baseEffect": {
+            "formKey": "01E70E:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Res_Tap3_Effect_Ruin_Enchanting",
+            "name": "Ruin - Enchanting"
+          },
+          "magnitude": 15,
+          "area": 0,
+          "duration": 120,
+          "effectCost": 0,
+          "archetype": "PeakValueModifier",
+          "actorValue": "Enchanting"
+        },
+        {
+          "index": 7,
+          "baseEffect": {
+            "formKey": "01E70F:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Res_Tap3_Effect_Ruin_HeavyArmor",
+            "name": "Ruin - Heavy Armor"
+          },
+          "magnitude": 15,
+          "area": 0,
+          "duration": 120,
+          "effectCost": 0,
+          "archetype": "PeakValueModifier",
+          "actorValue": "HeavyArmor"
+        },
+        {
+          "index": 8,
+          "baseEffect": {
+            "formKey": "01E710:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Res_Tap3_Effect_Ruin_Illusion",
+            "name": "Ruin - Illusion"
+          },
+          "magnitude": 15,
+          "area": 0,
+          "duration": 120,
+          "effectCost": 0,
+          "archetype": "PeakValueModifier",
+          "actorValue": "Illusion"
+        },
+        {
+          "index": 9,
+          "baseEffect": {
+            "formKey": "01EC76:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Res_Tap3_Effect_Ruin_LightArmor",
+            "name": "Ruin - Light Armor"
+          },
+          "magnitude": 15,
+          "area": 0,
+          "duration": 120,
+          "effectCost": 0,
+          "archetype": "PeakValueModifier",
+          "actorValue": "LightArmor"
+        },
+        {
+          "index": 10,
+          "baseEffect": {
+            "formKey": "01EC77:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Res_Tap3_Effect_Ruin_Lockpicking",
+            "name": "Ruin - Lockpicking"
+          },
+          "magnitude": 15,
+          "area": 0,
+          "duration": 120,
+          "effectCost": 0,
+          "archetype": "PeakValueModifier",
+          "actorValue": "Lockpicking"
+        },
+        {
+          "index": 11,
+          "baseEffect": {
+            "formKey": "01EC78:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Res_Tap3_Effect_Ruin_Marksman",
+            "name": "Ruin - Marksman"
+          },
+          "magnitude": 15,
+          "area": 0,
+          "duration": 120,
+          "effectCost": 0,
+          "archetype": "PeakValueModifier",
+          "actorValue": "Archery"
+        },
+        {
+          "index": 12,
+          "baseEffect": {
+            "formKey": "01EC79:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Res_Tap3_Effect_Ruin_OneHanded",
+            "name": "Ruin - One-Handed"
+          },
+          "magnitude": 15,
+          "area": 0,
+          "duration": 120,
+          "effectCost": 0,
+          "archetype": "PeakValueModifier",
+          "actorValue": "OneHanded"
+        },
+        {
+          "index": 13,
+          "baseEffect": {
+            "formKey": "01EC7A:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Res_Tap3_Effect_Ruin_Pickpocket",
+            "name": "Ruin - Pickpocket"
+          },
+          "magnitude": 15,
+          "area": 0,
+          "duration": 120,
+          "effectCost": 0,
+          "archetype": "PeakValueModifier",
+          "actorValue": "Pickpocket"
+        },
+        {
+          "index": 14,
+          "baseEffect": {
+            "formKey": "01EC7B:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Res_Tap3_Effect_Ruin_Restoration",
+            "name": "Ruin - Restoration"
+          },
+          "magnitude": 15,
+          "area": 0,
+          "duration": 120,
+          "effectCost": 0,
+          "archetype": "PeakValueModifier",
+          "actorValue": "Restoration"
+        },
+        {
+          "index": 15,
+          "baseEffect": {
+            "formKey": "01EC7C:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Res_Tap3_Effect_Ruin_Smithing",
+            "name": "Ruin - Smithing"
+          },
+          "magnitude": 15,
+          "area": 0,
+          "duration": 120,
+          "effectCost": 0,
+          "archetype": "PeakValueModifier",
+          "actorValue": "Smithing"
+        },
+        {
+          "index": 16,
+          "baseEffect": {
+            "formKey": "01EC7D:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Res_Tap3_Effect_Ruin_Sneak",
+            "name": "Ruin - Sneak"
+          },
+          "magnitude": 15,
+          "area": 0,
+          "duration": 120,
+          "effectCost": 0,
+          "archetype": "PeakValueModifier",
+          "actorValue": "Sneak"
+        },
+        {
+          "index": 17,
+          "baseEffect": {
+            "formKey": "01EC7E:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Res_Tap3_Effect_Ruin_Speech",
+            "name": "Ruin - Speech"
+          },
+          "magnitude": 15,
+          "area": 0,
+          "duration": 120,
+          "effectCost": 0,
+          "archetype": "PeakValueModifier",
+          "actorValue": "Speech"
+        },
+        {
+          "index": 18,
+          "baseEffect": {
+            "formKey": "01EC7F:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Res_Tap3_Effect_Ruin_TwoHanded",
+            "name": "Ruin - Two-Handed"
+          },
+          "magnitude": 15,
+          "area": 0,
+          "duration": 120,
+          "effectCost": 0,
+          "archetype": "PeakValueModifier",
+          "actorValue": "TwoHanded"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "07A22C:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_R075_Decompose_StaffEnchantment",
+      "name": "Decompose",
+      "enchantmentCost": 311,
+      "enchantmentAmount": 311,
+      "enchantType": "StaffEnchantment",
+      "castType": "FireAndForget",
+      "targetType": "Aimed",
+      "chargeTime": 0.5,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "095F3F:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Res_Necro4_Effect_Decompose",
+            "name": "Decompose"
+          },
+          "magnitude": 10,
+          "area": 0,
+          "duration": 60,
+          "effectCost": 311,
+          "archetype": "Cloak"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "07A22E:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_A025_Wither_StaffEnchantment",
+      "name": "Wither",
+      "enchantmentCost": 62,
+      "enchantmentAmount": 62,
+      "enchantType": "StaffEnchantment",
+      "castType": "FireAndForget",
+      "targetType": "Aimed",
+      "chargeTime": 0.5,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "12649A:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Alt_CrowdControl2_Effect_Wither",
+            "name": "Wither"
+          },
+          "magnitude": 5,
+          "area": 0,
+          "duration": 20,
+          "effectCost": 62,
+          "archetype": "Script"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "07A230:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_A075_DetonateLock_StaffEnchantment",
+      "name": "Detonate Lock",
+      "enchantmentCost": 595,
+      "enchantmentAmount": 595,
+      "enchantType": "StaffEnchantment",
+      "castType": "FireAndForget",
+      "targetType": "Aimed",
+      "chargeTime": 2,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "00AB60:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Alt_Unlock4_Effect_DetonateLock",
+            "name": "Detonate Lock"
+          },
+          "magnitude": 0,
+          "area": 40,
+          "duration": 0,
+          "effectCost": 595,
+          "archetype": "Script"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "07A232:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_A075_Entomb_StaffEnchantment",
+      "name": "Entomb",
+      "enchantmentCost": 475,
+      "enchantmentAmount": 475,
+      "enchantType": "StaffEnchantment",
+      "castType": "FireAndForget",
+      "targetType": "Aimed",
+      "chargeTime": 2.5,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "0AE5AE:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Alt_CrowdControl4_Effect_Entomb_Spawner",
+            "name": "Entomb - Spawner"
+          },
+          "magnitude": 0,
+          "area": 10,
+          "duration": 0,
+          "effectCost": 475,
+          "archetype": "Script"
+        },
+        {
+          "index": 1,
+          "baseEffect": {
+            "formKey": "0ABFE0:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Alt_CrowdControl4_Effect_Entomb",
+            "name": "Entomb"
+          },
+          "magnitude": 10,
+          "area": 0,
+          "duration": 0,
+          "effectCost": 0,
+          "archetype": "Stagger"
+        },
+        {
+          "index": 2,
+          "baseEffect": {
+            "formKey": "0AE5BA:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Alt_CrowdControl4_Effect_Entomb_Panic",
+            "name": "Entomb - Panic"
+          },
+          "magnitude": 100,
+          "area": 0,
+          "duration": 5,
+          "effectCost": 0,
+          "archetype": "Demoralize",
+          "actorValue": "Confidence"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "07C844:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_D025_DragonsTeeth_StaffEnchantment",
+      "name": "Dragon\u0027s Teeth",
+      "enchantmentCost": 50,
+      "enchantmentAmount": 50,
+      "enchantType": "StaffEnchantment",
+      "castType": "FireAndForget",
+      "targetType": "Aimed",
+      "chargeTime": 0.5,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "07BD5E:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Des_Fire2_Effect_DragonsTeeth",
+            "name": "Dragon\u0027s Teeth"
+          },
+          "magnitude": 5,
+          "area": 0,
+          "duration": 4,
+          "effectCost": 50,
+          "archetype": "ValueModifier",
+          "actorValue": "Health"
+        },
+        {
+          "index": 1,
+          "baseEffect": {
+            "formKey": "07BD5F:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Des_Fire2_Effect_DragonsTeeth_Desc",
+            "name": "Bonfire of the Damned"
+          },
+          "magnitude": 15,
+          "area": 0,
+          "duration": 4,
+          "effectCost": 0,
+          "archetype": "Script"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "07C846:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_D025_Thundercrack_StaffEnchantment",
+      "name": "Thundercrack",
+      "enchantmentCost": 43,
+      "enchantmentAmount": 43,
+      "enchantType": "StaffEnchantment",
+      "castType": "FireAndForget",
+      "targetType": "Aimed",
+      "chargeTime": 0.5,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "07C83A:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Des_Shock2_Effect_Thundercrack",
+            "name": "Thundercrack"
+          },
+          "magnitude": 40,
+          "area": 0,
+          "duration": 0,
+          "effectCost": 43,
+          "archetype": "DualValueModifier",
+          "actorValue": "Health"
+        },
+        {
+          "index": 1,
+          "baseEffect": {
+            "formKey": "07C843:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Des_Shock2_Effect_Thundercrack_Stagger",
+            "name": "Thunderstruck"
+          },
+          "magnitude": 0.5,
+          "area": 0,
+          "duration": 0,
+          "effectCost": 0,
+          "archetype": "Stagger"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "0803F5:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_A025_PerilousPath_StaffEnchantment",
+      "name": "Perilous Path",
+      "enchantmentCost": 80,
+      "enchantmentAmount": 80,
+      "enchantType": "StaffEnchantment",
+      "castType": "FireAndForget",
+      "targetType": "Aimed",
+      "chargeTime": 0.5,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "0F2184:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Alt_CrowdControl2_Effect_PerilousPath",
+            "name": "Perilous Path"
+          },
+          "magnitude": 0,
+          "area": 0,
+          "duration": 10,
+          "effectCost": 80,
+          "archetype": "Script"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
       "formKey": "085A78:Skyrim.esm",
       "editorId": "_02E_13_CircletOfShadows_Ench",
       "name": "Circlet of Shadows",
@@ -18356,6 +20598,364 @@
         "winnerLoadOrderIndex": 0,
         "chain": [
           "Skyrim.esm"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "0896E4:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_A025_DropZone_StaffEnchantment",
+      "name": "Drop Zone",
+      "enchantmentCost": 50,
+      "enchantmentAmount": 50,
+      "enchantType": "StaffEnchantment",
+      "castType": "FireAndForget",
+      "targetType": "TargetLocation",
+      "chargeTime": 0.5,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "08453F:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Alt_Telekinesis2_Effect_DropZone",
+            "name": "Drop Zone"
+          },
+          "magnitude": 0,
+          "area": 12,
+          "duration": 0,
+          "effectCost": 50,
+          "archetype": "Script"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "0896E8:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_A050_Undermine_StaffEnchantment",
+      "name": "Undermine",
+      "enchantmentCost": 167,
+      "enchantmentAmount": 167,
+      "enchantType": "StaffEnchantment",
+      "castType": "FireAndForget",
+      "targetType": "Aimed",
+      "chargeTime": 0.5,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "098A93:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Alt_CrowdControl3_Effect_Undermine",
+            "name": "Undermine"
+          },
+          "magnitude": 0,
+          "area": 0,
+          "duration": 30,
+          "effectCost": 167,
+          "archetype": "Script"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "0896EA:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_A050_TharnsPrison_StaffEnchantment",
+      "name": "Girath\u00FB\u0027s Prison",
+      "enchantmentCost": 190,
+      "enchantmentAmount": 190,
+      "enchantType": "StaffEnchantment",
+      "castType": "FireAndForget",
+      "targetType": "Aimed",
+      "chargeTime": 0.5,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "0AD56C:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Alt_CrowdControl3_Effect_TharnsPrison",
+            "name": "Girath\u00FB\u0027s Prison"
+          },
+          "magnitude": 0.35,
+          "area": 0,
+          "duration": 10,
+          "effectCost": 190,
+          "archetype": "Stagger"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "0896EC:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_C000_AzureReconstruction_StaffEnchantment",
+      "name": "Azure Reconstruction",
+      "enchantmentCost": 3,
+      "enchantmentAmount": 3,
+      "enchantType": "StaffEnchantment",
+      "castType": "Concentration",
+      "targetType": "TargetActor",
+      "chargeTime": 0.5,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "126DA1:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Con_Heal1_Effect_AzureReconstruction",
+            "name": "Azure Reconstruction"
+          },
+          "magnitude": 10,
+          "area": 0,
+          "duration": 0,
+          "effectCost": 3,
+          "archetype": "ValueModifier",
+          "actorValue": "Health"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "0896EE:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_C050_CorpseExplosion_StaffEnchantment",
+      "name": "Corpse Explosion",
+      "enchantmentCost": 175,
+      "enchantmentAmount": 175,
+      "enchantType": "StaffEnchantment",
+      "castType": "FireAndForget",
+      "targetType": "Aimed",
+      "chargeTime": 0.5,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "1212EA:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Con_Corpse3_Effect_CorpseExplosion",
+            "name": "Corpse Explosion"
+          },
+          "magnitude": 0,
+          "area": 0,
+          "duration": 0,
+          "effectCost": 175,
+          "archetype": "Script"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "0896F0:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_D000_Blaze_StaffEnchantment",
+      "name": "Blaze",
+      "enchantmentCost": 31,
+      "enchantmentAmount": 31,
+      "enchantType": "StaffEnchantment",
+      "castType": "FireAndForget",
+      "targetType": "Aimed",
+      "chargeTime": 0.5,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "0B2C72:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Des_Fire1_Effect_Blaze",
+            "name": "Blaze"
+          },
+          "magnitude": 10,
+          "area": 0,
+          "duration": 0,
+          "effectCost": 31,
+          "archetype": "ValueModifier",
+          "actorValue": "Health"
+        },
+        {
+          "index": 1,
+          "baseEffect": {
+            "formKey": "0B2C75:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Des_Fire1_Effect_Blaze_LeapingFire",
+            "name": "Leaping Fire"
+          },
+          "magnitude": 25,
+          "area": 0,
+          "duration": 1,
+          "effectCost": 0,
+          "archetype": "Script"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "0896F2:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_R050_HorridWilting_StaffEnchantment",
+      "name": "Horrid Wilting",
+      "enchantmentCost": 130,
+      "enchantmentAmount": 130,
+      "enchantType": "StaffEnchantment",
+      "castType": "FireAndForget",
+      "targetType": "Aimed",
+      "chargeTime": 1,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "012213:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Res_Disease3_Effect_HorridWilting",
+            "name": "Horrid Wilting"
+          },
+          "magnitude": 12,
+          "area": 20,
+          "duration": 10,
+          "effectCost": 130,
+          "archetype": "PeakValueModifier",
+          "actorValue": "Health"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "0896F4:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_R025_WellingBlood_StaffEnchantment",
+      "name": "Welling Blood",
+      "enchantmentCost": 70,
+      "enchantmentAmount": 70,
+      "enchantType": "StaffEnchantment",
+      "castType": "FireAndForget",
+      "targetType": "Aimed",
+      "chargeTime": 0.5,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "01FCD2:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Res_Blood2_Effect_WellingBlood",
+            "name": "Welling Blood"
+          },
+          "magnitude": 0,
+          "area": 0,
+          "duration": 8,
+          "effectCost": 70,
+          "archetype": "Script"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "0896F6:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_I000_PaleShadow_StaffEnchantment",
+      "name": "Pale Shadow",
+      "enchantmentCost": 40,
+      "enchantmentAmount": 40,
+      "enchantType": "StaffEnchantment",
+      "castType": "FireAndForget",
+      "targetType": "Aimed",
+      "chargeTime": 0.5,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "085582:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Ill_Simulacrum1_Effect_PaleShadow",
+            "name": "Pale Shadow"
+          },
+          "magnitude": 0,
+          "area": 0,
+          "duration": 10,
+          "effectCost": 40,
+          "archetype": "Script"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
         ],
         "winnerHeaderVersion": 1.7,
         "winnerNeedsBees": false
@@ -18828,6 +21428,44 @@
         ],
         "changedFields": [
           "effects"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "0974E0:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_R025_LambOfMara_StaffEnchantment",
+      "name": "Lamb of Irlanda",
+      "enchantmentCost": 83,
+      "enchantmentAmount": 83,
+      "enchantType": "StaffEnchantment",
+      "castType": "FireAndForget",
+      "targetType": "Aimed",
+      "chargeTime": 0.5,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "0974DD:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Res_HealCurse2_Effect_LambOfMara",
+            "name": "Lamb of Irlanda"
+          },
+          "magnitude": 0,
+          "area": 0,
+          "duration": 30,
+          "effectCost": 83,
+          "archetype": "Script"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
         ],
         "winnerHeaderVersion": 1.7,
         "winnerNeedsBees": false
@@ -19545,7 +22183,7 @@
         "isNewRecord": true,
         "isInjected": false,
         "winner": "EAM SE - Enderal Apothecarii Monastery.esp",
-        "winnerLoadOrderIndex": 89,
+        "winnerLoadOrderIndex": 88,
         "chain": [
           "EAM SE - Enderal Apothecarii Monastery.esp"
         ],
@@ -22177,6 +24815,48 @@
       }
     },
     {
+      "formKey": "0B00DE:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_A050_ConjureCraftlord_ConjuredActorStaffEnchantment",
+      "name": "Technobolt",
+      "enchantmentCost": 100,
+      "enchantmentAmount": 100,
+      "enchantType": "StaffEnchantment",
+      "castType": "FireAndForget",
+      "targetType": "Aimed",
+      "chargeTime": 2,
+      "flags": [
+        "NoAutoCalc"
+      ],
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "0B00DD:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Con_Human5_Effect_ConjureCraftlord_Technobolt",
+            "name": "Technobolt"
+          },
+          "magnitude": 75,
+          "area": 0,
+          "duration": 0,
+          "effectCost": 76,
+          "archetype": "ValueModifier",
+          "actorValue": "Health"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
       "formKey": "0B62DB:Skyrim.esm",
       "editorId": "StaffEnchConjureAtronachFlame",
       "name": "Summon Fire Elemental",
@@ -22504,6 +25184,325 @@
         "winnerLoadOrderIndex": 0,
         "chain": [
           "Skyrim.esm"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "0BB966:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_I050_IllusoryPyre_StaffEnchantment",
+      "name": "Illusory Pyre",
+      "enchantmentCost": 140,
+      "enchantmentAmount": 140,
+      "enchantType": "StaffEnchantment",
+      "castType": "FireAndForget",
+      "targetType": "TargetActor",
+      "chargeTime": 0.5,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "0BB963:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Ill_TempDmg3_Effect_IllusoryPyre",
+            "name": "Illusory Pyre"
+          },
+          "magnitude": 0,
+          "area": 10,
+          "duration": 15,
+          "effectCost": 140,
+          "archetype": "PeakValueModifier",
+          "actorValue": "Health"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "0BB96A:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_R025_Necroplague_StaffEnchantment",
+      "name": "Necroplague",
+      "enchantmentCost": 103,
+      "enchantmentAmount": 103,
+      "enchantType": "StaffEnchantment",
+      "castType": "FireAndForget",
+      "targetType": "Aimed",
+      "chargeTime": 0.5,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "034D0D:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Res_Disease2_Effect_Necroplague",
+            "name": "Necroplague"
+          },
+          "magnitude": 9,
+          "area": 0,
+          "duration": 30,
+          "effectCost": 103,
+          "archetype": "Script"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "0BB96C:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_I050_FigmentOfPain_StaffEnchantment",
+      "name": "Figment of Pain",
+      "enchantmentCost": 219,
+      "enchantmentAmount": 219,
+      "enchantType": "StaffEnchantment",
+      "castType": "FireAndForget",
+      "targetType": "TargetActor",
+      "chargeTime": 0.5,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "052547:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Ill_PassthroughDmg3_Effect_FigmentOfPain",
+            "name": "Figment of Pain"
+          },
+          "magnitude": 0,
+          "area": 0,
+          "duration": 20,
+          "effectCost": 219,
+          "archetype": "Script"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "0BB972:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_C025_AtronachMark_StaffEnchantment",
+      "name": "Atronach Mark",
+      "enchantmentCost": 75,
+      "enchantmentAmount": 75,
+      "enchantType": "StaffEnchantment",
+      "castType": "FireAndForget",
+      "targetType": "Aimed",
+      "chargeTime": 0.5,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "02CD79:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Con_Curse2_Effect_AtronachMark",
+            "name": "Atronach Mark"
+          },
+          "magnitude": 0,
+          "area": 0,
+          "duration": 10,
+          "effectCost": 75,
+          "archetype": "Script"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "0BB975:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_C025_ConjureDeadeyeCaptain_StaffEnchantment",
+      "name": "Conjure Deadeye Captain",
+      "enchantmentCost": 172,
+      "enchantmentAmount": 172,
+      "enchantType": "StaffEnchantment",
+      "castType": "FireAndForget",
+      "targetType": "TargetLocation",
+      "chargeTime": 0.5,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "0B7822:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Con_Undead2_Effect_ConjureDeadeyeCaptain",
+            "name": "Conjure Deadeye Captain"
+          },
+          "magnitude": 0,
+          "area": 0,
+          "duration": 60,
+          "effectCost": 172,
+          "archetype": "SummonCreature"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "0BB978:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_C050_SummoningRune_StaffEnchantment",
+      "name": "Summoning Rune",
+      "enchantmentCost": 198,
+      "enchantmentAmount": 198,
+      "enchantType": "StaffEnchantment",
+      "castType": "FireAndForget",
+      "targetType": "TargetLocation",
+      "chargeTime": 0.5,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "124962:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Con_Summon3_Effect_SummoningRune",
+            "name": "Summoning Rune"
+          },
+          "magnitude": 0,
+          "area": 0,
+          "duration": 1,
+          "effectCost": 198,
+          "archetype": "Script"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "0BB97B:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_C075_OathboundGuardian_StaffEnchantment",
+      "name": "Oathbound Guardian",
+      "enchantmentCost": 423,
+      "enchantmentAmount": 423,
+      "enchantType": "StaffEnchantment",
+      "castType": "FireAndForget",
+      "targetType": "TargetActor",
+      "chargeTime": 0.5,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "018AE6:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Con_Ghost4_Effect_OathboundGuardian",
+            "name": "Oathbound Guardian"
+          },
+          "magnitude": 0,
+          "area": 0,
+          "duration": 60,
+          "effectCost": 423,
+          "archetype": "SummonCreature"
+        },
+        {
+          "index": 1,
+          "baseEffect": {
+            "formKey": "019051:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Con_Ghost4_Effect_OathboundGuardian_Visuals",
+            "name": "Oathbound Guardian - Visuals"
+          },
+          "magnitude": 0,
+          "area": 0,
+          "duration": 0,
+          "effectCost": 0,
+          "archetype": "Script"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "0BDFAA:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_D075_ScorchingHands_StaffEnchantment",
+      "name": "Scorching Hands",
+      "enchantmentCost": 142,
+      "enchantmentAmount": 142,
+      "enchantType": "StaffEnchantment",
+      "castType": "Concentration",
+      "targetType": "Aimed",
+      "chargeTime": 1.5,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "0BDFA2:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Des_Fire4_Effect_ScorchingHands",
+            "name": "Scorching Hands"
+          },
+          "magnitude": 80,
+          "area": 3,
+          "duration": 1,
+          "effectCost": 142,
+          "archetype": "ValueModifier",
+          "actorValue": "Health"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
         ],
         "winnerHeaderVersion": 1.7,
         "winnerNeedsBees": false
@@ -25557,6 +28556,153 @@
         "winnerLoadOrderIndex": 0,
         "chain": [
           "Skyrim.esm"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "0D08CD:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_D050_FrostNova_StaffEnchantment",
+      "name": "Frost Nova",
+      "enchantmentCost": 136,
+      "enchantmentAmount": 136,
+      "enchantType": "StaffEnchantment",
+      "castType": "FireAndForget",
+      "targetType": "Self",
+      "chargeTime": 0.5,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "0D1E5B:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Des_Frost3_Effect_FrostNova",
+            "name": "Frost Nova"
+          },
+          "magnitude": 30,
+          "area": 25,
+          "duration": 0,
+          "effectCost": 136,
+          "archetype": "DualValueModifier",
+          "actorValue": "Health"
+        },
+        {
+          "index": 1,
+          "baseEffect": {
+            "formKey": "0D1E5C:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Des_Frost3_Effect_FrostNova_Centre01",
+            "name": "Frost Nova - Centre 15"
+          },
+          "magnitude": 15,
+          "area": 15,
+          "duration": 0,
+          "effectCost": 0,
+          "archetype": "DualValueModifier",
+          "actorValue": "Health"
+        },
+        {
+          "index": 2,
+          "baseEffect": {
+            "formKey": "0D1E5E:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Des_Frost3_Effect_FrostNova_Centre02",
+            "name": "Frost Nova - Centre 8"
+          },
+          "magnitude": 15,
+          "area": 8,
+          "duration": 0,
+          "effectCost": 0,
+          "archetype": "DualValueModifier",
+          "actorValue": "Health"
+        },
+        {
+          "index": 3,
+          "baseEffect": {
+            "formKey": "1347ED:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Des_FrostSlowArea",
+            "name": "Apocalypse Frost Slow"
+          },
+          "magnitude": 50,
+          "area": 25,
+          "duration": 3,
+          "effectCost": 0,
+          "archetype": "Script"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "0D08CF:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_D075_ShockNova_StaffEnchantment",
+      "name": "Shock Nova",
+      "enchantmentCost": 375,
+      "enchantmentAmount": 375,
+      "enchantType": "StaffEnchantment",
+      "castType": "FireAndForget",
+      "targetType": "Self",
+      "chargeTime": 0.5,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "0D1E61:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Des_Shock4_Effect_ShockNova",
+            "name": "Shock Nova"
+          },
+          "magnitude": 40,
+          "area": 25,
+          "duration": 0,
+          "effectCost": 375,
+          "archetype": "DualValueModifier",
+          "actorValue": "Health"
+        },
+        {
+          "index": 1,
+          "baseEffect": {
+            "formKey": "0D1E64:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Des_Shock4_Effect_ShockNova_Rim01",
+            "name": "Shock Nova - Rim 12"
+          },
+          "magnitude": 20,
+          "area": 25,
+          "duration": 0,
+          "effectCost": 0,
+          "archetype": "DualValueModifier",
+          "actorValue": "Health"
+        },
+        {
+          "index": 2,
+          "baseEffect": {
+            "formKey": "0D1E65:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Des_Shock4_Effect_ShockNova_Rim02",
+            "name": "Shock Nova - Rim 20"
+          },
+          "magnitude": 20,
+          "area": 25,
+          "duration": 0,
+          "effectCost": 0,
+          "archetype": "DualValueModifier",
+          "actorValue": "Health"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
         ],
         "winnerHeaderVersion": 1.7,
         "winnerNeedsBees": false
@@ -38581,6 +41727,314 @@
         "winnerLoadOrderIndex": 0,
         "chain": [
           "Skyrim.esm"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "161626:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_C075_MonarchMark_StaffEnchantment",
+      "name": "Monarch Mark",
+      "enchantmentCost": 300,
+      "enchantmentAmount": 300,
+      "enchantType": "StaffEnchantment",
+      "castType": "FireAndForget",
+      "targetType": "Aimed",
+      "chargeTime": 0.5,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "161620:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Con_Curse4_Effect_MonarchMark",
+            "name": "Monarch Mark"
+          },
+          "magnitude": 0,
+          "area": 0,
+          "duration": 10,
+          "effectCost": 300,
+          "archetype": "Script"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "161630:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_D075_IcePrism_StaffEnchantment",
+      "name": "Ice Prism",
+      "enchantmentCost": 133,
+      "enchantmentAmount": 133,
+      "enchantType": "StaffEnchantment",
+      "castType": "Concentration",
+      "targetType": "Aimed",
+      "chargeTime": 1.5,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "15E73D:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Des_Frost4_Effect_IcePrism",
+            "name": "Ice Prism"
+          },
+          "magnitude": 50,
+          "area": 25,
+          "duration": 1,
+          "effectCost": 133,
+          "archetype": "DualValueModifier",
+          "actorValue": "Health"
+        },
+        {
+          "index": 1,
+          "baseEffect": {
+            "formKey": "0B729D:Skyrim.esm",
+            "editorId": "FrostSlowConcAimed",
+            "name": "Slowdown"
+          },
+          "magnitude": 50,
+          "area": 0,
+          "duration": 1,
+          "effectCost": 0,
+          "archetype": "Script"
+        },
+        {
+          "index": 2,
+          "baseEffect": {
+            "formKey": "0F3934:Skyrim.esm",
+            "editorId": "PerkDeepFreezeParalysisConcAimed",
+            "name": "Deep Freeze Paralyze"
+          },
+          "magnitude": 0,
+          "area": 0,
+          "duration": 1,
+          "effectCost": 0,
+          "archetype": "Paralysis",
+          "actorValue": "Paralysis"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "1A792C:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_C050_Gank_StaffEnchantment",
+      "name": "Gank",
+      "enchantmentCost": 250,
+      "enchantmentAmount": 250,
+      "enchantType": "StaffEnchantment",
+      "castType": "FireAndForget",
+      "targetType": "Aimed",
+      "chargeTime": 0.5,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "1A1B76:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Con_Summon3_Effect_Gank",
+            "name": "Gank"
+          },
+          "magnitude": 0,
+          "area": 0,
+          "duration": 0,
+          "effectCost": 200,
+          "archetype": "Script"
+        },
+        {
+          "index": 1,
+          "baseEffect": {
+            "formKey": "1A1B77:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Con_Summon3_Effect_Gank_AoE",
+            "name": "Gank - Friendly AoE"
+          },
+          "magnitude": 0.5,
+          "area": 100,
+          "duration": 0,
+          "effectCost": 50,
+          "archetype": "Stagger"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "1A7930:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_I000_SilveryBarbs_StaffEnchantment",
+      "name": "Silvery Barbs",
+      "enchantmentCost": 42,
+      "enchantmentAmount": 42,
+      "enchantType": "StaffEnchantment",
+      "castType": "FireAndForget",
+      "targetType": "Aimed",
+      "chargeTime": 0.5,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "15B83F:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Ill_Antimage1_Effect_SilveryBarbs",
+            "name": "Silvery Barbs"
+          },
+          "magnitude": 0,
+          "area": 0,
+          "duration": 20,
+          "effectCost": 42,
+          "archetype": "Script"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "1A7935:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_I075_HrormirsMisdirection_StaffEnchantment",
+      "name": "Veil of Misdirection",
+      "enchantmentCost": 301,
+      "enchantmentAmount": 301,
+      "enchantType": "StaffEnchantment",
+      "castType": "FireAndForget",
+      "targetType": "TargetActor",
+      "chargeTime": 0.5,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "15B846:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Ill_Invis4_Effect_HrormirsMisdirection",
+            "name": "Veil of Misdirection"
+          },
+          "magnitude": 0,
+          "area": 0,
+          "duration": 30,
+          "effectCost": 301,
+          "archetype": "Script"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "1A7938:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_R050_DustInTheClockwork_StaffEnchantment",
+      "name": "Dust in the Clockwork",
+      "enchantmentCost": 176,
+      "enchantmentAmount": 176,
+      "enchantType": "StaffEnchantment",
+      "castType": "FireAndForget",
+      "targetType": "Aimed",
+      "chargeTime": 0.5,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "1A1B7D:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Res_Peace3_Effect_DustInTheClockwork",
+            "name": "Dust in the Clockwork"
+          },
+          "magnitude": 5,
+          "area": 0,
+          "duration": 10,
+          "effectCost": 176,
+          "archetype": "PeakValueModifier",
+          "actorValue": "Health"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
+        ],
+        "winnerHeaderVersion": 1.7,
+        "winnerNeedsBees": false
+      }
+    },
+    {
+      "formKey": "1A793C:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_R075_PoisonedChalice_StaffEnchantment",
+      "name": "Poisoned Chalice",
+      "enchantmentCost": 251,
+      "enchantmentAmount": 251,
+      "enchantType": "StaffEnchantment",
+      "castType": "FireAndForget",
+      "targetType": "Aimed",
+      "chargeTime": 0.5,
+      "effects": [
+        {
+          "index": 0,
+          "baseEffect": {
+            "formKey": "15E720:Apocalypse - Magic of Skyrim.esp",
+            "editorId": "WB_Res_HealCurse4_Effect_PoisonedChalice",
+            "name": "Poisoned Chalice"
+          },
+          "magnitude": 0,
+          "area": 0,
+          "duration": 30,
+          "effectCost": 251,
+          "archetype": "Script"
+        }
+      ],
+      "provenance": {
+        "definedIn": "Apocalypse - Magic of Skyrim.esp",
+        "isNewRecord": true,
+        "isInjected": false,
+        "winner": "Apocalypse - Magic of Skyrim.esp",
+        "winnerLoadOrderIndex": 305,
+        "chain": [
+          "Apocalypse - Magic of Skyrim.esp"
         ],
         "winnerHeaderVersion": 1.7,
         "winnerNeedsBees": false

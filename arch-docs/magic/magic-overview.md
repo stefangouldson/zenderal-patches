@@ -13,10 +13,10 @@ Runtime corroboration: the BEES log reports **68** plugins emulated (log written
 
 | Dataset | Winning records | With overrides | New (non-master) |
 |---|---:|---:|---:|
-| `spells.json` (SPEL) | 1977 | 704 | 836 |
-| `magic-effects.json` (MGEF) | 2224 | 489 | 940 |
-| `enchantments.json` (ENCH) | 766 | 275 | 56 |
-| `scrolls.json` (SCRL) | 36 | 34 | 2 |
+| `spells.json` (SPEL) | 2350 | 704 | 1209 |
+| `magic-effects.json` (MGEF) | 2780 | 489 | 1496 |
+| `enchantments.json` (ENCH) | 838 | 275 | 128 |
+| `scrolls.json` (SCRL) | 180 | 34 | 146 |
 | `ingestibles.json` (ALCH) | 400 | 270 | 82 |
 | `shouts.json` (SHOU) | 66 | 40 | 11 |
 | `leveled-spells.json` (LVSP) | 9 | 0 | 7 |
@@ -53,12 +53,12 @@ Plugins ranked by how many overridden magic records they end up winning:
 
 | School (Enderal name) | Actor value | Winning spells |
 |---|---|---:|
-| (none) | — | 755 |
-| Elementalism | Destruction | 486 |
-| Entropy | Conjuration | 243 |
-| Mentalism | Alteration | 189 |
-| Psionics | Illusion | 158 |
-| Light Magic | Restoration | 144 |
+| (none) | — | 823 |
+| Elementalism | Destruction | 573 |
+| Entropy | Conjuration | 295 |
+| Mentalism | Alteration | 246 |
+| Psionics | Illusion | 206 |
+| Light Magic | Restoration | 205 |
 | MarksmanModifier | MarksmanModifier | 1 |
 | HeavyArmor | HeavyArmor | 1 |
 

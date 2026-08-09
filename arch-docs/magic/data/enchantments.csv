@@ -105,6 +105,7 @@ Form Key,Editor Id,Name,Enchant Type,Cast Type,Target Type,Enchantment Cost,Ench
 148A1A:Skyrim.esm,_40E_MSet_WandererBootsEnch,Echo of the Wandering Mage,Enchantment,ConstantEffect,Self,782,782,0,,Enderal SE - Gameplay Overhaul.esp
 02C594:Skyrim.esm,VoiceEnchElementalFury,Elemental Fury,Enchantment,FireAndForget,Touch,0,0,0,,Skyrim.esm
 0432A9:Skyrim.esm,01E_09VerschlissenesElementaristendiademEnch,Elementalist Circlet,Enchantment,ConstantEffect,Self,327,327,0,,Enderal SE - Gameplay Overhaul.esp
+01A0A8:Apocalypse - Magic of Skyrim.esp,WB_C050_DaedricCrescent_SummonedWeaponEnchantment,Entropic Crescent,Enchantment,FireAndForget,Touch,1000,1000,0,,Apocalypse - Magic of Skyrim.esp
 001E9E:Enderal SE - Gameplay Overhaul.esp,EnchUniqueWeapon_Totensturm,Entropic Damage,Enchantment,FireAndForget,Touch,17,17,0,,Enderal SE - Gameplay Overhaul.esp
 01EB4B:Enderal - Forgotten Stories.esm,_02E_15_Unique_Epicura_Ench,Epicura,Enchantment,FireAndForget,Touch,23,23,0,,Enderal - Forgotten Stories.esm
 1130C7:Skyrim.esm,_00E_A2_EyeOfTheStormFailsaveEnch,Eye of the Storm,Enchantment,FireAndForget,Touch,665,665,0,,Skyrim.esm
@@ -714,17 +715,47 @@ Form Key,Editor Id,Name,Enchant Type,Cast Type,Target Type,Enchantment Cost,Ench
 02E3BA:Enderal - Forgotten Stories.esm,_05E_40_StaffOfTheFather_Ench,Absorb Health,StaffEnchantment,Concentration,Aimed,29,29,0,,Enderal - Forgotten Stories.esm
 0365C5:Skyrim.esm,_00E_EnchAbsorbHealthStaff02,Absorb Health,StaffEnchantment,Concentration,Aimed,38,38,0.5,,Enderal SE - Gameplay Overhaul.esp
 06728A:Skyrim.esm,_00E_EnchAbsorbHealthStaff01,Absorb Health,StaffEnchantment,Concentration,Aimed,30,30,1,,Enderal SE - Gameplay Overhaul.esp
+0BB972:Apocalypse - Magic of Skyrim.esp,WB_C025_AtronachMark_StaffEnchantment,Atronach Mark,StaffEnchantment,FireAndForget,Aimed,75,75,0.5,,Apocalypse - Magic of Skyrim.esp
+0896EC:Apocalypse - Magic of Skyrim.esp,WB_C000_AzureReconstruction_StaffEnchantment,Azure Reconstruction,StaffEnchantment,Concentration,TargetActor,3,3,0.5,,Apocalypse - Magic of Skyrim.esp
+0896F0:Apocalypse - Magic of Skyrim.esp,WB_D000_Blaze_StaffEnchantment,Blaze,StaffEnchantment,FireAndForget,Aimed,31,31,0.5,,Apocalypse - Magic of Skyrim.esp
 00A02A:KataPUMBSpellPack.esp,Kata_Staf_Mentalism_Blink,Blink,StaffEnchantment,FireAndForget,Aimed,22,22,0.5,,KataPUMBSpellPack.esp
+07A202:Apocalypse - Magic of Skyrim.esp,WB_D050_Bolide_StaffEnchantment,Bolide,StaffEnchantment,FireAndForget,Aimed,134,134,0.5,,Apocalypse - Magic of Skyrim.esp
 00F7BB:KataPUMBSpellPack.esp,Kata_Staf_Elementalism_Bombardment,Bombardment,StaffEnchantment,Concentration,Aimed,8,8,0.6,,KataPUMBSpellPack.esp
+07A210:Apocalypse - Magic of Skyrim.esp,WB_D075_Bombardment_StaffEnchantment,Bombardment,StaffEnchantment,Concentration,Aimed,125,125,1.5,,Apocalypse - Magic of Skyrim.esp
 029B5C:Skyrim.esm,StaffEnchChainLightning,Chain Lightning,StaffEnchantment,FireAndForget,Aimed,122,122,0.5,,Skyrim.esm
+07A218:Apocalypse - Magic of Skyrim.esp,WB_I050_CompellingWhispers_StaffEnchantment,Compelling Whispers,StaffEnchantment,Concentration,Aimed,23,23,0.5,,Apocalypse - Magic of Skyrim.esp
+07A1E4:Apocalypse - Magic of Skyrim.esp,WB_C075_ConjureAvengingWraith_StaffEnchantment,Conjure Avenging Wraith,StaffEnchantment,FireAndForget,TargetLocation,351,351,0.5,,Apocalypse - Magic of Skyrim.esp
+07A1E8:Apocalypse - Magic of Skyrim.esp,WB_C025_ConjureCatTotem_StaffEnchantment,Conjure Cat Totem,StaffEnchantment,FireAndForget,TargetLocation,161,161,0.5,,Apocalypse - Magic of Skyrim.esp
+0BB975:Apocalypse - Magic of Skyrim.esp,WB_C025_ConjureDeadeyeCaptain_StaffEnchantment,Conjure Deadeye Captain,StaffEnchantment,FireAndForget,TargetLocation,172,172,0.5,,Apocalypse - Magic of Skyrim.esp
+07A1F0:Apocalypse - Magic of Skyrim.esp,WB_C075_ConjureDremoraChampion_StaffEnchantment,Conjure Dremora Champion,StaffEnchantment,FireAndForget,TargetLocation,366,366,0.5,,Apocalypse - Magic of Skyrim.esp
+07A1E6:Apocalypse - Magic of Skyrim.esp,WB_C025_ConjureDremoraChurl_StaffEnchantment,Conjure Dremora Churl,StaffEnchantment,FireAndForget,TargetLocation,157,157,0.5,,Apocalypse - Magic of Skyrim.esp
+07A1F2:Apocalypse - Magic of Skyrim.esp,WB_C075_ConjureDremoraHonorGuard_StaffEnchantment,Conjure Dremora Honor Guard,StaffEnchantment,FireAndForget,TargetLocation,380,380,0.5,,Apocalypse - Magic of Skyrim.esp
+07A1E9:Apocalypse - Magic of Skyrim.esp,WB_C050_ConjureDremoraPitFighter_StaffEnchantment,Conjure Dremora Pit Fighter,StaffEnchantment,FireAndForget,TargetLocation,229,229,0.5,,Apocalypse - Magic of Skyrim.esp
+07A1F4:Apocalypse - Magic of Skyrim.esp,WB_C075_ConjureHerne_StaffEnchantment,Conjure Herne,StaffEnchantment,FireAndForget,TargetLocation,394,394,0.5,,Apocalypse - Magic of Skyrim.esp
+07A1F6:Apocalypse - Magic of Skyrim.esp,WB_C075_ConjureXivilaiLord_StaffEnchantment,Conjure Xivilai Lord,StaffEnchantment,FireAndForget,TargetLocation,344,344,0.5,,Apocalypse - Magic of Skyrim.esp
+07A1EE:Apocalypse - Magic of Skyrim.esp,WB_C050_ConjureXivilaiSorcerer_StaffEnchantment,Conjure Xivilai Sorcerer,StaffEnchantment,FireAndForget,TargetLocation,229,229,0.5,,Apocalypse - Magic of Skyrim.esp
+0896EE:Apocalypse - Magic of Skyrim.esp,WB_C050_CorpseExplosion_StaffEnchantment,Corpse Explosion,StaffEnchantment,FireAndForget,Aimed,175,175,0.5,,Apocalypse - Magic of Skyrim.esp
+07A1F8:Apocalypse - Magic of Skyrim.esp,WB_D000_Crackle_StaffEnchantment,Crackle,StaffEnchantment,FireAndForget,Aimed,31,31,0.5,,Apocalypse - Magic of Skyrim.esp
+07A1FC:Apocalypse - Magic of Skyrim.esp,WB_D025_CreepingCold_StaffEnchantment,Creeping Cold,StaffEnchantment,Concentration,Aimed,19,19,0,,Apocalypse - Magic of Skyrim.esp
 00F7BE:KataPUMBSpellPack.esp,Kata_Staf_Entropy_Curse,Curse,StaffEnchantment,FireAndForget,Aimed,12,12,0.5,,EGO - KataPUMB Spell Package.esp
+07A211:Apocalypse - Magic of Skyrim.esp,WB_I025_CurseOfTheSilent_StaffEnchantment,Curse of the Silent,StaffEnchantment,FireAndForget,Aimed,98,98,0.5,,Apocalypse - Magic of Skyrim.esp
 00A026:KataPUMBSpellPack.esp,Kata_Staf_Entropy_DeathBeam,Death Beam,StaffEnchantment,Concentration,Aimed,4,4,0.3,,KataPUMBSpellPack.esp
+07A22C:Apocalypse - Magic of Skyrim.esp,WB_R075_Decompose_StaffEnchantment,Decompose,StaffEnchantment,FireAndForget,Aimed,311,311,0.5,,Apocalypse - Magic of Skyrim.esp
+07A230:Apocalypse - Magic of Skyrim.esp,WB_A075_DetonateLock_StaffEnchantment,Detonate Lock,StaffEnchantment,FireAndForget,Aimed,595,595,2,,Apocalypse - Magic of Skyrim.esp
+07C844:Apocalypse - Magic of Skyrim.esp,WB_D025_DragonsTeeth_StaffEnchantment,Dragon's Teeth,StaffEnchantment,FireAndForget,Aimed,50,50,0.5,,Apocalypse - Magic of Skyrim.esp
 003911:Enderal SE - Gameplay Overhaul.esp,StaffEnchFear,Dread,StaffEnchantment,FireAndForget,Aimed,154,154,1,,Enderal SE - Gameplay Overhaul.esp
+0896E4:Apocalypse - Magic of Skyrim.esp,WB_A025_DropZone_StaffEnchantment,Drop Zone,StaffEnchantment,FireAndForget,TargetLocation,50,50,0.5,,Apocalypse - Magic of Skyrim.esp
+1A7938:Apocalypse - Magic of Skyrim.esp,WB_R050_DustInTheClockwork_StaffEnchantment,Dust in the Clockwork,StaffEnchantment,FireAndForget,Aimed,176,176,0.5,,Apocalypse - Magic of Skyrim.esp
 010457:KataPUMBSpellPack.esp,Kata_Staf_Elementalism_Electrocution,Electrocution,StaffEnchantment,Concentration,Aimed,14,14,0.6,,KataPUMBSpellPack.esp
 00A028:KataPUMBSpellPack.esp,Kata_Staf_Elementalism_ElectroSphere,Electrosphere,StaffEnchantment,FireAndForget,Aimed,15,15,0.5,,KataPUMBSpellPack.esp
+07A204:Apocalypse - Magic of Skyrim.esp,WB_D050_Electrosphere_StaffEnchantment,Electrosphere,StaffEnchantment,FireAndForget,Aimed,131,131,0.5,,Apocalypse - Magic of Skyrim.esp
 00F7BC:KataPUMBSpellPack.esp,Kata_Staf_Elementalism_ElectroStorm,Electrostorm,StaffEnchantment,Concentration,Aimed,8,8,0.6,,KataPUMBSpellPack.esp
+07A21C:Apocalypse - Magic of Skyrim.esp,WB_I075_EmpathicAgony_StaffEnchantment,Empathic Agony,StaffEnchantment,FireAndForget,Aimed,366,366,0.5,,Apocalypse - Magic of Skyrim.esp
+07A232:Apocalypse - Magic of Skyrim.esp,WB_A075_Entomb_StaffEnchantment,Entomb,StaffEnchantment,FireAndForget,Aimed,475,475,2.5,,Apocalypse - Magic of Skyrim.esp
 0773C0:Skyrim.esm,_00E_StaffEnchEldritchBlast,Entropic Blast,StaffEnchantment,Concentration,Aimed,12,12,0.5,,Enderal SE - Gameplay Overhaul.esp
 14897A:Skyrim.esm,_00E_StaffEnchEldritchBreath,Entropic Breath,StaffEnchantment,Concentration,Aimed,2,2,0,,Enderal SE - Gameplay Overhaul.esp
+0BB96C:Apocalypse - Magic of Skyrim.esp,WB_I050_FigmentOfPain_StaffEnchantment,Figment of Pain,StaffEnchantment,FireAndForget,TargetActor,219,219,0.5,,Apocalypse - Magic of Skyrim.esp
+07A226:Apocalypse - Magic of Skyrim.esp,WB_R050_FingerOfDeath_StaffEnchantment,Finger of Death,StaffEnchantment,FireAndForget,TargetActor,160,160,0.5,,Apocalypse - Magic of Skyrim.esp
 0B62DD:Skyrim.esm,StaffEnchFireRune,Fire Rune,StaffEnchantment,FireAndForget,TargetLocation,173,173,0.5,,Skyrim.esm
 029B59:Skyrim.esm,StaffEnchFireball,Fireball,StaffEnchantment,FireAndForget,Aimed,115,115,0.5,,Enderal SE - Gameplay Overhaul.esp
 12E1D4:Skyrim.esm,StaffEnchFireball2,Fireball,StaffEnchantment,FireAndForget,Aimed,207,207,0.5,,Enderal SE - Gameplay Overhaul.esp
@@ -732,26 +763,59 @@ Form Key,Editor Id,Name,Enchant Type,Cast Type,Target Type,Enchantment Cost,Ench
 04C6CB:Skyrim.esm,StaffEnchFirebolt,Firebolt,StaffEnchantment,FireAndForget,Aimed,41,41,0.5,,Skyrim.esm
 001D9E:Enderal SE - Gameplay Overhaul.esp,StaffEnchFlamesDunwar2,Flames,StaffEnchantment,Concentration,Aimed,1,1,0,,Enderal SE - Gameplay Overhaul.esp
 04DEDA:Skyrim.esm,StaffEnchFlames,Flames,StaffEnchantment,Concentration,Aimed,3,3,0.5,,Enderal SE - Gameplay Overhaul.esp
+07A1FE:Apocalypse - Magic of Skyrim.esp,WB_D025_Fracture_StaffEnchantment,Fracture,StaffEnchantment,FireAndForget,Aimed,54,54,0.5,,Apocalypse - Magic of Skyrim.esp
+0D08CD:Apocalypse - Magic of Skyrim.esp,WB_D050_FrostNova_StaffEnchantment,Frost Nova,StaffEnchantment,FireAndForget,Self,136,136,0.5,,Apocalypse - Magic of Skyrim.esp
 029B5B:Skyrim.esm,StaffEnchFrostbite,Frostbite,StaffEnchantment,Concentration,Aimed,9,9,0.5,,Enderal SE - Gameplay Overhaul.esp
+1A792C:Apocalypse - Magic of Skyrim.esp,WB_C050_Gank_StaffEnchantment,Gank,StaffEnchantment,FireAndForget,Aimed,250,250,0.5,,Apocalypse - Magic of Skyrim.esp
+0896EA:Apocalypse - Magic of Skyrim.esp,WB_A050_TharnsPrison_StaffEnchantment,Girathû's Prison,StaffEnchantment,FireAndForget,Aimed,190,190,0.5,,Apocalypse - Magic of Skyrim.esp
+07A1FA:Apocalypse - Magic of Skyrim.esp,WB_D000_Hailstone_StaffEnchantment,Hailstone,StaffEnchantment,FireAndForget,Aimed,31,31,0.5,,Apocalypse - Magic of Skyrim.esp
 002C94:Enderal SE - Gameplay Overhaul.esp,StaffEnchHealOtherGreater,Heal Other,StaffEnchantment,FireAndForget,TargetActor,20,20,0.5,1,Enderal SE - Gameplay Overhaul.esp
 029B6E:Skyrim.esm,StaffEnchHealOther,Heal Other,StaffEnchantment,FireAndForget,TargetActor,10,10,0.5,1,Enderal SE - Gameplay Overhaul.esp
 00F7C0:KataPUMBSpellPack.esp,Kata_Staf_LightMagic_HolyCross,Holy Cross,StaffEnchantment,FireAndForget,Aimed,22,22,0.6,,KataPUMBSpellPack.esp
 00A025:KataPUMBSpellPack.esp,Kata_Staf_LightMagic_HolyRay,Holy Ray,StaffEnchantment,Concentration,Aimed,4,4,0.3,,KataPUMBSpellPack.esp
 00F7C1:KataPUMBSpellPack.esp,Kata_Staf_LightMagic_HolyBall,Holy Sun Burst,StaffEnchantment,FireAndForget,Aimed,18,18,0.8,,EGO - KataPUMB Spell Package.esp
+0896F2:Apocalypse - Magic of Skyrim.esp,WB_R050_HorridWilting_StaffEnchantment,Horrid Wilting,StaffEnchantment,FireAndForget,Aimed,130,130,1,,Apocalypse - Magic of Skyrim.esp
+161630:Apocalypse - Magic of Skyrim.esp,WB_D075_IcePrism_StaffEnchantment,Ice Prism,StaffEnchantment,Concentration,Aimed,133,133,1.5,,Apocalypse - Magic of Skyrim.esp
+07A206:Apocalypse - Magic of Skyrim.esp,WB_D050_IceShiv_StaffEnchantment,Ice Shiv,StaffEnchantment,FireAndForget,Aimed,140,140,0.5,,Apocalypse - Magic of Skyrim.esp
 001CF1:Enderal SE - Gameplay Overhaul.esp,StaffEnchIceSpike40,Ice Spike,StaffEnchantment,FireAndForget,Aimed,64,64,0.5,,Enderal SE - Gameplay Overhaul.esp
 04DED7:Skyrim.esm,StaffEnchIceSpike,Ice Spike,StaffEnchantment,FireAndForget,Aimed,48,48,0.5,,Enderal SE - Gameplay Overhaul.esp
 001F47:Enderal SE - Gameplay Overhaul.esp,StaffEnchIceStorm2,Ice Storm,StaffEnchantment,FireAndForget,Aimed,95,95,0.5,,Enderal SE - Gameplay Overhaul.esp
 029B5A:Skyrim.esm,StaffEnchIceStorm,Ice Storm,StaffEnchantment,FireAndForget,Aimed,95,95,0.5,,Enderal SE - Gameplay Overhaul.esp
 00F7BD:KataPUMBSpellPack.esp,Kata_Staf_Elementalism_IcicleStorm,Icicle Storm,StaffEnchantment,Concentration,Aimed,8,8,0.6,,KataPUMBSpellPack.esp
+07A214:Apocalypse - Magic of Skyrim.esp,WB_I025_IllusoryFlames_StaffEnchantment,Illusory Flames,StaffEnchantment,Concentration,Aimed,19,19,0.5,,Apocalypse - Magic of Skyrim.esp
+0BB966:Apocalypse - Magic of Skyrim.esp,WB_I050_IllusoryPyre_StaffEnchantment,Illusory Pyre,StaffEnchantment,FireAndForget,TargetActor,140,140,0.5,,Apocalypse - Magic of Skyrim.esp
+07A208:Apocalypse - Magic of Skyrim.esp,WB_D050_IncendiaryFlow_StaffEnchantment,Incendiary Flow,StaffEnchantment,FireAndForget,Aimed,134,134,0.5,,Apocalypse - Magic of Skyrim.esp
 0432FD:Skyrim.esm,EnchUniqueWeapon_IrlandasGrace,Irlanda's Grace,StaffEnchantment,FireAndForget,Aimed,450,450,0.5,,Enderal SE - Gameplay Overhaul.esp
+0974E0:Apocalypse - Magic of Skyrim.esp,WB_R025_LambOfMara_StaffEnchantment,Lamb of Irlanda,StaffEnchantment,FireAndForget,Aimed,83,83,0.5,,Apocalypse - Magic of Skyrim.esp
+07A222:Apocalypse - Magic of Skyrim.esp,WB_R025_LeechSeed_StaffEnchantment,Leech Seed,StaffEnchantment,FireAndForget,Aimed,58,58,0.5,,Apocalypse - Magic of Skyrim.esp
 001CF2:Enderal SE - Gameplay Overhaul.esp,StaffEnchLightningBolt40,Lightning Bolt,StaffEnchantment,FireAndForget,Aimed,70,70,0.5,,Enderal SE - Gameplay Overhaul.esp
 04DED9:Skyrim.esm,StaffEnchLightningBolt,Lightning Bolt,StaffEnchantment,FireAndForget,Aimed,655,655,0.5,,Enderal SE - Gameplay Overhaul.esp
+07A20E:Apocalypse - Magic of Skyrim.esp,WB_D075_LightningStrike_StaffEnchantment,Lightning Strike,StaffEnchantment,FireAndForget,TargetLocation,361,361,0.5,,Apocalypse - Magic of Skyrim.esp
 04DEDD:Skyrim.esm,StaffEnchMagelight,Magelight,StaffEnchantment,FireAndForget,Aimed,14,14,0.5,,Skyrim.esm
+07A220:Apocalypse - Magic of Skyrim.esp,WB_I075_MindControl_StaffEnchantment,Mind Control,StaffEnchantment,FireAndForget,Aimed,468,468,1,,Apocalypse - Magic of Skyrim.esp
+07A216:Apocalypse - Magic of Skyrim.esp,WB_I025_MindVision_StaffEnchantment,Mind Vision,StaffEnchantment,FireAndForget,TargetActor,90,90,1,,Apocalypse - Magic of Skyrim.esp
+161626:Apocalypse - Magic of Skyrim.esp,WB_C075_MonarchMark_StaffEnchantment,Monarch Mark,StaffEnchantment,FireAndForget,Aimed,300,300,0.5,,Apocalypse - Magic of Skyrim.esp
+07A228:Apocalypse - Magic of Skyrim.esp,WB_R075_NaturesBalance_StaffEnchantment,Nature's Balance,StaffEnchantment,FireAndForget,Aimed,405,405,2,,Apocalypse - Magic of Skyrim.esp
+0BB96A:Apocalypse - Magic of Skyrim.esp,WB_R025_Necroplague_StaffEnchantment,Necroplague,StaffEnchantment,FireAndForget,Aimed,103,103,0.5,,Apocalypse - Magic of Skyrim.esp
+0BB97B:Apocalypse - Magic of Skyrim.esp,WB_C075_OathboundGuardian_StaffEnchantment,Oathbound Guardian,StaffEnchantment,FireAndForget,TargetActor,423,423,0.5,,Apocalypse - Magic of Skyrim.esp
+0896F6:Apocalypse - Magic of Skyrim.esp,WB_I000_PaleShadow_StaffEnchantment,Pale Shadow,StaffEnchantment,FireAndForget,Aimed,40,40,0.5,,Apocalypse - Magic of Skyrim.esp
 029B4A:Skyrim.esm,StaffEnchParalyze,Paralysis,StaffEnchantment,FireAndForget,Aimed,450,450,0.5,,Skyrim.esm
+0803F5:Apocalypse - Magic of Skyrim.esp,WB_A025_PerilousPath_StaffEnchantment,Perilous Path,StaffEnchantment,FireAndForget,Aimed,80,80,0.5,,Apocalypse - Magic of Skyrim.esp
 00F7C2:KataPUMBSpellPack.esp,Kata_Staf_Mentalism_Petrify,Petrify,StaffEnchantment,FireAndForget,Aimed,44,44,0.5,,KataPUMBSpellPack.esp
+1A793C:Apocalypse - Magic of Skyrim.esp,WB_R075_PoisonedChalice_StaffEnchantment,Poisoned Chalice,StaffEnchantment,FireAndForget,Aimed,251,251,0.5,,Apocalypse - Magic of Skyrim.esp
 029B53:Skyrim.esm,StaffEnchRevenant,Reanimate,StaffEnchantment,FireAndForget,Aimed,72,72,1.25,,Enderal SE - Gameplay Overhaul.esp
 091FFD:Skyrim.esm,StaffEnchRevenant2,Reanimate,StaffEnchantment,FireAndForget,Aimed,174,174,1.25,,Enderal SE - Gameplay Overhaul.esp
+07A200:Apocalypse - Magic of Skyrim.esp,WB_D025_RiftBolt_StaffEnchantment,Rift Bolt,StaffEnchantment,FireAndForget,Aimed,56,56,0.5,,Apocalypse - Magic of Skyrim.esp
+07A22A:Apocalypse - Magic of Skyrim.esp,WB_R050_Ruin_StaffEnchantment,Ruin,StaffEnchantment,FireAndForget,Aimed,151,151,0.5,,Apocalypse - Magic of Skyrim.esp
+07A20A:Apocalypse - Magic of Skyrim.esp,WB_D050_Scattershock_StaffEnchantment,Scattershock,StaffEnchantment,Concentration,Aimed,36,36,2.5,,Apocalypse - Magic of Skyrim.esp
+0BDFAA:Apocalypse - Magic of Skyrim.esp,WB_D075_ScorchingHands_StaffEnchantment,Scorching Hands,StaffEnchantment,Concentration,Aimed,142,142,1.5,,Apocalypse - Magic of Skyrim.esp
+07A21E:Apocalypse - Magic of Skyrim.esp,WB_I075_Seidstone_StaffEnchantment,Seidstone,StaffEnchantment,FireAndForget,Aimed,344,344,0.5,,Apocalypse - Magic of Skyrim.esp
+07A21A:Apocalypse - Magic of Skyrim.esp,WB_I050_Shadowbond_StaffEnchantment,Shadowbond,StaffEnchantment,FireAndForget,TargetActor,182,182,0.5,,Apocalypse - Magic of Skyrim.esp
 00A02B:KataPUMBSpellPack.esp,Kata_Staf_Psionics_Shatter,Shatter,StaffEnchantment,FireAndForget,Aimed,16,16,0.5,,KataPUMBSpellPack.esp
+0D08CF:Apocalypse - Magic of Skyrim.esp,WB_D075_ShockNova_StaffEnchantment,Shock Nova,StaffEnchantment,FireAndForget,Self,375,375,0.5,,Apocalypse - Magic of Skyrim.esp
+1A7930:Apocalypse - Magic of Skyrim.esp,WB_I000_SilveryBarbs_StaffEnchantment,Silvery Barbs,StaffEnchantment,FireAndForget,Aimed,42,42,0.5,,Apocalypse - Magic of Skyrim.esp
+07A224:Apocalypse - Magic of Skyrim.esp,WB_R025_SlayLiving_StaffEnchantment,Slay Living,StaffEnchantment,FireAndForget,TargetActor,95,95,0.5,,Apocalypse - Magic of Skyrim.esp
+07A20B:Apocalypse - Magic of Skyrim.esp,WB_D075_SleetStorm_StaffEnchantment,Sleet Storm,StaffEnchantment,Concentration,Aimed,117,117,1.5,,Apocalypse - Magic of Skyrim.esp
 0B62DC:Skyrim.esm,StaffEnchSoulTrap,Soul Trap,StaffEnchantment,FireAndForget,TargetActor,107,107,0.5,,Enderal SE - Gameplay Overhaul.esp
 12E2E5:Skyrim.esm,StaffEnchSparks3,Spark,StaffEnchantment,Concentration,Aimed,25,25,0,,Skyrim.esm
 0083E4:Enderal SE - Gameplay Overhaul.esp,StaffEnchSparks,Sparks,StaffEnchantment,Concentration,Aimed,11,11,0.5,,Enderal SE - Gameplay Overhaul.esp
@@ -761,7 +825,15 @@ Form Key,Editor Id,Name,Enchant Type,Cast Type,Target Type,Enchantment Cost,Ench
 13570D:Skyrim.esm,StaffEnchConjureOrbayer,Summon Oorbâya,StaffEnchantment,FireAndForget,TargetLocation,138,138,3,,Enderal SE - Gameplay Overhaul.esp
 00F7C6:KataPUMBSpellPack.esp,Kata_Staf_Entropy_SummonSpirit,Summon Spirit,StaffEnchantment,FireAndForget,TargetLocation,53,53,3,,EGO - KataPUMB Spell Package.esp
 02F0E2:Enderal - Forgotten Stories.esm,StaffEnchConjureVatyr,Summon Vatyr,StaffEnchantment,FireAndForget,TargetLocation,107,107,3,,Enderal SE - Gameplay Overhaul.esp
+0BB978:Apocalypse - Magic of Skyrim.esp,WB_C050_SummoningRune_StaffEnchantment,Summoning Rune,StaffEnchantment,FireAndForget,TargetLocation,198,198,0.5,,Apocalypse - Magic of Skyrim.esp
+0159E9:Apocalypse - Magic of Skyrim.esp,WB_A050_TechBlast_ConjuredActorStaffEnchantment,Tech Blast,StaffEnchantment,FireAndForget,Aimed,115,115,2,,Apocalypse - Magic of Skyrim.esp
+0B00DE:Apocalypse - Magic of Skyrim.esp,WB_A050_ConjureCraftlord_ConjuredActorStaffEnchantment,Technobolt,StaffEnchantment,FireAndForget,Aimed,100,100,2,,Apocalypse - Magic of Skyrim.esp
+07C846:Apocalypse - Magic of Skyrim.esp,WB_D025_Thundercrack_StaffEnchantment,Thundercrack,StaffEnchantment,FireAndForget,Aimed,43,43,0.5,,Apocalypse - Magic of Skyrim.esp
 029B72:Skyrim.esm,StaffEnchTurnGreaterUndead,Turn Greater Undead,StaffEnchantment,FireAndForget,Aimed,154,154,1,,Enderal SE - Gameplay Overhaul.esp
+0896E8:Apocalypse - Magic of Skyrim.esp,WB_A050_Undermine_StaffEnchantment,Undermine,StaffEnchantment,FireAndForget,Aimed,167,167,0.5,,Apocalypse - Magic of Skyrim.esp
+1A7935:Apocalypse - Magic of Skyrim.esp,WB_I075_HrormirsMisdirection_StaffEnchantment,Veil of Misdirection,StaffEnchantment,FireAndForget,TargetActor,301,301,0.5,,Apocalypse - Magic of Skyrim.esp
 029B5D:Skyrim.esm,StaffEnchWallOfFlames,Wall Of Flames,StaffEnchantment,Concentration,Aimed,45,118,0,,Enderal SE - Gameplay Overhaul.esp
 029B5E:Skyrim.esm,StaffEnchWallOfFrost,Wall Of Frost,StaffEnchantment,Concentration,Aimed,45,100,0,,Enderal SE - Gameplay Overhaul.esp
 029B5F:Skyrim.esm,StaffEnchWallOfStorms,Wall Of Storms,StaffEnchantment,Concentration,Aimed,45,86,0,,Enderal SE - Gameplay Overhaul.esp
+0896F4:Apocalypse - Magic of Skyrim.esp,WB_R025_WellingBlood_StaffEnchantment,Welling Blood,StaffEnchantment,FireAndForget,Aimed,70,70,0.5,,Apocalypse - Magic of Skyrim.esp
+07A22E:Apocalypse - Magic of Skyrim.esp,WB_A025_Wither_StaffEnchantment,Wither,StaffEnchantment,FireAndForget,Aimed,62,62,0.5,,Apocalypse - Magic of Skyrim.esp

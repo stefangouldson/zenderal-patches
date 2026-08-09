@@ -928,9 +928,21 @@
       "winner": "EGO - KataPUMB Spell Package.esp"
     },
     {
+      "formKey": "003E82:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_InvisibleManager_Perk",
+      "name": "Invisible Manager",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
       "formKey": "0047AD:KataPUMBSpellPack.esp",
       "editorId": "Kata_Inspire",
       "winner": "EGO - KataPUMB Spell Package.esp"
+    },
+    {
+      "formKey": "005F29:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_WindRunning_Perk",
+      "name": "Wind Running",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "005F61:KataPUMBAffinities.esp",
@@ -1131,6 +1143,24 @@
       "winner": "KataPUMB_SpellPackage.esp"
     },
     {
+      "formKey": "012357:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Conjurations_Perk",
+      "name": "Conjurations Perk",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "012E6E:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_ConjureDremoraChampion_Perk",
+      "name": "Blowout",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0133D1:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_ConjureHerne_Perk",
+      "name": "Spirit Wolfpack",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
       "formKey": "0142F9:KataPUMBSpellPack.esp",
       "editorId": "Kata_IllusionsDamageNerf",
       "winner": "KataPUMBSpellPack.esp"
@@ -1159,6 +1189,18 @@
       "formKey": "014CFA:Enderal - Forgotten Stories.esm",
       "editorId": "_00E_SE_DismantlePerk",
       "winner": "Enderal - Forgotten Stories.esm"
+    },
+    {
+      "formKey": "014EED:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_ConjureDremoraAssassin_Perk",
+      "name": "Black Arrows",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "014EF5:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_ConjureNetherLich_Perk",
+      "name": "Spirit Wolfpack",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "014F6B:KataPUMBSpellPack.esp",
@@ -1514,6 +1556,12 @@
       "editorId": "_00E_Class_Phasmalist_P04_A_ArcaneBreakdown",
       "name": "Arcane Breakdown",
       "winner": "Enderal - Forgotten Stories.esm"
+    },
+    {
+      "formKey": "02A78F:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_ConjureHerne_Perk_SpiritWolfpack",
+      "name": "Spirit Wolfpack Damage",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "02EA8F:Enderal - Forgotten Stories.esm",
@@ -2566,6 +2614,12 @@
       "winner": "Enderal SE - Gameplay Overhaul.esp"
     },
     {
+      "formKey": "073B51:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_SwordAndSorcery_Perk",
+      "name": "Sword and Sorcery",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
       "formKey": "07B903:Skyrim.esm",
       "editorId": "_00E_A1_InvisibilityPerk",
       "name": "Spectral Veil",
@@ -2630,6 +2684,24 @@
       "editorId": "_00E_Class_BladeDancer_P05_C_CriticalHit_02",
       "name": "Klingent\u00E4nzer: Kritischer Treffer",
       "winner": "Enderal SE - Gameplay Overhaul.esp"
+    },
+    {
+      "formKey": "082F65:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_SpellTwine_Perk_Proc_0",
+      "name": "Spell Twine",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "082F68:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_SpellTwine_Perk_Proc_6",
+      "name": "Spell Twine",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "084543:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DropZone_Perk",
+      "name": "Cushion Fall",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "0855C8:Skyrim.esm",
@@ -2728,6 +2800,76 @@
       "winner": "Enderal SE - Gameplay Overhaul.esp"
     },
     {
+      "formKey": "08607F:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_CircleOfGlory_Perk",
+      "name": "Circle of Glory Perk",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0870CF:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_SpellTwine_Perk_Proc_2",
+      "name": "Spell Twine",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "08763A:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_SpellTwine_Perk_Proc_4",
+      "name": "Spell Twine",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "08BD27:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_ConjureDremoraMentor_Perk_Alt",
+      "name": "Demonic Tutor",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "08BD28:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_ConjureDremoraMentor_Perk_Con",
+      "name": "Demonic Tutor",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "08BD29:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_ConjureDremoraMentor_Perk_Des",
+      "name": "Demonic Tutor",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "08BD2A:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_ConjureDremoraMentor_Perk_Ill",
+      "name": "Demonic Tutor",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "08BD2B:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_ConjureDremoraMentor_Perk_Res",
+      "name": "Demonic Tutor",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "08E84B:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Necrowitch_Perk_Mag",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "08E84C:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Necrowitch_Perk_Cost",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0A12C0:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_StrengthOfEarth_Perk",
+      "name": "Strength of Earth",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0A1838:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_SealedResolve_Perk",
+      "name": "Sealed Resolve",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
       "formKey": "0A47F5:EAM SE - Enderal Apothecarii Monastery.esp",
       "editorId": "EAM_twinsouls",
       "name": "Twin Eventuality",
@@ -2737,6 +2879,42 @@
       "formKey": "0A725C:Skyrim.esm",
       "editorId": "AlchemySkillBoosts",
       "winner": "Skyrim.esm"
+    },
+    {
+      "formKey": "0A7427:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_MothWingMirror_Perk_Attack",
+      "name": "Moth-Wing Steel",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0A7428:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_MothWingMirror_Perk_Spell",
+      "name": "Moth-Wing Magic",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0B0646:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_ConjureLordOfBindings_Perk",
+      "name": "Legions of Fire",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0B0BD6:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_ConjureBearTotem_Perk",
+      "name": "Totem of Old",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0B1C10:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_ConjureCatTotem_Perk",
+      "name": "Totem of Old",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0B1C34:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_ConjureCraftlord_Perk",
+      "name": "Craftlord",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "0B6372:Skyrim.esm",
@@ -2851,6 +3029,90 @@
       "editorId": "_00E_Class_Thaumaturge_P04_Talent_DimensionalRift_03",
       "name": "Talent: Dimensional Rift",
       "winner": "Skyrim.esm"
+    },
+    {
+      "formKey": "0B7826:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_ConjureDeadeyeCaptain_Perk",
+      "name": "Deadeye Captain",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0B933D:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_WormShroud_Perk_Proc_0",
+      "name": "Worm Shroud",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0B9341:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_WormShroud_Perk_Proc_1",
+      "name": "Worm Shroud",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0B934E:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_WormShroud_Perk_Proc_2",
+      "name": "Worm Shroud",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0B934F:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_WormShroud_Perk_Proc_3",
+      "name": "Worm Shroud",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0B9350:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_WormShroud_Perk_Proc_4",
+      "name": "Worm Shroud",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0B9351:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_WormShroud_Perk_Proc_5",
+      "name": "Worm Shroud",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0B9352:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_WormShroud_Perk_Proc_6",
+      "name": "Worm Shroud",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0B9353:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_WormShroud_Perk_Proc_7",
+      "name": "Worm Shroud",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0B9354:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_WormShroud_Perk_Proc_8",
+      "name": "Worm Shroud",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0B9355:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_WormShroud_Perk_Proc_9",
+      "name": "Worm Shroud",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0BA909:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_KingsHeart_Perk",
+      "name": "King\u0027s Heart",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0BDF95:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_ConjureBattlemage_Perk",
+      "name": "Battlemage",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0BDF96:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_ConjureBattlemage_Perk_Caster",
+      "name": "Pay to Win",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "0BEDC6:Skyrim.esm",
@@ -2971,6 +3233,12 @@
       "editorId": "_00E_Class_Trickster_P03_B_Talent_Firearrow_02",
       "name": "Talent: Fire Arrow",
       "winner": "Skyrim.esm"
+    },
+    {
+      "formKey": "0C058D:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_ConjureXivilaiLord_Perk",
+      "name": "Writhing Power",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "0C0882:Skyrim.esm",
@@ -3301,6 +3569,12 @@
       "winner": "Skyrim.esm"
     },
     {
+      "formKey": "103A7F:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_TestPerk",
+      "name": "TEST PERK ILLD",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
       "formKey": "1046BD:Skyrim.esm",
       "editorId": "crDragonResistNPCs",
       "name": "Dragonskin",
@@ -3363,6 +3637,72 @@
       "editorId": "_00E_Affinity_AbAssasinPerk",
       "name": "Affinity: Assasin",
       "winner": "Skyrim.esm"
+    },
+    {
+      "formKey": "155AAC:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Con_Any_Perk_MinionSpellScaling",
+      "name": "Minion Spell Scaling",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "1C1E67:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_TreeRings_Perk_Layer01",
+      "name": "Fortify Health",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "1C1E68:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_TreeRings_Perk_Layer02",
+      "name": "Fortify Health",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "1C1E69:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_TreeRings_Perk_Layer03",
+      "name": "Fortify Health",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "1C1E6A:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_TreeRings_Perk_Layer04",
+      "name": "Fortify Health",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "1C1E6B:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_TreeRings_Perk_Layer05",
+      "name": "Fortify Health",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "1C1E6C:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_TreeRings_Perk_Layer06",
+      "name": "Fortify Health",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "1C1E6D:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_TreeRings_Perk_Layer07",
+      "name": "Fortify Health",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "1C1E6E:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_TreeRings_Perk_Layer08",
+      "name": "Fortify Health",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "1C1E6F:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_TreeRings_Perk_Layer09",
+      "name": "Fortify Health",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "1C1E70:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_TreeRings_Perk_Layer10",
+      "name": "Fortify Health",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     }
   ],
   "keywords": [
@@ -4587,6 +4927,11 @@
       "winner": "KataPUMBSpellPack.esp"
     },
     {
+      "formKey": "001872:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "DXV_DestructionShock_Keyword",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
       "formKey": "001882:XPMSE.esp",
       "editorId": "XPMSEWeaponStyleScaleKYWD",
       "winner": "XPMSE.esp"
@@ -4767,6 +5112,11 @@
       "winner": "KataPUMBSpellPack.esp"
     },
     {
+      "formKey": "002E1C:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Alteration_Disable",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
       "formKey": "002ED8:Update.esm",
       "editorId": "Survival_ArmorCold",
       "winner": "OCF.esp"
@@ -4860,6 +5210,16 @@
       "formKey": "003279:Update.esm",
       "editorId": "MatchingSetLightExclude",
       "winner": "OCF.esp"
+    },
+    {
+      "formKey": "003E7C:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_IsBall",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "00496C:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Alteration_Chaos",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "00598B:TaberuAnimation.esp",
@@ -5027,6 +5387,31 @@
       "winner": "TaberuAnimation.esp"
     },
     {
+      "formKey": "0059B8:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Alteration_Damage",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "006498:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Alteration_Longstride",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "00649A:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Alteration_Longstride_OutOfCombat",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0064A4:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Buff",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "006A21:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Alteration_Metamagic",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
       "formKey": "006B7D:Enderal - Forgotten Stories.esm",
       "editorId": "LinkLookAtTarget",
       "winner": "Enderal - Forgotten Stories.esm"
@@ -5057,6 +5442,11 @@
       "winner": "KataHiddenPowers.esp"
     },
     {
+      "formKey": "007519:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Alteration_Curse",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
       "formKey": "007ADB:KataPUMBSpellPack.esp",
       "editorId": "Kata_NoScale",
       "winner": "KataPUMBSpellPack.esp"
@@ -5070,6 +5460,11 @@
       "formKey": "0083D9:Enderal SE - Gameplay Overhaul.esp",
       "editorId": "XionTransmute",
       "winner": "Enderal SE - Gameplay Overhaul.esp"
+    },
+    {
+      "formKey": "008570:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Alteration_ReynosFins_Swim",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "0098C5:KataPUMB_SpellPackage.esp",
@@ -5087,6 +5482,11 @@
       "winner": "KataPUMB_SpellPackage.esp"
     },
     {
+      "formKey": "00A5E9:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Alteration_Earth",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
       "formKey": "00A628:KataPUMB_SpellPackage.esp",
       "editorId": "Kata_Mantra",
       "winner": "KataPUMB_SpellPackage.esp"
@@ -5097,9 +5497,49 @@
       "winner": "Audio Overhaul Skyrim.esp"
     },
     {
+      "formKey": "00AB61:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Alteration_Unlock",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "00B63E:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_IsSwitchSpell",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "00BBB8:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_IsSpellstone",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "00BBBD:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Alteration_DoNotExtendDuration",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "00C140:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Alteration_LocateObject",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
       "formKey": "00D22C:KataPUMBSpellPack.esp",
       "editorId": "Kata_AegisKW",
       "winner": "KataPUMBSpellPack.esp"
+    },
+    {
+      "formKey": "00E1CD:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Alteration_MarkAndRecall",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "00ECB1:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Conjuration_Summon",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "00ECB4:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Conjuration_Detonate",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "00F4ED:KataPUMB_SpellPackage.esp",
@@ -5110,6 +5550,16 @@
       "formKey": "01019C:Enderal - Forgotten Stories.esm",
       "editorId": "_00E_MagicBoundWeapon",
       "winner": "Enderal - Forgotten Stories.esm"
+    },
+    {
+      "formKey": "012E65:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Conjuration_MinionMagicAttack",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "012E6B:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Conjuration_DremoraChampionPowerSlam",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "0130DB:Skyrim.esm",
@@ -5307,9 +5757,19 @@
       "winner": "Dawnguard.esm"
     },
     {
+      "formKey": "014EF4:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_IsDremoraAssassin",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
       "formKey": "014F6F:KataPUMBSpellPack.esp",
       "editorId": "Kata_PleaseNeverScaleMe",
       "winner": "KataPUMBSpellPack.esp"
+    },
+    {
+      "formKey": "01546A:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Restoration_Keyword_IsTapSpell",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "015C2E:Skyrim.esm",
@@ -5340,6 +5800,21 @@
       "formKey": "016771:Skyrim.esm",
       "editorId": "LocTypeHold",
       "winner": "Skyrim.esm"
+    },
+    {
+      "formKey": "016A25:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Conjuration_Mark",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "016F8F:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Conjuration_ConsumingPower",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "016F98:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Conjuration_Metamagic",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "0172AC:Skyrim.esm",
@@ -5382,6 +5857,16 @@
       "winner": "Skyrim.esm"
     },
     {
+      "formKey": "01A0A3:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Conjuration_Equip",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "01B648:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_IsZeroMagicka",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
       "formKey": "01B6D6:dD - Enhanced Blood Main.esp",
       "editorId": "DecapitatedKeyword",
       "winner": "dD - Enhanced Blood Main.esp"
@@ -5395,6 +5880,11 @@
       "formKey": "01BFF4:Skyrim.esm",
       "editorId": "TraitRich",
       "winner": "Skyrim.esm"
+    },
+    {
+      "formKey": "01C128:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Conjuration_NoLordOfBindings",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "01C3EE:Skyrim.esm",
@@ -5490,6 +5980,16 @@
       "formKey": "01D9E6:Skyrim.esm",
       "editorId": "JobLumberjack",
       "winner": "Skyrim.esm"
+    },
+    {
+      "formKey": "01DC33:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Restoration_Keyword_IsInstakillSpell",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "01E19B:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Restoration_Keyword_IsCircleSpell",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "01E1B7:Skyrim.esm",
@@ -5647,6 +6147,11 @@
       "winner": "Enderal - Forgotten Stories.esm"
     },
     {
+      "formKey": "01FCC4:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Restoration",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
       "formKey": "01FE2B:Enderal - Forgotten Stories.esm",
       "editorId": "_00E_FS_NQR05_SC08_GroupTalkMarker",
       "winner": "Enderal - Forgotten Stories.esm"
@@ -5662,14 +6167,64 @@
       "winner": "Enderal - Forgotten Stories.esm"
     },
     {
+      "formKey": "0207B6:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Illusion_Keyword",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0207BB:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Illusion_Keyword_AnticasterInstant",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "020D2D:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Illusion_Keyword_Damage",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "020D32:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Illusion_Keyword_AnticasterDuration",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "020D37:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Illusion_Keyword_Reave",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
       "formKey": "021383:Skyrim.esm",
       "editorId": "RelationshipMarriageFINKeyword",
       "winner": "Skyrim.esm"
     },
     {
+      "formKey": "022839:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Destruction",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "02283A:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Destruction_Frost",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "02283B:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Destruction_Shock",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "022DA5:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Destruction_Fire",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
       "formKey": "023DD7:Skyrim.esm",
       "editorId": "JobOrcChief",
       "winner": "Skyrim.esm"
+    },
+    {
+      "formKey": "023DF3:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_IsMeltdown",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "024823:Skyrim.esm",
@@ -5692,6 +6247,11 @@
       "winner": "Skyrim.esm"
     },
     {
+      "formKey": "024E40:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_IsFingersOfTheMountainProc",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
       "formKey": "0250B4:Skyrim.esm",
       "editorId": "RandomConversationTalkMarker",
       "winner": "Skyrim.esm"
@@ -5702,6 +6262,11 @@
       "winner": "Skyrim.esm"
     },
     {
+      "formKey": "02592F:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_IsFracture",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
       "formKey": "026110:Skyrim.esm",
       "editorId": "ActorTypeHorse",
       "winner": "Skyrim.esm"
@@ -5710,6 +6275,16 @@
       "formKey": "027A9A:Skyrim.esm",
       "editorId": "FurnitureLedgeSit",
       "winner": "Skyrim.esm"
+    },
+    {
+      "formKey": "027F26:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_IsFrostNova",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "02818A:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Conjuration_IsAnimal",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "029C32:Enderal - Forgotten Stories.esm",
@@ -5730,6 +6305,11 @@
       "formKey": "02A456:Skyrim.esm",
       "editorId": "CWOwner",
       "winner": "Skyrim.esm"
+    },
+    {
+      "formKey": "02A78C:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Conjuration_IsSpiritWolfpack",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "02B35C:Skyrim.esm",
@@ -5957,9 +6537,19 @@
       "winner": "Enderal - Forgotten Stories.esm"
     },
     {
+      "formKey": "030C16:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Illusion_Keyword_Cloak",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
       "formKey": "031ACD:Skyrim.esm",
       "editorId": "Lehrbuch",
       "winner": "Skyrim.esm"
+    },
+    {
+      "formKey": "0321C1:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Illusion_Keyword_DamageDueToCasterHealth",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "03235D:Skyrim.esm",
@@ -5970,6 +6560,11 @@
       "formKey": "032A20:Skyrim.esm",
       "editorId": "MQ03Fire",
       "winner": "Skyrim.esm"
+    },
+    {
+      "formKey": "032C8A:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Illusion_Keyword_PaleMoon",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "0332C0:Skyrim.esm",
@@ -6002,6 +6597,26 @@
       "winner": "Skyrim.esm"
     },
     {
+      "formKey": "03479E:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Restoration_Keyword_IsRestoreManaSpell",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "034D0E:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Restoration_Keyword_Necroplague",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "035278:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Restoration_Keyword_Damage",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "035280:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Restoration_Keyword_IsAntiUndeadSpell",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
       "formKey": "035D59:Skyrim.esm",
       "editorId": "ActorTypeDragon",
       "winner": "Skyrim.esm"
@@ -6017,9 +6632,24 @@
       "winner": "Skyrim.esm"
     },
     {
+      "formKey": "03732D:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Illusion_Keyword_MindAffecting_AISwitchSpell",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
       "formKey": "0379E9:Skyrim.esm",
       "editorId": "WeapTypeBoundWeapon",
       "winner": "Skyrim.esm"
+    },
+    {
+      "formKey": "037E14:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Conjuration",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "037E15:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Conjuration_ControlBuff",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "038ADD:Skyrim.esm",
@@ -6037,6 +6667,11 @@
       "winner": "Skyrim.esm"
     },
     {
+      "formKey": "03C52A:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Alteration",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
       "formKey": "03C700:Skyrim.esm",
       "editorId": "TypeHumanoid",
       "winner": "Skyrim.esm"
@@ -6045,6 +6680,11 @@
       "formKey": "03D09E:Seaview Lodge SE.esp",
       "editorId": "VendorItemPropertySeaView",
       "winner": "Seaview Lodge SE.esp"
+    },
+    {
+      "formKey": "0421DE:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_IsQuagmire",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "0424E0:Skyrim.esm",
@@ -6097,9 +6737,24 @@
       "winner": "Skyrim.esm"
     },
     {
+      "formKey": "044D47:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Illusion_Keyword_EvilTwin",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "044D4E:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Conjuration_NoNecrowitch",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
       "formKey": "044FEA:Skyrim.esm",
       "editorId": "_00E_SummonedCreature",
       "winner": "Skyrim.esm"
+    },
+    {
+      "formKey": "0452B3:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Alteration_Orb",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "046B88:Skyrim.esm",
@@ -6150,6 +6805,11 @@
       "formKey": "047DC0:Skyrim.esm",
       "editorId": "VendorItemOrderRobes",
       "winner": "Skyrim.esm"
+    },
+    {
+      "formKey": "047E26:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Alteration_Teleport",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "048116:Skyrim.esm",
@@ -6230,6 +6890,11 @@
       "formKey": "052964:TaberuAnimation.esp",
       "editorId": "aaTaberumonoIsSteamedMudcrabLegs",
       "winner": "TaberuAnimation.esp"
+    },
+    {
+      "formKey": "052AB4:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_IsDisableAI",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "0547A0:Skyrim.esm",
@@ -6360,6 +7025,11 @@
       "formKey": "05BD17:Skyrim.esm",
       "editorId": "TalentRage",
       "winner": "Skyrim.esm"
+    },
+    {
+      "formKey": "05C71D:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionMagicDamage",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "05CB6D:TaberuAnimation.esp",
@@ -6802,6 +7472,11 @@
       "winner": "Skyrim.esm"
     },
     {
+      "formKey": "06D4B3:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Alteration_Tremble",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
       "formKey": "06D930:Skyrim.esm",
       "editorId": "WeapTypeWarhammer",
       "winner": "Skyrim.esm"
@@ -7237,6 +7912,16 @@
       "winner": "TaberuAnimation.esp"
     },
     {
+      "formKey": "085B0E:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Illusion_Keyword_LastWord",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0865E5:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Restoration_Keyword_CircleOfGlory",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
       "formKey": "086697:Skyrim.esm",
       "editorId": "ShovelKeyword",
       "winner": "Skyrim.esm"
@@ -7255,6 +7940,26 @@
       "formKey": "0868E3:Skyrim.esm",
       "editorId": "LocTypeHoldMinor",
       "winner": "Skyrim.esm"
+    },
+    {
+      "formKey": "0870D6:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Alteration_SpellTwine_Haste",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "08763F:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Alteration_SpellTwine_Feather",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "087646:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Alteration_SpellTwine_Scale",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "087648:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Alteration_SpellTwine_Crystal",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "0879C2:Skyrim.esm",
@@ -7282,9 +7987,19 @@
       "winner": "Skyrim.esm"
     },
     {
+      "formKey": "08811E:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Conjuration_AtronachMarkExclusion",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
       "formKey": "08A499:TaberuAnimation.esp",
       "editorId": "aaTaberumonoIsFlin",
       "winner": "TaberuAnimation.esp"
+    },
+    {
+      "formKey": "08ACAC:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Conjuration_IsMentor",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "08ADA9:Skyrim.esm",
@@ -7295,6 +8010,36 @@
       "formKey": "08BB92:Skyrim.esm",
       "editorId": "RitualSpellIllusion",
       "winner": "Skyrim.esm"
+    },
+    {
+      "formKey": "08BD22:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Conjuration_IsMentor_Alt",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "08BD23:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Conjuration_IsMentor_Con",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "08BD24:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Conjuration_IsMentor_Des",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "08BD25:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Conjuration_IsMentor_Ill",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "08BD26:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Conjuration_IsMentor_Res",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "08C298:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Any_Keyword_ScrollOnly",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "08C775:Skyrim.esm",
@@ -7492,6 +8237,11 @@
       "winner": "TaberuAnimation.esp"
     },
     {
+      "formKey": "094F14:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Restoration_Keyword_Godform",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
       "formKey": "095206:Skyrim.esm",
       "editorId": "LinkCustom11",
       "winner": "Skyrim.esm"
@@ -7502,14 +8252,29 @@
       "winner": "Skyrim.esm"
     },
     {
+      "formKey": "0959D9:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Destruction_RideTheLightningProc",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
       "formKey": "0965B2:Skyrim.esm",
       "editorId": "ArmorShield",
       "winner": "Skyrim.esm"
     },
     {
+      "formKey": "099007:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Alteration_Grabbed",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
       "formKey": "099306:Skyrim.esm",
       "editorId": "PlayerKeyword",
       "winner": "Skyrim.esm"
+    },
+    {
+      "formKey": "099577:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Illusion_Keyword_MindFog",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "09B9A9:Skyrim.esm",
@@ -7545,6 +8310,61 @@
       "formKey": "09F28E:Skyrim.esm",
       "editorId": "MagicTrapGas",
       "winner": "Skyrim.esm"
+    },
+    {
+      "formKey": "09F69D:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Restoration_Keyword_TreeRingsLayer02",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "09F69E:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Restoration_Keyword_TreeRingsLayer01",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "09F69F:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Restoration_Keyword_TreeRingsLayer03",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "09F6A0:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Restoration_Keyword_TreeRingsLayer04",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "09F6A1:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Restoration_Keyword_TreeRingsLayer05",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "09F6A2:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Restoration_Keyword_TreeRingsLayer06",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "09F6A3:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Restoration_Keyword_TreeRingsLayer07",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "09F6A4:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Restoration_Keyword_TreeRingsLayer08",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "09F6A5:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Restoration_Keyword_TreeRingsLayer09",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "09F6A6:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Restoration_Keyword_TreeRingsLayer10",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0A07C3:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Restoration_Keyword_HeartOfThorns_Damage",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "0A0E54:Skyrim.esm",
@@ -7602,6 +8422,16 @@
       "winner": "Skyrim.esm"
     },
     {
+      "formKey": "0A12C4:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Restoration_Keyword_SealActive",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0A12C5:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Restoration_Keyword_IsSeal",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
       "formKey": "0A19E0:Skyrim.esm",
       "editorId": "BoundCaptive",
       "winner": "Skyrim.esm"
@@ -7620,6 +8450,16 @@
       "formKey": "0A39B3:TaberuAnimation.esp",
       "editorId": "aaTaberumonoIsMatze",
       "winner": "TaberuAnimation.esp"
+    },
+    {
+      "formKey": "0A538C:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Alteration_ThrummingStone_Drain",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0A5398:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Alteration_Wither_Speed",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "0A56D7:Skyrim.esm",
@@ -7645,6 +8485,11 @@
       "formKey": "0A6E84:Skyrim.esm",
       "editorId": "LocTypeHabitationHasInn",
       "winner": "Skyrim.esm"
+    },
+    {
+      "formKey": "0A7434:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Alteration_GraceOfWater",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "0A76B0:Skyrim.esm",
@@ -7797,6 +8642,31 @@
       "winner": "Skyrim.esm"
     },
     {
+      "formKey": "0B0BDF:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Conjuration_BearTotem",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0B1C35:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Conjuration_Technobolt",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0B1C37:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Conjuration_Technobolt_LifeDrain",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0B1C38:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Conjuration_ConjureCraftlord",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0B21A7:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Conjuration_CatTotem",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
       "formKey": "0B2CBF:TaberuAnimation.esp",
       "editorId": "aaTaberumonoIsMammothCheeseBowl",
       "winner": "TaberuAnimation.esp"
@@ -7807,6 +8677,16 @@
       "winner": "Skyrim.esm"
     },
     {
+      "formKey": "0B5D1D:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Destruction_Keyword_CyclonicRift_Teleports",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0B5D1F:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Destruction_Keyword_CyclonicRift_Damage",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
       "formKey": "0B62E4:Skyrim.esm",
       "editorId": "MagicCloak",
       "winner": "Skyrim.esm"
@@ -7815,6 +8695,106 @@
       "formKey": "0B729E:Skyrim.esm",
       "editorId": "MagicSlow",
       "winner": "Skyrim.esm"
+    },
+    {
+      "formKey": "0B7823:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Conjuration_Keyword_ConjureDeadeyeCaptain",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0B782B:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Restoration_Keyword_MysticWind",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0B7D8E:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Restoration_Keyword_Ruin00",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0B7D8F:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Restoration_Keyword_Ruin01",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0B7D90:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Restoration_Keyword_Ruin02",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0B7D91:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Restoration_Keyword_Ruin03",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0B7D92:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Restoration_Keyword_Ruin04",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0B7D93:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Restoration_Keyword_Ruin05",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0B7D94:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Restoration_Keyword_Ruin06",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0B7D95:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Restoration_Keyword_Ruin07",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0B7D96:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Restoration_Keyword_Ruin08",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0B7D97:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Restoration_Keyword_Ruin09",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0B7D98:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Restoration_Keyword_Ruin10",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0B7D99:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Restoration_Keyword_Ruin11",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0B7D9A:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Restoration_Keyword_Ruin12",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0B7D9B:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Restoration_Keyword_Ruin13",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0B7D9C:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Restoration_Keyword_Ruin14",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0B7D9D:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Restoration_Keyword_Ruin15",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0B7D9E:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Restoration_Keyword_Ruin16",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0B7D9F:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Restoration_Keyword_Ruin17",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "0B7DB3:Skyrim.esm",
@@ -7847,9 +8827,24 @@
       "winner": "Skyrim.esm"
     },
     {
+      "formKey": "0B98C3:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Restoration_Keyword_HallowedWeapon_Absorb",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
       "formKey": "0B997E:Skyrim.esm",
       "editorId": "JobHireling",
       "winner": "Skyrim.esm"
+    },
+    {
+      "formKey": "0B9E29:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Restoration_Keyword_HallowedWeapon_Buff",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0BAE85:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Restoration_Keyword_Hemorrhage",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "0BB958:Skyrim.esm",
@@ -7867,9 +8862,19 @@
       "winner": "Skyrim.esm"
     },
     {
+      "formKey": "0BD4C4:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Conjuration_Keyword_Battlemage",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
       "formKey": "0BD83F:Skyrim.esm",
       "editorId": "MagicTurnUndead",
       "winner": "Skyrim.esm"
+    },
+    {
+      "formKey": "0BEA74:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Restoration_Keyword_Hemoplague",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "0BECD7:Skyrim.esm",
@@ -7877,9 +8882,24 @@
       "winner": "Skyrim.esm"
     },
     {
+      "formKey": "0BFAB8:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Restoration_Keyword_BloodBoil",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0BFAB9:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Restoration_Keyword_Damnation",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
       "formKey": "0BFB07:Skyrim.esm",
       "editorId": "isIdleSoldierWall",
       "winner": "Skyrim.esm"
+    },
+    {
+      "formKey": "0C0027:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Conjuration_ConsumingPower_SelfDmg",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "0C007C:Skyrim.esm",
@@ -8012,9 +9032,24 @@
       "winner": "Skyrim.esm"
     },
     {
+      "formKey": "0CE869:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Illusion_Keyword_IllusoryFlames",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0CE86A:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Illusion_Keyword_IllusoryPyre",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
       "formKey": "0CEE14:Skyrim.esm",
       "editorId": "MagicSprigganCallAnimals",
       "winner": "Skyrim.esm"
+    },
+    {
+      "formKey": "0CF334:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Alteration_SpellTwine_Heal",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "0D0C7C:Skyrim.esm",
@@ -8702,6 +9737,11 @@
       "winner": "Skyrim.esm"
     },
     {
+      "formKey": "10695C:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Illusion_Keyword_KnotOfFetters",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
       "formKey": "1076F0:Skyrim.esm",
       "editorId": "MagicSchoolDestruction",
       "winner": "Skyrim.esm"
@@ -8857,6 +9897,11 @@
       "winner": "Skyrim.esm"
     },
     {
+      "formKey": "10F5D4:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Destruction_Keyword_ReducedVsMassiveTargets",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
       "formKey": "10F9DC:Skyrim.esm",
       "editorId": "MagicAlchDamageStamina",
       "winner": "Skyrim.esm"
@@ -8897,9 +9942,39 @@
       "winner": "TaberuAnimation.esp"
     },
     {
+      "formKey": "11E09A:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Restoration_Keyword_Godform_Step00",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "11E09B:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Restoration_Keyword_Godform_Step01",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "11E09C:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Restoration_Keyword_Godform_Step02",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "11E09D:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Restoration_Keyword_Godform_Step03",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "11E09E:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Restoration_Keyword_Godform_Step04",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
       "formKey": "122317:TaberuAnimation.esp",
       "editorId": "aaTaberumonoIsAshHopperLeg",
       "winner": "TaberuAnimation.esp"
+    },
+    {
+      "formKey": "126DA5:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_ConjurationDaedra_Keyword_IsHonorGuard",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "127420:TaberuAnimation.esp",
@@ -8925,6 +10000,16 @@
       "formKey": "13A19A:Skyrim.esm",
       "editorId": "PlayerhouseFurnitureLevel01",
       "winner": "Skyrim.esm"
+    },
+    {
+      "formKey": "13E504:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Restoration_Keyword_LeechSeed_Health",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "13E505:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_Restoration_Keyword_LeechSeed_Stamina",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "13F5BC:Skyrim.esm",
@@ -9272,29 +10357,54 @@
       "winner": "Audio Overhaul Skyrim.esp"
     },
     {
+      "formKey": "A00105:Update.esm",
+      "editorId": "MAG_MagicInfluenceSimulacrum",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "A00106:Update.esm",
+      "editorId": "MAG_MagicSummonDremora",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "A00108:Update.esm",
+      "editorId": "MAG_MagicCounterspell",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "A00170:Update.esm",
+      "editorId": "MAG_MagicAlarm",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "A00666:Update.esm",
+      "editorId": "MAG_MagicIsSimulacrum",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
       "formKey": "ADA001:Update.esm",
       "editorId": "MAG_MagicDamagePoison",
-      "winner": "OCF.esp"
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "ADA002:Update.esm",
       "editorId": "MAG_MagicDamageSun",
-      "winner": "OCF.esp"
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "ADA003:Update.esm",
       "editorId": "MAG_MagicInfluenceParalysis",
-      "winner": "OCF.esp"
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "ADA004:Update.esm",
       "editorId": "MAG_MagicInfluenceSilence",
-      "winner": "OCF.esp"
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "ADA005:Update.esm",
       "editorId": "MAG_MagicInfluenceCommand",
-      "winner": "OCF.esp"
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "ADA006:Update.esm",
@@ -9304,7 +10414,7 @@
     {
       "formKey": "ADA007:Update.esm",
       "editorId": "MAG_MagicInfluenceCourage",
-      "winner": "OCF.esp"
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "ADA117:Update.esm",
@@ -9317,6 +10427,11 @@
       "winner": "OCF.esp"
     },
     {
+      "formKey": "ADA120:Update.esm",
+      "editorId": "MAG_MagicStaffEnchantment",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
       "formKey": "ADA124:Update.esm",
       "editorId": "MAG_MagicJumpSpell",
       "winner": "OCF.esp"
@@ -9324,7 +10439,7 @@
     {
       "formKey": "ADA127:Update.esm",
       "editorId": "MAG_PoisonCloakSpell",
-      "winner": "OCF.esp"
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "ADA130:Update.esm",
@@ -9339,22 +10454,72 @@
     {
       "formKey": "ADA134:Update.esm",
       "editorId": "MAG_MagicShieldFire",
-      "winner": "OCF.esp"
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "ADA135:Update.esm",
       "editorId": "MAG_MagicShieldFrost",
-      "winner": "OCF.esp"
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "ADA136:Update.esm",
       "editorId": "MAG_MagicShieldShock",
-      "winner": "OCF.esp"
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "ADA137:Update.esm",
       "editorId": "MAG_MagicShieldPoison",
-      "winner": "OCF.esp"
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "ADA151:Update.esm",
+      "editorId": "MAG_ScrollTypeAlteration",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "ADA152:Update.esm",
+      "editorId": "MAG_ScrollTypeConjuration",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "ADA153:Update.esm",
+      "editorId": "MAG_ScrollTypeDestruction",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "ADA154:Update.esm",
+      "editorId": "MAG_ScrollTypeIllusion",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "ADA155:Update.esm",
+      "editorId": "MAG_ScrollTypeRestoration",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "ADA156:Update.esm",
+      "editorId": "MAG_StaffTypeAlteration",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "ADA157:Update.esm",
+      "editorId": "MAG_StaffTypeConjuration",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "ADA158:Update.esm",
+      "editorId": "MAG_StaffTypeDestruction",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "ADA159:Update.esm",
+      "editorId": "MAG_StaffTypeIllusion",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "ADA160:Update.esm",
+      "editorId": "MAG_StaffTypeRestoration",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "AF0100:Update.esm",
@@ -11034,6 +12199,21 @@
       "winner": "Sanguine Symphony.esp"
     },
     {
+      "formKey": "000D78:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionFire_Projectile_Emberbolt",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "000D79:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionFire_Projectile_Meteor",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "000D7B:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionFire_Projectile_Volcano",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
       "formKey": "00146E:KataHiddenPowers.esp",
       "editorId": "Kata_firebombProjectile",
       "name": "Fire Bomb",
@@ -11070,6 +12250,16 @@
       "formKey": "00148A:KataPUMBSpellPack.esp",
       "editorId": "Kata_EmptyBeam",
       "winner": "KataPUMBSpellPack.esp"
+    },
+    {
+      "formKey": "001873:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionShock_Projectile_Electrosphere",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "001876:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionShock_Projectile_Electrosphere_2C",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "001CDB:Enderal SE - Gameplay Overhaul.esp",
@@ -11121,6 +12311,21 @@
       "winner": "Enderal SE - Gameplay Overhaul.esp"
     },
     {
+      "formKey": "002E23:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_AlterationAlt_Beam",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "002E29:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_AlterationTelekinesis_Beam",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "002E33:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_AlterationTelekinesis_Beam_Lift",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
       "formKey": "002E39:KataPUMBSpellPack.esp",
       "editorId": "Kata_DeathBeam",
       "winner": "KataPUMBSpellPack.esp"
@@ -11169,6 +12374,11 @@
       "winner": "KataPUMB_SpellPackage.esp"
     },
     {
+      "formKey": "0059B1:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_AlterationBaleful_Beam_WarpTheFlesh",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
       "formKey": "006CEB:KataHiddenPowers.esp",
       "editorId": "Kata_HookProjectile_I",
       "name": "Hook",
@@ -11187,6 +12397,11 @@
       "winner": "EGO SE - KataPUMB Hidden Powers.esp"
     },
     {
+      "formKey": "00751A:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_AlterationBaleful_Beam",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
       "formKey": "007E96:KataPUMB_SpellPackage.esp",
       "editorId": "Kata_EmptyProjectile",
       "winner": "KataPUMB_SpellPackage.esp"
@@ -11195,6 +12410,31 @@
       "formKey": "0083FD:Enderal SE - Gameplay Overhaul.esp",
       "editorId": "XionBlindnessProjectile",
       "winner": "Enderal SE - Gameplay Overhaul.esp"
+    },
+    {
+      "formKey": "00A07C:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_AlterationEarth_Projectile",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "00AB6C:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_AlterationAlt_Beam_Invisible_DetonateLock",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "00B63F:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_AlterationEarth_Beam",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "00D184:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_AlterationTelekinesis_Beam_Slam",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "00ECB5:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionHellfire_Projectile",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "0110C7:KataPUMBSpellPack.esp",
@@ -11215,6 +12455,11 @@
       "formKey": "012FDC:Skyrim.esm",
       "editorId": "HealFakeProjectile",
       "winner": "Skyrim.esm"
+    },
+    {
+      "formKey": "0137B8:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionShock_Beam_FingersOfTheMountain",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "013DF4:Skyrim.esm",
@@ -11253,6 +12498,11 @@
       "winner": "Audio Overhaul Skyrim.esp"
     },
     {
+      "formKey": "0159F0:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_AlterationTelekinesis_Projectile",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
       "formKey": "016CD0:Skyrim.esm",
       "editorId": "DragonFireboltStormProjectile",
       "winner": "Skyrim.esm"
@@ -11271,6 +12521,11 @@
       "formKey": "016D3F:Skyrim.esm",
       "editorId": "DragonVoicePushProjectile",
       "winner": "Skyrim.esm"
+    },
+    {
+      "formKey": "017AAE:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_ConjurationGhosts_Projectile",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "018123:Skyrim.esm",
@@ -11298,9 +12553,24 @@
       "winner": "Audio Overhaul Skyrim.esp"
     },
     {
+      "formKey": "01B0DF:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionGold_Projectile",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "01B0E4:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionGold_Spray",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
       "formKey": "01B16E:Myths and Legends VI - The Forgotten One.esp",
       "editorId": "DLC2HMDaedraMouthProjectile",
       "winner": "Myths and Legends VI - The Forgotten One.esp"
+    },
+    {
+      "formKey": "01C694:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_ConjurationBanish_Projectile",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "01E8E9:Enderal - Forgotten Stories.esm",
@@ -11355,6 +12625,21 @@
       "winner": "Enderal - Forgotten Stories.esm"
     },
     {
+      "formKey": "02435A:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionFire_Projectile_Bombardment",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "024364:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionShock_Beam_RiftBolt",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "024E43:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionShock_Projectile_ShockScythe",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
       "formKey": "0252B0:Skyrim.esm",
       "editorId": "_00E_A2_SkyfallBoltProjc02",
       "winner": "Skyrim.esm"
@@ -11365,9 +12650,49 @@
       "winner": "Skyrim.esm"
     },
     {
+      "formKey": "0263FF:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionFire_Projectile_Volcano_2C",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "02743D:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionFire_Projectile_Bolide",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "02743E:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionFire_Projectile_Meltdown",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0279B1:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionFrost_Beam_CreepingCold",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0279B2:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionFrost_Projectile_Hailstone",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0279B3:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionFrost_Projectile_IceShiv",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
       "formKey": "02A071:Enderal - Forgotten Stories.esm",
       "editorId": "_FS_NQR05_Bossfight_TrapRuneFire",
       "winner": "Enderal - Forgotten Stories.esm"
+    },
+    {
+      "formKey": "02CAF3:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionFrost_Projectile_FrozenOrb",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "02E0BA:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionFire_Projectile_Flamestrike",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "02E2EA:Enderal - Forgotten Stories.esm",
@@ -11378,6 +12703,16 @@
       "formKey": "02ED77:Enderal - Forgotten Stories.esm",
       "editorId": "_00E_A2_Ghostblade_FakeSpell",
       "winner": "Enderal - Forgotten Stories.esm"
+    },
+    {
+      "formKey": "02F104:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_RestorationPeace_Beam_NaturesBalance",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "02F668:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_RestorationHeal_Beam_InfiniteLight",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "02F773:Skyrim.esm",
@@ -11403,6 +12738,26 @@
       "formKey": "034190:Skyrim.esm",
       "editorId": "ShockBoltConAim",
       "winner": "Skyrim.esm"
+    },
+    {
+      "formKey": "035277:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_RestorationNecro_Beam",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "035D5B:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_RestorationUndead_Projectile_BoneSpirit",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "036832:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_IllusionNightmare_Beam",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "037E20:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_IllusionPuppeteer_Beam",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "03A440:Skyrim.esm",
@@ -11500,6 +12855,11 @@
       "winner": "Skyrim.esm"
     },
     {
+      "formKey": "04274A:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_AlterationTelekinesis_Projectile_RazorWind",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
       "formKey": "0439E5:Skyrim.esm",
       "editorId": "_00E_FS_A3_Rogue_FrostbombProjectile",
       "name": "Glacial Bomb",
@@ -11509,6 +12869,11 @@
       "formKey": "04600A:Skyrim.esm",
       "editorId": "SpiderSpitProjectile",
       "winner": "Enderal SE - Gameplay Overhaul.esp"
+    },
+    {
+      "formKey": "047351:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_ConjurationGhosts_Projectile_ConjureGatewayWraith",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "049B61:Skyrim.esm",
@@ -11551,6 +12916,11 @@
       "winner": "Skyrim.esm"
     },
     {
+      "formKey": "057B8F:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_IllusionNightmare_Beam_Invisible",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
       "formKey": "058E9C:Skyrim.esm",
       "editorId": "ShockBoltAim",
       "winner": "Skyrim.esm"
@@ -11562,9 +12932,19 @@
       "winner": "Skyrim.esm"
     },
     {
+      "formKey": "05C718:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionWizardfire_Projectile",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
       "formKey": "05DB91:Skyrim.esm",
       "editorId": "RuneFireProjectile",
       "winner": "Skyrim.esm"
+    },
+    {
+      "formKey": "05E220:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionWizardfire_Beam_Deathstrike",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "05FBBF:Skyrim.esm",
@@ -11657,9 +13037,29 @@
       "winner": "Enderal - Forgotten Stories.esm"
     },
     {
+      "formKey": "06CF3F:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionWizardfire_Projectile_Apocalypse",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "06CF47:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionFire_Projectile_ForbiddenSun_1",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "06D4AC:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionFire_Projectile_ForbiddenSun_2",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
       "formKey": "06DA4E:Skyrim.esm",
       "editorId": "TrapDweBallistaBolt01",
       "winner": "Skyrim.esm"
+    },
+    {
+      "formKey": "06EA50:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionWizardfire_Beam_MagickaBurn",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "06EBC8:Skyrim.esm",
@@ -11670,6 +13070,16 @@
       "formKey": "06F793:Skyrim.esm",
       "editorId": "EmptyProjectile",
       "winner": "Skyrim.esm"
+    },
+    {
+      "formKey": "071AD1:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_AlterationEarth_Projectile_Grindstone",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "071AD9:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_IllusionNightmare_Projectile_Lobotomize",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "0732C7:Skyrim.esm",
@@ -11707,6 +13117,36 @@
       "winner": "Skyrim.esm"
     },
     {
+      "formKey": "075BB2:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionShock_Projectile_ShockScythe_2C",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "076680:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionShock_Beam_RideTheLightning",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "07816B:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionShock_Beam_Crackle",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "07816C:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionFrost_Projectile_IceAnchor",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "07816E:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionFire_Projectile_Blaze",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "078172:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionFrost_Projectile_Shivers",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
       "formKey": "07A522:Skyrim.esm",
       "editorId": "ChaurusSpitProjectile",
       "winner": "Enderal SE - Gameplay Overhaul.esp"
@@ -11729,9 +13169,29 @@
       "winner": "Enderal SE - Gameplay Overhaul.esp"
     },
     {
+      "formKey": "07BD5D:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionFire_Projectile_FireTeeth",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "07C83D:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionShock_Projectile_Thundercrack",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
       "formKey": "07FA8F:Skyrim.esm",
       "editorId": "_00E_WildflamesProjectile",
       "winner": "Skyrim.esm"
+    },
+    {
+      "formKey": "0803E7:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_RestorationArcane_Projectile_LunarTide",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0803F0:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_AlterationChaos_Projectile",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "081969:Skyrim.esm",
@@ -11743,6 +13203,56 @@
       "editorId": "_00E_MQ01_KillerArrowProjectile",
       "name": "Flame Arrow",
       "winner": "Enderal SE - Gameplay Overhaul.esp"
+    },
+    {
+      "formKey": "0829EE:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_RestorationPeace_Projectile_PurgingToxin",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0829F0:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_RestorationPeace_Projectile_PurgingToxin_2C",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "082F33:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionFrost_Projectile_GlacialTrident",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0834B9:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionFire_Beam_Volcano",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "083A24:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionShock_Projectile_Scattershock",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "083A28:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionShock_Projectile_Scattershock_old",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "083FA5:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_RestorationArcane_Beam",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "083FAD:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_RestorationNecro_Beam_DeathsDuet",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "08451B:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_RestorationUndead_Beam",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "085575:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_IllusionBlue_Beam",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "085952:Skyrim.esm",
@@ -11776,9 +13286,44 @@
       "winner": "Skyrim.esm"
     },
     {
+      "formKey": "085AED:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_IllusionNightmare_Projectile_Reave",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0865C4:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_RestorationHeal_Beam_ChainHealing",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "088683:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_ConjurationAtronach_Projectile_FlamesOfOblivion",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "089165:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionFrost_Beam_HowlingBlast",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
       "formKey": "08CA70:Skyrim.esm",
       "editorId": "VoiceDisarmProjectile01",
       "winner": "Skyrim.esm"
+    },
+    {
+      "formKey": "08F316:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionShock_Beam_Invisible_StaticDome",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "090366:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_ConjurationDaedric_Beam_ConjureWeepingDaedra",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "091914:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_AlterationMyst_Rune",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "0963C4:Skyrim.esm",
@@ -11791,9 +13336,69 @@
       "winner": "Skyrim.esm"
     },
     {
+      "formKey": "0974DC:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_RestorationPeace_Projectile_RhythmOfNature",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "099578:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_AlterationTelekinesis_Beam_MalvisersGauntlet",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
       "formKey": "09B247:Skyrim.esm",
       "editorId": "DA15WabbajackProjectile",
       "winner": "Skyrim.esm"
+    },
+    {
+      "formKey": "09BB3B:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionFire_Projectile_ExplosiveBlast",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "09C09F:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionFrost_Projectile_SleetStorm",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "09C607:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionShock_Projectile_ChargedBlast",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "09C60B:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionShock_Projectile_ForkedLightning",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "09CB71:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionShock_Projectile_PlasmaFlux",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "09CB72:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionShock_Projectile_PlasmaFlux_2C",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "09EBD3:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_RestorationUndead_Projectile_MeridiasWrath",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "09F136:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_RestorationSun_Projectile_Dawnfire",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "09FC12:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_RestorationHeal_Projectile_Luminaries",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "09FC18:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_RestorationArcane_Projectile_Withershins",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "0A852A:Skyrim.esm",
@@ -11826,6 +13431,111 @@
       "winner": "Skyrim.esm"
     },
     {
+      "formKey": "0B2C71:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionFire_Projectile_UnboundFlame",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0B2C80:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionShock_Beam_Crackle_Proc",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0B3CB1:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionFrost_Projectile_IcePrism",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0B3CB5:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionFrost_Projectile_IcePrism_Conc",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0B477D:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionFrost_Projectile_HailstoneNovice",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0B4C69:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionFrost_Projectile_Cryoblast",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0B4CE1:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionFrost_Projectile_Fracture",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0B57AB:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionFire_Beam_Bombardment",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0B5D15:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionShock_Beam_CyclonicRift",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0BBEFC:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionShock_Projectile_Battlemage_Shock_1",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0BBF06:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionShock_Beam_Battlemage_Shock_2",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0BBF0B:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionShock_Beam_Battlemage_Shock_3",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0BC471:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionFire_Projectile_MoltenImpact",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0BC476:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionFrost_Beam_Battlemage_Frost_3",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0BC479:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionFrost_Projectile_Battlemage_Frost_1",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0BC481:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionFire_Beam_Battlemage_Fire_2",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0BC9E7:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionFire_Projectile_Battlemage_Fire_1",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0BC9ED:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionFire_Projectile_Battlemage_Fire_3",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0BC9EE:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionFrost_Projectile_Battlemage_Frost_2",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0BCF5C:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionFire_Beam_Battlemage_Fire_3",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0BDFA0:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionFire_Beam_ScorchingHands",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
       "formKey": "0CAB54:Skyrim.esm",
       "editorId": "dunArcherPracticeArrowProjectile",
       "name": "Practice Arrow",
@@ -11845,6 +13555,16 @@
       "formKey": "0CD08A:Skyrim.esm",
       "editorId": "VoiceDisarmProjectile03",
       "winner": "Skyrim.esm"
+    },
+    {
+      "formKey": "0CFE00:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionShock_Projectile_LightningStrike",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0CFE02:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionFrost_Projectile_FrozenCore",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "0D4888:Skyrim.esm",
@@ -11881,6 +13601,16 @@
       "formKey": "0E4CB5:Skyrim.esm",
       "editorId": "ShockBoltAimStorm",
       "winner": "Skyrim.esm"
+    },
+    {
+      "formKey": "0E6646:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionFire_Projectile_Test1",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0E6647:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionFire_Projectile_Test2",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "0EA7EC:Skyrim.esm",
@@ -11920,6 +13650,16 @@
       "winner": "Enderal SE - Gameplay Overhaul.esp"
     },
     {
+      "formKey": "0F2185:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_AlterationEarth_Projectile_PerilousPath",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "0F218D:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionFire_Projectile_IncendiaryFlow",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
       "formKey": "0F4577:Skyrim.esm",
       "editorId": "FXBloodDropProjectile",
       "winner": "Skyrim.esm"
@@ -11928,6 +13668,11 @@
       "formKey": "0F650F:Skyrim.esm",
       "editorId": "DA16SkullBeamProjectile",
       "winner": "Enderal SE - Gameplay Overhaul.esp"
+    },
+    {
+      "formKey": "0F7F2E:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_AlterationEarth_Beam_MagneticAnomaly",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "0F82B6:Skyrim.esm",
@@ -11946,9 +13691,24 @@
       "winner": "Skyrim.esm"
     },
     {
+      "formKey": "0FADFC:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionShock_Projectile_Thunderstone",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
       "formKey": "0FCC2B:Skyrim.esm",
       "editorId": "TGNightingaleSubterfugeProjectile",
       "winner": "Skyrim.esm"
+    },
+    {
+      "formKey": "100BA9:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionShock_Projectile_LightningStrike_2C",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "100BAB:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionFire_Projectile_IncendiaryFlow_2C",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "1034C2:Skyrim.esm",
@@ -11966,9 +13726,19 @@
       "winner": "Skyrim.esm"
     },
     {
+      "formKey": "106B27:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionFire_Projectile_SkullTrap",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
       "formKey": "1090F8:Skyrim.esm",
       "editorId": "SprigganMatronConcProjectile",
       "winner": "Skyrim.esm"
+    },
+    {
+      "formKey": "10983B:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_IllusionNightmare_Projectile_Seidstone",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "109AB8:Skyrim.esm",
@@ -12041,9 +13811,144 @@
       "winner": "Enderal SE - Gameplay Overhaul.esp"
     },
     {
+      "formKey": "111D07:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_RestorationTap_Beam",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "1124B5:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionFire_Projectile_Firebloom",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "11BBC4:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_IllusionBlue_Projectile",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "11BBCA:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_IllusionNightmare_Projectile",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "11C6B1:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_IllusionAntimagic_Projectile",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "11D196:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_IllusionEmpathy_Projectile",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "11D1A1:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_RestorationNecro_Projectile",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "11D1A8:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_RestorationTap_Projectile",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "11DC7E:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_RestorationBlood_Beam",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "11E1E8:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionFrost_Beam_Fracture",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "11E1E9:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_IllusionGreen_Beam",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "11E1F8:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionFrost_Beam_Tornado",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "11F234:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_ConjurationBanish_Beam",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "11F7C3:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_ConjurationSummon_Beam",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "12081C:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_RestorationArcane_Projectile",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "120FB4:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionFrost_Projectile_ElementalHost",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "120FB5:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionFire_Projectile_ElementalHost_2",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "123E6A:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionShock_Projectile_Shockbloom",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "123EA3:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionAnomaly_Beam",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "124949:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_IllusionGreen_Rune",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "12494A:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_RestorationNecro_Projectile_Rune",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "12494C:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_AlterationTelekinesis_Rune",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "124958:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_AlterationChaos_Projectile_Rune",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "124959:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_ConjurationSummon_Rune",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "125449:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_RestorationBlood_Projectile_Rune",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
       "formKey": "133D16:Skyrim.esm",
       "editorId": "_00E_A1_DevourSoulProjectile",
       "winner": "Skyrim.esm"
+    },
+    {
+      "formKey": "13BEE2:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_IllusionPuppeteer_Projectile",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
+    },
+    {
+      "formKey": "13E501:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_RestorationPeace_Beam_LeechSeed",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     },
     {
       "formKey": "14333C:Skyrim.esm",
@@ -12111,6 +14016,11 @@
       "editorId": "ArrowIronProjectileOld",
       "name": "Old Iron Arrow",
       "winner": "Pretty Common Armory.esp"
+    },
+    {
+      "formKey": "15E72D:Apocalypse - Magic of Skyrim.esp",
+      "editorId": "WB_DestructionFire_Projectile_HotPotato",
+      "winner": "Apocalypse - Magic of Skyrim.esp"
     }
   ],
   "equipTypes": [
