@@ -45,6 +45,18 @@
       ]
     },
     {
+      "$comment": "Kata-related fixes. Currently: the magic-vendor chest merge - Funkentanz/Torius/Tarhutie overridden with EGO SE - Leveling Redone's winning version plus every loser's re-appended stock (Kata's 15 staves, Apocalypse's 45/39 tomes, xxOpenSpells' 4 books, the Emberlord patch's 5 entries). Regenerate with src/KataFixes/tools/01-merge-vendor-chests.py. MUST load after EGO SE - Leveling Redone.esp (mastered, so the engine enforces it).",
+      "name": "Zenderal - Kata Fixes",
+      "archiveName": "Zenderal - Kata Fixes",
+      "fomod": false,
+      "plugins": [
+        {
+          "yamlSource": "src/KataFixes/KataFixesESP",
+          "dest": "Zenderal - Kata Fixes.esp"
+        }
+      ]
+    },
+    {
       "name": "Zenderal - Skip To Taming The Waves",
       "archiveName": "Zenderal - Skip To Taming The Waves",
       "fomod": false,
