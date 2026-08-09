@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://qconsulting.ca/fo3/ModConfig5.0.xsd">
+  <moduleName>Zenderal - Faster Sprint</moduleName>
+
+  <requiredInstallFiles>
+    <file source="Zenderal - Faster Sprint.esp" destination="Zenderal - Faster Sprint.esp" priority="0" />
+  </requiredInstallFiles>
+
+  <!--
+    A single-plugin patch has no real choices, but the installer still needs one page: it is the
+    only place the install requirement below reliably reaches the user (see CLAUDE.md's "FOMOD
+    images that actually render in MO2" gotcha for why this block exists even without an image).
+  -->
+  <installSteps order="Explicit">
+    <installStep name="Before you install">
+      <optionalFileGroups order="Explicit">
+        <group name="Requirements" type="SelectExactlyOne">
+          <plugins order="Explicit">
+            <plugin name="Install Faster Sprint">
+              <description>Adds "Zenderal - Faster Sprint.esp".
+
+Requires "EGO SE - Enderal Gameplay Overhaul" to be active, and this plugin must load AFTER it - it overrides EGO's sprint MovementType values.</description>
+              <typeDescriptor>
+                <type name="Required" />
+              </typeDescriptor>
+            </plugin>
+          </plugins>
+        </group>
+      </optionalFileGroups>
+    </installStep>
+  </installSteps>
+</config>

@@ -292,6 +292,7 @@ Each patch's own ESL block. Overrides are not listed — they consume nothing.
 | Patch / plugin | Block | Contents |
 |---|---|---|
 | `RelentlessSword` → `Zenderal - Relentless Sword.esp` | `0x800–0x827` | `800–806` statics (1st-person models), `809–80F` weapons, `811–81F` forge + temper recipes (johnskyrim's original offsets, preserved for traceability), `820–825` dismantle recipes (new, this repo's), `826` crafting blueprint, `827` its placed reference in Riverville Temple |
+| `FasterSprint` → `Zenderal - Faster Sprint.esp` | none (overrides only) | Global (player + NPC) sprint speed +20% on top of EGO's current values — overrides `NPC_Sprinting_MT` (`034D9C:Skyrim.esm`, `ForwardWalk`/`ForwardRun` 440→528) and `AIControlledNPC_Sprinting_MT` (`0F3469:Skyrim.esm`, 450→540). `BackWalk`/`BackRun`/rotation fields left untouched. Master: `Skyrim.esm` only (no EGO FormKey is referenced, only its record is overridden — but this plugin **must load after** `Enderal SE - Gameplay Overhaul.esp` in-game to win the conflict; declaring it as a master isn't required since no FormLink to it exists). See `arch-docs/zenderal-curation.md`. |
 
 > **`Enderal - Forgotten Stories.esm` survives as a declared master.** It is an *implicit* base
 > master under `GameRelease.EnderalSE`, so there was reason to fear Mutagen would drop it from the
@@ -518,6 +519,19 @@ These are **engine-hardcoded** FormIDs — Bethesda's own code depends on them, 
 
 ## Gotchas
 
+- **Standalone xEdit reads its OWN configured game path, not `tools.json`'s `gameDataDir`.**
+  **[verified]** On this machine `tools.json.gameDataDir` is `E:/Zenderal/Stock Game/Data` (the MO2
+  instance's self-contained copy), but launching `EnderalSEEditQuickAutoClean.exe`/`EnderalSEEdit.exe`
+  directly (bypassing MO2) reads `EnderalSEEdit_log.txt`'s own `Using Enderal Special Edition Data
+  Path:` line — which pointed at a completely different, genuinely separate Steam install,
+  `E:\Steam\SteamApps\common\Enderal Special Edition\Data\`, apparently configured the one time
+  someone ran the tool standalone in the past. Staging a built plugin into `$Tools.gameDataDir` and
+  then running xEdit standalone silently does nothing — the QuickAutoClean process reports exit 0
+  but never touches the file, because it never looked in that folder. **Check the tool's own log file
+  in its install folder for the actual `Using ... Data Path:` line before staging anything**, don't
+  trust `tools.json` alone for this specific step. Both paths share the same
+  `C:\Users\frien\AppData\Local\Enderal Special Edition\Plugins.txt` load order, confirming the Steam
+  folder is the real live target MO2's USVFS overlays onto when launched normally.
 - **Enderal's cell EditorIDs are German; the display names are English.** Riverville is
   **`Flusshaim*`**, Ark is **`CapitalCity*`**, and the Sun Temple is `Suntemple*`. **[verified]**
   Searching `reference/base/*/Cells/` by the English town name returns **nothing** — grep the

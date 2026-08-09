@@ -93,6 +93,10 @@ including the **temper** recipes, whose `HasPerk 05218E` condition resolves here
 `_00E_Class_Phasmalist_P04_B_ArcaneSmith` ("You can improve enchanted armors and weapons"), which
 means exactly what johnskyrim intended it to mean.
 
+| Mod | Version | Why | Patch | Notes |
+|---|---|---|---|---|
+| *(original tuning, not a conversion)* | — | Sprint speed felt sluggish for both the player and NPCs. | **FasterSprint** → `Zenderal - Faster Sprint.esp` | Global (player + NPC) sprint speed boost, overriding EGO's sprint values directly. Overrides `NPC_Sprinting_MT`/`AIControlledNPC_Sprinting_MT` (`ForwardWalk`/`ForwardRun` only). **Must load after `Enderal SE - Gameplay Overhaul.esp`.** |
+
 ### Modern visuals
 
 | Mod | Version | Why | Patch | Notes |

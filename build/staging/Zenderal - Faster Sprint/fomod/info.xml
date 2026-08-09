@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fomod>
+  <Name>Zenderal - Faster Sprint</Name>
+  <Author>Zenderal</Author>
+  <Version MachineVersion="1.0.0">1.0.0</Version>
+  <Description>
+    Increases sprint speed (player and NPCs) by 80% over EGO - Enderal Gameplay Overhaul's
+    current sprint values (440/450 -&gt; 792/810 ForwardWalk/ForwardRun on the two sprint
+    MovementType records). Global, not player-only - NPCs sprint faster too, preserving relative
+    combat pacing against EGO's slower baseline.
+
+    Requires "EGO SE - Enderal Gameplay Overhaul" to be active and load BEFORE this plugin (this
+    plugin overrides its sprint values, so it must win the conflict).
+  </Description>
+  <Groups>
+    <element>Gameplay</element>
+  </Groups>
+</fomod>

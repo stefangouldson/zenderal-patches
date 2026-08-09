@@ -10,6 +10,16 @@
           "dest": "Zenderal - Relentless Sword.esp"
         }
       ]
+    },
+    {
+      "name": "Zenderal - Faster Sprint",
+      "archiveName": "Zenderal - Faster Sprint",
+      "plugins": [
+        {
+          "yamlSource": "src/FasterSprint/FasterSprintESP",
+          "dest": "Zenderal - Faster Sprint.esp"
+        }
+      ]
     }
   ]
 }
