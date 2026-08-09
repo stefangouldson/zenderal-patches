@@ -95,9 +95,25 @@ with it. This is the single most common source of "the list doesn't launch" repo
 > filenames it expects.
 >
 > Mutagen's *implicit* base-master list for `EnderalSE` does include them **[upstream]**, so Spriggit
-> will not object if you add one — the game will. A patch that masters a DLC in Enderal is a patch
-> that fails to load, and there is nothing in them to reference anyway. Compare
+> will not object if you add one. There is nothing in them to reference anyway, so don't. Compare
 > `reference/base/Dawnguard-stub/` with `reference/base/EnderalFS/` if you ever doubt it.
+>
+> **But the engine DOES load all three stubs, always, whether or not `plugins.txt` lists them.**
+> **[verified 2026-08-02]** — read straight out of a running game's plugin table via a Crash Logger
+> dump on a profile that never enabled them:
+>
+> ```
+> PLUGINS: Light: 13  Regular: 31  Total: 44
+>   [ 0] Skyrim.esm   [ 1] Dawnguard.esm   [ 2] HearthFires.esm
+>   [ 3] Dragonborn.esm   [ 4] Update.esm   [ 5] Enderal - Forgotten Stories.esm
+> ```
+>
+> Corroborated independently by the plugin array inside a `.ess` save. So the older claim here — that
+> a plugin mastering a DLC "fails to load" and that users must tick the stub — was **wrong**, and it
+> shipped in a patch's FOMOD before anyone tested it. A third-party mod that masters `Dragonborn.esm`
+> loads in Enderal with no user action at all; its references into the stub simply resolve to nothing.
+> Note also that the engine's real order puts the DLC **before** `Update.esm`, which is not the order
+> `loadorder.txt` shows.
 
 **Stock load order** (`%LOCALAPPDATA%\Enderal Special Edition\plugins.txt`) **[verified]**:
 
@@ -158,13 +174,60 @@ src/                       # EVERY patch lives here — one folder per patch
     <PatchName>ESP/        # Spriggit YAML — COMMITTED, source of truth
     Scripts/source/*.psc   # Papyrus source — COMMITTED
     Scripts/compiled/*.pex # COMMITTED via a .gitignore exception (CI can't compile Papyrus)
-build/                     # build.ps1 + manifest.json + committed FOMOD trees
+    tools/*.ps1            # only for REPLACEMENT releases — the generators that rebuild the tree
+build/                     # build.ps1 + manifest.json (+ a committed FOMOD tree per release that has
+                           #   one - none currently do; releases carry "fomod": false)
 arch-docs/                 # patch-authoring guide, curation docs, generated build report
+arch-docs/magic/           # GENERATED magic dataset: every SPEL/MGEF/ENCH/SCRL/ALCH/SHOU/GMST with
+                           #   load-order-WINNING values + provenance; /magic-extract regenerates it
 reference/base/            # gitignored — Enderal/vanilla decompiles + script source, LOOKUP ONLY
 reference/mods/            # gitignored — third-party list mods, serialized for lookup
+reference/mods/EGO/        #   `-- EGO's .esp + its loose scripts; documented in arch-docs/EGO/
 modlist/                   # gitignored — the installed Zenderal MO2 instance, hundreds of GB
 papyrus-source/            # gitignored — spare slot for unpacked .psc trees (see reference/base)
 ```
+
+> **Two shapes of release exist.** Most are **patches**: a small plugin of overrides that masters the
+> mod it fixes — everything in this repo is one. A few mods must instead be **replacements**: the
+> third-party plugin itself, rebuilt with our changes and shipped under its *original filename* so
+> its BSAs keep loading, with `src/<Name>/<Name>ESP/` holding *all* of the author's records rather
+> than just our edits, because that is what the build deserializes. A replacement is only legitimate
+> when the author's permissions allow modification and re-upload, and it must ship credit in the
+> plugin header and on the mod page. It also needs a `tools/` folder of generators that can rebuild
+> the tree against a new upstream version — without those, an update means redoing the analysis from
+> scratch.
+>
+> **Replacements are not built here.** The form-version ceiling below forces some Enderal ports into
+> that shape, and those live in the
+> [`enderal-mods`](https://github.com/stefangouldson/enderal-mods) repo, which holds Enderal SE mods
+> in general rather than this list's patches. `Apocalypse - Magic of Skyrim` is the worked example and
+> the source of most of what the ceiling section below records.
+
+> **A third shape: the SCRIPT-ONLY release — no plugin at all.** **[verified 2026-08-08]** When a
+> third-party mod's misbehaviour lives entirely in a *loose* `.pex` and not in its records, the patch
+> is one recompiled script and nothing else. `build/manifest.json` supports it directly: set
+> `"plugins": []` alongside `"fomod": false` and a `"scripts": { "from": …, "to": "Scripts" }` block.
+> `build.ps1` handles that without changes — the `foreach ($p in $rel.plugins)` loop simply runs zero
+> times, and the release contributes an archive but no row to the build report's Plugins table.
+>
+> Four rules, learned building `Zenderal - No Kata Debug Prompt` (that release was later absorbed
+> into `Zenderal - Kata Fixes`, which ships the recompiled script *alongside* a plugin — a release
+> may mix both; the rules below apply to its `scripts` block unchanged):
+> 1. **Start from the author's own `.psc`, copied verbatim**, and change the fewest lines possible
+>    (guardrail 4). Most mods that ship loose scripts ship their `source/` next to them.
+> 2. **Never add or remove a `Property` declaration.** The host plugin's quest record stores the
+>    property *values* in its `VMAD` and binds them **by name** at load. Drop a declaration and
+>    Papyrus logs an unresolved property every load; rename one and its value silently never arrives.
+>    Read the values out of the serialized record and diff the property set against your script before
+>    compiling — `rg -a -o '<names>' both.pex | sort -u` on the two `.pex` is the cheap confirmation.
+> 3. **It only wins if it sorts ABOVE the mod it overrides in `modlist.txt`** — MO2 writes that file
+>    highest-priority-first (the list's `EGO SE - *` patches sit ~20 lines above the `KataPUMB *` mods
+>    they patch). Getting this backwards is invisible: the game runs and the original script wins.
+> 4. **A `.pex` override only bites where the script re-runs.** An `OnInit()` fix reaches new games
+>    and saves that never had the mod; a save where `OnInit` already fired is untouched.
+>
+> This shape carries an obligation the others don't: it redistributes a **modified copy of someone
+> else's script**, so check the author's permissions and credit them in the source header.
 
 `src/` is the only place patch content goes, and it holds as many patches as the list needs. Each
 gets its own `src/<PatchName>/` folder and its own `build/manifest.json` release entry; the
@@ -242,7 +305,20 @@ These are distilled from real failures in this workspace's lineage. They cost te
    compiler. `build/build.ps1` fails on a *missing* `.pex` but cannot detect a *stale* one.
 10. **PowerShell 5.1 is the target** for build scripts and skills: `Set-StrictMode` is on, there is
     no `&&`/`||`, no ternary, no null-coalescing, and no built-in YAML parser. Write `-Encoding utf8`
-    explicitly when a file will be read by other tools.
+    explicitly when a file will be read by other tools. Two further traps when bulk-editing YAML:
+    - **The Spriggit YAML is CRLF, so `$` in a multiline regex does not match.** `'(?m)^Foo: bar$'`
+      silently fails on `Foo: bar\r\n` because `$` anchors before `\n` and the `\r` is in the way.
+      Use `(?=\r?$)` or drop the anchor. **[verified]** — this cost a full pass on the Apocalypse
+      recipes and it fails *silently*, so always assert the replacement count and throw on zero.
+    - `Join-Path` takes **two** arguments in 5.1; `Join-Path $a $b $c` is a parameter-binding error.
+      Nest the calls.
+11. **Bulk record edits should be scripted, verified by count, and re-validated after.** When a patch
+    touches dozens of records, generate them from `reference/` with a script that *asserts* what it
+    changed (entry counts before/after, every intended replacement matched at least once) and fails
+    loudly otherwise. Then re-resolve every FormKey the patch emits against the serialized masters —
+    that catches the dangling references xEdit would, without needing the mod installed. Note
+    `000014:Skyrim.esm` (PlayerRef) is **absent from `reference/base/Skyrim/`** despite being valid
+    and used by 77 of Enderal's own recipes, so allow-list it rather than chasing it. **[verified]**
 
 ## FormKey discipline
 
@@ -292,7 +368,38 @@ Each patch's own ESL block. Overrides are not listed — they consume nothing.
 | Patch / plugin | Block | Contents |
 |---|---|---|
 | `RelentlessSword` → `Zenderal - Relentless Sword.esp` | `0x800–0x827` | `800–806` statics (1st-person models), `809–80F` weapons, `811–81F` forge + temper recipes (johnskyrim's original offsets, preserved for traceability), `820–825` dismantle recipes (new, this repo's), `826` crafting blueprint, `827` its placed reference in Riverville Temple |
+| `RelentlessSwordZen` → **also** `Zenderal - Relentless Sword.esp` | `0x828–0x831` | The ZEN release is a **superset of the row above under the same ModKey**: `0x800–0x827` are its 33 records copied verbatim, then `828–829` statics, `82A–82B` weapons, `82C–82D` forge recipes, `82E–82F` tempers, `830–831` dismantle recipes for johnskyrim's Patreon "Zen" blade. Generated by `src/RelentlessSwordZen/tools/build-zen-tree.ps1` — see the note below the table |
+| `MagicPatches` → `Zenderal - Magic Patches.esp` | _(none used)_ | ALL magic compat/balance patches for the list live in this one plugin. Currently: **Apocalypse cost-ladder repricing** — 175 overrides of the book-taught Apocalypse player spells (their live costs ran 4–7× EGO's ladder: FF tier medians 56/83/175/393/720 vs EGO's 30/53/76/97/124). Mechanism: the spells are ALL auto-calc, so the engine reprices them from effects at runtime and a bare `BaseCost` override does nothing — each override adds `ManualCostCalc` + a hand `BaseCost` (EGO's own archetype, 78/81 of its Kata patch overrides). New cost = per-(tier, FF/conc) ratio onto EGO medians, from `src/MagicPatches/tools/01-build-cost-table.py`; YAML generated by `02-apply-cost-table.ps1` from `reference/mods/Apocalypse`, then `03-retune-fever.ps1` retunes the heals' Arcane Fever tax (Wild Healing 5→1.5 to EGO's flat burst rate, Resurgence 5→4 and King's Heart 12→5 to Enderal's 78-HP-per-point / Panacea precedents; Healing Blossom's 8 was already on the rule). **Regeneration order is 02 then 03** — never hand-edit the Spells folder. Also one MGEF override, NOT script-generated (the `MagicEffects/` folder survives regeneration): `_00E_IncreaseArcaneFeverFFSelf 11A4B6:Skyrim.esm`, EGO's record forwarded verbatim except its fever description — EGO baked the literal `<1,5>%` into the shared effect's text (safe for EGO, whose every user is 1.5), so all four Apocalypse heals displayed "1,5%"; restored base Enderal's `<mag>` token so each spell shows its real fever. Plus **five LVLI distribution-list merges** from `04-merge-distribution-lists.py`: the four `_00E_SpellBooksLoot*` lists (winner = the EGO-Kata patch, which dropped Apocalypse's 8 loot injections each) and `02E_Scrolls 0905A5` (winner was Apocalypse itself, whose override reverted EGO's rebalance — renamed EditorID, `ChanceNone` 0.5→0.15, entry trims — while adding its 4 scrolls). Each = deliberate winner's record verbatim + Apocalypse's additions re-appended. **Ownership split: Magic Patches owns these five LVLIs; `KataFixes` owns the three vendor chests — neither plugin may touch the other's records.** Masters now seven: base three + `KataPUMBSpellPack.esp` + EGO + Apocalypse + `EGO - KataPUMB Spell Package.esp` **`halfCostPerk` is kept, not cleared**: 274/278 of EGO's own player spells carry the vanilla half-cost perks, so they are live in Enderal's cost system. Masters: the base three + `Apocalypse - Magic of Skyrim.esp` |
+| `KataFixes` → `Zenderal - Kata Fixes.esp` | _(none used)_ | Kata-related fixes. Currently the **magic-vendor chest merge**: Funkentanz `102AD5`, Torius `118050` and Tarhutie `05BCD6` are each contested by up to SIX plugins, and the live winner (`EGO SE - Leveling Redone.esp`) carries none of the losers' stock — Kata's 15 staves, Apocalypse's 45/39 tomes, xxOpenSpells' 4 books and the Emberlord patch's 5 entries were ALL dead in game (the staves' only surviving location was `_00E_Test_Container_Weapons 0465BB`, a test chest). Each override = the winner's record verbatim + every loser's additions re-appended, derived (not hardcoded) by `src/KataFixes/tools/01-merge-vendor-chests.py` from the reference trees (`LevelingRedoneEGO`, `KataPUMB`, `Apocalypse`, `xxOpenSpells`, `KataEmberlord`). `0465BB` deliberately untouched. Nine masters incl. `EGO SE - Leveling Redone.esp` (content-unused, mastered to force load-after). **Whoever owns these chest records owns them alone** — no other Zenderal plugin may override them (the RelentlessSword lesson). Also ships the recompiled `Kata_Enderal_SpellPackageAddToLLists.pex` (absorbed from the retired `Zenderal - No Kata Debug Prompt` release): kills pack 2's debug prompt AND comments out (`;ZP-DEDUPE`) the 58 `AddForm` lines injecting the **29 spell lines duplicated between the two Kata packs** — the injection is `Books.GetAt(<hardcoded index>)`, so the script is the only place it can be fixed (editing the FormList would shift every index). Dedupe reaches **new games only** (`StartGameEnabled` + `RunOnce`); the mod folder must win the loose-script file conflict with `KataPUMB Magic Package` |
+| `SkipToTamingTheWaves` → `Zenderal - Skip To Taming The Waves.esp` | `0x800–0x803` | `800` Quest `ZP_SkipTTW`, `801` Activator `ZP_SkipTTW_StartTrigger`, `802` its placed trigger ref in Ark market cell `070793`, `803` Message `ZP_SkipTTW_sClassChoice`. Overrides `MQ101 03372B` (alias 183 `StartMarkerRef` → `TeleportMarker_ArkMarket 0EAB74`) and forwards FS's `CapitalCityMarketArea 07072A` header — neither costs anything from the block. **No `MQP01PrologStart` override**: `QF_MQ101_0003372B.Fragment_332` only does `MoveTo(StartMarkerRef)`, and nothing else starts the prologue — `MQP01` is started by the trigger inside `MQP01Home`, which a player spawning in Ark never reaches. SkipIntro disables that trigger defensively; it is not needed |
 | `FasterSprint` → `Zenderal - Faster Sprint.esp` | none (overrides only) | Global (player + NPC) sprint speed +20% on top of EGO's current values — overrides `NPC_Sprinting_MT` (`034D9C:Skyrim.esm`, `ForwardWalk`/`ForwardRun` 440→528) and `AIControlledNPC_Sprinting_MT` (`0F3469:Skyrim.esm`, 450→540). `BackWalk`/`BackRun`/rotation fields left untouched. Master: `Skyrim.esm` only (no EGO FormKey is referenced, only its record is overridden — but this plugin **must load after** `Enderal SE - Gameplay Overhaul.esp` in-game to win the conflict; declaring it as a master isn't required since no FormLink to it exists). See `arch-docs/zenderal-curation.md`. |
+
+> **When a mod has two mutually exclusive upstream builds, ship two ARCHIVES of ONE ModKey — not
+> two plugins.** **[verified 2026-08-06]** johnskyrim's Relentless Sword exists as a free Nexus
+> build (6 swords) and a Patreon "ZEN" build (the same 6 plus a Zen-design pair). The user owns one
+> or the other, never both — the ZEN download is a rebuild of the whole mod, not an add-on.
+>
+> Two shapes were tried. **An add-on plugin mastering the base patch was wrong**, and its failure
+> mode is the generalisable part: the base patch overrides `FlusshaimTemple 015282` (to place the
+> blueprint) and `_00ETraderCraftingPlansC 148ABE` (to stock it), so *any* second plugin of ours
+> touching either would win on load order and **silently delete the first patch's entry** —
+> guardrail 5, turned against our own repo.
+>
+> The shape that works: **two releases, both emitting `Zenderal - Relentless Sword.esp`**, one with
+> 33 records and one with 43. Same filename ⇒ they physically cannot both be enabled, no conflict
+> is possible, and because the Zen tree copies the base records **byte-identically** and allocates
+> its additions **above** them at `0x828+`, a user swapping builds keeps every FormID — swords
+> already in a save survive. `manifest.json` allows this directly: two releases may share a `dest`.
+>
+> The cost is a duplicated YAML tree, which the build requires (it deserializes a folder). Keep it
+> honest with `src/RelentlessSwordZen/tools/build-zen-tree.ps1`, which regenerates the Zen tree
+> from the base one and **asserts** file counts, that all 8 forge recipes gate on blueprint
+> `000826`, and that no `0F46CE`/`0F46D1` Skyforge reference survived. Re-run it after **any** edit
+> to `src/RelentlessSword/`; nothing else detects the drift.
+>
+> Verified on the built plugin: `MAST Skyrim.esm` + `MAST Enderal - Forgotten Stories.esm` (no
+> third master), HEDR 1.7, ESL flag intact, `nextObjectId 0x832`, and all 244 FormKey references
+> resolving. **That is a verified BUILD, not a verified RUN** (guardrail 8).
 
 > **`Enderal - Forgotten Stories.esm` survives as a declared master.** It is an *implicit* base
 > master under `GameRelease.EnderalSE`, so there was reason to fear Mutagen would drop it from the
@@ -310,10 +417,17 @@ Scripts go through extract → decompile → edit → compile → package. Use t
 
 | Step | Tool | Config key |
 |------|------|------------|
-| Extract `.bsa` | `bsab.exe` | `$Tools.bsab` |
+| Extract `.bsa` | `bsab.exe`, or `BSArch64.exe` (see below) | `$Tools.bsab` / `$Tools.bsarch` |
 | Decompile `.pex`→`.psc` | `Champollion.exe` | `$Tools.champollion` |
 | Compile `.psc`→`.pex` | `PapyrusCompiler.exe` (from Skyrim SE) | `$Tools.papyrusCompiler` |
 | Open Creation Kit | `CreationKit.exe` (from Skyrim SE) | `$Tools.creationKit` |
+
+> **`bae.exe` has no usable CLI — do not reach for it.** **[verified]** It rejects `-e`,
+> `--extract` and even `--help` ("Unknown option"); the `extract` string in the binary is a Qt slot
+> name, not a command-line option. It is GUI/drag-and-drop only. When `bsab` is not installed, use
+> **`BSArch64.exe unpack "<archive.bsa>" "<outdir>" -mt`** (bundled in xEdit's folder,
+> `$Tools.bsarch`) — it is the reliable headless extractor here. Note it **requires the output
+> directory to already exist** and fails with "Folder does not exist" otherwise.
 
 ### The import path is first-wins, and Enderal must be first
 
@@ -386,7 +500,31 @@ Use the `mod-deploy` skill rather than copying by hand.
 
 **xEdit must run in Enderal mode:** use a copy named `EnderalSEEdit.exe` or pass **`-EnderalSE`**.
 **[upstream]** Plain SSEEdit mode reads the Skyrim game folder and INI and will not see Enderal's
-plugins at all. The `xedit-audit` skill passes the switch.
+plugins at all. Pass the switch yourself — there is no skill that does it for you.
+
+### Crash logs are written to the SKYRIM SE folder, not Enderal's
+
+**[verified]** Crash Logger SSE (and the other SKSE plugin logs — `skse64.log`, `EnderalSE.log`,
+`po3_*.log`) land in:
+
+```
+C:\Users\<you>\Documents\My Games\Skyrim Special Edition\SKSE\crash-<timestamp>.log
+```
+
+**not** `…\My Games\Enderal Special Edition\SKSE\`, which holds only the INIs and saves. Looking in
+the Enderal folder and finding nothing is what makes a crash look like it produced no log at all —
+it did. Read the newest `crash-*.log` by mtime and check `Working Directory:` says Enderal before
+trusting it.
+
+Two fields to read first, before the call stack:
+
+| Field | Means |
+|---|---|
+| `PLUGINS: Total: 0` | crashed **during** file loading — the data handler never populated. Suspect the plugin header/masters, not records |
+| `PLUGINS: Total: <n>` with a full list | plugins loaded fine; it is a content or runtime problem |
+
+The plugin list in a `.ess` save is a second, independent source for what the engine actually
+loaded — useful when the game will not start at all.
 
 ---
 
@@ -408,8 +546,10 @@ different repo.
 | Read this | For |
 |---|---|
 | **[`arch-docs/enderal/`](arch-docs/enderal/)** | **How Enderal actually works** — six documents mined from the serialized plugins and SureAI's own source. Start with [`plugin-architecture.md`](arch-docs/enderal/plugin-architecture.md) |
+| **[`arch-docs/EGO/`](arch-docs/EGO/)** | **How EGO works and how to patch around it** — the list's gameplay overhaul, 6203 overridden records. Start with [`patching-ego.md`](arch-docs/EGO/patching-ego.md) before any combat/loot/crafting patch |
 | `arch-docs/enderal-record-patterns.md` | Record shapes that build clean and do nothing in-game |
 | `arch-docs/zenderal-curation.md` | What is actually in the list and why |
+| **[`arch-docs/magic/`](arch-docs/magic/)** | **The actual in-game value of every magic record** — load-order-winning SPEL/MGEF/ENCH/SCRL/ALCH/SHOU/GMST as JSON/CSV, with override chains, per-field diffs and recomputed spell costs. Start any magic-rebalance work here; regenerate with the `magic-extract` skill |
 
 Per pillar: combat patches start at [`arch-docs/enderal/combat.md`](arch-docs/enderal/combat.md),
 visuals at [`visuals-and-world.md`](arch-docs/enderal/visuals-and-world.md), and anything touching
@@ -418,10 +558,46 @@ progression, potions or scripts at
 [`crafting-alchemy-economy.md`](arch-docs/enderal/crafting-alchemy-economy.md) /
 [`scripting-and-actorvalues.md`](arch-docs/enderal/scripting-and-actorvalues.md).
 
+### EGO is the list's dominant conflict source
+
+`Enderal SE - Gameplay Overhaul.esp` (v1.93.1.0, author *Ixion XVII*) overrides **6203** records and
+adds **974**. **[verified 2026-08-04]** Zenderal patches load **after** it. Four facts that change
+how you write a patch, all documented in [`arch-docs/EGO/`](arch-docs/EGO/):
+
+1. **EGO is not `Localized`.** Every string on every record it overrides collapses from a
+   multi-language `Values:` list to a single English `Value:`. So `['Name', 'Description',
+   'Version2']` is the **null diff** — filter it out — and copying the FS/Skyrim version of a record
+   EGO also overrides re-adds the `Values:` block, which is the tell that you copied the wrong source.
+2. **`Player 000007:Skyrim.esm` carries 42 EGO perks.** That record *is* EGO's player ruleset.
+   Overriding it without forwarding them deletes the mod's combat, economy, alchemy and mana rules
+   while everything else still looks installed.
+3. **61 records are injected**, not overridden — FormIDs in `Skyrim.esm`'s space that `Skyrim.esm`
+   does not define (`ChaurusChitin 03AD57`, `DeflectArrows 058F68`, the Dragon Priest masks, six
+   `DeathItem*` lists…). Referencing one means declaring EGO as a master.
+4. **EGO rewrites all three blueprint vendor lists** (`_00ETraderCraftingPlansA/B/C`) — the exact
+   records a new craftable-weapon patch needs — plus 123 other leveled lists, 99 GMSTs and 18 GMSTs
+   it creates outright.
+
+Before touching a record, `grep` its FormKey in
+[`arch-docs/EGO/conflict-index.md`](arch-docs/EGO/conflict-index.md); if it is listed, build your
+version from **EGO's** YAML file, not the master's.
+
 ## How Enderal differs (and what that breaks)
 
 This is the section to read before assuming a Skyrim mod "just works". Each entry is a verified
 mechanism plus the class of patch it invalidates.
+
+> **Porting a Skyrim mod? Use the `skyrim-to-enderal-porter` subagent first**, before planning or
+> authoring anything. It runs the kill-checks in order — form version, load-proof, SKSE build,
+> masters, distribution, override collisions — and decides whether the mod is portable at all and
+> whether it needs a *patch* or a *replacement plugin*. The first two checks take minutes and both
+> have already cost this repo a full build-and-debug cycle when skipped.
+>
+> **For a spell or magic mod, follow it with `enderal-magic-porter`.** That one carries everything the
+> Apocalypse port cost: the five renamed schools (Alteration is *Mentalism*, Illusion is *Psionics* —
+> the intuitive pairing is wrong), rebuilding distribution when Enderal has no spell tomes at all,
+> repricing onto a 20–350 range, making self-heals pay Arcane Fever, renaming the Elder Scrolls gods
+> out of every string, and cutting the Daedra and Dwemer summons.
 
 **Progression is not Skyrim's.** There is no learn-by-doing and no vanilla perk tree UI. Enderal's
 *talents* are three-tier **Perks** paired with **WordOfPower** unlocks, read back via
@@ -449,12 +625,59 @@ Enderal."* **[verified — `enderal readme.txt`]** In practice a Skyrim mod that
 `Skyrim.esm` records may load, but Enderal has usually already overridden the record you care about,
 and Enderal's copy wins or loses purely on load order.
 
+**The five magic schools are renamed, not replaced.** Enderal keeps all five vanilla magic
+ActorValues and only changes what they are *called*. **[verified]** — read off the `AlchFortify*`
+magic effects' display strings in `reference/base/Skyrim/MagicEffects/`, and corroborated by
+`_00E_BookMagicDisciplines*` and the `_00E_MagicSchool*` load screens:
+
+| Vanilla `MagicSkill` | Enderal discipline | Higher school |
+|---|---|---|
+| Destruction | **Elementalism** | (an art of its own) |
+| Conjuration | **Entropy** | Sinistra |
+| Restoration | **Light Magic** | Thaumaturgy |
+| Alteration | **Mentalism** | Thaumaturgy |
+| Illusion | **Psionics** | Sinistra |
+
+> Note the last two: **Alteration is Mentalism and Illusion is Psionics.** The intuitive pairing
+> (Illusion→Mentalism) is wrong, and getting it backwards mis-files every spell in a magic patch.
+
+The consequence is good news for ported spell mods: a Skyrim spell's `MagicSkill`, magicka cost and
+skill scaling all work unchanged in Enderal. What does *not* carry over is anything user-visible
+that names a school — spell tomes, load screens, descriptions — because the player has never heard
+of "the School of Conjuration". Enderal's own magic metaphysics vocabulary, for rewriting those
+strings, is the **Sea of Eventualities** (mages "manifest an eventuality"), **Lost Ones** (its
+undead), and the two higher schools above. All from `_00E_BookMagicDisciplines*`.
+
 **Enderal-only systems to look for** before touching anything nearby (script names verified in
 `ScriptsEnderal.zip`): Arcane Fever (`_00E_FS_AlchAddArcaneFever`), Phasmalism/Apparitions
 (`_fs_phasmalist_controlquest`, `_00E_Phasmalist_*`), the affinity system inside
 `_00E_Game_SkillmenuSC`, memory/learning points (`_00E_Lehrbuch_Plus1MemoryPointSC`,
 `_00E_Lehrbuch_Plus2SkillPointsScript`), crafting books (`_00E_Handwerksbuch*`), and the
 talent cooldown/control quests (`_00E_Game_TalentControlSC`, `_00E_Game_TalentCooldownSC`).
+
+> **Enderal taxes healing MAGIC, not healing — so a ported healing spell is free money unless you tax
+> it.** **[verified 2026-08-03]** Only 11 of base Enderal's 837 spells raise Arcane Fever and every
+> one is a self-heal (the `_NNE_SpellBoon` and `_NNE_SpellFlashHeal` lines), plus FS's Mystical
+> Panacea and two Boon scrolls. Nothing else in the game raises it — a master-tier damage spell costs
+> zero, so a ported one costing zero is *correct*.
+>
+> **Enderal DOES have healing potions**, and none of them costs Fever: five tiers of
+> `_NNE_Genesungstrank` (`01E` `0028C8` → `05E` `0028C9`, 36 → 160 HP over 4 s, 25 → 190 gold) plus
+> `_00E_Medicine` `07071F`. **[verified]** So the design is a trade — potions are the finite,
+> gold-priced heal and magic is the renewable one that costs Fever instead. This repo asserted the
+> opposite ("Enderal has no healing potions") for a while, from an English-only name search;
+> Enderal's EditorIDs are German and `Genesungstrank` displays as *"Health Potion (Cheap)"*. **Search
+> `reference/base/Skyrim/Ingestibles/` by effect FormKey, not by English name.**
+> Attach `11A4B6:Skyrim.esm` (`_00E_IncreaseArcaneFeverFFSelf`, FireAndForget/**Self**) as an extra
+> effect item with `Magnitude` + `Duration: 1`; its script applies the Mental Expert reduction for
+> you. Concentration casts need `106EA4` paired with FS's `02F42E` instead. Price against Enderal's
+> own ceilings — **26 HP per fever point burst, 78 over-time** — and note that Enderal charges a
+> *flat* cost per line, so HP-per-point improves with tier. **`11A4B6` is Self-delivery and has zero
+> precedent on an Aimed spell across 370 non-Self spells**, so leech/drain heals cannot be taxed this
+> way. Full mechanism and the worked example in
+> [`crafting-alchemy-economy.md`](arch-docs/enderal/crafting-alchemy-economy.md#arcane-fever); the
+> worked example is `src/Apocalypse/tools/09-arcane-fever-heals.ps1` in the
+> [`enderal-mods`](https://github.com/stefangouldson/enderal-mods) repo.
 
 **A ported Skyrim gear mod's recipes are the part most likely to be silently inert.** Enderal keeps
 the crafting *plumbing* (bench keywords are vanilla — see
@@ -490,6 +713,130 @@ For weapon balance, Enderal's scale runs ~1.6× Skyrim's: its shadowsteel (ebony
 **23 damage / crit 6** and its greatsword **37 / crit 11** **[verified]**. Note also that
 `05AD9D:Skyrim.esm` is **`IngotShadowsteel`** here, Enderal's rename of ebony — so an ebony-tier
 Skyrim recipe's *materials* usually port across unchanged even when its gating does not.
+
+**A ported mod's DISTRIBUTION is the most likely thing to be silently dead — check it first.**
+**[verified]** on Apocalypse — Magic of Skyrim, whose entire loot/vendor system is inert in Enderal.
+It runs a `StartGameEnabled` quest (`WB_PopulateLists_Quest`) that copies three FormLists into **54
+vanilla Skyrim vendor and loot leveled lists** — and **not one of those 54 exists in Enderal**.
+Neither do the five College-of-Winterhold ritual globals it gates on (`0FDE72`–`0FDE76`), nor the
+`Tamriel` worldspace it places its containers in. The mod loads, its 373 spells are all present and
+mechanically fine, and the player can never obtain a single one.
+
+This generalises: **Enderal's `Skyrim.esm` is Enderal**, so a vanilla FormID is only present if
+Enderal happened to keep it. Bethesda's leveled-list IDs largely did *not* survive. So for any mod
+that distributes items, the port checklist is: resolve its leveled-list targets against
+`reference/base/Skyrim/` **before** assuming anything else about it — a dead distribution makes every
+other consideration moot. The same applies to `MenuDisplayObject`, `LoadingScreenNif`,
+`FirstPersonModel` and script `Object` properties, all of which are commonly vanilla FormIDs that
+Enderal lacks.
+
+> **A vanilla FormID that survived may be a completely different record — check what a ported mod
+> OVERRIDES, not just what it references.** **[verified]** Apocalypse overrides exactly one Enderal
+> record, and it is worldspace **`00003C`**. In Skyrim that is `Tamriel`; **in Enderal it is
+> `MQP01Home`**, the prologue house. Its override stamps Tamriel's `MaxHeight` grid and map bounds
+> over a `SmallWorld` interior-ish worldspace, drops `Parent: Vyn`, `Location` and the
+> `SmallWorld`/`CannotFastTravel` flags, and gives the persistent cell a `Regions` list of five
+> FormIDs — **four absent from Enderal, and the fifth (`041449`) is `_00E_Ark_1024WallRound01`, a
+> Static.** The rebuilt `Apocalypse - Magic of Skyrim.esp` forwards Enderal's own record back (from
+> **Forgotten Stories**, which also overrides it — guardrail 5).
+>
+> Generalise the *check*, not the fix: for any ported mod, list every record it overrides whose
+> FormKey suffix is `:Skyrim.esm` / `:Update.esm` and confirm the Enderal record at that ID is the
+> same record type **and the same thing**. A script that maps FormID → record group for both trees
+> does this in seconds. Note this override was **not** the crash it looked like — it is a real
+> defect, found while chasing an unrelated bug, and worth fixing on its own merits.
+
+**Enderal's own distribution slots**, for re-homing a ported mod's items **[verified]**
+(`reference/base/Skyrim/LeveledItems/`). Note Enderal has **no spell tomes at all** — it teaches
+spells from `_01E_SpellBook*` Books:
+
+| Purpose | Lists | Level bands |
+|---|---|---|
+| Spell books, vendor | `_00ETraderSpellBooksLevelA/B/C/D` = `118209` / `11820A` / `1376C8` / `14479B` | 1–12 / 1–18 / 14–40 / 30–55 |
+| Spell books, loot | `_00E_SpellBooksLootA/B/C/D` = `13798C` / `13798D` / `1447A2` / `1447A3` | 1–7 / 10–18 / 18–33 / 30–55 |
+| Scrolls, loot | `00E_ScrollsLowChance` = `0905A5` | 1+, `ChanceNone: 0.5` |
+| Crafting blueprints, vendor | `_00ETraderCraftingPlans` / `…PlansB` / `…PlansC` = `137A06` / `148ABD` / `148ABE` | 1 / 10+ / 19–30 |
+
+> **`(Rank N)` on an Enderal spell tome is an upgrade chain, not a power tier — do not add it to a
+> ported mod's tomes.** **[verified]** Enderal ships the *same spell* at six strengths, and the record
+> prefix is the **player level** each unlocks at: `_01E_SpellBookFireBolt` = *Spell Tome: Firebolt
+> (Rank I)* at level 1, then `_10E_` (II), `_18E_` (III), `_28E_` (IV), `_38E_` (V), `_48E_` (VI) at
+> levels 10/18/28/38/48. So "(Rank I)" promises the player a Rank II of that exact spell exists.
+>
+> Enderal follows its own rule: **13 of its 201 spell tomes carry no suffix** — Clairvoyance, Mark,
+> Return, Telekinesis, Detect Life, Detect Dead, the three Wall spells, the ghostly summons, Death
+> Storm — precisely the spells that exist at one strength only. A ported spell with a single version
+> therefore belongs in that group, unsuffixed. Apocalypse's tomes ship as `Spell Tome: <name>` for
+> this reason; it looks inconsistent next to Enderal's and is in fact the consistent choice.
+
+**Inject, don't rewrite.** Add entries to the host list pointing at your own sublist, and carry
+every existing entry through untouched (guardrail 5). One new LeveledItem per tier keeps the diff
+readable and leaves Enderal's own list contents byte-identical.
+
+> **But one entry is not enough — weight it, or your items are statistically invisible.**
+> **[verified in-game 2026-08-02]** A host list picks **one entry per draw**, so a single injected
+> entry gives your entire sublist the same odds as one of Enderal's individual books, no matter how
+> many items are behind it. Apocalypse's 160 tomes sat behind one slot in `_00ETraderSpellBooksLevelA`
+> (15 entries): even Tarhutie, the richest spell vendor at 8+10+10 draws, worked out to **~1 Apocalypse
+> tome out of ~28 books**, and Milbert at 3+4 draws expected **0.3** — i.e. usually none. The
+> distribution was correct and looked completely broken.
+>
+> Do the arithmetic before shipping: `draws x (your entries / entries at or below player level)`.
+> Duplicating the injected entry — same `Level`, same `Reference` — is the lever, because it still
+> touches none of Enderal's own entries. `enderal-mods`' `src/Apocalypse/tools/06-weight-distribution.ps1` tops each
+> injection up to a target multiplicity and is idempotent.
+>
+> Two traps when picking that multiplicity, both found by measuring rather than reasoning:
+> **`ChanceNone` does not dilute your share** — it gates whether the list yields anything at all, so
+> a loot list does *not* need a higher weight to compensate. And **a list whose band takes only one
+> of your sublists ends up on half the share of its neighbours**, so weight per *list*, not per
+> injection: Enderal's `…LevelB` / `…LootB` bands admit one Apocalypse rank where A/C/D admit two.
+>
+> Two things that make this look like a bug when it is not: vendor stock is **cached in the save**
+> (`iDaysToRespawnVendor: 2`, so a merchant only re-rolls every 2 in-game days), and
+> `player.additem <LVLI FormID> 1` **resolves a leveled list on the spot** — that command is the way
+> to prove distribution works without waiting or starting a new game.
+
+> **Weighting has a ceiling: a leveled list makes an item AVAILABLE, never FINDABLE.** **[verified
+> in-game 2026-08-02]** A list is rolled per draw, so *which* of your items a shop has is random
+> every restock. With 160 tomes behind one sublist, even at a healthy 38% share of a big vendor's
+> spell stock, most of the 160 were purchasable **nowhere**, and a player hunting one named spell had
+> no route to it at all. Two rounds of weighting did not fix that, because it is not a weighting
+> problem.
+>
+> **If every item must be reachable, place it directly** — write the item into a named merchant's
+> `Container` record as an ordinary `Items:` entry. Deterministic, restocks forever, and a player can
+> be told where to go. Enderal's spell merchants, ranked by the gold in their chest (the natural
+> wealth ladder for tiering what each one sells) **[verified]**:
+>
+> | Chest | FormKey | Gold | Shop |
+> |---|---|---|---|
+> | `_00E_Merchant_CCFunkentanz` | `102AD5` | 1800 | Ark, Emberlord and Fireflash (`coc CapitalCityMagierkram`) |
+> | `_00E_Merchant_STTurious` | `118050` | 1430 | Sun Temple, Torius Flameling (`coc SuntempleAlchemy`) |
+> | `_00E_Merchant_UC_Barnabas` | `13824A` | 1050 | Undercity, Barnabas (`coc UndercityBarracks2Barnabas`) |
+> | `_00E_Merchant_CCSteinschlag` | `0F9320` | 980 | Ark, Ora Stonehand |
+> | `_00E_Merchant_MaxusTabbakus02` | `022BF2` | 620 | Duneville, Maxus Tabbakus |
+> | `_00E_Merchant_CCMilbert` | `127928` | 530 | Ark, Milbert Foxhand |
+>
+> Richer merchants exist (`Nordwind_Traveller_01` 3700, `Rhalata_SisterEnvy` 2700, `DunenhaimKarymea`
+> 2700) but draw from only 1–2 spell lists, so they read as incidental rather than as mage shops.
+>
+> **Reprice what you distribute — Enderal's gold scale is much flatter than Skyrim's.** **[verified]**
+> Enderal's *entire* spell-tome range is **20–350**, with two outliers (Paralyze Rank II 400, the
+> unique Death Storm 600); scrolls run **10–100** with two at 500. Vanilla Skyrim's tome ladder is
+> ~50/175/330/700/1300, and a ported mod carries it in silently — Apocalypse's masters sat at a 1407
+> median, 5.6x Enderal's dearest tome, and its X-school scrolls at 2500. For scale, Enderal's
+> *unique weapons and armour* run 1100–4000, so a Skyrim-priced master tome costs about what a unique
+> greataxe does. Rescale by a **per-tier ratio** rather than a flat value so the author's ordering
+> inside each tier survives, and let tiers overlap at the edges — Enderal's own do.
+> **Forgotten Stories overrides all of these**, so copy the FS record, not base Enderal's (guardrail 5).
+>
+> **Check what else overrides the chest before claiming it.** `KataPUMBSpellPack.esp` adds the same 15
+> staves to `CCFunkentanz`, `STTurious` and `FlusshaimTarhutieContainer`, and those three shops are
+> their only vendor. **[verified]** A plugin loading after it that overrides one of those chests
+> without mastering it silently deletes them. Where a mod repeats an identical set across several
+> chests, **sparing one chest preserves the whole set** — that is why `Apocalypse` leaves Tarhutie
+> alone and hosts its Apprentice tier at Maxus Tabbakus (620 gold vs Tarhutie's 630) instead.
 
 ## Useful FormKey constants
 
@@ -556,10 +903,133 @@ These are **engine-hardcoded** FormIDs — Bethesda's own code depends on them, 
   Spriggit 0.40.0 round-trips this correctly, emitting the canonical
   `GRUP CELL → block → sub-block → CELL → GRUP cellchildren → GRUP celltemp → REFR` nesting, and a
   new `REFR` in an ESL-flagged plugin keeps the flag. **[verified]**
+- **Placing a ref in an EXTERIOR cell needs three scaffolding files, or Spriggit silently drops the
+  whole tree.** **[verified 2026-08-03]** An interior cell is one `RecordData.yaml` (see above), but
+  a worldspace cell will not build from the cell file alone — the plugin comes out with **zero**
+  `WRLD`/`CELL`/`REFR` records, no error, no warning. The build succeeds and the ref simply is not
+  there. Four files are required:
+
+  ```
+  Worldspaces/<WS EditorID> - <hex>_<master>/RecordData.yaml   # the WRLD record itself
+  Worldspaces/<WS…>/<blockX, blockY>/GroupRecordData.yaml      # GroupType: ExteriorCellBlock
+  Worldspaces/<WS…>/<blockX, blockY>/<subX, subY>/GroupRecordData.yaml  # ExteriorCellSubBlock
+  Worldspaces/<WS…>/<blockX, blockY>/<subX, subY>/<cell>/RecordData.yaml
+  ```
+
+  Folder names are `<X>, <Y>`; block = `floor(coord/32)`, sub-block = `floor(coord/8)`. Inside the
+  `GroupRecordData.yaml` the fields are `BlockNumberY` **then** `BlockNumberX` plus `GroupType`, and
+  a zero is **omitted** (Spriggit drops defaults) — so folder `0, -1` yields only `BlockNumberY: -1`.
+  A cell with no EditorID gets a folder of just `<hex>_<master>` with no `" - "` prefix.
+
+  **Truncate the WRLD record before its `TopCell:` block** unless you actually mean to override the
+  worldspace's persistent cell. Copying the master's record whole drags in every persistent ref
+  (Ark's market is ~40 of them) as an override you then have to be right about. Header-only builds
+  fine and keeps the conflict surface to the WRLD fields. Copy the file and cut it with a script —
+  do not retype it (guardrail 4).
+- **Never rewrite a UTF-8 doc with PowerShell 5.1's `Set-Content -Encoding utf8`.** **[verified
+  2026-08-03]** It reads the file as the system ANSI codepage and writes it back as UTF-8 **with a
+  BOM**, double-encoding every non-ASCII character — every `—` in this file became `â€"` in one
+  pass, and `git diff` then reports the whole file as changed. It happened here while resolving a
+  rebase conflict in `CLAUDE.md`. Use the Edit tool for surgical text changes, or `git checkout` the
+  file and redo them; if you must script it, read and write with an explicit
+  `[System.Text.UTF8Encoding]::new($false)` rather than the `-Encoding utf8` shorthand.
 - **`E - Update.bsa` loads last and wins.** When a record or asset doesn't look like the one you
   found in `E - Meshes.bsa`, check `E - Update.bsa` before concluding your patch is wrong.
-- **A DLC master silently breaks the plugin.** Spriggit accepts it (Mutagen's implicit base-master
-  set for `EnderalSE` includes the DLC) but Enderal does not load them. See "Masters" above.
+- **Don't give a patch you author a DLC master** — there is nothing in the stubs to reference. But
+  the stubs *do* load (see "Masters" above), so a third-party plugin that masters one is fine and
+  needs no user action. What you get is *loading*, not *working*: every FormID into a stub resolves
+  to null, because the stubs hold 1–2 records between them. `Dragonborn.esm`'s single record is
+  `DLC2MiraakRace` `03CA97`. **[verified]** Adding the DLC to your own master list does **not** help a
+  dependent patch either — tested directly, it changes nothing. **[verified]**
+  - A patch may override each record carrying a DLC reference and repoint or drop it, but weigh that
+    against doing nothing: a dangling FormID is **proven harmless** here (Apocalypse ships 67 recipes
+    and 144 scrolls full of them and the game runs), whereas a *null* is not automatically better.
+    **Null `BNAM` on a `COBJ` has zero precedent in Enderal** — all 1,859 of its recipes carry a real
+    bench keyword, none null, none absent. **[verified]** We shipped 67 null ones on the reasoning
+    that null "is a real engine sentinel"; that reasoning was never tested and the overrides were
+    later dropped entirely. If a dangling reference already makes the record unreachable, **leave it
+    alone** — that is the proven archetype (guardrail 3), and an override that achieves nothing is
+    still a record you have to be right about.
+
+> ### THE FORM-VERSION CEILING: Enderal will not load a plugin whose `HEDR` version is 1.71
+>
+> **[verified in-game 2026-08-02. Read this before porting any Skyrim mod.]**
+>
+> Enderal SE runs SSE **1.5.97**, and that engine **silently refuses any plugin written at `HEDR`
+> form version 1.71**. No warning, no log entry, no missing-master dialog — the plugin is simply
+> absent from the game. `HEDR` 1.70 is the ceiling; 1.71 is what the 1.6/AE-era Creation Kit and
+> newer tools emit.
+>
+> **BUT: the Zenderal modlist lifts this ceiling with BEES.** **[verified in-game 2026-08-08]**
+> The list ships **Backported Extended ESL Support** (Nukem, Nexus 106441, v1.2.0.0 — SKSE plugin,
+> `mods\Backported Extended ESL Support\`), which replicates SSE 1.6.1130's plugin-loading code on
+> 1.5.97 so 1.71 plugins load normally. Proof from a live run:
+> `Documents\My Games\Skyrim Special Edition\SKSE\BackportedESLSupport.log` logs
+> `Emulated old header version for <plugin>` for **exactly the 68 plugins** an independent HEDR
+> scan of the profile found at 1.71 (`DynDOLOD.esp`, the `Pretty * Armory` set, `ForHonorBFCO.esp`,
+> `Smart_NPC_Potions.esp`, …). BEES was added to the list on 2026-08-08 — *after* the 2026-08-02
+> ceiling verification; both observations were correct when made.
+>
+> Consequences: (a) everything below still applies verbatim to a BEES-less Enderal install, to
+> plugins WE author (keep writing `Version: 1.7` — do not make Zenderal patches depend on BEES),
+> and to debugging reports from users who dropped BEES; (b) inside *this* list, a 1.71 third-party
+> plugin is **not** inert — the "five inert `thepath` plugins" note below describes a list without
+> BEES, so audit any Enderal list for 1.71 **or** for BEES; (c) BEES
+> is now load-bearing — removing it silently disables 68 plugins. `arch-docs/magic/` datasets mark
+> every record whose winner needs it (`winnerNeedsBees`), and the `magic-extract` tool hard-fails
+> if 1.71 plugins are present without BEES.
+>
+> **Proof:** `Apocalypse - Magic of Skyrim.esp` is 1.71. With it enabled, `help wither 4` in the
+> console finds nothing, though the mod defines a spell whose EditorID and name both contain
+> "Wither". Change **four bytes** — the `HEDR` version float at file offset 30 — from 1.71 to 1.70,
+> leave every other byte identical, and the spell appears. Single variable, both directions.
+>
+> **How this presents, and why it is so hard to spot:**
+>
+> - The mod appears installed and enabled. MO2 is happy. The game launches.
+> - Nothing it adds exists. `help <anything> 4` finds none of its records.
+> - **A patch that masters it crashes the game**, because the patch loads, tries to bind to a master
+>   the engine skipped, and dereferences null during data load:
+>   ```
+>   EXCEPTION_ACCESS_VIOLATION  SkyrimSE.exe+05E1F22   mov rdx, [rax+0x158]   rax = 0
+>   PROBABLE CALL STACK: ... InitTESThread
+>   PLUGINS: Light: 0  Regular: 0  Total: 0      <-- data handler never finished
+>   ```
+> - Setting the *patch* to 1.71 makes the crash disappear — because the patch is now skipped too.
+>   **That is a false fix and it was shipped once.** A crash that vanishes because both plugins
+>   became invisible looks exactly like a crash that was fixed.
+>
+> **Check `HEDR` before you plan anything.** Read the float at offset 30 of the `.esp`
+> (`enderal-mods`' `src/Apocalypse/tools/verify-plugin-structure.ps1` prints it, or read the four
+> bytes directly). If it is 1.71:
+>
+> - a patch plugin **cannot** work — the only route is to rebuild the mod's own plugin at 1.70,
+>   which means shipping a modified copy under the same filename (keeps its BSAs loading). Check the
+>   author's permissions first.
+> - when authoring with Spriggit, set `ModHeader.Stats.Version: 1.7` **explicitly**. Mutagen's
+>   default is **1.71**, so a plugin that never mentions the field builds itself invisible.
+>
+> **This is not rare.** Five other plugins in the `thepath` modlist are 1.71 and therefore inert:
+> `CS Light.esp`, `DynDOLOD.esp`, `Enderal Weather - HDR.esp`, `standard_lighting_templates.esp`,
+> `TerrainHelper.esp` — most of a visuals layer, loading nothing, with no error anywhere. Audit any
+> Enderal list for this.
+
+> ### Debugging a load crash: bisect the PLUGIN, not the records
+>
+> **[verified — learned the expensive way on the Apocalypse patch.]** When a patch crashes the game
+> at load, the instinct is to suspect the records. Six record-level hypotheses were tested and all
+> six were wrong, because the cause was in the 24-byte header. **Run the cheap controls first, in
+> this order** — each is one launch and each halves the search space:
+>
+> 1. **Empty plugin.** Hand-write a valid TES4 with no masters and no records under the same
+>    filename. If that crashes, nothing you authored is involved.
+> 2. **Masters only, no records.** Add the real master list, still zero records. This separates
+>    "header/masters" from "content" in one launch.
+> 3. **Bisect the master list**, then the header fields (`HEDR` version, flags), then records.
+>
+> `scratchpad/make-masters.ps1`-style hand-built plugins are better than toolchain output here
+> precisely because they remove the toolchain as a variable. Also: **isolate one variable per
+> launch** — an early run changed the ESL flag and the record set together and proved nothing.
 - **Compiling against vanilla signatures.** If a script compiles clean and then misbehaves on an
   Enderal type, check the `-i` order — Enderal's tree must be first. 55 names collide.
 - **FOMOD images that actually render in MO2** — a config can build clean, pass
