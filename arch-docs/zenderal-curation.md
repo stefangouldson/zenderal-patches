@@ -256,7 +256,7 @@ humanoid, level-banded onto Enderal's own `1 / 10 / 18 / 28 / 38` ladder (the ba
 | Health `_NNE_Genesungstrank` | `0028C8` `0028C5` `0028C6` `0028C7` `0028C9` | 55 | 1–2 |
 | Mana `_NNE_Manatrank` | `0028DB` `019E3B` `090892` `09B6CB` `1037F7` | 45 | 1–2 |
 | Stamina `_NNE_Morgenlufttrank` | `0028DE` `085668` `09B6CA` `1037F5` `1037F6` | 45 | 1–2 |
-| Ambrosia `_00E_Ambrosia` | `0FEC69` (no level band) | 12 | 1 |
+| Ambrosia `_00E_Ambrosia` | `0FEC69` (no level band) | 30 | 1 |
 
 Traits `-S/-C/-D` exclude summons, children and StartsDead props.
 
@@ -276,6 +276,18 @@ Three things worth not rediscovering:
   difficulty increase. It also means each base NPC is stamped `SPID_Processed` once per session, so
   the level band is evaluated against whichever actor of that base loads first — exact for Enderal's
   fixed-level NPCs, player-tracking for PC-level-mult ones, which is why the bands are wide.
+- **Budget `Chance` per BASE NPC RECORD, not per corpse — and expect it all-or-nothing.**
+  **[verified in-game 2026-08-13]** SPID rolls once per base and adds to that base's container, so a
+  base that wins gives the item to *every* instance of itself and one that loses never gives it at
+  all. Ambrosia shipped at 12 and read as "never drops" over ~50 kills. The log showed it working
+  exactly as configured — 22 of 182 bases, 12.1% — but ~16 of those 22 were townsfolk (Ulla
+  Featherdance, Marius Vonderfull, farmers, four City Guard bases), because `ActorTypeNPC` is mostly
+  civilians. A fight is only 5–10 distinct enemy bases, so `0.88^8 ≈ 36%` of encounters yield none.
+  Raised to 30. The three potion lines never showed this because five tiers at 45–55 mean almost
+  every base wins something. **The diagnosis is `grep -a "Registered .*/" po3_SpellPerkItemDistributor.log`
+  plus a count of the `[📦]` lines — not another play session.** NPCs were *not* drinking the
+  Ambrosia: its effect `1037EC` is a `Script` archetype with no restore-actor-value, so neither the
+  vanilla AI nor `NPCs Use Potions` (which classifies by magic effect) will touch it.
 
 ### Modern visuals
 
