@@ -242,6 +242,40 @@ dangling reference of its own. Guessing replacements would be inventing mechanis
 and recorded here instead.
 
 | *(original tuning, not a conversion)* | — | Sprint speed felt sluggish for both the player and NPCs. | **FasterSprint** → `Zenderal - Faster Sprint.esp` | Global (player + NPC) sprint speed boost, overriding EGO's sprint values directly. Overrides `NPC_Sprinting_MT`/`AIControlledNPC_Sprinting_MT` (`ForwardWalk`/`ForwardRun` only). **Must load after `Enderal SE - Gameplay Overhaul.esp`.** |
+| *(original tuning, not a conversion)* | — | `Smart NPC Potions` and `NPCs Use Potions` are both in the list, but Enderal's humanoid NPCs carry almost no consumables, so neither had anything to act on. | **NpcPotions** → `Zenderal - NPC Potions_DISTR.ini` | SPID config, no plugin. See below. |
+
+#### NPC Potions
+
+A **SPID config-only release** — no plugin, no script, one `_DISTR.ini` at the archive root. 16
+`Item =` lines hand Enderal's three restore-consumable lines plus Ambrosia to every `ActorTypeNPC`
+humanoid, level-banded onto Enderal's own `1 / 10 / 18 / 28 / 38` ladder (the bands
+`_00ETraderPotion10/20/30` and the `_01E_`…`_48E_` prefixes already use).
+
+| Line | FormIDs (`:Skyrim.esm`, tier order) | Chance | Count |
+|---|---|---|---|
+| Health `_NNE_Genesungstrank` | `0028C8` `0028C5` `0028C6` `0028C7` `0028C9` | 55 | 1–2 |
+| Mana `_NNE_Manatrank` | `0028DB` `019E3B` `090892` `09B6CB` `1037F7` | 45 | 1–2 |
+| Stamina `_NNE_Morgenlufttrank` | `0028DE` `085668` `09B6CA` `1037F5` `1037F6` | 45 | 1–2 |
+| Ambrosia `_00E_Ambrosia` | `0FEC69` (no level band) | 12 | 1 |
+
+Traits `-S/-C/-D` exclude summons, children and StartsDead props.
+
+Three things worth not rediscovering:
+
+- **The restore-stamina line is `Morgenlufttrank` ("Morning Air Potion"), not `Ausdauertrank`.**
+  `_NNE_Ausdauertrank` is *fortify* stamina, and base Enderal ships only two tiers of it (`019E43`,
+  `11A52F`); the third, `03E_Ausdauertrank 0008C0`, is a record EGO adds. Health tier FormIDs are
+  also **non-monotonic** — `0028C8` is tier 1 and `0028C5` is tier 2. Both are easy to get wrong from
+  the German EditorIDs alone and neither fails loudly.
+- **This supersedes `Zenderal - Enemy Potions.esp`**, an untracked mod sitting at MO2 priority 24
+  with no source in this repo, which banded the same three potion lines into the `_00E_MOB_Bandit`,
+  `DeathItemDraugr` and `_00E_FS_DeathItem_Human` death-item leveled lists (via `ZEN_LItemPotion*`
+  sublists). **Disable it** — otherwise bandits, the Lost Ones and FS humans draw from both sources.
+- **Enemies will drink these, and that is the point.** SPID's `Item` adds to the base NPC's *live*
+  container, not to a death item, so the two potion-AI mods finally have stock to use. Expect a real
+  difficulty increase. It also means each base NPC is stamped `SPID_Processed` once per session, so
+  the level band is evaluated against whichever actor of that base loads first — exact for Enderal's
+  fixed-level NPCs, player-tracking for PC-level-mult ones, which is why the bands are wide.
 
 ### Modern visuals
 
