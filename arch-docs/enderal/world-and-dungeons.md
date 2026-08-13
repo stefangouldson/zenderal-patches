@@ -66,8 +66,8 @@ The two systems a Skyrim modder would reach for are both effectively absent **[v
 
 - **Locations (LCTN): 90 base / 69 FS records, and they are not a dungeon layer.** The vanilla
   `LocType*` keywords all still exist as KYWD records, but across all locations
-  **`LocTypeDungeon 0130DB` is used exactly once** (and `LocTypeDraugrCrypt`, `LocTypeBanditCamp`
-  etc. never). The hierarchy is shallow and city-centric: 30 of the 48 `ParentLocation` links
+  **`LocTypeDungeon 0130DB` is used exactly once** — on `AbandonedPrisonLocation 0ECF4C` — and
+  `LocTypeDraugrCrypt`, `LocTypeBanditCamp` etc. never. The hierarchy is shallow and city-centric: 30 of the 48 `ParentLocation` links
   point at `CapitalCityLocation 0A1A12` (Ark's shops), 14 at `_00E_UEMasterLocation 103392` (the
   Undercity). Only 183 of 415 interior cells set `Location:` at all — entire dungeon level chains
   (e.g. `AltIniath04BOSS 020AFC`) are orphaned from any location.
