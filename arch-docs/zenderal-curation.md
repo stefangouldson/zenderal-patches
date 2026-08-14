@@ -253,9 +253,9 @@ humanoid, level-banded onto Enderal's own `1 / 10 / 18 / 28 / 38` ladder (the ba
 
 | Line | FormIDs (`:Skyrim.esm`, tier order) | Chance | Count |
 |---|---|---|---|
-| Health `_NNE_Genesungstrank` | `0028C8` `0028C5` `0028C6` `0028C7` `0028C9` | 55 | 1–2 |
-| Mana `_NNE_Manatrank` | `0028DB` `019E3B` `090892` `09B6CB` `1037F7` | 45 | 1–2 |
-| Stamina `_NNE_Morgenlufttrank` | `0028DE` `085668` `09B6CA` `1037F5` `1037F6` | 45 | 1–2 |
+| Health `_NNE_Genesungstrank` | `0028C8` `0028C5` `0028C6` `0028C7` `0028C9` | 55 | 1 |
+| Mana `_NNE_Manatrank` | `0028DB` `019E3B` `090892` `09B6CB` `1037F7` | 45 | 1 |
+| Stamina `_NNE_Morgenlufttrank` | `0028DE` `085668` `09B6CA` `1037F5` `1037F6` | 45 | 1 |
 | Ambrosia `_00E_Ambrosia` (**`DeathItem =`**) | `0FEC69` (no level band) | 10 | 1 |
 
 Traits `-S/-C/-D` exclude summons, children and StartsDead props.
