@@ -256,11 +256,23 @@ humanoid, level-banded onto Enderal's own `1 / 10 / 18 / 28 / 38` ladder (the ba
 | Health `_NNE_Genesungstrank` | `0028C8` `0028C5` `0028C6` `0028C7` `0028C9` | 55 | 1–2 |
 | Mana `_NNE_Manatrank` | `0028DB` `019E3B` `090892` `09B6CB` `1037F7` | 45 | 1–2 |
 | Stamina `_NNE_Morgenlufttrank` | `0028DE` `085668` `09B6CA` `1037F5` `1037F6` | 45 | 1–2 |
-| Ambrosia `_00E_Ambrosia` | `0FEC69` (no level band) | 30 | 1 |
+| Ambrosia `_00E_Ambrosia` (**`DeathItem =`**) | `0FEC69` (no level band) | 10 | 1 |
 
 Traits `-S/-C/-D` exclude summons, children and StartsDead props.
 
-Three things worth not rediscovering:
+> **Ambrosia depends on a setting in another mod.** *NPCs Use Potions* ships
+> `[Removal] RemoveItemsOnDeath = true / ChanceToRemoveItem = 90 / MaxItemsLeftAfterRemoval = 2`,
+> which culls every corpse's alchemy items to at most two survivors. A single-count item never wins
+> that against the six potions above it: at chance **100**, on **every humanoid base in the game**,
+> Ambrosia reached **zero** corpses, and switching to `DeathItem =` did not help either because NUP
+> strips on a worker thread that runs after every `TESDeathEvent` hook. **Set NUP's
+> `RemoveItemsOnDeath = false`** (or loosen it hard) or this line does nothing, with no error
+> anywhere. **[verified in-game 2026-08-14]** Full write-up in `CLAUDE.md`.
+>
+> Note the side effect of turning it off: the potion lines above are no longer culled either, so
+> corpses now keep everything they were given rather than at most two items.
+
+Four things worth not rediscovering:
 
 - **The restore-stamina line is `Morgenlufttrank` ("Morning Air Potion"), not `Ausdauertrank`.**
   `_NNE_Ausdauertrank` is *fortify* stamina, and base Enderal ships only two tiers of it (`019E43`,
