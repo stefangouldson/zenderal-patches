@@ -1,7 +1,8 @@
 # Zenderal Controller Setup
 
 How to add full Xbox-controller support to the Zenderal list (Enderal SE, engine **1.5.97**),
-reproduced from a working install. Three mods off Nexus, one INI value, and one ready-built mod
+reproduced from a working install. Three mods off Nexus, one INI value, one Steam setting (§6 —
+skip it and the pad is dead however correct the rest is), and one ready-built mod
 from this repo carrying the Enderal-specific tweaks — everything Wabbajack-compilable, nothing
 edited inside third-party mods.
 
@@ -172,8 +173,47 @@ second one. Do **not** put it in `[Controls]`; the engine only reads it from `[M
 by A/B test). If BethINI Pie is run afterwards, re-check the value survived — BethINI has
 previously relocated this key into sections the engine ignores.
 
-## 6. Verify
+## 6. Steam Input — turn off the GLOBAL Xbox setting
 
+**Steam → Settings → Controller → "Enable Steam Input for Xbox controllers": OFF.**
+
+[verified 2026-10-09, after a long diagnosis] With that global switch on (Steam's default for
+many installs), an Xbox pad is **completely dead in the list** — main menu included — while mouse
+and keyboard work and every other setting in this guide is correct. The same pad works in vanilla
+Enderal launched from the Steam library. Turning the global switch off fixed it immediately.
+
+**Why the per-game setting doesn't help.** Steam applies a game's own Steam Input override only
+when *Steam* launches the game. MO2 launches `skse64_loader.exe` directly, so Steam falls back to
+the global setting and claims the pad for its desktop configuration. The game is told it is in
+gamepad mode — it shows controller button prompts — but never receives a button. Setting Enderal's
+per-game Steam Input to *Disabled* changed nothing; that is the tell.
+
+How it presents, so the next person recognises it fast:
+
+- Pad dead even on the **main menu**, before any SKSE plugin or save could be involved.
+- The engine is in gamepad mode: confirm/cancel prompts show controller buttons, Settings →
+  Controls shows the controller **On**.
+- Windows sees the pad live (`XInputGetState` slot 0 responds) — so it is not the controller.
+- It can **work once and then stop** with no file changed: whichever of Steam and the game wins
+  the device that session decides it.
+- A clean reinstall of the list changes nothing.
+
+**Ruled out along the way** (each tested with one launch, none involved): the `[MAIN]`/`[General]`
+INI placement once fixed, Auto Input Switch on or off, Theo's Render Pipeline and Wheeler, a local
+legacy `xinput1_3.dll` (System32's are Microsoft GameInput forwarders since GameInput 3.5 — they
+are fine), `ControlMap_Custom.txt` in *Zenderal - Settings*, and Root Builder's game-root files
+(only ENB's `d3d11.dll`/`d3dcompiler_46e.dll` and Engine Fixes' `d3dx9_42.dll` — none touch input).
+
+**Bisect order for a "dead pad" report:** (1) XInput probe in Windows; (2) vanilla Enderal from
+the Steam library — if the pad works there, the PC is fine; (3) the Steam global switch above;
+(4) only then a mod bisect, starting from an empty MO2 profile.
+
+If another Steam game needs Steam Input, re-enable it **per game** in that game's Properties —
+Steam-launched games honour the per-game override.
+
+## 7. Verify
+
+- [ ] Steam's global "Steam Input for Xbox controllers" is **off** (§6).
 - [ ] `skse64.log` shows `AutoInputSwitch.dll ... loaded correctly` — if it says
       `does not appear to be an SKSE plugin`, the AE build is installed.
 - [ ] With the pad on before launch: menus navigate, the character moves, and pad and
@@ -187,8 +227,9 @@ previously relocated this key into sections the engine ignores.
 
 If the pad seems dead, check Windows first: an XInput probe from PowerShell (poll
 `XInputGetState` slot 0) separates a sleeping controller from a game-side problem in seconds.
+If Windows sees it, follow the bisect order in §6.
 
-## 7. Side note found during diagnosis
+## 8. Side note found during diagnosis
 
 `ImprovedCameraSE.dll` currently reports itself incompatible in `skse64.log` — it's an AE build,
 same disease as the stock Auto Input Switch. Unrelated to controller support, but the list is

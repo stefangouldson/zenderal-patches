@@ -327,6 +327,15 @@ itself the signal to give it a FOMOD.
 - **Existing saves are unaffected:** the trigger checks that the main quest has not started and
   deletes itself either way.
 
+### `Zenderal - Controller Tweaks`
+
+- **Turn OFF Steam → Settings → Controller → "Enable Steam Input for Xbox controllers".** MO2
+  launches the game outside Steam, so Steam ignores Enderal's per-game Steam Input setting, claims
+  the pad itself, and the game receives no controller input at all, main menu included.
+- Also needs `bGamepadEnable=1` under **`[MAIN]`** of the profile's `EnderalPrefs.ini`, and the
+  **1.5.97** build of Auto Input Switch (1.1.2 from Old Files). The full setup is in
+  [`arch-docs/zenderal-controller-setup.md`](arch-docs/zenderal-controller-setup.md).
+
 > **The Apocalypse conversion moved.** It is a *replacement plugin* rather than a patch — it ships
 > under Enai Siaion's own filename `Apocalypse - Magic of Skyrim.esp` — and is now released from
 > [**`enderal-mods`**](https://github.com/stefangouldson/enderal-mods), which holds Enderal SE mods

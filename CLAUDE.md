@@ -1162,7 +1162,12 @@ These are **engine-hardcoded** FormIDs — Bethesda's own code depends on them, 
   SKSE 2.0.20 as `does not appear to be an SKSE plugin` (no `SKSEPlugin_Query` export — the quick
   binary test for any DLL); a 1.5.97 build exists in the mod's old files / the mod-166519 backport;
   (3) an XInput pad's health is testable outside the game — poll `XInputGetState` slot 0 from
-  PowerShell before blaming the game. Controller stack in the list: Complete Controller Setup's
+  PowerShell before blaming the game; (4) **[verified 2026-10-09]** if Windows sees the pad and
+  the game shows controller prompts but takes no input (dead even on the main menu), it is
+  **Steam's GLOBAL "Steam Input for Xbox controllers"** — MO2 launches outside Steam, so the
+  per-game Steam Input override is ignored and Steam claims the pad. Turn the global switch off;
+  vanilla Enderal launched from Steam working is the tell. Full bisect in the controller setup
+  doc §6. Controller stack in the list: Complete Controller Setup's
   `controlmap.txt` wins the 3-way conflict (over Gamepad++ and Modern Toggle Walk-Run Fix), and its
   eight required mods are all present. Two follow-up fixes live as in-place edits that a mod
   reinstall reverts: CCS's controlmap has `Quick Stats`' gamepad combo (B+DpadUp) unbound → `0xff`
